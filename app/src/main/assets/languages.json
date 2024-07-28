@@ -1,0 +1,9 @@
+{
+  "languages": [
+    {
+      "grammar": "textmate/python/syntaxes/python.tmLanguage.json",
+      "name": "python",
+      "scopeName": "source.python"
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/wf"
+    android:orientation="vertical"
+
+    >
+
+<include layout="@layout/top_bar"
+   />
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/round_unselected"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:text="Covered in Percentage">
+
+        </TextView>
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="0dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/octagonal"
+            android:text="0%">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:padding="8dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+
+                    android:layout_weight="2"
+                    >
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Strands covered "
+    android:textColor="@color/black"
+    >
+
+</TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Strands covered "
+                    android:textColor="@color/black"
+                    >
+
+                </TextView><TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                android:text="Strands covered "
+                >
+
+            </TextView><TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Strands covered "
+                    android:textColor="@color/black"
+                >
+
+            </TextView><TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                android:text="Strands covered "
+                >
+
+            </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2"
+
+                    >
+                <LinearLayout
+                    android:id="@+id/compiler_btn"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+
+                    >
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/utop"
+                        android:layout_gravity="center"
+
+                        >
+
+                    </TextView>
+                    <ImageView
+
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/compy"
+
+                        >
+
+                    </ImageView>
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ubottom"
+                        android:gravity="center"
+                        android:text="Compiler"
+                        android:textColor="@color/black"
+                        android:elevation="10dp"
+
+                        >
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:src="@drawable/p">
+
+        </ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/projectsbtn"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                >
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/utop"
+                    android:layout_gravity="center"
+                    android:id="@+id/utop"
+                    >
+
+                </TextView>
+                <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/proj"
+                    android:id="@+id/swi_img"
+                    >
+
+                </ImageView>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ubottom"
+                    android:gravity="center"
+                    android:text="Projects"
+                    android:textColor="@color/black"
+                    android:elevation="10dp"
+                    android:id="@+id/comp"
+                    >
+
+                </TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:id="@+id/swi"
+                >
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/utop"
+
+                    android:id="@+id/uswi"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/les"
+                    android:id="@+id/cont_img"
+                    >
+
+                </ImageView>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ubottom"
+                    android:gravity="center"
+                    android:text="switch"
+                    android:textColor="@color/black"
+                    android:elevation="10dp"
+                    android:id="@+id/lswi"
+
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                >
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/utop"
+
+                    android:id="@+id/ucon"
+                    >
+
+                </TextView>
+                <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/cont"
+                    android:id="@+id/compi"
+                    >
+
+                </ImageView>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ubottom"
+                    android:gravity="center"
+                    android:elevation="10dp"
+                    android:textColor="@color/black"
+                    android:text="Continue"
+                    android:id="@+id/cont"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <include layout="@layout/bottom_bar"/>
+</LinearLayout>

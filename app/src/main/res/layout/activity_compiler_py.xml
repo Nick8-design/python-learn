@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CompilerPy"
+    android:background="@drawable/wf"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/top_bar" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:fillColor="@android:color/transparent"
+        android:gravity="center"
+        android:layout_weight="1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/dl"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/code"
+                >
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="code"
+                android:textSize="27sp"
+                android:textColor="@color/on"
+                android:layout_marginStart="2dp"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:id="@+id/outp"
+            android:background="@drawable/dr"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            >
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/unoutput"
+                >
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="run"
+                android:textSize="27sp"
+                android:textColor="@color/off"
+                android:layout_marginStart="2dp"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/white"
+        android:text="clear"
+        android:textSize="22sp"
+        android:id="@+id/clear"
+        android:background="@color/red"
+        >
+
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="8">
+
+
+
+        <io.github.rosemoe.sora.widget.CodeEditor
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/codearea"
+            app:text='print("hello world")'
+            android:layout_marginBottom="5dp"
+
+
+
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+    <include layout="@layout/bottom_bar"
+        />
+</LinearLayout>

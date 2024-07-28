@@ -1,0 +1,26 @@
+<!-- res/menu/menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_sav"
+        android:title="Save"
+        android:icon="@drawable/save"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_save"
+        android:title="Save As"
+        android:icon="@drawable/save"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_open"
+        android:title="Open"
+        android:icon="@drawable/open"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/settings"
+        app:showAsAction="always"/>
+</menu>
