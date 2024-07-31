@@ -36,7 +36,7 @@
         <TextView
             android:id="@+id/percentage"
             android:layout_width="0dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="20dp"
             android:layout_weight="1"
             android:layout_gravity="right"
             android:layout_height="match_parent"
@@ -122,7 +122,9 @@
                     >
                 <LinearLayout
                     android:id="@+id/compiler_btn"
-                    android:layout_width="140dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="10dp"
                     android:layout_height="140dp"
                     android:orientation="vertical"
                     android:gravity="center"
@@ -172,7 +174,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:layout_weight="1"
+            android:layout_weight="2"
+            android:scaleType="fitCenter"
+
             android:src="@drawable/p">
 
         </ImageView>

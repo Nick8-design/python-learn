@@ -239,7 +239,7 @@ public class Myproject extends AppCompatActivity {
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
-
+        popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
         popupMenu.getMenu().findItem(R.id.action_save).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
         popupMenu.getMenu().findItem(R.id.action_open).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
 

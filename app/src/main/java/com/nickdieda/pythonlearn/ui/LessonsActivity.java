@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,11 +24,15 @@ import androidx.core.view.WindowInsetsCompat;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 
+import io.github.rosemoe.sora.widget.CodeEditor;
+
 public class LessonsActivity extends AppCompatActivity {
-    LinearLayout homefra,lessonfra,button;
+    LinearLayout homefra,lessonfra,cont;
     ImageView homei,lessoni,compi,swi_img,uswi,cont_img,image;
     TextView hometext,lessontext,percentage;
     private ImageButton menuButton;
+    private CodeEditor fra;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +51,16 @@ public class LessonsActivity extends AppCompatActivity {
                 lessontext=findViewById(R.id.lesson_text);
                 percentage=findViewById(R.id.percentage);
                 image=findViewById(R.id.image);
+                cont=findViewById(R.id.contless);
+                progressBar=findViewById(R.id.prointro);
+
+                progressBar.setProgress(0);
+
+        progressBar.setVisibility(View.VISIBLE);  // To show
+      //  progressBar.setVisibility(View.GONE);
+
+
+
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +103,7 @@ public class LessonsActivity extends AppCompatActivity {
 
         popupMenu.getMenu().findItem(R.id.action_save).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
         popupMenu.getMenu().findItem(R.id.action_open).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
+        popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
@@ -105,6 +121,14 @@ public class LessonsActivity extends AppCompatActivity {
 
         popupMenu.show();
     }
+
+
+
+
+
+
+
+
 }
 
 

@@ -132,8 +132,6 @@ public class CompilerPy extends AppCompatActivity {
 
         CodeArea.setTypefaceText(Typeface.MONOSPACE);
 
-        //  codeEditor.setColorScheme(new SchemeDarcula());
-
 
         FileProviderRegistry.getInstance().addFileProvider(
                 new AssetsFileResolver(getApplicationContext().getAssets())
@@ -249,16 +247,14 @@ public class CompilerPy extends AppCompatActivity {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
 
-        //popupMenu.getMenu().findItem(R.id.action_save).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
-        //   popupMenu.getMenu().findItem(R.id.action_open).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
-
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
+
+
                     Toast.makeText(getApplicationContext(), "Settings clicked", Toast.LENGTH_SHORT).show();
                     return true;
-
                 } else if (item.getItemId() == R.id.action_save) {
                     if (!CodeArea.getText().toString().trim().isEmpty()) {
                         showSaveAsDialog();
@@ -268,7 +264,10 @@ public class CompilerPy extends AppCompatActivity {
                     return true;
 
                 } else if (item.getItemId() == R.id.action_open) {
-                    Toast.makeText(getApplicationContext(), "Open clicked", Toast.LENGTH_SHORT).show();
+
+                    Intent opn=new Intent(getApplicationContext(),Myproject.class);
+                    startActivity(opn);
+
                     return true;
 
                 } else {
