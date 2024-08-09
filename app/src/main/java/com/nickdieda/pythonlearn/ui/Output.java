@@ -27,85 +27,85 @@ import com.nickdieda.pythonlearn.R;
 public class Output extends AppCompatActivity {
 
     private ImageButton menuButton;
-            TextView txtv;
-            LinearLayout homefra,lessonfra,cd;
-            ImageView homei,lessoni;
-            TextView hometext,lessontext,percentage;
+    TextView txtv;
+    LinearLayout homefra,lessonfra,cd;
+    ImageView homei,lessoni;
+    TextView hometext,lessontext,percentage;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_output);
+        menuButton = findViewById(R.id.menu_button);
+        homefra=findViewById(R.id.home_fra);
+        lessonfra=findViewById(R.id.lesson_fra);
+        txtv=findViewById(R.id.outputr);
+
+        homei=findViewById(R.id.home_image);
+        lessoni=findViewById(R.id.lessons_im);
+        hometext=findViewById(R.id.home_text);
+        lessontext=findViewById(R.id.lesson_text);
+
+        cd=findViewById(R.id.codeit);
+
+        TextView title=findViewById(R.id.title);
+
+        title.setText("Output");
+
+        String outp=getIntent().getStringExtra("output");
+
+        String f="\n\n\n[Program Finished]";
+        txtv.setText(outp+f);
+        txtv.setMovementMethod(new ScrollingMovementMethod());
+
+
+
+
+
+        homei.setImageResource(R.drawable.unhome);
+        lessoni.setImageResource(R.drawable.unbook);
+        hometext.setTextColor(getResources().getColor(R.color.off));
+        lessontext.setTextColor(getResources().getColor(R.color.off));
+        homei.setBackgroundResource(R.drawable.round_unselected);
+        lessoni.setBackgroundResource(R.drawable.round_unselected);
+        menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                EdgeToEdge.enable(this);
-                setContentView(R.layout.activity_output);
-                menuButton = findViewById(R.id.menu_button);
-                homefra=findViewById(R.id.home_fra);
-                lessonfra=findViewById(R.id.lesson_fra);
-                txtv=findViewById(R.id.outputr);
+            public void onClick(View view) {
+                showPopupMenu(view);
+            }
+        });
 
-                homei=findViewById(R.id.home_image);
-                lessoni=findViewById(R.id.lessons_im);
-                hometext=findViewById(R.id.home_text);
-                lessontext=findViewById(R.id.lesson_text);
+        lessonfra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                cd=findViewById(R.id.codeit);
-
-                TextView title=findViewById(R.id.title);
-
-                title.setText("Output");
-
-                String outp=getIntent().getStringExtra("output");
-
-                String f="\n\n\n[Program Finished]";
-                txtv.setText(outp+f);
-                txtv.setMovementMethod(new ScrollingMovementMethod());
-
-
-
-
-
-                homei.setImageResource(R.drawable.unhome);
-                lessoni.setImageResource(R.drawable.unbook);
-                hometext.setTextColor(getResources().getColor(R.color.off));
-                lessontext.setTextColor(getResources().getColor(R.color.off));
-                homei.setBackgroundResource(R.drawable.round_unselected);
-                lessoni.setBackgroundResource(R.drawable.round_unselected);
-                menuButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        showPopupMenu(view);
-                    }
-                });
-
-                lessonfra.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
-                        startActivity(intent);
-
-                    }
-                });
-                cd.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
-                        startActivity(intent);
-
-                    }
-                });
-
-                homefra.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-
-                    }
-                });
-
+                Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
+                startActivity(intent);
 
             }
+        });
+        cd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
+                startActivity(intent);
+
+            }
+        });
+
+        homefra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+    }
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
@@ -137,6 +137,3 @@ public class Output extends AppCompatActivity {
         popupMenu.show();
     }
 }
-
-
-

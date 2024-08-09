@@ -5,7 +5,7 @@
             <solid android:color="#E0E0E0" />
         </shape>
     </item>
-    <item android:id="@android:id/secondaryProgress">
+    <item android:id="@android:id/progress">
         <rotate
             android:fromDegrees="270"
             android:toDegrees="270">
@@ -13,8 +13,8 @@
                 <size android:width="200dp" android:height="200dp" />
                 <gradient
                     android:angle="0"
-                    android:endColor="#FF4081"
-                    android:startColor="#FF4081"
+                    android:endColor="@color/on"
+                    android:startColor="@color/off"
                     android:type="sweep" />
             </shape>
         </rotate>

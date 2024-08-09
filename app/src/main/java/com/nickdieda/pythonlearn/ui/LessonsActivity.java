@@ -1,6 +1,7 @@
 package com.nickdieda.pythonlearn.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
@@ -21,24 +22,35 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
+import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
+import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class LessonsActivity extends AppCompatActivity {
-    LinearLayout homefra,lessonfra,cont;
+    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall;
     ImageView homei,lessoni,compi,swi_img,uswi,cont_img,image;
-    TextView hometext,lessontext,percentage;
+    TextView hometext,lessontext,percentage,hdt;
     private ImageButton menuButton;
     private CodeEditor fra;
+    ProgressBar basicf,prointro,proinst;
     private ProgressBar progressBar;
+    SharedPreferences sharedPreferences;
+    private    int prog,b2,b3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lessons);
 
+        sharedPreferences = getSharedPreferences("progress", MODE_PRIVATE);
+        int bfp = sharedPreferences.getInt("overv", 0);
+        int bint = sharedPreferences.getInt("intro", 0);
+        int binsta = sharedPreferences.getInt("installa", 0);
         TextView title=findViewById(R.id.title);
 
             title.setText("Lessons");
@@ -52,14 +64,43 @@ public class LessonsActivity extends AppCompatActivity {
                 percentage=findViewById(R.id.percentage);
                 image=findViewById(R.id.image);
                 cont=findViewById(R.id.contless);
-                progressBar=findViewById(R.id.prointro);
+                pyinstall=findViewById(R.id.pyinstall);
+                proinst=findViewById(R.id.proinst);
 
-                progressBar.setProgress(0);
+                overviews=findViewById(R.id.pyover);
+                hdt=findViewById(R.id.header);
+                basicf=findViewById(R.id.overpro);
+                pyintro=findViewById(R.id.pyintro);
+                prointro=findViewById(R.id.prointro);
 
-        progressBar.setVisibility(View.VISIBLE);  // To show
-      //  progressBar.setVisibility(View.GONE);
 
 
+                proinst.setProgress(probar(binsta,b3));
+                basicf.setProgress(probar(bfp,prog));
+                prointro.setProgress(probar(bint,b2));
+
+
+        pyinstall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent insta=new Intent(getApplicationContext(), InstallPy.class);
+
+                startActivity(insta);
+            }
+        });
+
+
+
+
+
+        pyintro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intro=new Intent(getApplicationContext(), Introduction.class);
+
+                startActivity(intro);
+            }
+        });
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +135,18 @@ public class LessonsActivity extends AppCompatActivity {
 
 
 
+                overviews.setOnClickListener(new View.OnClickListener() {
+                    String hdo=hdt.getText().toString();
+                    @Override
+                    public void onClick(View v) {
+                Intent over=new Intent(getApplicationContext(), OverviewBasic.class);
+                over.putExtra("tto",hdo);
+                startActivity(over);
+                    }
+                });
+
+
+
             }
 
 
@@ -123,8 +176,20 @@ public class LessonsActivity extends AppCompatActivity {
     }
 
 
-
-
+public int probar(int a ,int b){
+    if(a==0){
+        b=0;
+    }else if(a==1){
+        b=25;
+    }else if(a==2){
+        b=50;
+    }else if(a==3){
+        b=75;
+    }else{
+        b=100;
+    }
+    return b;
+}
 
 
 

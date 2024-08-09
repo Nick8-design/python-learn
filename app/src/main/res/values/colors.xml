@@ -18,4 +18,11 @@
     <color name="on">#DFFD01</color>
     <color name="off">#9E9E62</color>
     <color name="gra">#757575</color>
+    <color name="gr">#626567</color>
+    <color name="darkgra">#4d5656</color>
+    <color name="navyb">#263238</color>
+
+
+
+
 </resources>

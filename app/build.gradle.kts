@@ -121,7 +121,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     //compiler view
-    implementation ("io.github.amrdeveloper:codeview:1.3.9")
+  //  implementation ("io.github.amrdeveloper:codeview:1.3.9")
 
 
      //code editor

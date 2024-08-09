@@ -194,9 +194,6 @@ public class MainActivity extends AppCompatActivity {
         lessonfra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(MainActivity.this, "Lesson start soon", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
                 startActivity(intent);
 
@@ -257,26 +254,7 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
 
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.kebab, menu);
 
-        menu.findItem(R.id.action_save).setVisible(false);
-        menu.findItem(R.id.action_open).setVisible(false);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_settings) {
-            Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-*/
 
 
     private void showPopupMenu(View view) {

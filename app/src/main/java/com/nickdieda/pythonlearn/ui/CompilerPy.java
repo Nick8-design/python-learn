@@ -29,6 +29,7 @@ import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.setpylan;
 
 import org.eclipse.tm4e.core.registry.IThemeSource;
 
@@ -72,8 +73,10 @@ public class CompilerPy extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_compiler_py);
         CodeArea = findViewById(R.id.codearea);
+
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
         String savedCode = sharedPreferences.getString("code", ""); // Default value if not found
+
         if (savedCode.isEmpty()) {
             CodeArea.setText("#delete..");
         } else {
@@ -85,7 +88,11 @@ public class CompilerPy extends AppCompatActivity {
         if (code != null) {
             CodeArea.setText(code);
         }
+        String ex1 = getIntent().getStringExtra("try1");
 
+        if (ex1 != null) {
+            CodeArea.setText(ex1);
+        }
         String filePath = getIntent().getStringExtra("filePath");
         if (filePath != null) {
             String fileContent = readFileContent(new File(filePath));
@@ -133,49 +140,8 @@ public class CompilerPy extends AppCompatActivity {
         CodeArea.setTypefaceText(Typeface.MONOSPACE);
 
 
-        FileProviderRegistry.getInstance().addFileProvider(
-                new AssetsFileResolver(getApplicationContext().getAssets())
-        );
-
-// Load the theme (replace "your-theme-name" with the actual theme name)
-        ThemeRegistry themeRegistry = ThemeRegistry.getInstance();
-        String themeAssetsPath = "textmate/darcula.json";
-        try {
-            themeRegistry.loadTheme(new ThemeModel(
-                            IThemeSource.fromInputStream(
-                                    Objects.requireNonNull(FileProviderRegistry.getInstance().tryGetInputStream(themeAssetsPath)),
-                                    themeAssetsPath,
-                                    null
-                            ),
-                            "darcula"
-                    )
-                    // If the theme is dark
-                    // .isDark(true)
-            );
-        } catch (Exception e) {
-            // throw new RuntimeException(e);
-        }
-
-// Set the active theme
-        themeRegistry.setTheme("darcula");
-        GrammarRegistry.getInstance().loadGrammars("languages.json");  // Path to your languages.json
-        String scopeName = "source.python";
-        try {
-            CodeArea.setColorScheme(TextMateColorScheme.create(ThemeRegistry.getInstance()));// Create the TextMateLanguage instance
-        } catch (Exception e) {
-
-        }
-
-        try {
-            TextMateLanguage language = TextMateLanguage.create(
-                    scopeName,
-                    true
-            );
-            CodeArea.setEditorLanguage(language);
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), (CharSequence) e, Toast.LENGTH_LONG).show();
-        }
-
+        setpylan pylang=new setpylan();
+        pylang.pyLang(getApplicationContext(),CodeArea);
         if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(this));
         }

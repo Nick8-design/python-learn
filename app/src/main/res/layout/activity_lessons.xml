@@ -55,7 +55,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
@@ -66,8 +66,12 @@
             <ProgressBar
                 android:id="@+id/overpro"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -76,7 +80,8 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Overview"
-                android:textSize="24sp"
+                android:textSize="20sp"
+                android:id="@+id/header"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -96,19 +101,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
             android:id="@+id/pyintro"
             android:gravity="center_vertical"
+
             >
 
             <ProgressBar
                 android:id="@+id/prointro"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -117,9 +126,10 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Introduction"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
+
                 >
 
             </TextView>
@@ -137,7 +147,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
@@ -148,17 +158,20 @@
             <ProgressBar
                 android:id="@+id/proinst"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
-
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Installation"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -178,7 +191,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
@@ -189,8 +202,12 @@
             <ProgressBar
                 android:id="@+id/prowrite"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -199,7 +216,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python writing code"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -219,7 +236,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:id="@+id/display"
@@ -230,8 +247,12 @@
             <ProgressBar
                 android:id="@+id/prodis"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -240,7 +261,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Py Display Output"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -260,7 +281,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:id="@+id/statement"
@@ -271,8 +292,12 @@
             <ProgressBar
                 android:id="@+id/prostate"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -281,7 +306,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Statements"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -301,7 +326,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
@@ -312,8 +337,12 @@
             <ProgressBar
                 android:id="@+id/prosyn"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -322,7 +351,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Syntax"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -342,7 +371,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/rounddark"
             android:orientation="horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
@@ -353,8 +382,12 @@
             <ProgressBar
                 android:id="@+id/procom"
                 android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/circular_progress_bar" />
 
@@ -363,7 +396,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Comments"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -381,11 +414,407 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundcon"
+            android:alpha="0.8"
+            android:scrollbars="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python Variables and DataTypes"
+                android:textSize="38sp"
+                android:gravity="start|center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/varible"
+                >
+
+                <ProgressBar
+                    android:id="@+id/provar"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="50"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Variables"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/datatpyes"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/prodata"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Data Types"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/numb"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/pronum"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Numbers"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/nummethods"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/promet"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Number Methods"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:id="@+id/string"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prostring"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Strings"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:id="@+id/stringmeth"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prostinmeth"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python String Methods"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/typeconversion"
+                >
+
+                <ProgressBar
+                    android:id="@+id/protypecon"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Type Conversion"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/booleans"
+                >
+
+                <ProgressBar
+                    android:id="@+id/probolean"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Booleans"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </LinearLayout>
+
     </ScrollView>
     <include layout="@layout/bottom_bar" />
 </LinearLayout>

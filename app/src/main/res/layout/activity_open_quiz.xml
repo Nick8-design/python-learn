@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quiz.OpenQuiz"
+    android:background="@drawable/wf"
+    android:orientation="vertical">
+
+    <include layout="@layout/return_topbar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ansdis">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/submit_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit for marking"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/markdis"
+        android:visibility="gone"> <!-- Initially hidden -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundcon"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@color/on"
+                            android:id="@+id/imgmark"
+                            android:layout_margin="8dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/roundcon"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/result_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Perfect Score"
+                                android:textSize="28sp"
+                                android:textColor="@color/white"
+                                android:gravity="start" />
+
+                            <TextView
+                                android:id="@+id/result_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="You got 4 out of 4 questions correct."
+                                android:textSize="18sp"
+                                android:textColor="@color/white"
+                                android:gravity="start" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Back to Lessons"
+                        android:textSize="18sp"
+                        android:padding="6dp"
+                        android:id="@+id/backtolessons"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounddark"
+                        android:layout_gravity="end" />
+
+                </LinearLayout>
+
+                <!-- Other question result views here -->
+
+                <Button
+                    android:id="@+id/retake_quiz_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retake Quiz"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
