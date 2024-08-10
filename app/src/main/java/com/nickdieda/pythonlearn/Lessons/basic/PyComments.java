@@ -21,7 +21,7 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
-public class Syntaxs extends AppCompatActivity {
+public class PyComments extends AppCompatActivity {
     private CodeEditor pd2,pd3,pd4;
     private TextView title,qz,pd11,pd22,pd33,pd44;
     private ImageView ret;
@@ -29,7 +29,8 @@ public class Syntaxs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_syntaxs);
+        setContentView(R.layout.activity_py_comments);
+
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
@@ -62,7 +63,7 @@ public class Syntaxs extends AppCompatActivity {
 
 
 
-        String tt = "Python Syntax";
+        String tt = "Python Comments";
         title.setText(tt);
         title.setSelected(true);
 
@@ -72,7 +73,7 @@ public class Syntaxs extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 6);
+                quiz.putExtra("id", 7);
 
                 startActivity(quiz);
             }

@@ -18,7 +18,9 @@ import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
 import com.nickdieda.pythonlearn.Lessons.basic.PDis;
+import com.nickdieda.pythonlearn.Lessons.basic.PyComments;
 import com.nickdieda.pythonlearn.Lessons.basic.PyState;
+import com.nickdieda.pythonlearn.Lessons.basic.Syntaxs;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.data.QuestionAdapter;
@@ -92,6 +94,16 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Can one statement be in more than one line?", Arrays.asList("Yes", "Never","I hope so"), 0));
             questionList.add(new Question("In Python, a line typically contains how many statements", Arrays.asList("two","one"), 1));
             questionList.add(new Question("Can a statement be used to compute for a value", Arrays.asList("Never","Yes", "No"), 1));
+        } else if (activityid==6){
+            questionList.add(new Question("It indicates a group (block) of statements in Python.", Arrays.asList("indentation","brackets"), 0));
+            questionList.add(new Question("Is indentation important in python", Arrays.asList("No","Yes"), 1));
+            questionList.add(new Question("Not Observing Indentation in a block of statements leads to?", Arrays.asList("indentation error","name error"), 0));
+            questionList.add(new Question("Is the block of statements below well indented \nx=3\ny=8\ntprint(x+y)", Arrays.asList("Never","Yes", "No"), 2));
+        } else if (activityid==7){
+            questionList.add(new Question("What are comments used for? .", Arrays.asList("Deleting codes","Explaining codes"), 1));
+            questionList.add(new Question("Are comments interpreted by the compiler", Arrays.asList("No","Yes"), 0));
+            questionList.add(new Question("Which character is used to comment in python", Arrays.asList("#","//"), 0));
+            questionList.add(new Question("Will comments be executed?", Arrays.asList("Never","Yes", "No"), 2));
         }
 
 
@@ -178,6 +190,10 @@ public class OpenQuiz extends AppCompatActivity {
                 savedir("pdis",correctAnswers);
         }  else if (activityid==5) {
             savedir("pystate",correctAnswers);
+        }  else if (activityid==6) {
+            savedir("syntax",correctAnswers);
+        }  else if (activityid==7) {
+            savedir("comments",correctAnswers);
         }
 
 
@@ -264,7 +280,14 @@ public Intent returnINT(){
         bk = new Intent(getApplicationContext(), PDis.class);
     } else if (activityid==5) {
         bk = new Intent(getApplicationContext(), PyState.class);
+    } else if (activityid==6) {
+        bk = new Intent(getApplicationContext(), Syntaxs.class);
+    } else if (activityid==7) {
+        bk = new Intent(getApplicationContext(), PyComments.class);
     }
+
+
+
     return bk;
 }
 

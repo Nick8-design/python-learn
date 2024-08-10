@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.basic.Syntaxs">
+    tools:context=".Lessons.basic.PyComments">
 
     <include layout="@layout/return_topbar" />
 
@@ -26,7 +26,7 @@
                 android:id="@+id/intrott"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Python Syntax"
+                android:text="Python Comments"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -36,44 +36,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                    android:text="Python syntax are set of rules that we follow when writing Python programs.\n\nIt is like the structure of writing python codes we must follow it. "
+                android:text="Comments are always used to clarify or explain codes or checking for errors.\n\nComments are never interpreted by the interpreter or in python.\n\nComments are not executed."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Python Identation"
-                android:textColor="@color/white"
-                android:layout_margin="4dp"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="IDENTATION in python is very IMPORTANT.\n\nIn other language like C,Kotlin,Cpp,Java,Prolog, identation are only for readbility purposes and their compilers don't care about identations.\n\nWhere in Python, identation indicates a block (group) of statements.\n\nTabs or leading whitespaces are used to compute the identation levelof a line.\n\nIt depends on you whether you want to use tabs or whitespaces, in this example we'll use 2 whitespaces. "
-              android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="140dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    app:text='for i in range(5):\n  x = "Hello My Friend &#9829;"\n  print(x)'
+                    android:layout_height="100dp"
+                    app:text='#this i a commented line\nfor i in range(5):\n  x = "Hello My Friend &#9829;"\n  print(x) #hello world will be looped 5 times'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -92,13 +71,7 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="For block of codes or statements that fall under one function ,loop,conditions consider using same identation as i have done above."
-                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
+
 
 
 
@@ -118,10 +91,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Note! The number of whitespaces also depends on you,but it has to be atleast one."
-                     android:textColor="@color/white"
+                    android:text="Fact! In python # is used for commenting"
+                   android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:layout_margin="4dp" >
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center">
 
                 </TextView>
             </LinearLayout>
@@ -132,7 +106,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Indentation Error"
+                android:text="Single Line Comment"
                 android:textColor="@color/white"
                 android:layout_margin="4dp"
                 android:textSize="26sp"
@@ -142,8 +116,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="In Python, a block of statements needs to have the same indentation level.\n\nThis example will produce an indentation error,because the first line of the block/group does not have the same indentation as the second line."
-               android:textColor="@color/white"
+                android:text="A single line comment starts with a harsh character #."
+              android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -157,7 +131,7 @@
                     android:id="@+id/pd3"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
-                  app:text='if 5 > 3:\n   x = "Hello World!"\n     print(x) '
+                    app:text='#this is a single line comment\nprint("I am the first line to be executed")'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -180,7 +154,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ending a block of statemets"
+                android:text="Multiple Lines of Comments"
                 android:textColor="@color/white"
                 android:layout_margin="4dp"
                 android:textSize="26sp"
@@ -190,14 +164,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-               android:text="A block (group) of statements end with the next unindented line."
+               android:text="To write comments in multiple lines, simply use multiple single line comments.Yes am also finding it difficult."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="180dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
@@ -205,7 +179,7 @@
                     android:id="@+id/pd4"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
-                    app:text='for i in range(5):\n  x = "Hello My Friend &#9829;"\n  print(x)\n\nprint("Am outside the block am even indentified different from others in the block ")'
+                    app:text='#comment here\n#comment here\n#comment here\n#comment here\nprint("Hello My Friend &#9829; ")'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -231,16 +205,6 @@
 
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="\n\n\n \n"
-                android:textSize="20sp"
-                android:layout_margin="4dp"
-                android:layout_marginBottom="20dp">
-
-            </TextView>
         </LinearLayout>
     </ScrollView>
 

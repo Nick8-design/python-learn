@@ -26,6 +26,7 @@ import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
 import com.nickdieda.pythonlearn.Lessons.basic.PDis;
+import com.nickdieda.pythonlearn.Lessons.basic.PyComments;
 import com.nickdieda.pythonlearn.Lessons.basic.PyState;
 import com.nickdieda.pythonlearn.Lessons.basic.Syntaxs;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
@@ -35,16 +36,16 @@ import com.nickdieda.pythonlearn.R;
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class LessonsActivity extends AppCompatActivity {
-    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display,statement,syntax;
+    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display,statement,syntax,comm;
     ImageView homei,lessoni,compi,swi_img,uswi,cont_img,image;
     TextView hometext,lessontext,percentage,hdt;
     private ImageButton menuButton;
     private CodeEditor fra;
-    ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate;
+    ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate,prosyn,procom;
     private ProgressBar progressBar;
     SharedPreferences sharedPreferences;
-    private    int prog,b2,b3,b4,b5,b6;
-
+    private    int prog,b2,b3,b4,b5,b6,b7,b8;
+    int totalProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +59,12 @@ public class LessonsActivity extends AppCompatActivity {
         int bwpc = sharedPreferences.getInt("wpc", 0);
         int bdis = sharedPreferences.getInt("pdis", 0);
         int bsta = sharedPreferences.getInt("pystate", 0);
+        int bsin = sharedPreferences.getInt("syntax", 0);
+        int bcom = sharedPreferences.getInt("comments", 0);
+
+
+        totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom;
+        progressindicator();
 
 
 
@@ -68,7 +75,9 @@ public class LessonsActivity extends AppCompatActivity {
                 homefra=findViewById(R.id.home_fra);
                 prowrite=findViewById(R.id.prowrite);
         display=findViewById(R.id.display);
-
+        procom=findViewById(R.id.procom);
+        prosyn=findViewById(R.id.prosyn);
+        comm=findViewById(R.id.comments);
                 lessonfra=findViewById(R.id.lesson_fra);
                 syntax=findViewById(R.id.syntax);
                  statement=findViewById(R.id.statement);
@@ -99,8 +108,17 @@ public class LessonsActivity extends AppCompatActivity {
                 prowrite.setProgress(probar(bwpc,b4));
                 prodis.setProgress(probar(bdis,b5));
                 prostate.setProgress(probar(bsta,b6));
+         prosyn.setProgress(probar(bsin,b7));
+        procom.setProgress(probar(bcom,b8));
 
+        comm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent insta=new Intent(getApplicationContext(), PyComments.class);
 
+                startActivity(insta);
+            }
+        });
 
         syntax.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -246,8 +264,21 @@ public int probar(int a ,int b){
     }
     return b;
 }
+int p;
+public void  progressindicator(){
+    SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
+    SharedPreferences.Editor editor = sharedPreferences.edit();
 
 
+
+    if(totalProgress<10){
+        editor.putInt("count", 3);
+      } else if (totalProgress>=10) {
+        editor.putInt("count", 9);
+    }
+
+    editor.apply();
+}
 
 
 }
