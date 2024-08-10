@@ -26,7 +26,7 @@
                 android:id="@+id/intrott"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Python Displaying Output"
+                android:text="Python Statements"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -36,43 +36,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="To display an output in python in python, use the print() function."
+                android:text="Python Statement is an executed line or a block of codes.\n\nExample"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Printing String"
-                android:textColor="@color/white"
-                android:layout_margin="4dp"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="The function print() can be used to print text,words even strings.\n\nIn the example,the Hello World! text will be printed. "
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="120dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd1"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    app:text='print("hello world!")'
+                    android:layout_height="70dp"
+                    app:text='x = 4\ny = 5\nprint(y-x)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -91,31 +70,14 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
-
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
+                android:text="In the example above we have 3 lines where each line is executable and can be executed to completion hense each line is considered as a statement.\nTherefore there we have 3 statements"
+              android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ddyn"
-                    android:layout_gravity="center"
-                    android:layout_margin="4dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Did you know! print() is an in-build funtion having 50 to 60 lines which are implemented in C"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:layout_margin="4dp" >
-
-                </TextView>
-            </LinearLayout>
 
 
 
@@ -123,17 +85,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Printing Number"
+                android:text="Multiple Statements in One line"
                 android:textColor="@color/white"
                 android:layout_margin="4dp"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
-
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-             android:text="We can also diplay numbers using print()\nUnlike string we dont place them in Quotes &quot; &quot;.\n\nLets print 888."
+                android:text="Yes its possible to have more than one statement in one line.\nRemember a statement can me executeted on its own.\n\nTo achieve multiple statement in one line we end  the statement with semicolon (;).\n\nThis is to show the end of each statement so that we can execute the next statement."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -150,7 +111,7 @@
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    app:text='print(888)'
+                    app:text='name = "Joy"; gender="girl"; print(name,gender)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -169,27 +130,65 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-              android:text="You can also print numbers and any mathematical operator accodingly."
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
 
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Did you know!Identation is necessary in python ,take note while writing codes."
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp" >
+
+                </TextView>
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="One Statement in Multiple Lines"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There are also some cases where you can write a single statement in multiple lines.\nOne example is when you assign a list to a variable."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd3"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    app:text='print(4 * 222)'
+                    android:layout_height="110dp"
+                    app:text='weeklyTask=[\n"Mon->Wash,watch",\n"Tue->Pray,Play",\n"Wed->Read,Run","Thu->Earn,Eat"]\nprint(weeklyTask)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -210,105 +209,6 @@
             </LinearLayout>
 
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="You can also use print() to display other data types ,which we will learn later."
-                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Printing Two Objects"
-                android:textColor="@color/white"
-                android:layout_margin="4dp"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="The print() can also print more than one object.\n\nLets print 2 strings at once."
-               android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd4"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    app:text='print("I am","a Gen Z")'
-                    android:layout_margin="5dp"
-                    android:background="#EFEFEF"
-                    android:padding="4dp" />
-
-                <TextView
-                    android:id="@+id/pd44"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try it out"
-                    android:textColor="@color/white"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:background="@drawable/rounddark"
-                    android:layout_gravity="end"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="We can also mix data types like string and numbers together as shown."
-               android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd5"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    app:text='x = 98765\ny = 12345\neven = x - y\nprint("The even number 10-0 are",even)'
-                    android:layout_margin="5dp"
-                    android:background="#EFEFEF"
-                    android:padding="4dp" />
-
-                <TextView
-                    android:id="@+id/pd55"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try it out"
-                    android:textColor="@color/white"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:background="@drawable/rounddark"
-                    android:layout_gravity="end"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
 
 
 

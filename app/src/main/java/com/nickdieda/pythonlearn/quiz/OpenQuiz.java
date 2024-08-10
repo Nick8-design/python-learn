@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
+import com.nickdieda.pythonlearn.Lessons.basic.PDis;
+import com.nickdieda.pythonlearn.Lessons.basic.PyState;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.data.QuestionAdapter;
@@ -75,11 +77,21 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Is a program that executes Python codes.", Arrays.asList("Python compiler", "Python runner"), 0));
             questionList.add(new Question("Which of the following does this app have?", Arrays.asList("an Online compiler", "an Offline compiler"), 1));
             questionList.add(new Question("What is the output of the following code println('Hello World')", Arrays.asList("Hello World", "Error"), 1));
-        }else if (activityid==3){
-            questionList.add(new Question("Python files are saved with which of the following file extension?", Arrays.asList(".js", ".py",".php"), 1));
-            questionList.add(new Question("Can you write and save python files using this app?", Arrays.asList("Yes", "Never","I hope so"), 0));
+        }else if (activityid==3) {
+            questionList.add(new Question("Python files are saved with which of the following file extension?", Arrays.asList(".js", ".py", ".php"), 1));
+            questionList.add(new Question("Can you write and save python files using this app?", Arrays.asList("Yes", "Never", "I hope so"), 0));
             questionList.add(new Question("Which of the following does this app have?", Arrays.asList("Python Console", "Python interpreter(compiler)"), 1));
             questionList.add(new Question("How do we run this file (factorial.py) in command prompt or terminal.", Arrays.asList("python factorial.py", "run factorial.py"), 0));
+        } else if (activityid==4){
+                questionList.add(new Question("Which of the following function displays output in python", Arrays.asList("print();", "cout()","print()"), 2));
+                questionList.add(new Question("Can we print numbers and string together?", Arrays.asList("Yes", "Never","I hope so"), 0));
+                questionList.add(new Question("What is the output print('Nick love'+8)", Arrays.asList("Nick love 8","error", "Nick love+8"), 1));
+                questionList.add(new Question("What is the output print('Nick love'8)", Arrays.asList("Nick love 8","error", "Nick love+8"), 1));
+        } else if (activityid==5){
+            questionList.add(new Question("How many statements are here?a=6;b=6;print(a+b)", Arrays.asList("1", "2","3"), 2));
+            questionList.add(new Question("Can one statement be in more than one line?", Arrays.asList("Yes", "Never","I hope so"), 0));
+            questionList.add(new Question("In Python, a line typically contains how many statements", Arrays.asList("two","one"), 1));
+            questionList.add(new Question("Can a statement be used to compute for a value", Arrays.asList("Never","Yes", "No"), 1));
         }
 
 
@@ -104,16 +116,8 @@ public class OpenQuiz extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bk = new Intent();
-                if(activityid==0) {
-                 bk  =new Intent(getApplicationContext(), OverviewBasic.class);
-                } else if (activityid==1) {
-                    bk = new Intent(getApplicationContext(), Introduction.class);
-                } else if (activityid==2) {
-                    bk = new Intent(getApplicationContext(), InstallPy.class);
-                } else if (activityid==3) {
-                    bk = new Intent(getApplicationContext(), WPCodes.class);
-                }
+                Intent bk = returnINT();
+
                     bk.putExtra("tto",ttt);
                     startActivity(bk);
                 }
@@ -125,16 +129,8 @@ public class OpenQuiz extends AppCompatActivity {
         bl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bk = new Intent();
-                if(activityid==0) {
-                    bk  =new Intent(getApplicationContext(), OverviewBasic.class);
-                } else if (activityid==1) {
-                    bk = new Intent(getApplicationContext(), Introduction.class);
-                } else if (activityid==2) {
-                    bk = new Intent(getApplicationContext(), InstallPy.class);
-                } else if (activityid==3) {
-                    bk = new Intent(getApplicationContext(), WPCodes.class);
-                }
+                Intent bk = returnINT();
+
                 bk.putExtra("tto",ttt);
                 startActivity(bk);
             }
@@ -177,7 +173,11 @@ public class OpenQuiz extends AppCompatActivity {
     } else if (activityid==2) {
         savedir("installa",correctAnswers);
         } else if (activityid==3) {
-            savedir("wpc",correctAnswers);
+            savedir("wpc", correctAnswers);
+        }  else if (activityid==4) {
+                savedir("pdis",correctAnswers);
+        }  else if (activityid==5) {
+            savedir("pystate",correctAnswers);
         }
 
 
@@ -250,5 +250,22 @@ public  void savedir(String dire,int d){
     editor.apply();
 }
 
+public Intent returnINT(){
+    Intent bk = new Intent();
+    if(activityid==0) {
+        bk  =new Intent(getApplicationContext(), OverviewBasic.class);
+    } else if (activityid==1) {
+        bk = new Intent(getApplicationContext(), Introduction.class);
+    } else if (activityid==2) {
+        bk = new Intent(getApplicationContext(), InstallPy.class);
+    } else if (activityid==3) {
+        bk = new Intent(getApplicationContext(), WPCodes.class);
+    } else if (activityid==4) {
+        bk = new Intent(getApplicationContext(), PDis.class);
+    } else if (activityid==5) {
+        bk = new Intent(getApplicationContext(), PyState.class);
+    }
+    return bk;
+}
 
 }

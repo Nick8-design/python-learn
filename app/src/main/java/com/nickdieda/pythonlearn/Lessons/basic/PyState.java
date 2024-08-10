@@ -21,16 +21,17 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
-public class PDis extends AppCompatActivity {
+public class PyState extends AppCompatActivity {
 
-    private CodeEditor pd1,pd2,pd3,pd4,pd5;
-    private TextView title,ex1,qz,pd11,pd22,pd33,pd44,pd55 ;
+    private CodeEditor pd1,pd2,pd3;
+    private TextView title,ex1,qz,pd11,pd22,pd33;
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_pdis);
+        setContentView(R.layout.activity_py_state);
+
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
@@ -45,10 +46,7 @@ public class PDis extends AppCompatActivity {
         pd22 = findViewById(R.id.pd22);
         pd3 = findViewById(R.id.pd3);
         pd33 = findViewById(R.id.pd33);
-        pd4 = findViewById(R.id.pd4);
-        pd44 = findViewById(R.id.pd44);
-        pd5 = findViewById(R.id.pd5);
-        pd55 = findViewById(R.id.pd55);
+
 
 
 
@@ -61,14 +59,10 @@ public class PDis extends AppCompatActivity {
         pd3.setEditable(false);
         pd3.setTypefaceText(Typeface.MONOSPACE);
 
-        pd4.setEditable(false);
-        pd4.setTypefaceText(Typeface.MONOSPACE);
-
-        pd5.setEditable(false);
-        pd5.setTypefaceText(Typeface.MONOSPACE);
 
 
-        String tt = "Python Displaying Output";
+
+        String tt = "Python Statements";
         title.setText(tt);
         title.setSelected(true);
 
@@ -78,7 +72,7 @@ public class PDis extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 4);
+                quiz.putExtra("id", 5);
 
                 startActivity(quiz);
             }
@@ -89,8 +83,7 @@ public class PDis extends AppCompatActivity {
         pylang.pyLang(getApplicationContext(),pd1);
         pylang.pyLang(getApplicationContext(),pd2);
         pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd5);
-        pylang.pyLang(getApplicationContext(),pd4);
+
 
         pd11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,21 +106,6 @@ public class PDis extends AppCompatActivity {
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
                 exe1.putExtra("try1",pd3.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd44.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd4.getText().toString());
-                startActivity(exe1);
-            }
-        });   pd55.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd5.getText().toString());
                 startActivity(exe1);
             }
         });

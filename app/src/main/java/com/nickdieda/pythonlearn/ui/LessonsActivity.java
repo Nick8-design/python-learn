@@ -26,6 +26,8 @@ import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
 import com.nickdieda.pythonlearn.Lessons.basic.PDis;
+import com.nickdieda.pythonlearn.Lessons.basic.PyState;
+import com.nickdieda.pythonlearn.Lessons.basic.Syntaxs;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
@@ -33,15 +35,15 @@ import com.nickdieda.pythonlearn.R;
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class LessonsActivity extends AppCompatActivity {
-    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display;
+    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display,statement,syntax;
     ImageView homei,lessoni,compi,swi_img,uswi,cont_img,image;
     TextView hometext,lessontext,percentage,hdt;
     private ImageButton menuButton;
     private CodeEditor fra;
-    ProgressBar basicf,prointro,proinst,prowrite;
+    ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate;
     private ProgressBar progressBar;
     SharedPreferences sharedPreferences;
-    private    int prog,b2,b3,b4;
+    private    int prog,b2,b3,b4,b5,b6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,8 @@ public class LessonsActivity extends AppCompatActivity {
         int bint = sharedPreferences.getInt("intro", 0);
         int binsta = sharedPreferences.getInt("installa", 0);
         int bwpc = sharedPreferences.getInt("wpc", 0);
+        int bdis = sharedPreferences.getInt("pdis", 0);
+        int bsta = sharedPreferences.getInt("pystate", 0);
 
 
 
@@ -66,6 +70,8 @@ public class LessonsActivity extends AppCompatActivity {
         display=findViewById(R.id.display);
 
                 lessonfra=findViewById(R.id.lesson_fra);
+                syntax=findViewById(R.id.syntax);
+                 statement=findViewById(R.id.statement);
                 homei=findViewById(R.id.home_image);
                 lessoni=findViewById(R.id.lessons_im);
                 hometext=findViewById(R.id.home_text);
@@ -81,6 +87,9 @@ public class LessonsActivity extends AppCompatActivity {
                 basicf=findViewById(R.id.overpro);
                 pyintro=findViewById(R.id.pyintro);
                 prointro=findViewById(R.id.prointro);
+        prostate=findViewById(R.id.prostate);
+                prodis=findViewById(R.id.prodis);
+
 
 
 
@@ -88,7 +97,27 @@ public class LessonsActivity extends AppCompatActivity {
                 basicf.setProgress(probar(bfp,prog));
                 prointro.setProgress(probar(bint,b2));
                 prowrite.setProgress(probar(bwpc,b4));
+                prodis.setProgress(probar(bdis,b5));
+                prostate.setProgress(probar(bsta,b6));
 
+
+
+        syntax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent insta=new Intent(getApplicationContext(), Syntaxs.class);
+
+                startActivity(insta);
+            }
+        });
+        statement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent insta=new Intent(getApplicationContext(), PyState.class);
+
+                startActivity(insta);
+            }
+        });
 
         display.setOnClickListener(new View.OnClickListener() {
             @Override
