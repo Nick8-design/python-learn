@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
+import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.data.QuestionAdapter;
 
@@ -74,6 +75,11 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Is a program that executes Python codes.", Arrays.asList("Python compiler", "Python runner"), 0));
             questionList.add(new Question("Which of the following does this app have?", Arrays.asList("an Online compiler", "an Offline compiler"), 1));
             questionList.add(new Question("What is the output of the following code println('Hello World')", Arrays.asList("Hello World", "Error"), 1));
+        }else if (activityid==3){
+            questionList.add(new Question("Python files are saved with which of the following file extension?", Arrays.asList(".js", ".py",".php"), 1));
+            questionList.add(new Question("Can you write and save python files using this app?", Arrays.asList("Yes", "Never","I hope so"), 0));
+            questionList.add(new Question("Which of the following does this app have?", Arrays.asList("Python Console", "Python interpreter(compiler)"), 1));
+            questionList.add(new Question("How do we run this file (factorial.py) in command prompt or terminal.", Arrays.asList("python factorial.py", "run factorial.py"), 0));
         }
 
 
@@ -105,6 +111,8 @@ public class OpenQuiz extends AppCompatActivity {
                     bk = new Intent(getApplicationContext(), Introduction.class);
                 } else if (activityid==2) {
                     bk = new Intent(getApplicationContext(), InstallPy.class);
+                } else if (activityid==3) {
+                    bk = new Intent(getApplicationContext(), WPCodes.class);
                 }
                     bk.putExtra("tto",ttt);
                     startActivity(bk);
@@ -124,6 +132,8 @@ public class OpenQuiz extends AppCompatActivity {
                     bk = new Intent(getApplicationContext(), Introduction.class);
                 } else if (activityid==2) {
                     bk = new Intent(getApplicationContext(), InstallPy.class);
+                } else if (activityid==3) {
+                    bk = new Intent(getApplicationContext(), WPCodes.class);
                 }
                 bk.putExtra("tto",ttt);
                 startActivity(bk);
@@ -166,7 +176,9 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("intro",correctAnswers);
     } else if (activityid==2) {
         savedir("installa",correctAnswers);
-    }
+        } else if (activityid==3) {
+            savedir("wpc",correctAnswers);
+        }
 
 
         if (correctAnswers == questionList.size()) {

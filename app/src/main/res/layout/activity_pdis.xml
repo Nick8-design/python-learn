@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.basic.InstallPy">
+    tools:context=".Lessons.basic.PDis">
 
     <include layout="@layout/return_topbar" />
 
@@ -36,8 +36,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-               android:text="Lets now learn how to write and run python codes or scripts."
-                 android:textColor="@color/white"
+                android:text="Lets now learn how to write and run python codes or scripts."
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="We are set to go, now type the following and hit enter."
-               android:textColor="@color/white"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
             <ImageView
@@ -231,7 +231,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-              android:text="Python file or codes are saved using .py file extension.\n\nYou can code the python scripts in any TextEditor such as Notepad and save it ending with .py it will be considered as a python file.\n\nLets try saving the python code below as myname.py"
+                android:text="Python file or codes are saved using .py file extension.\n\nYou can code the python scripts in any TextEditor such as Notepad and save it ending with .py it will be considered as a python file.\n\nLets try saving the python code below as myname.py"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -271,8 +271,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-               android:text="On PC\nCopy and paste in textEditor and save the file as myname.py \n\nOn command prompt/terminal\nNavigate to the folder where you saved your file using command prompt."
-                  android:textColor="@color/white"
+                android:text="On PC\nCopy and paste in textEditor and save the file as myname.py \n\nOn command prompt/terminal\nNavigate to the folder where you saved your file using command prompt."
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -372,8 +372,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-              android:text="This app will grab all the python files on your device even onces you did create using this app.\nThe app has in-build program for you also to try out.\n\nHere is how you can open them:\nGo to home page of the app.\nClick Projects button.\nYou will find pre-build and the python files on your phone.\nclick on the program to execute it."
-               android:textColor="@color/white"
+                android:text="This app will grab all the python files on your device even onces you did create using this app.\nThe app has in-build program for you also to try out.\n\nHere is how you can open them:\nGo to home page of the app.\nClick Projects button.\nYou will find pre-build and the python files on your phone.\nclick on the program to execute it."
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
             <TextView

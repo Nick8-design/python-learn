@@ -25,21 +25,23 @@ import androidx.core.view.WindowInsetsCompat;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
+import com.nickdieda.pythonlearn.Lessons.basic.PDis;
+import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class LessonsActivity extends AppCompatActivity {
-    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall;
+    LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display;
     ImageView homei,lessoni,compi,swi_img,uswi,cont_img,image;
     TextView hometext,lessontext,percentage,hdt;
     private ImageButton menuButton;
     private CodeEditor fra;
-    ProgressBar basicf,prointro,proinst;
+    ProgressBar basicf,prointro,proinst,prowrite;
     private ProgressBar progressBar;
     SharedPreferences sharedPreferences;
-    private    int prog,b2,b3;
+    private    int prog,b2,b3,b4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +53,18 @@ public class LessonsActivity extends AppCompatActivity {
         int bfp = sharedPreferences.getInt("overv", 0);
         int bint = sharedPreferences.getInt("intro", 0);
         int binsta = sharedPreferences.getInt("installa", 0);
+        int bwpc = sharedPreferences.getInt("wpc", 0);
+
+
+
         TextView title=findViewById(R.id.title);
 
             title.setText("Lessons");
-        menuButton = findViewById(R.id.menu_button);
+                menuButton = findViewById(R.id.menu_button);
                 homefra=findViewById(R.id.home_fra);
+                prowrite=findViewById(R.id.prowrite);
+        display=findViewById(R.id.display);
+
                 lessonfra=findViewById(R.id.lesson_fra);
                 homei=findViewById(R.id.home_image);
                 lessoni=findViewById(R.id.lessons_im);
@@ -66,7 +75,7 @@ public class LessonsActivity extends AppCompatActivity {
                 cont=findViewById(R.id.contless);
                 pyinstall=findViewById(R.id.pyinstall);
                 proinst=findViewById(R.id.proinst);
-
+                writing=findViewById(R.id.writing);
                 overviews=findViewById(R.id.pyover);
                 hdt=findViewById(R.id.header);
                 basicf=findViewById(R.id.overpro);
@@ -78,8 +87,26 @@ public class LessonsActivity extends AppCompatActivity {
                 proinst.setProgress(probar(binsta,b3));
                 basicf.setProgress(probar(bfp,prog));
                 prointro.setProgress(probar(bint,b2));
+                prowrite.setProgress(probar(bwpc,b4));
 
 
+        display.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent insta=new Intent(getApplicationContext(), PDis.class);
+
+                startActivity(insta);
+            }
+        });
+
+        writing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent insta=new Intent(getApplicationContext(), WPCodes.class);
+
+                startActivity(insta);
+            }
+        });
         pyinstall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
