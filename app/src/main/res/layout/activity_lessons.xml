@@ -450,7 +450,7 @@
                 android:layout_margin="8dp"
                 android:padding="8dp"
                 android:gravity="center_vertical"
-                android:id="@+id/varible"
+                android:id="@+id/variable"
                 >
 
                 <ProgressBar
@@ -472,6 +472,7 @@
                     android:text="Python Variables"
                     android:textSize="20sp"
                     android:textColor="@color/white"
+                    android:id="@+id/t11"
                     android:gravity="center|start"
                     >
 

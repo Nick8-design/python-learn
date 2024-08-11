@@ -30,6 +30,7 @@ import com.nickdieda.pythonlearn.Lessons.basic.PyComments;
 import com.nickdieda.pythonlearn.Lessons.basic.PyState;
 import com.nickdieda.pythonlearn.Lessons.basic.Syntaxs;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
+import com.nickdieda.pythonlearn.Lessons.datatypes.PyVar;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 
@@ -46,6 +47,7 @@ public class LessonsActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private    int prog,b2,b3,b4,b5,b6,b7,b8;
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
+    LinearLayout variable;
 
     int totalProgress;
     @Override
@@ -109,7 +111,7 @@ public class LessonsActivity extends AppCompatActivity {
                 t7=findViewById(R.id.t7);
                 t8=findViewById(R.id.t8);
 
-
+        variable=findViewById(R.id.variable);
 
 
                 proinst.setProgress(probar(binsta,b3));
@@ -120,6 +122,32 @@ public class LessonsActivity extends AppCompatActivity {
                 prostate.setProgress(probar(bsta,b6));
          prosyn.setProgress(probar(bsin,b7));
         procom.setProgress(probar(bcom,b8));
+
+
+
+
+
+
+
+        variable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t8.getText().toString();
+                String strand="1/8";
+                String tno="two";
+                int idl=7;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), PyVar.class);
+
+                startActivity(insta);
+            }
+        });
+
+
+
+
+
+
 
         comm.setOnClickListener(new View.OnClickListener() {
             @Override

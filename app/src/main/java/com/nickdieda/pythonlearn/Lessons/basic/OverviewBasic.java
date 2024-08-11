@@ -62,7 +62,7 @@ public class OverviewBasic extends AppCompatActivity {
         String tt="Python Overview";
         ttt.setText(tt);
         ttt.setSelected(true);
-        //ott.setText(tt);
+
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override
