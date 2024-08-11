@@ -81,7 +81,7 @@
                 android:layout_height="match_parent"
                 android:text="Python Overview"
                 android:textSize="20sp"
-                android:id="@+id/header"
+                android:id="@+id/t1"
                 android:textColor="@color/white"
                 android:gravity="center|start"
                 >
@@ -129,7 +129,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
-
+                android:id="@+id/t2"
                 >
 
             </TextView>
@@ -174,6 +174,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
+                android:id="@+id/t3"
                 >
 
             </TextView>
@@ -216,6 +217,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python writing code"
+                android:id="@+id/t4"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
@@ -260,6 +262,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="match_parent"
+                android:id="@+id/t5"
                 android:text="Py Display Output"
                 android:textSize="20sp"
                 android:textColor="@color/white"
@@ -306,6 +309,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Statements"
+                android:id="@+id/t6"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
@@ -351,6 +355,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Syntax"
+                android:id="@+id/t7"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"
@@ -396,6 +401,7 @@
                 android:layout_weight="5"
                 android:layout_height="match_parent"
                 android:text="Python Comments"
+                android:id="@+id/t8"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center|start"

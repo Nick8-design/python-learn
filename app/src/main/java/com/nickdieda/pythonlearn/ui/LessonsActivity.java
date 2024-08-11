@@ -45,6 +45,8 @@ public class LessonsActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     SharedPreferences sharedPreferences;
     private    int prog,b2,b3,b4,b5,b6,b7,b8;
+    TextView t1,t2,t3,t4,t5,t6,t7,t8;
+
     int totalProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class LessonsActivity extends AppCompatActivity {
         totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom;
         progressindicator();
 
+     //   Toast.makeText(getApplicationContext(), totalProgress, Toast.LENGTH_SHORT).show();
 
 
         TextView title=findViewById(R.id.title);
@@ -74,10 +77,10 @@ public class LessonsActivity extends AppCompatActivity {
                 menuButton = findViewById(R.id.menu_button);
                 homefra=findViewById(R.id.home_fra);
                 prowrite=findViewById(R.id.prowrite);
-        display=findViewById(R.id.display);
-        procom=findViewById(R.id.procom);
-        prosyn=findViewById(R.id.prosyn);
-        comm=findViewById(R.id.comments);
+                display=findViewById(R.id.display);
+                procom=findViewById(R.id.procom);
+                prosyn=findViewById(R.id.prosyn);
+                comm=findViewById(R.id.comments);
                 lessonfra=findViewById(R.id.lesson_fra);
                 syntax=findViewById(R.id.syntax);
                  statement=findViewById(R.id.statement);
@@ -92,12 +95,19 @@ public class LessonsActivity extends AppCompatActivity {
                 proinst=findViewById(R.id.proinst);
                 writing=findViewById(R.id.writing);
                 overviews=findViewById(R.id.pyover);
-                hdt=findViewById(R.id.header);
                 basicf=findViewById(R.id.overpro);
                 pyintro=findViewById(R.id.pyintro);
                 prointro=findViewById(R.id.prointro);
-        prostate=findViewById(R.id.prostate);
+                prostate=findViewById(R.id.prostate);
                 prodis=findViewById(R.id.prodis);
+                t1=findViewById(R.id.t1);
+                t2=findViewById(R.id.t2);
+                t3=findViewById(R.id.t3);
+                t4=findViewById(R.id.t4);
+                t5=findViewById(R.id.t5);
+                t6=findViewById(R.id.t6);
+                t7=findViewById(R.id.t7);
+                t8=findViewById(R.id.t8);
 
 
 
@@ -114,6 +124,11 @@ public class LessonsActivity extends AppCompatActivity {
         comm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String topic =t8.getText().toString();
+                String strand="8/8";
+                String tno="one";
+                int idl=7;
+                learning(topic,strand,tno,idl);
                 Intent insta=new Intent(getApplicationContext(), PyComments.class);
 
                 startActivity(insta);
@@ -123,6 +138,11 @@ public class LessonsActivity extends AppCompatActivity {
         syntax.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String topic =t7.getText().toString();
+                String strand="7/8";
+                String tno="one";
+                int idl=6;
+                learning(topic,strand,tno,idl);
                 Intent insta=new Intent(getApplicationContext(), Syntaxs.class);
 
                 startActivity(insta);
@@ -131,6 +151,11 @@ public class LessonsActivity extends AppCompatActivity {
         statement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String topic =t6.getText().toString();
+                String strand="6/8";
+                String tno="one";
+                int idl=5;
+                learning(topic,strand,tno,idl);
                 Intent insta=new Intent(getApplicationContext(), PyState.class);
 
                 startActivity(insta);
@@ -140,6 +165,11 @@ public class LessonsActivity extends AppCompatActivity {
         display.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String topic =t5.getText().toString();
+                String strand="5/8";
+                String tno="one";
+                int idl=4;
+                learning(topic,strand,tno,idl);
                 Intent insta=new Intent(getApplicationContext(), PDis.class);
 
                 startActivity(insta);
@@ -149,6 +179,11 @@ public class LessonsActivity extends AppCompatActivity {
         writing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String topic =t4.getText().toString();
+                String strand="4/8";
+                String tno="one";
+                int idl=3;
+                learning(topic,strand,tno,idl);
                 Intent insta=new Intent(getApplicationContext(), WPCodes.class);
 
                 startActivity(insta);
@@ -157,6 +192,11 @@ public class LessonsActivity extends AppCompatActivity {
         pyinstall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String topic =t3.getText().toString();
+                String strand="3/8";
+                String tno="one";
+                int idl=2;
+                learning(topic,strand,tno,idl);
                 Intent insta=new Intent(getApplicationContext(), InstallPy.class);
 
                 startActivity(insta);
@@ -170,8 +210,13 @@ public class LessonsActivity extends AppCompatActivity {
         pyintro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intro=new Intent(getApplicationContext(), Introduction.class);
+                String topic =t2.getText().toString();
+                String strand="2/8";
+                String tno="one";
+                int idl=1;
+                learning(topic,strand,tno,idl);
 
+                Intent intro=new Intent(getApplicationContext(), Introduction.class);
                 startActivity(intro);
             }
         });
@@ -210,9 +255,14 @@ public class LessonsActivity extends AppCompatActivity {
 
 
                 overviews.setOnClickListener(new View.OnClickListener() {
-                    String hdo=hdt.getText().toString();
+                    String hdo=t1.getText().toString();
                     @Override
                     public void onClick(View v) {
+                        String topic =hdo;
+                        String strand="1/8";
+                        String tno="one";
+                        int idl=0;
+                        learning(topic,strand,tno,idl);
                 Intent over=new Intent(getApplicationContext(), OverviewBasic.class);
                 over.putExtra("tto",hdo);
                 startActivity(over);
@@ -270,17 +320,41 @@ public void  progressindicator(){
     SharedPreferences.Editor editor = sharedPreferences.edit();
 
 
-
-    if(totalProgress<10){
-        editor.putInt("count", 3);
-      } else if (totalProgress>=10) {
-        editor.putInt("count", 9);
+    if(totalProgress<=5){
+        editor.putInt("count", 1);
+      } else if (totalProgress<=10) {
+        editor.putInt("count", 2);
+    } else if (totalProgress<=15) {
+        editor.putInt("count", 4);
+    } else if (totalProgress<=20) {
+        editor.putInt("count", 5);
+    } else if (totalProgress<=25) {
+        editor.putInt("count", 7);
+    } else if (totalProgress<30) {
+        editor.putInt("count", 8);
+    } else if (totalProgress>=30) {
+        editor.putInt("count", 10);
     }
+
+
+
+
+
+
 
     editor.apply();
 }
 
+public void learning(String top,String stra,String tno,int idl) {
+    SharedPreferences currenttopic = getSharedPreferences("app_datas", MODE_PRIVATE);
+    SharedPreferences.Editor edit = currenttopic.edit();
+    edit.putString("topics",top);
+    edit.putString("strands",stra);
+    edit.putString("topno",tno);
+    edit.putInt("idlearn",idl);
+    edit.apply();
 
+}
 }
 
 

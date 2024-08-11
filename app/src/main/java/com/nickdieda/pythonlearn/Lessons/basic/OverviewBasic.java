@@ -59,7 +59,7 @@ public class OverviewBasic extends AppCompatActivity {
         qz=findViewById(R.id.qiuz);
 
 
-        String tt=getIntent().getStringExtra("tto");
+        String tt="Python Overview";
         ttt.setText(tt);
         ttt.setSelected(true);
         //ott.setText(tt);

@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import com.nickdieda.pythonlearn.ui.Projects;
@@ -33,12 +34,12 @@ import com.nickdieda.pythonlearn.ui.Projects;
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout homefra, lessonfra, button, compiler_b, projects;
+    LinearLayout homefra, lessonfra, button, compiler_b, projects,continuel;
     ImageView homei, lessoni, compi, swi_img, uswi, cont_img, image;
-    TextView hometext, lessontext, percentage, title;
+    TextView hometext, lessontext, percentage, title,topicname,strand,topicno,ts,tn;
     private ImageButton menuButton;
-    int i;
-
+   private int i;
+private int activityid;
     private static final int REQUEST_WRITE_STORAGE = 112;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         menuButton = findViewById(R.id.menu_button);
+        continuel = findViewById(R.id.continuel);
         homefra = findViewById(R.id.home_fra);
         lessonfra = findViewById(R.id.lesson_fra);
         homei = findViewById(R.id.home_image);
@@ -61,21 +63,50 @@ public class MainActivity extends AppCompatActivity {
         swi_img = findViewById(R.id.swi_img);
         title = findViewById(R.id.title);
         projects = findViewById(R.id.projectsbtn);
+        topicname=findViewById(R.id.topicname);
+        topicno=findViewById(R.id.topicno);
+        strand=findViewById(R.id.strand);
+        ts=findViewById(R.id.ts);
+        tn=findViewById(R.id.tn);
+
 
         requestStoragePermission();
         createPythonProjectsFolder();
         title.setText("Home");
 
+
+
+
+
+
+
+
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
         i = sharedPreferences.getInt("count", 0);
         int imageResource = sharedPreferences.getInt("imageResource", R.drawable.p);
         int colorValue = sharedPreferences.getInt("colorValue", R.color.red);
+        String tops=sharedPreferences.getString("topics","Welcome!,Lets learn python together.");
+        String topsno=sharedPreferences.getString("topno","Home page");
+        String stre=sharedPreferences.getString("strands","Home");
+         activityid= sharedPreferences.getInt("idlearn", 0);
 
-        // Apply retrieved state
+        topicname.setText(tops);
+        topicno.setText(topsno);
+        strand.setText(stre);
+
+        topicname.setSelected(true);
+        topicno.setSelected(true);
+        strand.setSelected(true);
+        ts.setSelected(true);
+        tn.setSelected(true);
+
+
+
         image.setImageResource(imageResource);
         percentage.setText(getPercentageText(i));
         percentage.setTextColor(getResources().getColor(colorValue));
         octColor(colorValue);
+
 
 
         menuButton.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 showPopupMenu(view);
             }
         });
-
 
         compiler_b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,10 +132,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+      //  button.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
+        //    @Override
+           // public void onClick(View view) {
 
                 int imageResource1 = 0; // Initialize imageResource here
                 int colorValue1 = 0;     // Initialize colorValue here
@@ -176,10 +206,23 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("colorValue", colorValue1);
                 editor.apply();
 
-                i++;
+              //  i++;
+          //  }
+
+
+     //   });
+
+
+        continuel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReturnActivity rt=new ReturnActivity();
+                Intent bk = rt.returnINT(getApplicationContext(),activityid);
+                startActivity(bk);
+
+
+
             }
-
-
         });
 
 
@@ -233,6 +276,8 @@ public class MainActivity extends AppCompatActivity {
                 return "0%";
         }
     }
+
+
 
     public void octColor(int color) {
         Drawable background = percentage.getBackground();
@@ -295,6 +340,10 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_WRITE_STORAGE);
         }
     }
+
+
+
+
 
 }
 

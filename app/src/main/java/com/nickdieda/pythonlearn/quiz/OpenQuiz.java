@@ -23,6 +23,7 @@ import com.nickdieda.pythonlearn.Lessons.basic.PyState;
 import com.nickdieda.pythonlearn.Lessons.basic.Syntaxs;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.data.QuestionAdapter;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class OpenQuiz extends AppCompatActivity {
     LinearLayout ansd, markd;
     TextView tto,quiz,bl;
     ImageView back;
-    int activityid;
+   private int activityid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,12 +99,12 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("It indicates a group (block) of statements in Python.", Arrays.asList("indentation","brackets"), 0));
             questionList.add(new Question("Is indentation important in python", Arrays.asList("No","Yes"), 1));
             questionList.add(new Question("Not Observing Indentation in a block of statements leads to?", Arrays.asList("indentation error","name error"), 0));
-            questionList.add(new Question("Is the block of statements below well indented \nx=3\ny=8\ntprint(x+y)", Arrays.asList("Never","Yes", "No"), 2));
+            questionList.add(new Question("Is the block of statements below well indented \nx=3\ny=8\n\tprint(x+y)", Arrays.asList("Never","Yes", "No"), 2));
         } else if (activityid==7){
             questionList.add(new Question("What are comments used for? .", Arrays.asList("Deleting codes","Explaining codes"), 1));
             questionList.add(new Question("Are comments interpreted by the compiler", Arrays.asList("No","Yes"), 0));
             questionList.add(new Question("Which character is used to comment in python", Arrays.asList("#","//"), 0));
-            questionList.add(new Question("Will comments be executed?", Arrays.asList("Never","Yes", "No"), 2));
+            questionList.add(new Question("Will comments be executed?", Arrays.asList("Wow","Yes", "No"), 2));
         }
 
 
@@ -128,7 +129,8 @@ public class OpenQuiz extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bk = returnINT();
+                ReturnActivity rt=new ReturnActivity();
+                Intent bk = rt.returnINT(getApplicationContext(),activityid);
 
                     bk.putExtra("tto",ttt);
                     startActivity(bk);
@@ -141,7 +143,8 @@ public class OpenQuiz extends AppCompatActivity {
         bl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bk = returnINT();
+                ReturnActivity rt=new ReturnActivity();
+                Intent bk = rt.returnINT(getApplicationContext(),activityid);
 
                 bk.putExtra("tto",ttt);
                 startActivity(bk);
@@ -266,29 +269,5 @@ public  void savedir(String dire,int d){
     editor.apply();
 }
 
-public Intent returnINT(){
-    Intent bk = new Intent();
-    if(activityid==0) {
-        bk  =new Intent(getApplicationContext(), OverviewBasic.class);
-    } else if (activityid==1) {
-        bk = new Intent(getApplicationContext(), Introduction.class);
-    } else if (activityid==2) {
-        bk = new Intent(getApplicationContext(), InstallPy.class);
-    } else if (activityid==3) {
-        bk = new Intent(getApplicationContext(), WPCodes.class);
-    } else if (activityid==4) {
-        bk = new Intent(getApplicationContext(), PDis.class);
-    } else if (activityid==5) {
-        bk = new Intent(getApplicationContext(), PyState.class);
-    } else if (activityid==6) {
-        bk = new Intent(getApplicationContext(), Syntaxs.class);
-    } else if (activityid==7) {
-        bk = new Intent(getApplicationContext(), PyComments.class);
-    }
-
-
-
-    return bk;
-}
 
 }
