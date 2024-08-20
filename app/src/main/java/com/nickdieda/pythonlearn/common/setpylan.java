@@ -1,4 +1,4 @@
-package com.nickdieda.pythonlearn;
+package com.nickdieda.pythonlearn.common;
 
 import android.content.Context;
 import android.widget.Toast;

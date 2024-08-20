@@ -200,40 +200,7 @@
                     </TextView>
                 </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|top"
-                        android:orientation="horizontal"
-                        >
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Topic "
-                            android:textColor="@color/black"
-                            >
 
-                        </TextView>
-
-                        <TextView
-
-                            android:layout_width="0dp"
-                            android:layout_weight="2"
-                            android:layout_height="wrap_content"
-
-                            android:text="Strands covered "
-                            android:textColor="@color/maziwa"
-                            android:ellipsize="marquee"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:singleLine="true"
-                            android:scrollHorizontally="true"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true"
-                            >
-
-                        </TextView>
-                    </LinearLayout>
 
 
                 </LinearLayout>

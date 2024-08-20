@@ -17,9 +17,65 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.Collections.List"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.Collections.introcol"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.MemberShip"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.IdentityOp"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.LogOp"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.CompOpera"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.Assign"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.ArithOper"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.matopera.IntOpera"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.Bools"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.TypeCon"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.Pystrmed"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.PyString"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.Num_met"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.Pynum"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
+            android:name=".Lessons.datatypes.PyData"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+        <activity
             android:name=".Lessons.datatypes.PyVar"
             android:exported="false"
-            android:theme="@style/Theme.PythonLearn.NoActionBar"/>
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
         <activity
             android:name=".Lessons.basic.PyComments"
             android:exported="false"

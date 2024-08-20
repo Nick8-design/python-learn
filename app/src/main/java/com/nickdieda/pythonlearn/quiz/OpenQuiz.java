@@ -105,7 +105,88 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Are comments interpreted by the compiler", Arrays.asList("No","Yes"), 0));
             questionList.add(new Question("Which character is used to comment in python", Arrays.asList("#","//"), 0));
             questionList.add(new Question("Will comments be executed?", Arrays.asList("Wow","Yes", "No"), 2));
+        } else if (activityid==8){
+            questionList.add(new Question("It is used to store a value.", Arrays.asList("operator","variable"), 1));
+            questionList.add(new Question("Which character is used to assign value to a variable?", Arrays.asList(">","="), 1));
+            questionList.add(new Question("Which one is assigned correctly ", Arrays.asList("Dr.Angulu = 1","dr_angulu = 1"), 1));
+            questionList.add(new Question("Which value is stored in value x=8", Arrays.asList("8","0", "Gen z"), 0));
+        } else if (activityid==9){
+            questionList.add(new Question("Which of the following is an integer data type?", Arrays.asList("True","'False'","454"), 2));
+            questionList.add(new Question("Which of the following is an string data type?", Arrays.asList("'211'","hello","True"), 0));
+            questionList.add(new Question("Which of the following is an Boolean data type?", Arrays.asList("True","'True'"), 0));
+            questionList.add(new Question("Which of the following is an floating point data type?", Arrays.asList("8","'8'", "1.11"), 2));
+        } else if (activityid==10){
+            questionList.add(new Question("Is a number without decimal", Arrays.asList("Floating point","Integer","complex"), 1));
+            questionList.add(new Question("Which of the following is a floating number ", Arrays.asList("'211'","211","2.11"), 2));
+            questionList.add(new Question("It is an imaginary number.", Arrays.asList("int","'True'","complex"), 2));
+            questionList.add(new Question("What is the type of the x variable below?\nx = 4.44", Arrays.asList("complex","int", "float"), 2));
+        } else if (activityid==11){
+            questionList.add(new Question("Which function is used to round numbers to the specified decimal point", Arrays.asList("Floating point()","abs()","round()"), 2));
+            questionList.add(new Question("Which of the following returns the absolute value of a number", Arrays.asList("round()","Abs()","abs()"), 2));
+            questionList.add(new Question("What is the value of \n\tw=pow(4,2)", Arrays.asList("16","8","6"), 0));
+            questionList.add(new Question("What is the absolute value of -1.2", Arrays.asList("-1","1.2", "0.2"), 1));
+        } else if (activityid==12){
+            questionList.add(new Question("Which of the following is a well declared string ", Arrays.asList("string = string","stn = 'hi'","string = new string()"), 1));
+            questionList.add(new Question("Why should you use double quotes ", Arrays.asList("when string contains double quotes","when string contains single quotes","abs()"), 1));
+            questionList.add(new Question("Which character is used to escape characters", Arrays.asList("\\","/"), 0));
+            questionList.add(new Question("We combine or concatenate strings using?", Arrays.asList("+","+1", "-"), 0));
+        } else if (activityid==13){
+            questionList.add(new Question("Which function can help convert text to lower case", Arrays.asList("lower()","upper()"), 0));
+            questionList.add(new Question("Which of the following capitalizes a string", Arrays.asList("capitalize()","capital()","Upper()"), 0));
+            questionList.add(new Question("Which character will be displayed.\nx=mango\nprint(x[3])", Arrays.asList("n","g","error"), 1));
+            questionList.add(new Question("What function replaces parts of a string", Arrays.asList("replace_with()","replace()", "remove()"), 1));
+        } else if (activityid==14){
+            questionList.add(new Question("Which of the following convert objects to strings ", Arrays.asList("string()","ast()","str()"), 2));
+            questionList.add(new Question("To convert object to integer we use which method", Arrays.asList("int","int()","Int()"), 1));
+            questionList.add(new Question("Can we convert a string representing number to integer", Arrays.asList("YES","NOPE"), 0));
+            questionList.add(new Question("Which of the following can be converted to float", Arrays.asList("'33'","aa"), 0));
+        } else if (activityid==15){
+            questionList.add(new Question("Which data type returns True or False", Arrays.asList("Conditional","Boolean","if"), 1));
+            questionList.add(new Question("Which function do we use to check if the data type is boolean", Arrays.asList("type()","bool()","name()"), 0));
+            questionList.add(new Question("Can boolean be used inside an if statement?", Arrays.asList("YES","NOPE"), 0));
+            questionList.add(new Question("Which data type do we get when we compare objects", Arrays.asList("boolean","true"), 0));
+        } else if (activityid==16){
+            questionList.add(new Question("Which among this is an operator from this problem? \na > 10", Arrays.asList("a",">","10"), 1));
+            questionList.add(new Question("Which of the following is an operand here?\n5 == 5", Arrays.asList("5","True","=="), 0));
+            questionList.add(new Question("Symbols that perform operations on operands are called.", Arrays.asList("operators","functions"), 0));
+            questionList.add(new Question("Can operators be used on strings?", Arrays.asList("yes","no"), 0));
+        } else if (activityid==17){
+            questionList.add(new Question("Which operator is used in division", Arrays.asList("/","\\","-:-"), 0));
+            questionList.add(new Question("Which operator is used here?\nprint(5 % 5)", Arrays.asList("5","True","%"), 2));
+            questionList.add(new Question("What is the out put of the code\nprint(5%)", Arrays.asList("'5%'","5%","error"), 2));
+            questionList.add(new Question("Can operators be used on strings?", Arrays.asList("yes","no"), 0));
+        } else if (activityid==18){
+            questionList.add(new Question("Am used to assign value to variable.", Arrays.asList("/","==","="), 2));
+            questionList.add(new Question("Which of the following is modulus assignment ", Arrays.asList("%","%=","mod"), 1));
+            questionList.add(new Question("Is this a = a / 5 same as a /=5", Arrays.asList("'Yes'","No","error"), 0));
+            questionList.add(new Question("Can we assign sting to a variable?", Arrays.asList("yes","no"), 0));
+        } else if (activityid==19){
+            questionList.add(new Question("Which operator can we use to confirm if the name entered is the same as the name in the database.", Arrays.asList("/","==","="), 1));
+            questionList.add(new Question("Which operator can we use to check if someone can get an ID ", Arrays.asList("==",">=","="), 1));
+            questionList.add(new Question("Comparison operator returns which data type", Arrays.asList("True","Boolean","False"), 1));
+            questionList.add(new Question("Can we compare stings", Arrays.asList("yes","no"), 0));
+        } else if (activityid==20){
+            questionList.add(new Question("What is the output\nprint(True and False)", Arrays.asList("True","error","False"), 2));
+            questionList.add(new Question("What is the output\nprint(True and true)", Arrays.asList("True","error","False"), 1));
+            questionList.add(new Question("If those 2 bottle each have water bring them and also bring them if there is water in one but if none of them has water dont bring them ,which logical operator will i use here", Arrays.asList("and","or","not"), 1));
+            questionList.add(new Question("What does logic not do operands", Arrays.asList("negate","False"), 0));
+        } else if (activityid==21){
+            questionList.add(new Question("It returns False when both operands points to the same object", Arrays.asList("is","not","is not"), 2));
+            questionList.add(new Question("Are this the same a == b  and a is b from a = 10,b = 10", Arrays.asList("yes","no","error"), 1));
+            questionList.add(new Question("I want to check if the variable am using are both pointing the name variable i had intialized,which operator should I use?", Arrays.asList("is","or","is not"), 0));
+            questionList.add(new Question("Type of operator that tells us if operands are points to the same object are called?", Arrays.asList("logical","identity"), 1));
+        } else if (activityid==22){
+            questionList.add(new Question("To check if my name is present in the guest list ,I use which operator?", Arrays.asList("is","in","is not"), 1));
+            questionList.add(new Question("Checks if a value is present in an object am which type of operator?", Arrays.asList("Logical","Identity","Membership"), 2));
+            questionList.add(new Question("not in checks if?", Arrays.asList("values are pointing same object","the value is not in the object"), 1));
+            questionList.add(new Question("Which is not a membership operator", Arrays.asList("in","is","not in"), 1));
+        } else if (activityid==23){
+            questionList.add(new Question("Does python have containers", Arrays.asList("yes","nop"), 0));
+            questionList.add(new Question("Is python object oriented language", Arrays.asList("Nop","Yes"), 1));
+            questionList.add(new Question("Can python hold many objects in one object?", Arrays.asList("yes","no"), 0));
+            questionList.add(new Question("Is a string an object", Arrays.asList("No","Yes"), 1));
         }
+
 
 
 
@@ -197,7 +278,40 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("syntax",correctAnswers);
         }  else if (activityid==7) {
             savedir("comments",correctAnswers);
+        }  else if (activityid==8) {
+            savedir("variables",correctAnswers);
+        }  else if (activityid==9) {
+            savedir("pydata",correctAnswers);
+        }  else if (activityid==10) {
+            savedir("pynum",correctAnswers);
+        }  else if (activityid==11) {
+            savedir("nummed",correctAnswers);
+        }  else if (activityid==12) {
+            savedir("pystring",correctAnswers);
+        }  else if (activityid==13) {
+            savedir("pystrmed",correctAnswers);
+        }  else if (activityid==14) {
+            savedir("typeconv",correctAnswers);
+        }  else if (activityid==15) {
+            savedir("bools",correctAnswers);
+        }  else if (activityid==16) {
+            savedir("intopera",correctAnswers);
+        }  else if (activityid==17) {
+            savedir("arithoper",correctAnswers);
+        }  else if (activityid==18) {
+            savedir("assig",correctAnswers);
+        }  else if (activityid==19) {
+            savedir("comppera",correctAnswers);
+        }  else if (activityid==20) {
+            savedir("logop",correctAnswers);
+        }  else if (activityid==21) {
+            savedir("identityop",correctAnswers);
+        }  else if (activityid==22) {
+            savedir("membership",correctAnswers);
+        }  else if (activityid==23) {
+            savedir("introcon",correctAnswers);
         }
+
 
 
         if (correctAnswers == questionList.size()) {

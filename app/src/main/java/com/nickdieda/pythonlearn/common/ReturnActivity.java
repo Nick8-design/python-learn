@@ -3,6 +3,7 @@ package com.nickdieda.pythonlearn.common;
 import android.content.Context;
 import android.content.Intent;
 
+import com.nickdieda.pythonlearn.Lessons.Collections.introcol;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
 import com.nickdieda.pythonlearn.Lessons.basic.OverviewBasic;
@@ -11,6 +12,21 @@ import com.nickdieda.pythonlearn.Lessons.basic.PyComments;
 import com.nickdieda.pythonlearn.Lessons.basic.PyState;
 import com.nickdieda.pythonlearn.Lessons.basic.Syntaxs;
 import com.nickdieda.pythonlearn.Lessons.basic.WPCodes;
+import com.nickdieda.pythonlearn.Lessons.datatypes.Bools;
+import com.nickdieda.pythonlearn.Lessons.datatypes.Num_met;
+import com.nickdieda.pythonlearn.Lessons.datatypes.PyData;
+import com.nickdieda.pythonlearn.Lessons.datatypes.PyString;
+import com.nickdieda.pythonlearn.Lessons.datatypes.PyVar;
+import com.nickdieda.pythonlearn.Lessons.datatypes.Pynum;
+import com.nickdieda.pythonlearn.Lessons.datatypes.Pystrmed;
+import com.nickdieda.pythonlearn.Lessons.datatypes.TypeCon;
+import com.nickdieda.pythonlearn.Lessons.matopera.ArithOper;
+import com.nickdieda.pythonlearn.Lessons.matopera.Assign;
+import com.nickdieda.pythonlearn.Lessons.matopera.CompOpera;
+import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
+import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
+import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
+import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
 
 public class ReturnActivity {
 
@@ -33,6 +49,38 @@ public class ReturnActivity {
             bk = new Intent(act, Syntaxs.class);
         } else if (activityid==7) {
             bk = new Intent(act, PyComments.class);
+        } else if (activityid==8) {
+            bk = new Intent(act, PyVar.class);
+        } else if (activityid==9) {
+            bk = new Intent(act, PyData.class);
+        } else if (activityid==10) {
+            bk = new Intent(act, Pynum.class);
+        } else if (activityid==11) {
+            bk = new Intent(act, Num_met.class);
+        } else if (activityid==12) {
+            bk = new Intent(act, PyString.class);
+        } else if (activityid==13) {
+            bk = new Intent(act, Pystrmed.class);
+        } else if (activityid==14) {
+            bk = new Intent(act, TypeCon.class);
+        } else if (activityid==15) {
+            bk = new Intent(act, Bools.class);
+        } else if (activityid==16) {
+            bk = new Intent(act, IntOpera.class);
+        } else if (activityid==17) {
+            bk = new Intent(act, ArithOper.class);
+        } else if (activityid==18) {
+            bk = new Intent(act, Assign.class);
+        } else if (activityid==19) {
+            bk = new Intent(act, CompOpera.class);
+        } else if (activityid==20) {
+            bk = new Intent(act, LogOp.class);
+        } else if (activityid==21) {
+            bk = new Intent(act, IdentityOp.class);
+        } else if (activityid==22) {
+            bk = new Intent(act, MemberShip.class);
+        } else if (activityid==23) {
+            bk = new Intent(act, introcol.class);
         }
 
 

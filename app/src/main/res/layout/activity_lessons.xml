@@ -472,7 +472,7 @@
                     android:text="Python Variables"
                     android:textSize="20sp"
                     android:textColor="@color/white"
-                    android:id="@+id/t11"
+                    android:id="@+id/t21"
                     android:gravity="center|start"
                     >
 
@@ -518,6 +518,7 @@
                     android:layout_height="match_parent"
                     android:text="Python Data Types"
                     android:textSize="20sp"
+                    android:id="@+id/t22"
                     android:textColor="@color/white"
                     android:gravity="center|start"
 
@@ -563,6 +564,7 @@
                     android:layout_height="match_parent"
                     android:text="Python Numbers"
                     android:textSize="20sp"
+                    android:id="@+id/t23"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
@@ -603,6 +605,7 @@
                     android:progressDrawable="@drawable/circular_progress_bar" />
 
                 <TextView
+                    android:id="@+id/t24"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
@@ -630,7 +633,7 @@
                 android:background="@drawable/rounddark"
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
-                android:id="@+id/string"
+                android:id="@+id/pystrings"
                 android:padding="8dp"
                 android:gravity="center_vertical"
                 >
@@ -653,6 +656,7 @@
                     android:layout_height="match_parent"
                     android:text="Python Strings"
                     android:textSize="20sp"
+                    android:id="@+id/t25"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
@@ -698,6 +702,7 @@
                     android:layout_height="match_parent"
                     android:text="Python String Methods"
                     android:textSize="20sp"
+                    android:id="@+id/t26"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
@@ -743,6 +748,7 @@
                     android:layout_height="match_parent"
                     android:text="Python Type Conversion"
                     android:textSize="20sp"
+                    android:id="@+id/t27"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
@@ -788,6 +794,7 @@
                     android:layout_height="match_parent"
                     android:text="Python Booleans"
                     android:textSize="20sp"
+                    android:id="@+id/t28"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
@@ -805,10 +812,611 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundcon"
+            android:alpha="0.8"
+            android:scrollbars="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mathematis and Operators"
+                android:textSize="38sp"
+                android:gravity="start|center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/operIntro"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prooperintro"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="50"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Introduction to operators"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/t31"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/arith"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/proarith"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Arithmetic Operations"
+                    android:textSize="20sp"
+                    android:id="@+id/t32"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/assigns"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/proassign"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Assignment Operators"
+                    android:textSize="20sp"
+                    android:id="@+id/t33"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/compa"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/procompa"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/t34"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Comparison Operators"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:id="@+id/logical"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prological"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Logical Operators"
+                    android:textSize="20sp"
+                    android:id="@+id/t35"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:id="@+id/identity"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/proidentity"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Identity Operatators"
+                    android:textSize="20sp"
+                    android:id="@+id/t36"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/members"
+                >
+
+                <ProgressBar
+                    android:id="@+id/promember"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Membership Operators"
+                    android:textSize="20sp"
+                    android:id="@+id/t37"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundcon"
+            android:alpha="0.8"
+            android:scrollbars="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python Collections"
+                android:textSize="38sp"
+                android:gravity="start|center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/containers"
+                >
+
+                <ProgressBar
+                    android:id="@+id/procontainers"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="50"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Introduction to Collections"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/t41"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/lists"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/prolists"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python List"
+                    android:textSize="20sp"
+                    android:id="@+id/t42"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/tuples"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/protuple"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Tuple"
+                    android:textSize="20sp"
+                    android:id="@+id/t43"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/sets"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prosets"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/t44"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Sets"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:id="@+id/dictionary"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prodictionary"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Dictionary"
+                    android:textSize="20sp"
+                    android:id="@+id/t55"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
 
 
 
-
+        </LinearLayout>
 
 
 

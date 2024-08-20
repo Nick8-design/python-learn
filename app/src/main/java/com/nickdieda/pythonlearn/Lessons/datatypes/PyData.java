@@ -9,24 +9,29 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
-import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.common.setpylan;
+import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
-public class PyVar extends AppCompatActivity {
-    private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9;
-    private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd88,pd99;
+public class PyData extends AppCompatActivity {
+    private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
+    private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_py_var);
+        setContentView(R.layout.activity_py_data);
+
+
 
 
 
@@ -34,6 +39,14 @@ public class PyVar extends AppCompatActivity {
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
+        pd4= findViewById(R.id.pd4);
+        pd44= findViewById(R.id.pd44);
+        pd11 = findViewById(R.id.pd11);
+        pd55 = findViewById(R.id.pd55);
+        pd88 = findViewById(R.id.pd88);
+        pd99 = findViewById(R.id.pd99);
+        pd8 = findViewById(R.id.pd8);
+        pd9 = findViewById(R.id.pd9);
         ret = findViewById(R.id.returnback);
 
 
@@ -50,12 +63,16 @@ public class PyVar extends AppCompatActivity {
         pd33 = findViewById(R.id.pd33);
         pd4= findViewById(R.id.pd4);
         pd44= findViewById(R.id.pd44);
-
+        pd77= findViewById(R.id.pd77);
+        pd66 = findViewById(R.id.pd66);
         pd55 = findViewById(R.id.pd55);
         pd88 = findViewById(R.id.pd88);
         pd99 = findViewById(R.id.pd99);
         pd8 = findViewById(R.id.pd8);
         pd9 = findViewById(R.id.pd9);
+        pd10 = findViewById(R.id.pd10);
+
+        pd1010 = findViewById(R.id.pd1010);
 
 
 
@@ -85,9 +102,12 @@ public class PyVar extends AppCompatActivity {
         pd9.setEditable(false);
         pd9.setTypefaceText(Typeface.MONOSPACE);
 
+        pd10.setEditable(false);
+        pd10.setTypefaceText(Typeface.MONOSPACE);
 
 
-        String tt = "Python Variables";
+
+        String tt = "Python Data Types";
         title.setText(tt);
         title.setSelected(true);
 
@@ -97,7 +117,7 @@ public class PyVar extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 8);
+                quiz.putExtra("id", 9);
 
                 startActivity(quiz);
             }
@@ -115,8 +135,17 @@ public class PyVar extends AppCompatActivity {
         pylang.pyLang(getApplicationContext(),pd8);
         pylang.pyLang(getApplicationContext(),pd9);
         pylang.pyLang(getApplicationContext(),pd1);
+        pylang.pyLang(getApplicationContext(),pd10);
 
 
+        pd11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
+                exe1.putExtra("try1",pd1.getText().toString());
+                startActivity(exe1);
+            }
+        });
 
         pd22.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +179,22 @@ public class PyVar extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
+        pd66.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
+                exe1.putExtra("try1",pd6.getText().toString());
+                startActivity(exe1);
+            }
+        });
+        pd77.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
+                exe1.putExtra("try1",pd7.getText().toString());
+                startActivity(exe1);
+            }
+        });
         pd88.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,7 +211,14 @@ public class PyVar extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-
+        pd1010.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
+                exe1.putExtra("try1",pd10.getText().toString());
+                startActivity(exe1);
+            }
+        });
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override
