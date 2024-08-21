@@ -1,10 +1,931 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
     tools:context=".Lessons.Collections.List">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/intrott"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Phython List is a cointainer created using square brackets ( [ ] ).\n\nObjects are placed inside the square brackets and separated by commas ( , ).List are orded containers take a look at this one."
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:text='fruits = ["mango","apples","avacado","berry"]\nprint(fruits)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="List can hold more than one data type in the same object.\n\nExample"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:text='a = [8,"Apples",2,"Eggs"]\nprint(a)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="The first item in any container it is always index 0, second item has index 1 and it goes on that way."
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accessing items of the list"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INDEXING\n\nIndexing is used when you want to access a single element on the list.\n\nWhen using indexing the name of the collection and the brackets are used.\n\nInside the brackets [] the index of the element you want to access is placed.\n\nSyntax \n\nname[itemIndex] egfruits[2].\n\nLet's try accessing different items using indexing"
+             android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd3"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\na = planets[2]\nprint(planets[0])\nprint(planets[1])\nprint(a)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="We can also access items in the list using negative indexing.\n\nIn negative indexing the last element has index -1,second last has index -2 and so on to the last index."
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd4"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\na = planets[-1]\nprint(planets[-2])\nprint(planets[-3])\nprint(a)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RANGE OF INDEXES\n\nUsing the range of indexes we can access the range of items at once.\n\nWhile using range of indexes to access items we follow the following syntax:\n\nname[start:stop]\n\nname - the name of the list\nstart - where you want to start from\n :  - colon separating the starting index of the range and the ending\nstop  - end of the range,Note that the item of this index is not display.\n\nExample  "
+               android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd5"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\np = planets[1:3] # ["Venus","Earth"]\nprint(p)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="If you want to access element from the start of the list to a specific point you only give the index of the end of the index."
+                  android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\np = planets[:2] # ["Mercury","Venus"]\nprint(p)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+             android:textColor="@color/white"
+                android:text="If you want to access element from a specific point to the last index also give the starting index only."
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd7"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\np = planets[2:] # ["Earth","Mars"]\nprint(p)'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd77"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add new items to a list"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              android:text="To add item to a list we use append() function.\n\nThe append() function only add the item at the end of the List.\n\nExample"
+               android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd8"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\nplanets.append("Jupiter")\nprint(planets)'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd88"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To insert or add item at any point or index you want we use insert() function.\n\nExample"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd9"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:text='planets = ["Mercury","Earth","Mars"]\nplanets.insert(1,"Venus")\nprint(planets)'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd99"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+            </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deleting items from a list"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="6dp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We use pop() method to delete the last item in a list.\n\nExample"
+                  android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <io.github.rosemoe.sora.widget.CodeEditor
+                        android:id="@+id/pd10"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        app:text='planets = ["Mercury","Venus","Earth","Mars"]\nplanets.pop()\nprint(planets)'
+
+                        android:layout_margin="5dp"
+                        android:background="#EFEFEF"
+                        android:padding="4dp" />
+
+                    <TextView
+                        android:id="@+id/pd1010"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Try it out"
+                        android:textColor="@color/white"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:background="@drawable/rounddark"
+                        android:layout_gravity="end"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To remove or delete specific item we use the method remove().\n\nThe remove(itemToBeDeleted) takes in the item you want to delete."
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <io.github.rosemoe.sora.widget.CodeEditor
+                        android:id="@+id/pd111"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        app:text='planets = ["Mercury","Venus","Earth","Mars"]\nplanets.remove("Earth")\nprint(planets)'
+
+                        android:layout_margin="5dp"
+                        android:background="#EFEFEF"
+                        android:padding="4dp" />
+
+                    <TextView
+                        android:id="@+id/pd1111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Try it out"
+                        android:textColor="@color/white"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:background="@drawable/rounddark"
+                        android:layout_gravity="end"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To delete an item at the index you want we use del.\n\nExample"
+                  android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp" />
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd12"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:text='planets = ["Mercury","Earth","Mars"]\n del planets[3]\nprint(planets)'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1212"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Getting the length of a list "
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Length of a list is the number of item in a list.\n\nlen() method is used to get the length of a list."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd13"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\nprint(len(planets)) # number of items in a list.'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1313"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modifying or changing an item on the list"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To modify or replace the item ,get the item using its index and assig new value to  its index.\n\nExample"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd14"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\nplanets[1] ="morning star"\nprint(planets)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1414"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checking if an item exists in the list"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I had mention in operator in Operators ,here we will use it to check if a value exists in the list.\n\nTrue is it exists and False if not."
+            android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd15"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\nprint("Mars" in planets) # True \nprint("sun" in planets) # False  '
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1515"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Combining or extending aList"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="To add all the item of a list to another we use extend() method."
+                android:layout_height="wrap_content"
+               android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd16"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\nothers = ["moons","sun","comets"]\nplanets.extend(others)\nprint(planets)'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1616"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Looping through a list"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We can use for loop to access all the items on a list one by one in an order.\n\nYou will learn about looping soon."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd17"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\nfor planet in planets:\n\tprint(planet)'
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1717"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alternative way of creating a list"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='We have 2 ways of creating a list:\nLiteral - eg fruits["apple","mango"]\nconstructor - fruits = list(("apple","mango")).\n\nIn constructor we use double brackets'
+               android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd18"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text='planets = list(("Mercury","Venus","Earth","Mars"))\nprint(planets) '
+
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd1818"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

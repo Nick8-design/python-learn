@@ -3,6 +3,7 @@ package com.nickdieda.pythonlearn.common;
 import android.content.Context;
 import android.content.Intent;
 
+import com.nickdieda.pythonlearn.Lessons.Collections.List;
 import com.nickdieda.pythonlearn.Lessons.Collections.introcol;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
@@ -81,6 +82,8 @@ public class ReturnActivity {
             bk = new Intent(act, MemberShip.class);
         } else if (activityid==23) {
             bk = new Intent(act, introcol.class);
+        } else if (activityid==24) {
+            bk = new Intent(act, List.class);
         }
 
 
