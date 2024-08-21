@@ -56,6 +56,7 @@
                     android:layout_height="50dp"
                     app:text='fruits = ["mango","apples","avacado","berry"]\nprint(fruits)'
                     android:layout_margin="5dp"
+
                     android:background="#EFEFEF"
                     android:padding="4dp" />
                 <TextView
@@ -90,15 +91,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:orientation="vertical"
+
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+
                     app:text='a = [8,"Apples",2,"Eggs"]\nprint(a)'
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
                 <TextView
                     android:id="@+id/pd22"

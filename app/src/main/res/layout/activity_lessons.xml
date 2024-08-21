@@ -1328,7 +1328,7 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/sets"
+                android:id="@+id/set_s"
                 android:gravity="center_vertical"
                 >
 
@@ -1396,7 +1396,7 @@
                     android:layout_height="match_parent"
                     android:text="Python Dictionary"
                     android:textSize="20sp"
-                    android:id="@+id/t55"
+                    android:id="@+id/t45"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >

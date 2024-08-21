@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.Collections.Ctuple">
+    tools:context=".Lessons.Collections.Setsc">
 
     <include layout="@layout/return_topbar" />
 
@@ -27,7 +27,7 @@
                 android:id="@+id/intrott"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tuple      ( )"
+                android:text="Python Sets  { }"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Phython Tuple is cointainer created using square brackets ( ).\n\nObjects are placed inside the round brackets and separated by commas ( , ).\n\nTuple are ordered containers take a look at this one."
+                android:text="Phython Set is cointainer created using curly brackets { }.\n\nObjects are placed inside the round brackets and separated by commas ( , ).\n\nSets are unordered containers take a look at this one."
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -54,9 +54,8 @@
                     android:id="@+id/pd1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    app:text='fruits = ("mango","apples","avacado","berry")\nprint(fruits)'
+                    app:text='fruits = {"mango","apples","avacado","berry"}\nprint(fruits)'
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
                 <TextView
                     android:id="@+id/pd11"
@@ -80,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Tuple can hold more than one data type in the same object.\n\nExample"
+                android:text="Sets can hold more than one data type in the same object.\n\nExample"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -96,9 +95,8 @@
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    app:text='a = (8,"Apples",2,"Eggs")\nprint(a)'
+                    app:text='a = {True,8,"Apples",2,"Eggs"}\nprint(a)'
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
                 <TextView
                     android:id="@+id/pd22"
@@ -131,8 +129,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="The main difference between between tuple and List:\nItems of tuple cannot be changed\nTuple use round brackets () while List use square brackets []\n\nTuples are immutable (unchangeable) - you cannot add,remove,or change its items"
-                    android:textSize="16sp"
+                    android:text="Sets are immutable to and can't contain mutable object like lists and dictionaries."
+                  android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center">
 
@@ -142,7 +140,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Accessing items of the Tuple"
+                android:text="Accessing items"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -153,7 +151,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="INDEXING\n\nIndexing is used when you want to access a single element on the tuple.\n\nWhen using indexing the name of the collection and the brackets are used.\n\nInside the brackets [] the index of the element you want to access is placed.\n\nSyntax \n\nname[itemIndex] egfruits[2].\n\nLet's try accessing different items using indexing"
+                android:text="Sets are unordered hense the items don't have indeces.\nHence, you cannot access the items of a set using indexes.\n\nHere we can use for loop to access the items one by one."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -164,15 +162,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd3"
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\na = planets[2]\nprint(planets[0])\nprint(planets[1])\nprint(a)'
+                    android:layout_height="70dp"
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nfor planet in planets:\n\tprint(planet)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -196,30 +194,38 @@
 
 
 
+            <TextView
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Addind items to a Set"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
 
-
-
+            </TextView>
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="We can also access items in the tuple using negative indexing.\n\nIn negative indexing the last element has index -1,second last has index -2 and so on to the last index."
-                android:textSize="18sp"
+                android:text="add() and update() functions lets us add new items to the set."
+               android:textSize="18sp"
                 android:layout_margin="4dp" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd4"
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\na = planets[-1]\nprint(planets[-2])\nprint(planets[-3])\nprint(a)'
+                    android:layout_height="70dp"
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nplanets.add("Uranus")\nprint(planets)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -240,18 +246,29 @@
             </LinearLayout>
 
 
+            <TextView
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Removing an item on a set"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
 
-
+            </TextView>
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RANGE OF INDEXES\n\nUsing the range of indexes we can access the range of items at once.\n\nWhile using range of indexes to access items we follow the following syntax:\n\nname[start:stop]\n\nname - the name of the tuple\nstart - where you want to start from\n :  - colon separating the starting index of the range and the ending\nstop  - end of the range,Note that the item of this index is not display.\n\nExample  "
                 android:textColor="@color/white"
+                android:text="USING remove()\n\nIt removes or deletes an item from the set.\nYou specify or put the item to be deleted inside the brackets.\nIt will raise an error if the item is not in the set.\n\nExample "
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
@@ -262,7 +279,7 @@
                     android:id="@+id/pd5"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\np = planets[1:3] # ("Venus","Earth")\nprint(p)'
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nplanets.remove("Venus")\nprint(planets)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -288,23 +305,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="If you want to access element from the start of the tuple to a specific point you only give the index of the end of the index."
-                android:textColor="@color/white"
+                android:text="USING discard() \n\nIn discard we also put the item we want to remove inside the brackets.\ndiscard() will not throw an error if item to be removed is not in the set."
+               android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="130dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd6"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\np = planets[:2] # ("Mercury","Venus")\nprint(p)'
+                    android:layout_height="70dp"
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nplanets.discard("Venus")\nprint(planets)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -329,22 +346,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="If you want to access element from a specific point to the last index also give the starting index only."
+                android:text="USING pop()\n\nWhile using pop() we do not put the element to be removed from the set inside the brackets.\nIn set the element to be poped is not specified hense any can be poped since sets is unordered container."
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd7"
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\np = planets[2:] # ("Earth","Mars")\nprint(p)'
+                    android:layout_height="70dp"
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nplanets.pop()\nprint(planets)'
 
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
@@ -366,27 +383,10 @@
 
             </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Getting the length of a Tuple "
+                android:text="Getting the length of a Set "
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -399,7 +399,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Length of a Tuple is the number of item in a tuple.\n\nlen() method is used to get the length of a tuple."
+                android:text="Length of a Set is the number of item in a set.\n\nlen() method is used to get the length of a set."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -407,18 +407,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd8"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\nprint(len(planets)) # number of items in a tuple.'
-
+                    android:layout_height="50dp"
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nprint(len(planets)) # number of items in a tuple.'
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
@@ -439,17 +437,10 @@
 
 
 
-
-
-
-
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Checking if an item exists in the Tuple"
+                android:text="Checking if an item exists in the Set"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -462,7 +453,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I had mention in operator ,here we will use it to check if a value exists in the tuple.\n\nTrue if it exists and False if not."
+                android:text="I had mention in operator ,here we will use it to check if a value exists in the set.\n\nTrue if it exists and False if not."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -470,35 +461,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     android:id="@+id/pd9"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\nprint("Mars" in planets) # True \nprint("sun" in planets) # False  '
-
+                    android:layout_height="70dp"
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nprint("Mars" in planets) # True \nprint("sun" in planets) # False  '
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
@@ -519,7 +491,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Combining or extending Tuples"
+                android:text="Combining Sets"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -531,7 +503,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="To combine two tuple together we use + (addition)."
+                android:text="To combine two sets together we use  update() method.\n\nThis methods excludes dublicate items."
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -548,10 +520,8 @@
                     android:id="@+id/pd10"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\nothers = ("moons","sun","comets")\nsolarSys = planets + others\nprint(solarSys)'
-
+                    app:text='planets = {"Mercury","Venus","Earth","Mars"}\nothers = {"moons","sun","Mars"}\nplanets.update(others)\nprint(planets)'
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
@@ -573,7 +543,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Looping through a Tuple"
+                android:text="Alternative way of creating a sets"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -586,7 +556,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="We can use for loop to access all the items on a tuple one by one in an order.\n\nYou will learn about looping soon."
+                android:text='We have 2 ways of creating a sets:\nLiteral - eg fruits = {"apple","mango"}\nconstructor   - fruits = set(("apple","mango")).\n\nIn constructor we use double brackets'
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -602,67 +572,12 @@
                     android:id="@+id/pd111"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    app:text='planets = ("Mercury","Venus","Earth","Mars")\nfor planet in planets:\n\tprint(planet)'
-
+                    app:text='planets = set(("Mercury","Venus","Earth","Mars"))\nprint(planets) '
                     android:layout_margin="5dp"
-                    android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
                     android:id="@+id/pd1111"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try it out"
-                    android:textColor="@color/white"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:background="@drawable/rounddark"
-                    android:layout_gravity="end"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alternative way of creating a Tuple"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="6dp">
-
-            </TextView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text='We have 2 ways of creating a tuple:\nLiteral - eg fruits = ("apple","mango")\nconstructor - fruits = tuple(("apple","mango")).\n\nIn constructor we use double brackets'
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd12"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    app:text='planets = tuple(("Mercury","Venus","Earth","Mars"))\nprint(planets) '
-
-                    android:layout_margin="5dp"
-                    android:background="#EFEFEF"
-                    android:padding="4dp" />
-
-                <TextView
-                    android:id="@+id/pd1212"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"

@@ -21,16 +21,16 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
-public class Ctuple extends AppCompatActivity {
+public class Setsc extends AppCompatActivity {
     private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10,pd12, pd111,pd13,pd14,pd15,pd17,pd16,pd18,pd19,pd20;
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010,pd1111,pd1212,pd1313,pd1414,pd1515,pd1616,pd1717,pd1818,pd1919,pd2020;
     private ImageView ret;
+    public  setpylan pylang=new setpylan();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ctuple);
-
+        setContentView(R.layout.activity_setsc);
 
 
         title = findViewById(R.id.title);
@@ -67,9 +67,9 @@ public class Ctuple extends AppCompatActivity {
 
         pd111 = findViewById(R.id.pd111);
         pd1111 = findViewById(R.id.pd1111);
-        pd12 = findViewById(R.id.pd12);
+       /*  pd12 = findViewById(R.id.pd12);
         pd1212 = findViewById(R.id.pd1212);
-     /*   pd13 = findViewById(R.id.pd13);
+       pd13 = findViewById(R.id.pd13);
         pd1313 = findViewById(R.id.pd1313);
         pd14= findViewById(R.id.pd14);
         pd1414= findViewById(R.id.pd1414);
@@ -119,11 +119,11 @@ public class Ctuple extends AppCompatActivity {
 
         pd111.setEditable(false);
         pd111.setTypefaceText(Typeface.MONOSPACE);
-
+   /*
         pd12.setEditable(false);
         pd12.setTypefaceText(Typeface.MONOSPACE);
 
-     /*   pd13.setEditable(false);
+    pd13.setEditable(false);
         pd13.setTypefaceText(Typeface.MONOSPACE);
 
         pd14.setEditable(false);
@@ -145,7 +145,7 @@ public class Ctuple extends AppCompatActivity {
 
 
 
-        String tt = "Python Tuples";
+        String tt = "Python Sets  {}";
         title.setText(tt);
         title.setSelected(true);
 
@@ -155,26 +155,27 @@ public class Ctuple extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 25);
+                quiz.putExtra("id", 26);
 
                 startActivity(quiz);
             }
         });
 
-        setpylan pylang=new setpylan();
+
         pylang.pyLang(getApplicationContext(),pd1);
         pylang.pyLang(getApplicationContext(),pd2);
         pylang.pyLang(getApplicationContext(),pd3);
         pylang.pyLang(getApplicationContext(),pd4);
-     //   pylang.pyLang(getApplicationContext(),pd5);
+        //   pylang.pyLang(getApplicationContext(),pd5);
         pylang.pyLang(getApplicationContext(),pd6);
-       // pylang.pyLang(getApplicationContext(),pd7);
+        // pylang.pyLang(getApplicationContext(),pd7);
         pylang.pyLang(getApplicationContext(),pd8);
-        pylang.pyLang(getApplicationContext(),pd9);
+        // pylang.pyLang(getApplicationContext(),pd9);
         pylang.pyLang(getApplicationContext(),pd10);
-       // pylang.pyLang(getApplicationContext(),pd111);
-        pylang.pyLang(getApplicationContext(),pd12);
-      /*
+        pylang.pyLang(getApplicationContext(),pd111);
+
+        /* pylang.pyLang(getApplicationContext(),pd12);
+
         pylang.pyLang(getApplicationContext(),pd13);
         pylang.pyLang(getApplicationContext(),pd14);
 
@@ -286,7 +287,7 @@ public class Ctuple extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-        pd1212.setOnClickListener(new View.OnClickListener() {
+     /*    pd1212.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -294,7 +295,7 @@ public class Ctuple extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-    /*    pd1313.setOnClickListener(new View.OnClickListener() {
+       pd1313.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);

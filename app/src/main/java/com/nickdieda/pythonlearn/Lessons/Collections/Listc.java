@@ -22,13 +22,14 @@ public class Listc extends AppCompatActivity {
     private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10,pd12, pd111,pd13,pd14,pd15,pd17,pd16,pd18,pd19,pd20;
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010,pd1111,pd1212,pd1313,pd1414,pd1515,pd1616,pd1717,pd1818,pd1919,pd2020;
     private ImageView ret;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_list);
-
-
+        setpylan pylang=new setpylan();
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
@@ -82,6 +83,28 @@ public class Listc extends AppCompatActivity {
         pd1818= findViewById(R.id.pd1818);
         pd10= findViewById(R.id.pd10);
         pd1010= findViewById(R.id.pd1010);
+
+
+
+        pylang.pyLang(Listc.this,pd1);
+     //   pylang.pyLang(Listc.this,pd2);
+        pylang.pyLang(Listc.this,pd3);
+       pylang.pyLang(Listc.this,pd4);
+      //  pylang.pyLang(Listc.this,pd5);
+       // pylang.pyLang(Listc.this,pd6);
+        pylang.pyLang(Listc.this,pd7);
+       // pylang.pyLang(Listc.this,pd8);
+      //  pylang.pyLang(Listc.this,pd9);
+    //    pylang.pyLang(Listc.this,pd10);
+        pylang.pyLang(Listc.this,pd111);
+        pylang.pyLang(Listc.this,pd13);
+     //   pylang.pyLang(Listc.this,pd14);
+     //   pylang.pyLang(Listc.this,pd12);
+        pylang.pyLang(Listc.this,pd15);
+        pylang.pyLang(Listc.this,pd16);
+       // pylang.pyLang(Listc.this,pd17);
+        pylang.pyLang(Listc.this,pd18);
+
 
 
 
@@ -155,26 +178,6 @@ public class Listc extends AppCompatActivity {
                 startActivity(quiz);
             }
         });
-
-        setpylan pylang=new setpylan();
-        pylang.pyLang(getApplicationContext(),pd1);
-        pylang.pyLang(getApplicationContext(),pd2);
-        pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
-        pylang.pyLang(getApplicationContext(),pd5);
-        pylang.pyLang(getApplicationContext(),pd6);
-        pylang.pyLang(getApplicationContext(),pd7);
-        pylang.pyLang(getApplicationContext(),pd8);
-        pylang.pyLang(getApplicationContext(),pd9);
-        pylang.pyLang(getApplicationContext(),pd10);
-        pylang.pyLang(getApplicationContext(),pd111);
-        pylang.pyLang(getApplicationContext(),pd13);
-        pylang.pyLang(getApplicationContext(),pd14);
-        pylang.pyLang(getApplicationContext(),pd12);
-        pylang.pyLang(getApplicationContext(),pd15);
-        pylang.pyLang(getApplicationContext(),pd16);
-        pylang.pyLang(getApplicationContext(),pd17);
-        pylang.pyLang(getApplicationContext(),pd18);
 
 
 

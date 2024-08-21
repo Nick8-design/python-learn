@@ -16,19 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Lessons.Collections.Dictionar_y"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.Collections.Setsc"
+            android:exported="false" />
         <activity
             android:name=".Lessons.Collections.Ctuple"
             android:exported="false"
-            android:theme="@style/Theme.PythonLearn.NoActionBar"
-            android:hardwareAccelerated="false"
-            />
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
         <activity
             android:name=".Lessons.Collections.Listc"
             android:exported="false"
-            android:theme="@style/Theme.PythonLearn.NoActionBar"
-            android:hardwareAccelerated="true"
-            />
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
         <activity
             android:name=".Lessons.Collections.introcol"
             android:exported="false"

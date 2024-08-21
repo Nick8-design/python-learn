@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.nickdieda.pythonlearn.Lessons.Collections.Ctuple;
+import com.nickdieda.pythonlearn.Lessons.Collections.Dictionar_y;
 import com.nickdieda.pythonlearn.Lessons.Collections.Listc;
+import com.nickdieda.pythonlearn.Lessons.Collections.Setsc;
 import com.nickdieda.pythonlearn.Lessons.Collections.introcol;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
@@ -87,7 +89,12 @@ public class ReturnActivity {
             bk = new Intent(act, Listc.class);
         } else if (activityid==25) {
             bk = new Intent(act, Ctuple.class);
+        } else if (activityid==26) {
+            bk = new Intent(act, Setsc.class);
+        } else if (activityid==27) {
+            bk = new Intent(act, Dictionar_y.class);
         }
+
 
 
 

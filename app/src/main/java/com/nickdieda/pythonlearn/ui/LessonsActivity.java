@@ -17,7 +17,9 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.Lessons.Collections.Ctuple;
+import com.nickdieda.pythonlearn.Lessons.Collections.Dictionar_y;
 import com.nickdieda.pythonlearn.Lessons.Collections.Listc;
+import com.nickdieda.pythonlearn.Lessons.Collections.Setsc;
 import com.nickdieda.pythonlearn.Lessons.Collections.introcol;
 import com.nickdieda.pythonlearn.Lessons.basic.InstallPy;
 import com.nickdieda.pythonlearn.Lessons.basic.Introduction;
@@ -51,24 +53,24 @@ public class LessonsActivity extends AppCompatActivity {
     LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display,statement,syntax,comm;
     LinearLayout variable,datatpye,numb,nummethods,pystrings,stringmeth,typeconversion,booleans;
     private LinearLayout operIntro,arith,assigns,compa,logical,identity,members;
-    private LinearLayout containers,lists,tuples;
+    private LinearLayout containers,lists,tuples,set_s,dictionary;
 
 
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
     ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate,prosyn,procom;
     ProgressBar prooperintro,proarith,proassign,procompa,prological,proidentity,promember;
-    ProgressBar procontainers,prolists,protuple;
+    ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
 
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
     private  TextView t21,t22,t23,t24,t25,t26,t27,t28;
     private  TextView t31,t32,t33,t34,t35,t36,t37;
-    private  TextView t41,t42,t43;
+    private  TextView t41,t42,t43,t44,t45;
 
     private    int prog,b2,b3,b4,b5,b6,b7,b8;
     private    int b9,v10,v11,v12,v13,v14,v15,v16;
     private    int m1,m2,m3,m4,m5,m6,m7;
-    private    int c1,c2,c3;
+    private    int c1,c2,c3,c4,c5;
 
 
     SharedPreferences sharedPreferences;
@@ -112,9 +114,11 @@ public class LessonsActivity extends AppCompatActivity {
         int cint= sharedPreferences.getInt("introcon", 0);
         int clist= sharedPreferences.getInt("lists", 0);
         int ctup= sharedPreferences.getInt("ctuple", 0);
+        int cs= sharedPreferences.getInt("cset", 0);
+        int cd= sharedPreferences.getInt("cdic", 0);
 
-        totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup;
-        mark=(totalProgress*10)/104;
+        totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
+        mark=(totalProgress*10)/112;
         progressindicator();
 
 
@@ -160,9 +164,12 @@ public class LessonsActivity extends AppCompatActivity {
         statement=findViewById(R.id.statement);
         protuple=findViewById(R.id.protuple);
         homei=findViewById(R.id.home_image);
-                lessoni=findViewById(R.id.lessons_im);
-                hometext=findViewById(R.id.home_text);
-                lessontext=findViewById(R.id.lesson_text);
+        set_s=findViewById(R.id.set_s);
+        lessoni=findViewById(R.id.lessons_im);
+        prosets=findViewById(R.id.prosets);
+        hometext=findViewById(R.id.home_text);
+        dictionary=findViewById(R.id.dictionary);
+        lessontext=findViewById(R.id.lesson_text);
                 percentage=findViewById(R.id.percentage);
                 image=findViewById(R.id.image);
                 cont=findViewById(R.id.contless);
@@ -170,6 +177,7 @@ public class LessonsActivity extends AppCompatActivity {
                 proinst=findViewById(R.id.proinst);
                 writing=findViewById(R.id.writing);
                 overviews=findViewById(R.id.pyover);
+        prodictionary=findViewById(R.id.prodictionary);
         promember=findViewById(R.id.promember);
         basicf=findViewById(R.id.overpro);
 
@@ -213,6 +221,8 @@ public class LessonsActivity extends AppCompatActivity {
         t41=findViewById(R.id.t41);
         t42=findViewById(R.id.t42);
         t43=findViewById(R.id.t43);
+        t44=findViewById(R.id.t44);
+        t45=findViewById(R.id.t45);
 
 
 
@@ -242,9 +252,38 @@ public class LessonsActivity extends AppCompatActivity {
         procontainers.setProgress(probar(cint,c1));
         prolists.setProgress(probar(clist,c2));
         protuple.setProgress(probar(ctup,c3));
+        prosets.setProgress(probar(cs,c4));
+        prodictionary.setProgress(probar(cd,c5));
 
 
 
+        dictionary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t45.getText().toString();
+                String strand="5/5";
+                String tno="Four";
+                int idl=27;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), Dictionar_y.class);
+
+                startActivity(insta);
+            }
+        });
+
+        set_s.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t44.getText().toString();
+                String strand="4/5";
+                String tno="Four";
+                int idl=26;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), Setsc.class);
+
+                startActivity(insta);
+            }
+        });
 
         tuples.setOnClickListener(new View.OnClickListener() {
             @Override

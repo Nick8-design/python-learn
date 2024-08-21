@@ -192,10 +192,23 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("To know how many people are on the list i use which method?", Arrays.asList("count()","len()"), 1));
         } else if (activityid==25){
             questionList.add(new Question("Which is the syntax for tuple", Arrays.asList("names = [elements]","name=(elements)"), 1));
-            questionList.add(new Question("Which is the syntax for list", Arrays.asList("name = list(elements)","name = tuple((elements))"), 1));
+            questionList.add(new Question("Which is the syntax for tuple", Arrays.asList("name = list(elements)","name = tuple((elements))"), 1));
             questionList.add(new Question("Can we add new element to a tuple", Arrays.asList("Yes","No"), 1));
             questionList.add(new Question("To know how many people are on the tuple i use which method?", Arrays.asList("count()","len()"), 1));
+        } else if (activityid==26){
+            questionList.add(new Question("Which is the syntax for set", Arrays.asList("names = {elements}","name=(elements)"), 0));
+            questionList.add(new Question("Which is the syntax for set", Arrays.asList("name = list(elements)","name = set((elements))"), 1));
+            questionList.add(new Question("Can we add new element to a tuple", Arrays.asList("Yes","No"), 0));
+            questionList.add(new Question("To know how many people are on the set i use which method?", Arrays.asList("count()","len()"), 1));
+        } else if (activityid==28){
+            questionList.add(new Question("How do you create an empty dictionary in Python?", Arrays.asList("my_dict = {}", "my_dict = []"), 0));
+            questionList.add(new Question("Which method is used to get the value associated with a key in a dictionary?", Arrays.asList("get()", "value()"), 0));
+            questionList.add(new Question("Can a dictionary key be a mutable type?", Arrays.asList("Yes", "No"), 1));
+            questionList.add(new Question("Which method removes a key-value pair from a dictionary?", Arrays.asList("remove()", "pop()"), 1));
+            questionList.add(new Question("How do you add a new key-value pair to an existing dictionary?", Arrays.asList("my_dict[key] = value", "my_dict.add(key, value)"), 0));
         }
+
+
 
 
 
@@ -323,6 +336,10 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("lists",correctAnswers);
         }  else if (activityid==25) {
             savedir("ctuple",correctAnswers);
+        }  else if (activityid==26) {
+            savedir("cset",correctAnswers);
+        }  else if (activityid==27) {
+            savedir("cdic",correctAnswers);
         }
 
 
