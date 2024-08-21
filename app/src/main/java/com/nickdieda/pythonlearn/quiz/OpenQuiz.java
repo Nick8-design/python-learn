@@ -189,7 +189,12 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Which is the syntax for list", Arrays.asList("names = [elements]","name[elements]"), 0));
             questionList.add(new Question("Which is the syntax for list", Arrays.asList("name = list(elements)","name = list((elements))"), 1));
             questionList.add(new Question("append() function does what to list", Arrays.asList("add elements anywhere on the list","add element at the end of the list"), 1));
-            questionList.add(new Question("To know how many people are are on the list i use which method?", Arrays.asList("count()","len()"), 1));
+            questionList.add(new Question("To know how many people are on the list i use which method?", Arrays.asList("count()","len()"), 1));
+        } else if (activityid==25){
+            questionList.add(new Question("Which is the syntax for tuple", Arrays.asList("names = [elements]","name=(elements)"), 1));
+            questionList.add(new Question("Which is the syntax for list", Arrays.asList("name = list(elements)","name = tuple((elements))"), 1));
+            questionList.add(new Question("Can we add new element to a tuple", Arrays.asList("Yes","No"), 1));
+            questionList.add(new Question("To know how many people are on the tuple i use which method?", Arrays.asList("count()","len()"), 1));
         }
 
 
@@ -316,6 +321,8 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("introcon",correctAnswers);
         }  else if (activityid==24) {
             savedir("lists",correctAnswers);
+        }  else if (activityid==25) {
+            savedir("ctuple",correctAnswers);
         }
 
 
