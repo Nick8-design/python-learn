@@ -44,6 +44,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 
@@ -53,7 +54,7 @@ public class LessonsActivity extends AppCompatActivity {
     LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display,statement,syntax,comm;
     LinearLayout variable,datatpye,numb,nummethods,pystrings,stringmeth,typeconversion,booleans;
     private LinearLayout operIntro,arith,assigns,compa,logical,identity,members;
-    private LinearLayout containers,lists,tuples,set_s,dictionary;
+    private LinearLayout containers,lists,tuples,set_s,dictionary,introfun;
 
 
 
@@ -61,16 +62,19 @@ public class LessonsActivity extends AppCompatActivity {
     ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate,prosyn,procom;
     ProgressBar prooperintro,proarith,proassign,procompa,prological,proidentity,promember;
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
+            ProgressBar prointrofun;
 
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
     private  TextView t21,t22,t23,t24,t25,t26,t27,t28;
     private  TextView t31,t32,t33,t34,t35,t36,t37;
     private  TextView t41,t42,t43,t44,t45;
+    private  TextView t51,t52,t53,t54;
 
     private    int prog,b2,b3,b4,b5,b6,b7,b8;
     private    int b9,v10,v11,v12,v13,v14,v15,v16;
     private    int m1,m2,m3,m4,m5,m6,m7;
     private    int c1,c2,c3,c4,c5;
+    private    int f1,f2,f3,f4;
 
 
     SharedPreferences sharedPreferences;
@@ -116,9 +120,14 @@ public class LessonsActivity extends AppCompatActivity {
         int ctup= sharedPreferences.getInt("ctuple", 0);
         int cs= sharedPreferences.getInt("cset", 0);
         int cd= sharedPreferences.getInt("cdic", 0);
+        int fint= sharedPreferences.getInt("intfun", 0);
 
+
+      //  Toast.makeText(getApplicationContext(),"intro = "+fint,Toast.LENGTH_SHORT).show();
         totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
-        mark=(totalProgress*10)/112;
+      totalProgress +=fint;
+
+        mark=(totalProgress*10)/116;
         progressindicator();
 
 
@@ -172,9 +181,11 @@ public class LessonsActivity extends AppCompatActivity {
         lessontext=findViewById(R.id.lesson_text);
                 percentage=findViewById(R.id.percentage);
                 image=findViewById(R.id.image);
-                cont=findViewById(R.id.contless);
+        introfun=findViewById(R.id.introfun);
+        cont=findViewById(R.id.contless);
                 pyinstall=findViewById(R.id.pyinstall);
-                proinst=findViewById(R.id.proinst);
+        prointrofun=findViewById(R.id.proinfun);
+        proinst=findViewById(R.id.proinst);
                 writing=findViewById(R.id.writing);
                 overviews=findViewById(R.id.pyover);
         prodictionary=findViewById(R.id.prodictionary);
@@ -223,6 +234,7 @@ public class LessonsActivity extends AppCompatActivity {
         t43=findViewById(R.id.t43);
         t44=findViewById(R.id.t44);
         t45=findViewById(R.id.t45);
+        t51=findViewById(R.id.t51);
 
 
 
@@ -254,8 +266,24 @@ public class LessonsActivity extends AppCompatActivity {
         protuple.setProgress(probar(ctup,c3));
         prosets.setProgress(probar(cs,c4));
         prodictionary.setProgress(probar(cd,c5));
+        prointrofun.setProgress(probar(fint,f1));
 
 
+
+
+        introfun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t51.getText().toString();
+                String strand="1/4";
+                String tno="Five";
+                int idl=28;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), Introdef.class);
+
+                startActivity(insta);
+            }
+        });
 
         dictionary.setOnClickListener(new View.OnClickListener() {
             @Override

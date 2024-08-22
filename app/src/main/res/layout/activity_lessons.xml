@@ -1450,13 +1450,12 @@
                 >
 
                 <ProgressBar
-                    android:id="@+id/prointrofun"
+                    android:id="@+id/proinfun"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
                     android:layout_marginEnd="5dp"
                     android:max="50"
-                    android:progress="100"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:progressDrawable="@drawable/circular_progress_bar" />

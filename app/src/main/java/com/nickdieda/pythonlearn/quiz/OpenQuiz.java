@@ -37,7 +37,7 @@ public class OpenQuiz extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     LinearLayout ansd, markd;
     TextView tto,quiz,bl;
-    ImageView back;
+    ImageView back,imgmark;
    private int activityid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class OpenQuiz extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         ansd = findViewById(R.id.ansdis);
         markd = findViewById(R.id.markdis);
+        imgmark=findViewById(R.id.imgmark);
         back=findViewById(R.id.returnback);
         quiz=findViewById(R.id.qiuz);
         bl=findViewById(R.id.backtolessons);
@@ -204,7 +205,6 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("How do you create an empty dictionary in Python?", Arrays.asList("my_dict = {}", "my_dict = []"), 0));
             questionList.add(new Question("Which method is used to get the value associated with a key in a dictionary called person?", Arrays.asList("person.get('keyname')", "person.value()"), 0));
             questionList.add(new Question("Can a dictionary key be a mutable type?", Arrays.asList("Yes", "No"), 1));
-            questionList.add(new Question("Which method removes a key-value pair from a dictionary?", Arrays.asList("remove()", "pop()"), 1));
             questionList.add(new Question("How do you add a new key-value pair to an existing dictionary?", Arrays.asList("my_dict[key] = value", "my_dict.add(key, value)"), 0));
         } else if (activityid==28){
             questionList.add(new Question("A block of codes with head that perfom a specific task is called", Arrays.asList("function", "dictionary"), 0));
@@ -346,7 +346,7 @@ public class OpenQuiz extends AppCompatActivity {
         }  else if (activityid==27) {
             savedir("cdic",correctAnswers);
         }  else if (activityid==28) {
-            savedir("introfun",correctAnswers);
+            savedir("intfun",correctAnswers);
         }
 
 
@@ -354,10 +354,12 @@ public class OpenQuiz extends AppCompatActivity {
 
         if (correctAnswers == questionList.size()) {
             resultTitle = "Excellent!";
+            imgmark.setImageResource(R.drawable.tick);
 
             resultText = "You got all the answers correct.";
         } else {
             resultTitle = "Good try!";
+            imgmark.setImageResource(R.drawable.wron);
 
             resultText = "You got " + correctAnswers + " out of " + questionList.size() + " questions correct.";
         }

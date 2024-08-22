@@ -160,7 +160,7 @@ private int activityid;
                         break;
                     case 4:
                         imageResource1 = R.drawable.p40;
-                        colorValue1 = R.color.graya;
+                        colorValue1 = R.color.egg;
                         break;
 
                     case 5:

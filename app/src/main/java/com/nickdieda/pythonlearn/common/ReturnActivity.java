@@ -31,6 +31,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
 
 public class ReturnActivity {
 
@@ -93,7 +94,10 @@ public class ReturnActivity {
             bk = new Intent(act, Setsc.class);
         } else if (activityid==27) {
             bk = new Intent(act, Dictionar_y.class);
+        } else if (activityid==28) {
+            bk = new Intent(act, Introdef.class);
         }
+
 
 
 
