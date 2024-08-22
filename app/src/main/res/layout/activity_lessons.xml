@@ -1417,6 +1417,217 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundcon"
+            android:alpha="0.8"
+            android:scrollbars="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python Functions,Lambda and methods"
+                android:textSize="38sp"
+                android:gravity="start|center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/introfun"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prointrofun"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="50"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Introduction to Python functions"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/t51"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fu_n"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/profun"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Function"
+                    android:textSize="20sp"
+                    android:id="@+id/t52"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/lambdaf"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prolambdaf"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python Lambdaa Function "
+                    android:textSize="20sp"
+                    android:id="@+id/t53"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/pass_s"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/propass"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/t54"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Python pass Statement"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
 
 
 

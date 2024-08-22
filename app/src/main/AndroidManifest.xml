@@ -17,6 +17,9 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.pyfun.Introdef"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.Collections.Dictionar_y"
             android:exported="false" />
         <activity
