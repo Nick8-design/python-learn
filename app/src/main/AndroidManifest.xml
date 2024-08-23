@@ -17,6 +17,15 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.pyfun.PassPy"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.pyfun.lambdaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.pyfun.FunDef"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.pyfun.Introdef"
             android:exported="false" />
         <activity

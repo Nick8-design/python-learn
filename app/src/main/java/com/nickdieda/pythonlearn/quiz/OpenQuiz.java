@@ -210,8 +210,24 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("A block of codes with head that perfom a specific task is called", Arrays.asList("function", "dictionary"), 0));
             questionList.add(new Question("A function in python is identified by", Arrays.asList("def", "fun"), 0));
             questionList.add(new Question("Can a function be called as many times as posible", Arrays.asList("Yes", "No"), 0));
-            questionList.add(new Question("Which is the collect head of a function", Arrays.asList("def my_fun();", "def my_fun():"), 1));
-            }
+            questionList.add(new Question("Which is the correct head of a function", Arrays.asList("def my_fun();", "def my_fun():"), 1));
+        } else if (activityid==29){
+            questionList.add(new Question("How will we call this def myFun(n):", Arrays.asList("myFun(n)", "myFun(8)"), 1));
+            questionList.add(new Question("If i want to use a block of code over and over again what do i do", Arrays.asList("i put them in a function", "i put them in a dictionary"), 0));
+            questionList.add(new Question("Is indentation important in functions", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("What does the return statement do", Arrays.asList("return result and teminate execution", "stops the function from being called"), 0));
+        } else if (activityid==30){
+            questionList.add(new Question("What is a lambda function?", Arrays.asList("A small anonymous function", "A large named function"), 0));
+            questionList.add(new Question("What is the correct syntax for a lambda function?", Arrays.asList("lambda arguments: expression", "def lambda arguments: expression"), 0));
+            questionList.add(new Question("Can lambda functions take multiple arguments?", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("Lambda functions are typically used for?", Arrays.asList("Small, simple operations", "Complex, lengthy operations"), 0));
+        } else if (activityid==31){
+            questionList.add(new Question("What is the use of pass statement", Arrays.asList("Placeholder", "Commenting things out"), 0));
+            questionList.add(new Question("Can we use pass statement in a function instead of writing codes", Arrays.asList("Gen Z", "Yes","No"), 1));
+            questionList.add(new Question("Can pass be used in a class and if statement", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("I don't remember what to put inside my for loop but I want to continue coding,what will i place in the body of the for loop to avoid error?", Arrays.asList("# to be worked on", "pass"), 1));
+        }
+
 
 
 
@@ -347,6 +363,12 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("cdic",correctAnswers);
         }  else if (activityid==28) {
             savedir("intfun",correctAnswers);
+        }  else if (activityid==29) {
+            savedir("funs",correctAnswers);
+        }  else if (activityid==30) {
+            savedir("lambdas",correctAnswers);
+        }  else if (activityid==31) {
+            savedir("passpy",correctAnswers);
         }
 
 

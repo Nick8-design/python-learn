@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.nickdieda.pythonlearn.common.ColorUtil;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -36,7 +37,7 @@ import java.io.File;
 public class MainActivity extends AppCompatActivity {
     LinearLayout homefra, lessonfra, button, compiler_b, projects,continuel;
     ImageView homei, lessoni, compi, swi_img, uswi, cont_img, image;
-    TextView hometext, lessontext, percentage, title,topicname,strand,topicno,ts,tn;
+    TextView hometext, lessontext, percentage, percentag,title,covpas,topicname,strand,topicno,ts,tn;
     private ImageButton menuButton;
    private int i;
 private int activityid;
@@ -67,7 +68,9 @@ private int activityid;
         topicno=findViewById(R.id.topicno);
         strand=findViewById(R.id.strand);
         ts=findViewById(R.id.ts);
+        covpas=findViewById(R.id.covpas);
         tn=findViewById(R.id.tn);
+        percentag=findViewById(R.id.percentag);
 
 
         requestStoragePermission();
@@ -78,7 +81,7 @@ private int activityid;
 
 
 
-
+        covpas.setTextColor(ColorUtil.getRandomColor());
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
@@ -105,6 +108,8 @@ private int activityid;
         image.setImageResource(imageResource);
         percentage.setText(getPercentageText(i));
         percentage.setTextColor(getResources().getColor(colorValue));
+        percentag.setText(getPercentageText(i));
+        percentag.setTextColor(getResources().getColor(colorValue));
         octColor(colorValue);
 
 
@@ -197,6 +202,8 @@ private int activityid;
                 image.setImageResource(imageResource1);
                 percentage.setText(getPercentageText(i));
                 percentage.setTextColor(getResources().getColor(colorValue1));
+        percentag.setText(getPercentageText(i));
+        percentag.setTextColor(getResources().getColor(colorValue1));
                 octColor(colorValue1);
 
                 // Save state to SharedPreferences

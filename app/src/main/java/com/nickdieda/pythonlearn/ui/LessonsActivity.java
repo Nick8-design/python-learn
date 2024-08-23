@@ -44,7 +44,10 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.pyfun.FunDef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
+import com.nickdieda.pythonlearn.Lessons.pyfun.PassPy;
+import com.nickdieda.pythonlearn.Lessons.pyfun.lambdaActivity;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 
@@ -54,15 +57,15 @@ public class LessonsActivity extends AppCompatActivity {
     LinearLayout homefra,lessonfra,cont,overviews,pyintro,pyinstall,writing,display,statement,syntax,comm;
     LinearLayout variable,datatpye,numb,nummethods,pystrings,stringmeth,typeconversion,booleans;
     private LinearLayout operIntro,arith,assigns,compa,logical,identity,members;
-    private LinearLayout containers,lists,tuples,set_s,dictionary,introfun;
-
+    private LinearLayout containers,lists,tuples,set_s,dictionary;
+    private LinearLayout introfun,fu_n,lambdaf,pass_s;
 
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
     ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate,prosyn,procom;
     ProgressBar prooperintro,proarith,proassign,procompa,prological,proidentity,promember;
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
-            ProgressBar prointrofun;
+            ProgressBar prointrofun,profun,prolambdaf,propass;
 
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
     private  TextView t21,t22,t23,t24,t25,t26,t27,t28;
@@ -121,13 +124,16 @@ public class LessonsActivity extends AppCompatActivity {
         int cs= sharedPreferences.getInt("cset", 0);
         int cd= sharedPreferences.getInt("cdic", 0);
         int fint= sharedPreferences.getInt("intfun", 0);
+        int fun= sharedPreferences.getInt("funs", 0);
+        int fl= sharedPreferences.getInt("lambdas", 0);
+        int fp= sharedPreferences.getInt("passpy", 0);
 
 
       //  Toast.makeText(getApplicationContext(),"intro = "+fint,Toast.LENGTH_SHORT).show();
         totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
-      totalProgress +=fint;
+      totalProgress +=fint+fun+fl+fp;
 
-        mark=(totalProgress*10)/116;
+        mark=(totalProgress*10)/128;
         progressindicator();
 
 
@@ -179,14 +185,18 @@ public class LessonsActivity extends AppCompatActivity {
         hometext=findViewById(R.id.home_text);
         dictionary=findViewById(R.id.dictionary);
         lessontext=findViewById(R.id.lesson_text);
-                percentage=findViewById(R.id.percentage);
-                image=findViewById(R.id.image);
+        prolambdaf=findViewById(R.id.prolambdaf);
+        percentage=findViewById(R.id.percentage);
+        pass_s=findViewById(R.id.pass_s);
+        image=findViewById(R.id.image);
         introfun=findViewById(R.id.introfun);
         cont=findViewById(R.id.contless);
-                pyinstall=findViewById(R.id.pyinstall);
+        propass=findViewById(R.id.propass);
+        pyinstall=findViewById(R.id.pyinstall);
         prointrofun=findViewById(R.id.proinfun);
         proinst=findViewById(R.id.proinst);
-                writing=findViewById(R.id.writing);
+                fu_n=findViewById(R.id.fu_n);
+        writing=findViewById(R.id.writing);
                 overviews=findViewById(R.id.pyover);
         prodictionary=findViewById(R.id.prodictionary);
         promember=findViewById(R.id.promember);
@@ -201,13 +211,15 @@ public class LessonsActivity extends AppCompatActivity {
         pyintro=findViewById(R.id.pyintro);
         procontainers   =findViewById(R.id.procontainers);
         prointro=findViewById(R.id.prointro);
-                assigns=findViewById(R.id.assigns);
+        lambdaf=findViewById(R.id.lambdaf);
+        assigns=findViewById(R.id.assigns);
         tuples=findViewById(R.id.tuples);
         prostate=findViewById(R.id.prostate);
                 prodis=findViewById(R.id.prodis);
         prostinmeth=findViewById(R.id.prostinmeth);
         stringmeth=findViewById(R.id.stringmeth);
-                t1=findViewById(R.id.t1);
+                profun=findViewById(R.id.profun);
+        t1=findViewById(R.id.t1);
                 t2=findViewById(R.id.t2);
                 t3=findViewById(R.id.t3);
                 t4=findViewById(R.id.t4);
@@ -235,6 +247,9 @@ public class LessonsActivity extends AppCompatActivity {
         t44=findViewById(R.id.t44);
         t45=findViewById(R.id.t45);
         t51=findViewById(R.id.t51);
+        t52=findViewById(R.id.t52);
+        t53=findViewById(R.id.t53);
+        t54=findViewById(R.id.t54);
 
 
 
@@ -267,9 +282,52 @@ public class LessonsActivity extends AppCompatActivity {
         prosets.setProgress(probar(cs,c4));
         prodictionary.setProgress(probar(cd,c5));
         prointrofun.setProgress(probar(fint,f1));
+        profun.setProgress(probar(fun,f2));
+        prolambdaf.setProgress(probar(fl,f3));
+        propass.setProgress(probar(fp,f4));
 
 
 
+
+        pass_s.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t54.getText().toString();
+                String strand="4/4";
+                String tno="Five";
+                int idl=31;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), PassPy.class);
+
+                startActivity(insta);
+            }
+        });
+        lambdaf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t53.getText().toString();
+                String strand="3/4";
+                String tno="Five";
+                int idl=30;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), lambdaActivity.class);
+
+                startActivity(insta);
+            }
+        });
+fu_n.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        String topic =t52.getText().toString();
+        String strand="2/4";
+        String tno="Five";
+        int idl=29;
+        learning(topic,strand,tno,idl);
+        Intent insta=new Intent(getApplicationContext(), FunDef.class);
+
+        startActivity(insta);
+    }
+});
 
         introfun.setOnClickListener(new View.OnClickListener() {
             @Override

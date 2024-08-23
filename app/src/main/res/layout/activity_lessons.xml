@@ -1430,7 +1430,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Python Functions,Lambda and methods"
+                android:text="Python Functions,Lambda"
                 android:textSize="38sp"
                 android:gravity="start|center"
                 android:textColor="@color/white"
@@ -1557,7 +1557,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Python Lambdaa Function "
+                    android:text="Python Lambda Function "
                     android:textSize="20sp"
                     android:id="@+id/t53"
                     android:textColor="@color/white"

@@ -31,7 +31,10 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.pyfun.FunDef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
+import com.nickdieda.pythonlearn.Lessons.pyfun.PassPy;
+import com.nickdieda.pythonlearn.Lessons.pyfun.lambdaActivity;
 
 public class ReturnActivity {
 
@@ -96,6 +99,12 @@ public class ReturnActivity {
             bk = new Intent(act, Dictionar_y.class);
         } else if (activityid==28) {
             bk = new Intent(act, Introdef.class);
+        } else if (activityid==29) {
+            bk = new Intent(act, FunDef.class);
+        } else if (activityid==30) {
+            bk = new Intent(act, lambdaActivity.class);
+        } else if (activityid==31) {
+            bk = new Intent(act, PassPy.class);
         }
 
 
