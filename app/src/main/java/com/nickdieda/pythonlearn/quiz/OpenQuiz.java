@@ -369,6 +369,8 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("lambdas",correctAnswers);
         }  else if (activityid==31) {
             savedir("passpy",correctAnswers);
+        }  else if (activityid==31) {
+            savedir("if_els",correctAnswers);
         }
 
 
