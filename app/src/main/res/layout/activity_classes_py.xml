@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.flow_control.BreakCon">
+    tools:context=".Lessons.pyadvance.ClassesPy">
 
     <include layout="@layout/return_topbar" />
 
@@ -26,7 +26,7 @@
                 android:id="@+id/intrott"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="break and continue in Python"
+                android:text="Classes in Python"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -34,8 +34,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="break and continue comes handy in loops sometimes in order to get the desired results."
-                 android:textColor="@color/white"
+                android:text="Classes are objects in python."
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -43,7 +43,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="break Statement"
+                android:text="Creating a class in Python"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -54,7 +54,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="break statement stops the execution of the current loop.\n\nbreak Statement tells the compiler to stop executing the current statement(s) and more out of the loop or where it is currently.\n\nExample of break statement in for loop."
+                android:text="The keyword 'class' is used to create a class in python.\Just like we use def to create functions we use the term class to create a class.\n\nSyntax\n\tclass className :\n\t\tstatement(s)"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -62,16 +62,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="140dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd1"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\n\nfor planet in planets:\n\tprint(planet)\n\tif planet == "Earth":\n\t\tbreak'
-                    android:layout_margin="5dp"
+                    android:layout_height="100dp"
+                    app:text="class House :\n\twidth = '200M'\n\theight = '800M'\n\trooms = 88"
+                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
@@ -107,34 +107,45 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Like in function,if,if...else here also indentation is very important."
+                    android:text="Keep in mind indentation is very important."
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center" />
             </LinearLayout>
+            <TextView
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instantiating a Class"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Example of for loop in while loop"
+                android:text="To create any abject from the class you need to instantiate it first.\nInstantiating a class by adding round brackets to the end of its name as shown here.\n\t hse = House()\n\nNow we can access the class's objects and properties."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="150dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:text='i = 0\n\nwhile i &#60; 8:\n\tprint( i )\n\tif i == 4:\n\t\tbreak\n\ti += 1'
-                    android:layout_margin="5dp"
+                    android:layout_height="110dp"
+                    app:text="hse = House()\n\nprint(hse.width)\nprint(hse.height)\nprint(hse.rooms)"
+                       android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
@@ -158,23 +169,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="In both example both Earth and 4 ,the items we told the compiler to break or stop executing when it meets them ,were still printed this is because the print() came before the break statement.\n\nThey will not be printed if we move the print() after the break.\nSince,we have told the compiler to stop executing when it reaches them."
-              android:textColor="@color/white"
+                android:text="Here is a full example"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="260dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd3"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\n\nfor planet in planets:\n\tif planet == "Earth":\n\t\tbreak\n\tprint(planet)'
+                    android:layout_height="220dp"
+                    app:text="class House :\n\twidth = '200M'\n\theight = '800M'\n\trooms = 88\n\nhse = House()\n\nprint(hse.width)\nprint(hse.height)\nprint(hse.rooms)"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -196,9 +207,23 @@
 
 
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Even in while 4 will not be displayed"
+                android:text="Class Attributes"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Classes have attributes.\n\nFor example ,the House class can have attributes like width,height and rooms"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -214,7 +239,7 @@
                     android:id="@+id/pd4"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
-                    app:text='i = 0\n\nwhile i &#60; 8:\n\tif i == 4:\n\t\tbreak\n\tprint( i )\n\ti += 1'
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -233,39 +258,28 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
-            <TextView
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="continue Statement"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="6dp">
-
-            </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="continue Statement terminates the execution of the current iteration of the loop.\n\nAnd continues the execution of the loop with the next iteration.\n\nIt jumps the species item when it reaches it and continues with the execution."
-                android:textColor="@color/white"
+                android:text="After creating the class we now create the instances of a class .\nCreating instance of a class is just instantiating the class and giving it values to its attributes.\nLet's one instance of our class House.\nWe will call this instance houseA remember it is also an object.\n\n\thouseA = House('500M','1200M',50)\n\nWe can now accesse the properties of houseA. "
+              android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="300dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd5"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:text='i = 0\n\nwhile i &#60; 8:\n\ti += 1\n\tif i == 5:\n\t\tcontinue\n\tprint( i )'
+                    android:layout_height="260dp"
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms\n\nhouseA = House('500M','1200M',50)\n\nprint(houseA.width)\nprint(houseA.height)\nprint(houseA.rooms)"
                     android:layout_margin="5dp"
                     android:padding="4dp" />
 
@@ -283,10 +297,77 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="continue in for loop"
+                android:text="__init__ Allows us to provide values for the attributesof the class.\nself parameter allow us to access the attributes and the methods of a class."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Methods"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              android:text="Methods are functions withing a class and can access class attributes."
+               android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd6"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms\n\n\tdef rooms_of_houses(self):\n\t\tprint('House A will have ',self.rooms,' rooms')\n\nhouseA = House('500M','1200M',50)\nhouseA.rooms_of_houses()"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can also pass arguments to a method"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -294,21 +375,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="280dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd6"
+                    android:id="@+id/pd7"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\n\nfor planet in planets:\n\tif planet == "Venus":\n\t\tcontinue\n\tprint(planet)'
+                    android:layout_height="240dp"
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms\n\n\tdef rooms_of_houses(self,windows):\n\t\tprint('House A, will have ',self.rooms,' rooms with ',windows)\n\nhouseA = House('500M','1200M',50)\nhouseA.rooms_of_houses('3 windows each')"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/pd66"
+                    android:id="@+id/pd77"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"

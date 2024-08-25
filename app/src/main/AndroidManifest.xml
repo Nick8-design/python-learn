@@ -17,6 +17,9 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.pyadvance.ClassesPy"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.flow_control.BreakCon"
             android:exported="false" />
         <activity

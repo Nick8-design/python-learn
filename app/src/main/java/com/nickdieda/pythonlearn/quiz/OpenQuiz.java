@@ -246,6 +246,11 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Is indentation important in while loop", Arrays.asList("Yes", "No"), 0));
             questionList.add(new Question("Can i loop over a String using while loop", Arrays.asList("Yes","No"), 0));
             questionList.add(new Question("Which loop iterates through iterable objects?", Arrays.asList("while loop", "for loop"), 1));
+        } else if (activityid==36){
+            questionList.add(new Question("Which of the jumps the current iteration and continues on the next iteration ", Arrays.asList("for loop", "continue","break"), 1));
+            questionList.add(new Question("When i want to stop looping once i meet a certain condition which statement do i use", Arrays.asList("Loop", "break","continue"), 1));
+            questionList.add(new Question("Can i use cintinue on other objects like Strings", Arrays.asList("Yes","No"), 0));
+            questionList.add(new Question("continue can be used on for loop can it be also be used on while loops", Arrays.asList("Yes", "No"), 0));
         }
 
 
@@ -397,6 +402,8 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("forl",correctAnswers);
         }  else if (activityid==35) {
             savedir("whilel",correctAnswers);
+        }  else if (activityid==36) {
+            savedir("brks",correctAnswers);
         }
 
 

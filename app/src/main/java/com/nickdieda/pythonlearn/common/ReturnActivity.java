@@ -24,6 +24,7 @@ import com.nickdieda.pythonlearn.Lessons.datatypes.PyVar;
 import com.nickdieda.pythonlearn.Lessons.datatypes.Pynum;
 import com.nickdieda.pythonlearn.Lessons.datatypes.Pystrmed;
 import com.nickdieda.pythonlearn.Lessons.datatypes.TypeCon;
+import com.nickdieda.pythonlearn.Lessons.flow_control.BreakCon;
 import com.nickdieda.pythonlearn.Lessons.flow_control.For_Loop;
 import com.nickdieda.pythonlearn.Lessons.flow_control.If_el;
 import com.nickdieda.pythonlearn.Lessons.flow_control.Ifes;
@@ -117,6 +118,8 @@ public class ReturnActivity {
             bk = new Intent(act, For_Loop.class);
         } else if (activityid==35) {
             bk = new Intent(act, WhileActivity.class);
+        } else if (activityid==36) {
+            bk = new Intent(act, BreakCon.class);
         }
 
 
