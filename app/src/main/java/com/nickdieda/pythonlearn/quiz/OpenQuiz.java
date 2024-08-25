@@ -226,6 +226,26 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Can we use pass statement in a function instead of writing codes", Arrays.asList("Gen Z", "Yes","No"), 1));
             questionList.add(new Question("Can pass be used in a class and if statement", Arrays.asList("Yes", "No"), 0));
             questionList.add(new Question("I don't remember what to put inside my for loop but I want to continue coding,what will i place in the body of the for loop to avoid error?", Arrays.asList("# to be worked on", "pass"), 1));
+        } else if (activityid==32){
+            questionList.add(new Question("Can if statement work together with Logical operators", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("If statements is executed if the condition is", Arrays.asList("True", "False","No"), 0));
+            questionList.add(new Question("Indentation is important in if..else ", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("If statement inside another if statement is called ", Arrays.asList("elif", "Nested if"), 1));
+        } else if (activityid==33){
+            questionList.add(new Question("I want to assign an answer that depends on some condition to a variable , which conditional statement should i use?", Arrays.asList("if...else", "if...else shorthand"), 0));
+            questionList.add(new Question("How many statements does if...else statement excecute", Arrays.asList("4", "3","2"), 2));
+            questionList.add(new Question("Does if...els have shorthand", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("If statement inside another if statement is called ", Arrays.asList("elif", "Nested if"), 1));
+        } else if (activityid==34){
+            questionList.add(new Question("What is the first value while using range() in for loop", Arrays.asList("1", "0","null"), 1));
+            questionList.add(new Question("Is it possible to have nested for loop in python", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("Can i loop over a String using for loop", Arrays.asList("Yes","No"), 0));
+            questionList.add(new Question("Which loop iterates through iterable objects?", Arrays.asList("while loop", "for loop"), 1));
+        } else if (activityid==35){
+            questionList.add(new Question("Which loop executes as the given condition or expression is True", Arrays.asList("for loop", "while loop","null"), 1));
+            questionList.add(new Question("Is indentation important in while loop", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("Can i loop over a String using while loop", Arrays.asList("Yes","No"), 0));
+            questionList.add(new Question("Which loop iterates through iterable objects?", Arrays.asList("while loop", "for loop"), 1));
         }
 
 
@@ -369,8 +389,14 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("lambdas",correctAnswers);
         }  else if (activityid==31) {
             savedir("passpy",correctAnswers);
-        }  else if (activityid==31) {
+        }  else if (activityid==32) {
             savedir("if_els",correctAnswers);
+        }  else if (activityid==33) {
+            savedir("if_elss",correctAnswers);
+        }  else if (activityid==34) {
+            savedir("forl",correctAnswers);
+        }  else if (activityid==35) {
+            savedir("whilel",correctAnswers);
         }
 
 

@@ -25,9 +25,10 @@ public class PassPy extends AppCompatActivity {
     private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
     private ImageView ret;
-    setpylan pylang=new setpylan();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setpylan pylang=new setpylan();
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pass_py);

@@ -1,4 +1,4 @@
-package com.nickdieda.pythonlearn.Lessons.pyfun;
+package com.nickdieda.pythonlearn.Lessons.flow_control;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -21,16 +21,17 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
-public class lambdaActivity extends AppCompatActivity {
+public class WhileActivity extends AppCompatActivity {
     private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
     private ImageView ret;
-    setpylan pylang=new setpylan();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setpylan pylang=new setpylan();
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_lambda);
+        setContentView(R.layout.activity_while);
+
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
@@ -45,50 +46,51 @@ public class lambdaActivity extends AppCompatActivity {
         pd22 = findViewById(R.id.pd22);
         pd3 = findViewById(R.id.pd3);
         pd33 = findViewById(R.id.pd33);
-        pd4= findViewById(R.id.pd4);
+          /*  pd4= findViewById(R.id.pd4);
         pd44= findViewById(R.id.pd44);
 
 
 
         pd5 = findViewById(R.id.pd5);
         pd55 = findViewById(R.id.pd55);
-      /*  pd6 = findViewById(R.id.pd6);
+      pd6 = findViewById(R.id.pd6);
         pd66 = findViewById(R.id.pd66);
         pd7= findViewById(R.id.pd7);
         pd77= findViewById(R.id.pd77);
         pd8= findViewById(R.id.pd8);
         pd88= findViewById(R.id.pd88);
-        //  pd9= findViewById(R.id.pd9);
-        //  pd99= findViewById(R.id.pd99);*/
+        pd9= findViewById(R.id.pd9);
+         pd99= findViewById(R.id.pd99);*/
 
+        pd1.setEditable(false);
+        pd1.setTypefaceText(Typeface.MONOSPACE);
         pd2.setEditable(false);
         pd2.setTypefaceText(Typeface.MONOSPACE);
 
         pd3.setEditable(false);
         pd3.setTypefaceText(Typeface.MONOSPACE);
 
-        pd1.setEditable(false);
-        pd1.setTypefaceText(Typeface.MONOSPACE);
-        pd4.setEditable(false);
+
+           /*   pd4.setEditable(false);
         pd4.setTypefaceText(Typeface.MONOSPACE);
 
 
         pd5.setEditable(false);
         pd5.setTypefaceText(Typeface.MONOSPACE);
 
-  /*      pd6.setEditable(false);
+       pd6.setEditable(false);
         pd6.setTypefaceText(Typeface.MONOSPACE);
 
         pd7.setEditable(false);
         pd7.setTypefaceText(Typeface.MONOSPACE);
         pd8.setEditable(false);
         pd8.setTypefaceText(Typeface.MONOSPACE);
-        // pd9.setEditable(false);
+     // pd9.setEditable(false);
         //pd9.setTypefaceText(Typeface.MONOSPACE);*/
 
 
 
-        String tt = "Python Lambda Functions";
+        String tt = "while loop in Python";
         title.setText(tt);
         title.setSelected(true);
 
@@ -98,7 +100,7 @@ public class lambdaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 30);
+                quiz.putExtra("id", 35);
 
                 startActivity(quiz);
             }
@@ -108,12 +110,12 @@ public class lambdaActivity extends AppCompatActivity {
         pylang.pyLang(getApplicationContext(),pd1);
         pylang.pyLang(getApplicationContext(),pd2);
         pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
+         /*    pylang.pyLang(getApplicationContext(),pd4);
         pylang.pyLang(getApplicationContext(),pd5);
-      /*  pylang.pyLang(getApplicationContext(),pd6);
+     pylang.pyLang(getApplicationContext(),pd6);
         pylang.pyLang(getApplicationContext(),pd7);
         pylang.pyLang(getApplicationContext(),pd8);
-        //    pylang.pyLang(getApplicationContext(),pd9);*/
+        pylang.pyLang(getApplicationContext(),pd9);*/
 
 
 
@@ -128,7 +130,7 @@ public class lambdaActivity extends AppCompatActivity {
             }
         });
 
-        pd22.setOnClickListener(new View.OnClickListener() {
+  pd22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -136,7 +138,7 @@ public class lambdaActivity extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-       pd33.setOnClickListener(new View.OnClickListener() {
+        pd33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -144,7 +146,7 @@ public class lambdaActivity extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-        pd44.setOnClickListener(new View.OnClickListener() {
+            /*     pd44.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -166,7 +168,7 @@ public class lambdaActivity extends AppCompatActivity {
             }
         });
 
-  /*        pd66.setOnClickListener(new View.OnClickListener() {
+           pd66.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -190,7 +192,7 @@ public class lambdaActivity extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-      pd99.setOnClickListener(new View.OnClickListener() {
+   pd99.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);

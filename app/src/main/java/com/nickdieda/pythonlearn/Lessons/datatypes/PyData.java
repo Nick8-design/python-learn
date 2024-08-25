@@ -128,10 +128,10 @@ public class PyData extends AppCompatActivity {
 
         pylang.pyLang(getApplicationContext(),pd2);
         pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
+     //   pylang.pyLang(getApplicationContext(),pd4);
         pylang.pyLang(getApplicationContext(),pd5);
         pylang.pyLang(getApplicationContext(),pd6);
-        pylang.pyLang(getApplicationContext(),pd7);
+       // pylang.pyLang(getApplicationContext(),pd7);
         pylang.pyLang(getApplicationContext(),pd8);
         pylang.pyLang(getApplicationContext(),pd9);
         pylang.pyLang(getApplicationContext(),pd1);

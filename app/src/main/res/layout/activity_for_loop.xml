@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.flow_control.If_el">
+    tools:context=".Lessons.flow_control.For_Loop">
 
     <include layout="@layout/return_topbar" />
 
@@ -26,7 +26,7 @@
                 android:id="@+id/intrott"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="if..else Conditional Statement"
+                android:text="for loop in Python"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -34,8 +34,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Conditional Statements executes code or block of codes depending on the condition (True or False).\nIt is like Yes execute me an No don't execute me."
-               android:textColor="@color/white"
+                android:text="for loop is used to repetitively execute a group of statement(s) over a sequence or iterable objects such as string,lists,tuple etc.\n\nSyntax\n\tfor variable in sequence:\n\t\tstatement(s)"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
@@ -43,7 +43,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="if Statement"
+                android:text="for loop on List"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -54,23 +54,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="if will only execute its body or block of of codes under it if the condition given is True.\n\nIndentation is key here a block of code should have same indentation.\n\nSyntax\n\t\tif  expression :\n\t\t\tstatement(s)\n\nExample"
-                android:textColor="@color/white"
+               android:textColor="@color/white"
+                android:text="for Loop can help us access each item on a List in the Example below."
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd1"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text="if 22 &#60; 100 :\n\tmsg = 'It true 22 is less than 100'\n\tprint( msg )"
+                    android:layout_height="100dp"
+                    app:text='planets = ["Mercury","Venus","Earth","Mars"]\n\nfor planet in planets:\n\tprint(planet)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -107,33 +107,44 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="If is one of the conditional statement and just like in function here also indentation is key."
+                    android:text="Like in function,if,if...else here also indentation is very important."
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center" />
             </LinearLayout>
 
+            <TextView
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="for loop on a String"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="if you don't observe indentation you get indentation error."
+                android:text="A string contains a sequence of characters that we can loop over."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text="if 22 &#60; 100 :\n\t\tmsg = 'It true 22 is less than 100'\n\tprint( msg )"
+                    android:layout_height="100dp"
+                    app:text="msg = 'You can loop over me!.'\n\nfor i in msg:\n\tprint( i )"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -158,7 +169,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="if...else Statement"
+                android:text="for loop on range()"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -169,7 +180,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Incase if is False ,the else statement will execute with its body.\n\nIndentation is key here a block of code should have same indentation.\n\nSyntax\n\t\tif  expression :\n\t\t\tstatement(s)\n\t\telse:\n\t\t\tstatement(s)\n\nExample"
+                android:text="Incase where you don't have itereble object like List,sets,strings ets we use range().\n\nrange() takes in one argument ,this is the number of times you want to loop. Eg range(5)\n\nWhile using for loop on range looping starts from 0.\n\n Eg \n\tfor i in range(5): \n\nWe are telling the compiler we want to loop 5 times that is from 0 to 4.\nNote the first i = 0 \nAs you may have noticed the head of the for statement is also terminated using full colon ( : )\n\nIn this example it is going to show what the first digit in a range is always 0"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -177,15 +188,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd3"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    app:text="age = 15\nmsg = ''\nif age &#62;= 18 :\n\tmsg = 'You can apply for Id'\nelse:\n\tmsg = 'Come back when you are 18 and above'\n\nprint( msg )"
+                    android:layout_height="70dp"
+                    app:text="for i in range( 3 ):\n\tprint('i = ', i )"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -209,7 +220,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="if...elif Statement"
+                android:text="Nested for Loops"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -222,7 +233,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-              android:text="Incase the if condition is False and the elif condition is True it will execute.\nWhen if condition is True it will automatically execute without caring if elif is True or False.\n\nSyntax\n\t\tif expression:\n\t\t\tstatement(s)\n\t\telif expression:\n\t\t\tstatament(s)\n\nExample"
+                android:text="We can place a for loop inside another for loop"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -230,15 +241,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="170dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd4"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    app:text="age = 17\nmsg = ''\nif age &#62;= 18 :\n\tmsg = 'You can apply for Id'\nelif age == 17:\n\tmsg = 'Wait for one year to apply for id'\n\nprint( msg )"
+                    android:layout_height="130dp"
+                    app:text='caps = ["A","B","C","D","E"]\nsmall = ["1","2","3","4","5"]\n\nfor i in caps:\n\tfor r in small:\n\t\tprint(i + " " + r)'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -257,28 +268,39 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+            <TextView
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="for loop with else"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp">
+
+            </TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Incase both if and elif conditions are False we can provide an else Statement to be executed.\n\nExample"
-                android:textColor="@color/white"
+                android:text="When looping ends the else statement will be executed."
+               android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="180dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd5"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    app:text="age = 15\nmsg = ''\nif age &#62;= 18 :\n\tmsg = 'You can apply for Id'\nelif age == 17:\n\tmsg = 'Wait for one year to apply for id'\nelse :\n\tmsg = 'You are too young to apply for ID'\n\nprint( msg )"
+                    android:layout_height="140dp"
+                    app:text='one_ten = []\nfor i in range(10):\n\tc=i+1\n\tone_ten.append(c)\nelse:\n\tprint( one_ten )'
                     android:layout_margin="5dp"
                     android:padding="4dp" />
 
@@ -296,147 +318,7 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
-            <TextView
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Using if and Logical Operator"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="6dp">
-
-            </TextView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Incase  you want to check more than one condition in one if statement ,you must involve Logical Operators.\nBetween the 2 conditions or expression you place Logical Operators  (and/or).\n\nif together with and \nThe and operator returns True if both expressions (or Booleans values ) are True.\n\nExample"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="280dp"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd6"
-                    android:layout_width="match_parent"
-                    android:layout_height="240dp"
-                    app:text="age = 18\nnationality = 'Kenya'\nmsg = ''\nif (age &#62;= 18) and (nationality == 'Kenya'):\n\tmsg = 'You can apply for Id'\nelif (age &#62;= 17) and (nationality == 'Kenya'):\n\tmsg = 'Wait for one year to apply for id'\nelse :\n\tmsg = 'You must be a Kenyan Citizen who is  18 and above to apply for a Kenyan ID'\n\nprint( msg )"
-                    android:layout_margin="5dp"
-                    android:background="#EFEFEF"
-                    android:padding="4dp" />
-
-                <TextView
-                    android:id="@+id/pd66"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try it out"
-                    android:textColor="@color/white"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:background="@drawable/rounddark"
-                    android:layout_gravity="end"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="if together with or\nThe or operator returns True if either of the expression,condition or Boolean values are True or both .\nIt only return false if both are False.\n\nExample"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="260dp"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd7"
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    app:text="age = 23\nmsg = ''\nif (age == 18) or (age &#62; 18 ):\n\tmsg = 'You can apply for Id'\nelse :\n\tmsg = 'You must be 18 or above to apply for a Kenyan ID'\n\nprint( msg )"
-                    android:layout_margin="5dp"
-                    android:padding="4dp" />
-
-                <TextView
-                    android:id="@+id/pd77"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try it out"
-                    android:textColor="@color/white"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:background="@drawable/rounddark"
-                    android:layout_gravity="end"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
-
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nested if Statements"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="6dp">
-
-            </TextView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="if statement inside another if statement are called Nested if statements."
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="280dp"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp">
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd8"
-                    android:layout_width="match_parent"
-                    android:layout_height="240dp"
-                    app:text="age = 18\nnationality = 'Kenya'\nmsg = ''\nif (age &#62;= 18):\n\tmsg = 'You are old enough to apply for ID'\n\tif(nationality == 'Kenya'):\n\t\tmsg = 'You are 18 and above and Kenyan so You can apply for Id '\n\telse :\n\t\tmsg = 'You must be a Kenyan Citizen who is  18 and above to apply for a Kenyan ID'\n\nprint( msg )"
-                    android:layout_margin="5dp"
-                    android:background="#EFEFEF"
-                    android:padding="4dp" />
-                <TextView
-                    android:id="@+id/pd88"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Try it out"
-                    android:textColor="@color/white"
-                    android:layout_margin="4dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:background="@drawable/rounddark"
-                    android:layout_gravity="end"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp" />
-            </LinearLayout>
 
 
         </LinearLayout>

@@ -24,6 +24,10 @@ import com.nickdieda.pythonlearn.Lessons.datatypes.PyVar;
 import com.nickdieda.pythonlearn.Lessons.datatypes.Pynum;
 import com.nickdieda.pythonlearn.Lessons.datatypes.Pystrmed;
 import com.nickdieda.pythonlearn.Lessons.datatypes.TypeCon;
+import com.nickdieda.pythonlearn.Lessons.flow_control.For_Loop;
+import com.nickdieda.pythonlearn.Lessons.flow_control.If_el;
+import com.nickdieda.pythonlearn.Lessons.flow_control.Ifes;
+import com.nickdieda.pythonlearn.Lessons.flow_control.WhileActivity;
 import com.nickdieda.pythonlearn.Lessons.matopera.ArithOper;
 import com.nickdieda.pythonlearn.Lessons.matopera.Assign;
 import com.nickdieda.pythonlearn.Lessons.matopera.CompOpera;
@@ -105,6 +109,14 @@ public class ReturnActivity {
             bk = new Intent(act, lambdaActivity.class);
         } else if (activityid==31) {
             bk = new Intent(act, PassPy.class);
+        } else if (activityid==32) {
+            bk = new Intent(act, If_el.class);
+        } else if (activityid==33) {
+            bk = new Intent(act, Ifes.class);
+        } else if (activityid==34) {
+            bk = new Intent(act, For_Loop.class);
+        } else if (activityid==35) {
+            bk = new Intent(act, WhileActivity.class);
         }
 
 

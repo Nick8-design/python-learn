@@ -17,6 +17,18 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.flow_control.BreakCon"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.flow_control.WhileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.flow_control.For_Loop"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.flow_control.Ifes"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.flow_control.If_el"
             android:exported="false" />
         <activity

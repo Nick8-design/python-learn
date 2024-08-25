@@ -54,7 +54,7 @@ public class TypeCon extends AppCompatActivity {
         pd6 = findViewById(R.id.pd6);
         pd66 = findViewById(R.id.pd66);
      //   pd7= findViewById(R.id.pd7);
-      //  pd77= findViewById(R.id.pd77);
+        //  pd77= findViewById(R.id.pd77);
      //   pd8= findViewById(R.id.pd8);
      //   pd88= findViewById(R.id.pd88);
 
@@ -80,7 +80,7 @@ public class TypeCon extends AppCompatActivity {
       //  pd7.setEditable(false);
       //  pd7.setTypefaceText(Typeface.MONOSPACE);
       //  pd8.setEditable(false);
-     //   pd8.setTypefaceText(Typeface.MONOSPACE);
+     //  pd8.setTypefaceText(Typeface.MONOSPACE);
 
 
         String tt = "Data type conversion";
