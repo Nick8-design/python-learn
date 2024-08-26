@@ -36,6 +36,8 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
+import com.nickdieda.pythonlearn.Lessons.pyadvance.Inheritance;
 import com.nickdieda.pythonlearn.Lessons.pyfun.FunDef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.PassPy;
@@ -120,6 +122,10 @@ public class ReturnActivity {
             bk = new Intent(act, WhileActivity.class);
         } else if (activityid==36) {
             bk = new Intent(act, BreakCon.class);
+        } else if (activityid==37) {
+            bk = new Intent(act, ClassesPy.class);
+        } else if (activityid==38) {
+            bk = new Intent(act, Inheritance.class);
         }
 
 

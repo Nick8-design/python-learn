@@ -279,7 +279,7 @@
                     android:id="@+id/pd5"
                     android:layout_width="match_parent"
                     android:layout_height="260dp"
-                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms\n\nhouseA = House('500M','1200M',50)\n\nprint(houseA.width)\nprint(houseA.height)\nprint(houseA.rooms)"
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.rooms = rooms\n\nhouseA = House('500M','1200M',50)\n\nprint(houseA.width)\nprint(houseA.height)\nprint(houseA.rooms)"
                     android:layout_margin="5dp"
                     android:padding="4dp" />
 
@@ -345,7 +345,7 @@
                     android:id="@+id/pd6"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms\n\n\tdef rooms_of_houses(self):\n\t\tprint('House A will have ',self.rooms,' rooms')\n\nhouseA = House('500M','1200M',50)\nhouseA.rooms_of_houses()"
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.rooms = rooms\n\n\tdef rooms_of_houses(self):\n\t\tprint('House A, will have ',self.rooms,' rooms')\n\nhouseA = House('500M','1200M',50)\nhouseA.rooms_of_houses()"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
@@ -383,7 +383,7 @@
                     android:id="@+id/pd7"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
-                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.roors = rooms\n\n\tdef rooms_of_houses(self,windows):\n\t\tprint('House A, will have ',self.rooms,' rooms with ',windows)\n\nhouseA = House('500M','1200M',50)\nhouseA.rooms_of_houses('3 windows each')"
+                    app:text="class House:\n\tdef __init__(self,width,height,rooms):\n\t\tself.width = width\n\t\tself.height = height\n\t\tself.rooms = rooms\n\n\tdef rooms_of_houses(self,windows):\n\t\tprint('House A, will have ',self.rooms,' rooms with ',windows)\n\nhouseA = House('500M','1200M',50)\nhouseA.rooms_of_houses('3 windows each')"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.pyadvance.Inheritance">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/intrott"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inheritance in Python"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inheritance allows one class to inherit and use the attributes and method of another class.\n\nExample"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd1"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    app:text="class Human:\n\tdef __init__(self,name,DOB):\n\t\tself.name = name\n\t\tself.DOB = DOB\n\n\tdef born(self):\n\t\tprint(self.name + ' was born on '+self.DOB)"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The above class tells us 2 features that Human have we can create another class called Student to inherit from it since a student is also a human and have those characteristics.\n\nTo inherit a class you place the name of the class which you want to inherit from in round blackets as shown \n\nclass A(B):\n\t\tA - class to inherit the other class's properties(child class)\n\t\tB - class being inheritted from (parent class)\n\nExample"
+            android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    app:text="def Student(Human):\n\tdef __init__(self,name, sch_Id):\n\t\tsuper().__init__(name, sch_Id)\n\n\tdef status(self):\n\t\tprint(self.name + ' is a student.')"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Here is a full example,showing how Student class inherits from Human class."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="430dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd3"
+                    android:layout_width="match_parent"
+                    android:layout_height="390dp"
+                    app:text="class Human:\n\tdef __init__(self,name,DOB):\n\t\tself.name = name\n\t\tself.DOB = DOB\n\n\tdef born(self):\n\t\tprint(self.name + ' was born on '+self.DOB)\n\nclass Student(Human):\n\tdef __init__(self,name,DOB,sch_Id):\n\t\tsuper().__init__(name,DOB )\n\n\tdef status(self):\n\t\tprint(self.name + ' is a student.')\n\nS = Student('Tezara Joy','16/7/2003',888)\nS.born()\nS.status()"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="super() and __init__ allows us to inherit from anothe class."
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

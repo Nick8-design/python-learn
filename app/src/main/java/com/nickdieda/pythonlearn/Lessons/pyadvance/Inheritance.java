@@ -21,7 +21,7 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
-public class ClassesPy extends AppCompatActivity {
+public class Inheritance extends AppCompatActivity {
     private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
     private ImageView ret;
@@ -30,9 +30,7 @@ public class ClassesPy extends AppCompatActivity {
         setpylan pylang=new setpylan();
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_classes_py);
-
-
+        setContentView(R.layout.activity_inheritance);
 
 
         title = findViewById(R.id.title);
@@ -48,7 +46,7 @@ public class ClassesPy extends AppCompatActivity {
         pd22 = findViewById(R.id.pd22);
         pd3 = findViewById(R.id.pd3);
         pd33 = findViewById(R.id.pd33);
-        pd4= findViewById(R.id.pd4);
+        /*  pd4= findViewById(R.id.pd4);
         pd44= findViewById(R.id.pd44);
 
 
@@ -57,9 +55,9 @@ public class ClassesPy extends AppCompatActivity {
         pd55 = findViewById(R.id.pd55);
         pd6 = findViewById(R.id.pd6);
         pd66 = findViewById(R.id.pd66);
-       pd7= findViewById(R.id.pd7);
+        pd7= findViewById(R.id.pd7);
         pd77= findViewById(R.id.pd77);
-       /*    pd8= findViewById(R.id.pd8);
+         pd8= findViewById(R.id.pd8);
         pd88= findViewById(R.id.pd88);
         pd9= findViewById(R.id.pd9);
          pd99= findViewById(R.id.pd99);*/
@@ -73,7 +71,7 @@ public class ClassesPy extends AppCompatActivity {
         pd3.setTypefaceText(Typeface.MONOSPACE);
 
 
-        pd4.setEditable(false);
+        /*     pd4.setEditable(false);
         pd4.setTypefaceText(Typeface.MONOSPACE);
 
 
@@ -83,16 +81,16 @@ public class ClassesPy extends AppCompatActivity {
         pd6.setEditable(false);
         pd6.setTypefaceText(Typeface.MONOSPACE);
 
-          pd7.setEditable(false);
+        pd7.setEditable(false);
         pd7.setTypefaceText(Typeface.MONOSPACE);
-           /*   pd8.setEditable(false);
+         pd8.setEditable(false);
         pd8.setTypefaceText(Typeface.MONOSPACE);
      // pd9.setEditable(false);
         //pd9.setTypefaceText(Typeface.MONOSPACE);*/
 
 
 
-        String tt = "Classes in Python";
+        String tt = "Inheritance in Python";
         title.setText(tt);
         title.setSelected(true);
 
@@ -102,7 +100,7 @@ public class ClassesPy extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 37);
+                quiz.putExtra("id", 38);
 
                 startActivity(quiz);
             }
@@ -112,11 +110,11 @@ public class ClassesPy extends AppCompatActivity {
         pylang.pyLang(getApplicationContext(),pd1);
         pylang.pyLang(getApplicationContext(),pd2);
         pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
+       /*  pylang.pyLang(getApplicationContext(),pd4);
         pylang.pyLang(getApplicationContext(),pd5);
         pylang.pyLang(getApplicationContext(),pd6);
-         pylang.pyLang(getApplicationContext(),pd7);
-          /* pylang.pyLang(getApplicationContext(),pd8);
+        pylang.pyLang(getApplicationContext(),pd7);
+          pylang.pyLang(getApplicationContext(),pd8);
         pylang.pyLang(getApplicationContext(),pd9);*/
 
 
@@ -148,7 +146,7 @@ public class ClassesPy extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-        pd44.setOnClickListener(new View.OnClickListener() {
+      /*       pd44.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -178,7 +176,7 @@ public class ClassesPy extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-    pd77.setOnClickListener(new View.OnClickListener() {
+        pd77.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -186,7 +184,7 @@ public class ClassesPy extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-       /*  pd88.setOnClickListener(new View.OnClickListener() {
+    pd88.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);

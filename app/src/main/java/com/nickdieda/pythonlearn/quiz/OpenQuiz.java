@@ -251,7 +251,18 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("When i want to stop looping once i meet a certain condition which statement do i use", Arrays.asList("Loop", "break","continue"), 1));
             questionList.add(new Question("Can i use cintinue on other objects like Strings", Arrays.asList("Yes","No"), 0));
             questionList.add(new Question("continue can be used on for loop can it be also be used on while loops", Arrays.asList("Yes", "No"), 0));
+        } else if (activityid==37){
+            questionList.add(new Question("Is class an object python", Arrays.asList("Yes", "No"), 0));
+            questionList.add(new Question("Which parameter give as access to attributes and methods in a class ", Arrays.asList("self", "--init--","__in__"), 0));
+            questionList.add(new Question("A function inside a class is called ", Arrays.asList("init","method"), 0));
+            questionList.add(new Question("Which is the correct instance of class Details", Arrays.asList("det = new Details", "det = Details()"), 1));
+        } else if (activityid==38){
+            questionList.add(new Question("Taking attributes of another class is called", Arrays.asList("borrowing", "inheritance"), 1));
+            questionList.add(new Question("WHere is inheritance of class A done correctily", Arrays.asList(" class A(B):", "class B(A):","class A:"), 1));
+            questionList.add(new Question("Aclass that is being inherited from is called", Arrays.asList("child","parent"), 1));
+            questionList.add(new Question("In python can a class inherit the methods of another class", Arrays.asList("Yes", "No"), 0));
         }
+
 
 
 
@@ -404,7 +415,12 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("whilel",correctAnswers);
         }  else if (activityid==36) {
             savedir("brks",correctAnswers);
+        }  else if (activityid==37) {
+            savedir("classespy",correctAnswers);
+        }  else if (activityid==38) {
+            savedir("inheritance",correctAnswers);
         }
+
 
 
 
