@@ -20,7 +20,7 @@
         app:showAsAction="always"/>
     <item
         android:id="@+id/action_settings"
-        android:title="Settings"
+        android:title="Brightness"
         android:icon="@drawable/settings"
         app:showAsAction="always"/>
 </menu>

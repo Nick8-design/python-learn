@@ -261,6 +261,21 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("WHere is inheritance of class A done correctily", Arrays.asList(" class A(B):", "class B(A):","class A:"), 1));
             questionList.add(new Question("Aclass that is being inherited from is called", Arrays.asList("child","parent"), 1));
             questionList.add(new Question("In python can a class inherit the methods of another class", Arrays.asList("Yes", "No"), 0));
+        } else if (activityid==39){
+            questionList.add(new Question("The name given to a variable created and declared inside a variable is called", Arrays.asList("Local variable", "Global variable"), 0));
+            questionList.add(new Question("Is it posible to have two global scope with the same name ", Arrays.asList("Yes","No"), 1));
+            questionList.add(new Question("Can we have 2 local varible  each in different functions with the same name", Arrays.asList("No","Yes"),1));
+            questionList.add(new Question("Select correct converted local variable name = 'John' to global", Arrays.asList("name = 'John'", "global name = 'John'"), 1));
+        } else if (activityid==40){
+            questionList.add(new Question("Which brackets do we use as placeholder while formatting the string", Arrays.asList("[]", "{}"), 1));
+            questionList.add(new Question("m = 'I [1] Python' Is it posible to format the string this way ", Arrays.asList("Yes","No"), 1));
+            questionList.add(new Question("Is it possible to use multiple placeholder to format a string?", Arrays.asList("No","Yes"),1));
+            questionList.add(new Question("What does literal String interpolation do", Arrays.asList("Allows one to place expression inside a string", "allow use to create a class in a string"), 0));
+        } else if (activityid==41){
+            questionList.add(new Question("I want to stop my program from crushing each time it encounters an error which statement do i use", Arrays.asList("try...except", "try...catch"), 0));
+            questionList.add(new Question("Does the program continue being executed after throwing try exception error", Arrays.asList("Yes","No"), 0));
+            questionList.add(new Question("To execute a block of code where or not exception was thrown which statement do i use", Arrays.asList("finally", "try","except"),0));
+            questionList.add(new Question("Can we throw our own exception", Arrays.asList("Yes", "No"), 0));
         }
 
 
@@ -419,6 +434,12 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("classespy",correctAnswers);
         }  else if (activityid==38) {
             savedir("inheritance",correctAnswers);
+        }  else if (activityid==39) {
+            savedir("varscope",correctAnswers);
+        }  else if (activityid==40) {
+            savedir("formstring",correctAnswers);
+        }  else if (activityid==41) {
+            savedir("handerror",correctAnswers);
         }
 
 
