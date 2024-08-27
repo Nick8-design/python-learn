@@ -11,6 +11,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.common.setpylan;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -86,23 +87,23 @@ public class Listc extends AppCompatActivity {
 
 
 
-        pylang.pyLang(Listc.this,pd1);
-     //   pylang.pyLang(Listc.this,pd2);
-        pylang.pyLang(Listc.this,pd3);
-       pylang.pyLang(Listc.this,pd4);
-      //  pylang.pyLang(Listc.this,pd5);
-       // pylang.pyLang(Listc.this,pd6);
-        pylang.pyLang(Listc.this,pd7);
-       // pylang.pyLang(Listc.this,pd8);
-      //  pylang.pyLang(Listc.this,pd9);
-    //    pylang.pyLang(Listc.this,pd10);
-        pylang.pyLang(Listc.this,pd111);
-        pylang.pyLang(Listc.this,pd13);
-     //   pylang.pyLang(Listc.this,pd14);
-     //   pylang.pyLang(Listc.this,pd12);
-        pylang.pyLang(Listc.this,pd15);
-        pylang.pyLang(Listc.this,pd16);
-       // pylang.pyLang(Listc.this,pd17);
+        CodeLang.pyLangstatic(getApplicationContext(),pd1);
+        CodeLang.pyLangstatic(getApplicationContext(),pd2);
+        CodeLang.pyLangstatic(getApplicationContext(),pd3);
+        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd5);
+        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+        CodeLang.pyLangstatic(getApplicationContext(),pd8);
+        CodeLang.pyLangstatic(getApplicationContext(),pd9);
+        CodeLang.pyLangstatic(getApplicationContext(),pd10);
+        CodeLang.pyLangstatic(getApplicationContext(),pd111);
+        CodeLang.pyLangstatic(getApplicationContext(),pd12);
+        CodeLang.pyLangstatic(getApplicationContext(),pd13);
+        CodeLang.pyLangstatic(getApplicationContext(),pd14);
+        CodeLang.pyLangstatic(getApplicationContext(),pd15);
+        CodeLang.pyLangstatic(getApplicationContext(),pd16);
+       pylang.pyLang(Listc.this,pd17);
         pylang.pyLang(Listc.this,pd18);
 
 

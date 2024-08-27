@@ -49,10 +49,13 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.Inheritance;
+import com.nickdieda.pythonlearn.Lessons.pyadvance.Iterator;
+import com.nickdieda.pythonlearn.Lessons.pyadvance.UserInput;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.VarScope;
 import com.nickdieda.pythonlearn.Lessons.pyfun.FunDef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
@@ -70,14 +73,19 @@ public class LessonsActivity extends AppCompatActivity {
     private LinearLayout operIntro,arith,assigns,compa,logical,identity,members;
     private LinearLayout containers,lists,tuples,set_s,dictionary,classO;
     private LinearLayout introfun,fu_n,lambdaf,pass_s,if_else,ifshort,forpy,whilepy,conbrk,inherit,varscope;
-    private LinearLayout fomstrings,tryexcept;
+    private LinearLayout fomstrings,tryexcept,pyiter ,inputm;
+    private LinearLayout     intmodule;
+
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
     ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate,prosyn,procom;
     ProgressBar prooperintro,proarith,proassign,procompa,prological,proidentity,promember;
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
     ProgressBar prointrofun,profun,prolambdaf,propass,proclassO,protryexc;
-    ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring;
+    ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring,proinputm,propyiter;
+    ProgressBar   prointmodule;
+
+
 
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
     private  TextView t21,t22,t23,t24,t25,t26,t27,t28;
@@ -86,6 +94,8 @@ public class LessonsActivity extends AppCompatActivity {
     private  TextView t51,t52,t53,t54;
     private  TextView t61,t62,t63,t64,t65;
     private  TextView t71,t72,t73,t74,t75,t76,t77;
+    private  TextView t81,t82,t83,t84,t85,t86;
+
 
     private    int prog,b2,b3,b4,b5,b6,b7,b8;
     private    int b9,v10,v11,v12,v13,v14,v15,v16;
@@ -94,6 +104,7 @@ public class LessonsActivity extends AppCompatActivity {
     private    int f1,f2,f3,f4;
     private    int if1,if2,if3,if4,if5;
     private int p1,p2,p3,p4,p5,p6,p7;
+    private int mo1,mo2,mo3,mo4,mo5,mo6;
 
 
     SharedPreferences sharedPreferences;
@@ -153,13 +164,16 @@ public class LessonsActivity extends AppCompatActivity {
         int pya3= sharedPreferences.getInt("varscope", 0);
         int pya4= sharedPreferences.getInt("formstring", 0);
         int pya5= sharedPreferences.getInt("handerror", 0);
+        int pya6= sharedPreferences.getInt("interator", 0);
+        int pya7= sharedPreferences.getInt("inputm", 0);
+        int mod1= sharedPreferences.getInt("intromodule", 0);
 
 
       //  Toast.makeText(getApplicationContext(),"intro = "+fint,Toast.LENGTH_SHORT).show();
          totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
-      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5;
+      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1;
 
-        mark=(totalProgress*10)/168;
+        mark=(totalProgress*10)/180;
         progressindicator();
 
 
@@ -184,6 +198,8 @@ public class LessonsActivity extends AppCompatActivity {
         proarith=findViewById(R.id.proarith);
         display=findViewById(R.id.display);
         promet=findViewById(R.id.promet);
+        proinputm=findViewById(R.id.proinputm);
+        propyiter=findViewById(R.id.propyiter);
         probolean=findViewById(R.id.probolean);
         procom=findViewById(R.id.procom);
         fomstrings=findViewById(R.id.fomstrings);
@@ -266,11 +282,15 @@ public class LessonsActivity extends AppCompatActivity {
         t2=findViewById(R.id.t2);
         protryexc=findViewById(R.id.protryexc);
         t3=findViewById(R.id.t3);
-                t4=findViewById(R.id.t4);
+        pyiter=findViewById(R.id.pyiter);
+        inputm=findViewById(R.id.inputm);
+        t4=findViewById(R.id.t4);
+        intmodule=findViewById(R.id.intmodule);
         proconbrk=findViewById(R.id.proconbrk);
                 t5=findViewById(R.id.t5);
                 t6=findViewById(R.id.t6);
                 t7=findViewById(R.id.t7);
+                prointmodule=findViewById(R.id.prointmodule);
                 t8=findViewById(R.id.t8);
         t21=findViewById(R.id.t21);
         t22=findViewById(R.id.t22);
@@ -307,6 +327,12 @@ public class LessonsActivity extends AppCompatActivity {
         t75=findViewById(R.id.t75);
         t76=findViewById(R.id.t76);
         t77=findViewById(R.id.t77);
+        t81=findViewById(R.id.t81);
+        t82=findViewById(R.id.t82);
+        t83=findViewById(R.id.t83);
+        t84=findViewById(R.id.t84);
+        t85=findViewById(R.id.t85);
+        t86=findViewById(R.id.t86);
 
 
                 proinst.setProgress(probar(binsta,b3));
@@ -351,9 +377,53 @@ public class LessonsActivity extends AppCompatActivity {
         provarscope.setProgress(probar(pya3,p3));
         profomstring.setProgress(probar(pya4,p4));
         protryexc.setProgress(probar(pya5,p5));
+        proinputm.setProgress(probar(pya7,p7));
+                propyiter.setProgress(probar(pya6,p6));
+        prointmodule.setProgress(probar(mod1,mo1));
 
 
 
+        intmodule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t81.getText().toString();
+                String strand="1/6";
+                String tno="Eight";
+                int idl=44;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), IntroModule.class);
+
+                startActivity(insta);
+            }
+        });
+
+        inputm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t77.getText().toString();
+                String strand="7/7";
+                String tno="Seven";
+                int idl=43;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), UserInput.class);
+
+                startActivity(insta);
+            }
+        });
+
+        pyiter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t76.getText().toString();
+                String strand="6/7";
+                String tno="Seven";
+                int idl=42;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), Iterator.class);
+
+                startActivity(insta);
+            }
+        });
 
         tryexcept.setOnClickListener(new View.OnClickListener() {
             @Override

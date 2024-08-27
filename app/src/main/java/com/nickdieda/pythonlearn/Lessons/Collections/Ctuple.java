@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.common.setpylan;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -162,17 +163,17 @@ public class Ctuple extends AppCompatActivity {
         });
 
         setpylan pylang=new setpylan();
-        pylang.pyLang(getApplicationContext(),pd1);
-        pylang.pyLang(getApplicationContext(),pd2);
-        pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
-     //   pylang.pyLang(getApplicationContext(),pd5);
-        pylang.pyLang(getApplicationContext(),pd6);
-       // pylang.pyLang(getApplicationContext(),pd7);
-        pylang.pyLang(getApplicationContext(),pd8);
+        CodeLang.pyLangstatic(getApplicationContext(),pd1);
+        CodeLang.pyLangstatic(getApplicationContext(),pd2);
+        CodeLang.pyLangstatic(getApplicationContext(),pd3);
+        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd5);
+        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+        CodeLang.pyLangstatic(getApplicationContext(),pd8);
         pylang.pyLang(getApplicationContext(),pd9);
         pylang.pyLang(getApplicationContext(),pd10);
-       // pylang.pyLang(getApplicationContext(),pd111);
+        pylang.pyLang(getApplicationContext(),pd111);
         pylang.pyLang(getApplicationContext(),pd12);
       /*
         pylang.pyLang(getApplicationContext(),pd13);

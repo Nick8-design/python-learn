@@ -258,7 +258,7 @@ public class CompilerPy extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK) {
             String userInput = data.getStringExtra("userInput");
             Python py = Python.getInstance();
@@ -266,7 +266,7 @@ public class CompilerPy extends AppCompatActivity {
             pyobj.callAttr("handle_input", userInput);
 
         }
-        super.onActivityResult(requestCode, resultCode, data);
+
     }
 
     public void saveScript(String scriptContent, String scriptName) {

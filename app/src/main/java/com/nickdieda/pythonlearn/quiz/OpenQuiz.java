@@ -276,7 +276,23 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Does the program continue being executed after throwing try exception error", Arrays.asList("Yes","No"), 0));
             questionList.add(new Question("To execute a block of code where or not exception was thrown which statement do i use", Arrays.asList("finally", "try","except"),0));
             questionList.add(new Question("Can we throw our own exception", Arrays.asList("Yes", "No"), 0));
+        } else if (activityid==42){
+            questionList.add(new Question("Which function returns an iterator from an iterable objects", Arrays.asList("infer()", "iter()"), 1));
+            questionList.add(new Question("Which function is used to iterate through iterator", Arrays.asList("next","next()"), 1));
+            questionList.add(new Question("Objects that can be iterated over are called ", Arrays.asList("iterable", "try"),0));
+            questionList.add(new Question("It is used to iterate through iterable objects", Arrays.asList("iterator", "looper"), 0));
+        } else if (activityid==43){
+            questionList.add(new Question("Can you take users input in Python", Arrays.asList("YES", "NO"), 0));
+            questionList.add(new Question("We use which function to take users input", Arrays.asList("input","input()"), 1));
+            questionList.add(new Question("To prompt the user for input where do we write the sting", Arrays.asList("after input()", "before input()","inside input()"),2));
+            questionList.add(new Question("Which statement is correct to assign the name entered by user to variable name", Arrays.asList("name = input('fname')", "name = fname.input()"), 0));
+        } else if (activityid==44){
+            questionList.add(new Question("Why do we use modules in Python?", Arrays.asList("To organize code", "To make code slower"), 0));
+            questionList.add(new Question("Which keyword is used to import a module?", Arrays.asList("include", "import"), 1));
+            questionList.add(new Question("How do you import only the sqrt function from the math module?", Arrays.asList("from math import sqrt", "import math.sqrt"), 0));
+            questionList.add(new Question("Which function lists all functions and variables in a module?", Arrays.asList("list()", "dir()"), 1));
         }
+
 
 
 
@@ -440,6 +456,12 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("formstring",correctAnswers);
         }  else if (activityid==41) {
             savedir("handerror",correctAnswers);
+        }  else if (activityid==42) {
+            savedir("interator",correctAnswers);
+        }  else if (activityid==43) {
+            savedir("inputm",correctAnswers);
+        }  else if (activityid==44) {
+            savedir("intromodule",correctAnswers);
         }
 
 

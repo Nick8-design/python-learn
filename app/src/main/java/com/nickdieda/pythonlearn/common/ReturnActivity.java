@@ -36,10 +36,13 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.Inheritance;
+import com.nickdieda.pythonlearn.Lessons.pyadvance.Iterator;
+import com.nickdieda.pythonlearn.Lessons.pyadvance.UserInput;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.VarScope;
 import com.nickdieda.pythonlearn.Lessons.pyfun.FunDef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
@@ -135,6 +138,12 @@ public class ReturnActivity {
             bk = new Intent(act, FormatingStrings.class);
         } else if (activityid==41) {
             bk = new Intent(act, ErrorHandling.class);
+        } else if (activityid==42) {
+            bk = new Intent(act, Iterator.class);
+        } else if (activityid==43) {
+            bk = new Intent(act, UserInput.class);
+        } else if (activityid==44) {
+            bk = new Intent(act, IntroModule.class);
         }
 
 

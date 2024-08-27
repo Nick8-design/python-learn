@@ -83,7 +83,7 @@
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorUserInput"
+                    android:id="@+id/pd1"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     app:text='name = input("Enter your name: ")\nprint("Hello, " + name + "!")\n# Output depends on user input\n\n# Converting input to an integer\nyear = int(input("Enter your birth year: "))\nage = 2024 - year\nprint("You are", age, "years old.")'
@@ -91,7 +91,7 @@
                     android:background="#EFEFEF"
                     android:padding="4dp" />
                 <TextView
-                    android:id="@+id/userInputTryItOut"
+                    android:id="@+id/pd11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"
@@ -130,7 +130,7 @@
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorUserInputLoop"
+                    android:id="@+id/pd2"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     app:text='while True:\n    answer = input("Type exit to quit: ")\n    if answer == "exit":\n        break\n    print("You entered:", answer)'
@@ -138,7 +138,7 @@
                 android:background="#EFEFEF"
                 android:padding="4dp" />
                 <TextView
-                    android:id="@+id/userInputLoopTryItOut"
+                    android:id="@+id/pd22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"

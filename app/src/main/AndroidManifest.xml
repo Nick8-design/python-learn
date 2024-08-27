@@ -17,6 +17,9 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.modules.IntroModule"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.pyadvance.Iterator"
             android:exported="false" />
         <activity
