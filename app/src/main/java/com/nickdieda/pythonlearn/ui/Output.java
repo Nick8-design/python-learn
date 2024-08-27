@@ -23,6 +23,7 @@ import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.BrightnessUtil;
 
 public class Output extends AppCompatActivity {
 
@@ -117,7 +118,7 @@ public class Output extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
-                    Toast.makeText(getApplicationContext(), "Settings clicked", Toast.LENGTH_SHORT).show();
+                    BrightnessUtil.showBrightnessDialog(Output.this);
                     return true;
 
                 }else if (item.getItemId() == R.id.action_save) {

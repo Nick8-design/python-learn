@@ -27,6 +27,7 @@ import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.setpylan;
 
 import java.io.BufferedReader;
@@ -198,14 +199,13 @@ public class CompilerPy extends AppCompatActivity {
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
-
+        popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
 
-
-                    Toast.makeText(getApplicationContext(), "Settings clicked", Toast.LENGTH_SHORT).show();
+                    BrightnessUtil.showBrightnessDialog(CompilerPy.this);
                     return true;
                 } else if (item.getItemId() == R.id.action_save) {
                     if (!CodeArea.getText().toString().trim().isEmpty()) {

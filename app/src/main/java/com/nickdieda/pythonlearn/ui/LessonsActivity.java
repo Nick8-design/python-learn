@@ -999,7 +999,7 @@ fu_n.setOnClickListener(new View.OnClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
-                    Toast.makeText(getApplicationContext(), "Brightness clicked", Toast.LENGTH_SHORT).show();
+
                     BrightnessUtil.showBrightnessDialog(LessonsActivity.this);  // 'this' refers to the current Activity context
 
                     return true;

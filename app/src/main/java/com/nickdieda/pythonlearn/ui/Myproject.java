@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.BrightnessUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -247,7 +248,7 @@ public class Myproject extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
-                    Toast.makeText(getApplicationContext(), "Settings clicked", Toast.LENGTH_SHORT).show();
+                    BrightnessUtil.showBrightnessDialog(Myproject.this);
                     return true;
 
                 } else {

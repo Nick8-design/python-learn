@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.ColorUtil;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -321,7 +322,7 @@ private int activityid;
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getItemId() == R.id.action_settings) {
-                    Toast.makeText(getApplicationContext(), "Settings clicked", Toast.LENGTH_SHORT).show();
+                    BrightnessUtil.showBrightnessDialog(MainActivity.this);
                     return true;
 
                 } else {
