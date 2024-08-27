@@ -203,9 +203,9 @@ private int activityid;
                 image.setImageResource(imageResource1);
                 percentage.setText(getPercentageText(i));
                 percentag.setText(getPercentageText(i));
-                percentage.setTextColor(getResources().getColor(colorValue1));
+               percentage.setTextColor(getResources().getColor(colorValue1));
 
-                percentag.setTextColor(getResources().getColor(colorValue1));
+               percentag.setTextColor(getResources().getColor(colorValue1));
                 octColor(colorValue1);
 
                 // Save state to SharedPreferences
