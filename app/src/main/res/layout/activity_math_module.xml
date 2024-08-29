@@ -354,6 +354,19 @@
         android:layout_margin="5dp"
 
         android:padding="4dp" />
+        <TextView
+            android:id="@+id/pd88"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try it out"
+            android:textColor="@color/white"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:background="@drawable/rounddark"
+            android:layout_gravity="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
     </LinearLayout>
 
     <TextView
@@ -378,6 +391,19 @@
         android:layout_margin="5dp"
 
         android:padding="4dp" />
+        <TextView
+            android:id="@+id/pd99"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try it out"
+            android:textColor="@color/white"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:background="@drawable/rounddark"
+            android:layout_gravity="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
     </LinearLayout>
 
 
