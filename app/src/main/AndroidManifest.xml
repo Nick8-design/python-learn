@@ -17,6 +17,9 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.modules.DateTimeModule"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.modules.Rand_ompy"
             android:exported="false" />
         <activity

@@ -51,6 +51,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
+import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
@@ -75,7 +76,7 @@ public class LessonsActivity extends AppCompatActivity {
     private LinearLayout containers,lists,tuples,set_s,dictionary,classO;
     private LinearLayout introfun,fu_n,lambdaf,pass_s,if_else,ifshort,forpy,whilepy,conbrk,inherit,varscope;
     private LinearLayout fomstrings,tryexcept,pyiter ,inputm;
-    private LinearLayout     intmodule,maolib;
+    private LinearLayout     intmodule,maolib,randomlib,datetime;
 
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
@@ -84,7 +85,7 @@ public class LessonsActivity extends AppCompatActivity {
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
     ProgressBar prointrofun,profun,prolambdaf,propass,proclassO,protryexc;
     ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring,proinputm,propyiter;
-    ProgressBar   prointmodule,promathmod;
+    ProgressBar   prointmodule,promathmod,prorandomlib;
 
 
 
@@ -169,12 +170,19 @@ public class LessonsActivity extends AppCompatActivity {
         int pya7= sharedPreferences.getInt("inputm", 0);
         int mod1= sharedPreferences.getInt("intromodule", 0);
         int mod2= sharedPreferences.getInt("mathmodule", 0);
+        int mod3= sharedPreferences.getInt("randmodule", 0);
+        int mod4= sharedPreferences.getInt("dateT", 0);
 
-      //  Toast.makeText(getApplicationContext(),"intro = "+fint,Toast.LENGTH_SHORT).show();
+
+
+
+
+
+        //  Toast.makeText(getApplicationContext(),"intro = "+mod3,Toast.LENGTH_SHORT).show();
          totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
-      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1+mod2;
+      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1+mod2+mod3+mod4;
 
-        mark=(totalProgress*10)/184;
+        mark=(totalProgress*10)/194;
         progressindicator();
 
 
@@ -186,7 +194,7 @@ public class LessonsActivity extends AppCompatActivity {
 
         prological = findViewById(R.id.prological);
         conbrk = findViewById(R.id.conbrk);
-        menuButton = findViewById(R.id.menu_button);
+        menuButton = findViewById(R.id.menu_button);datetime
         prostring = findViewById(R.id.prostring);
         prooperintro=findViewById(R.id.prooperintro);
         logical=findViewById(R.id.logical);
@@ -216,6 +224,7 @@ public class LessonsActivity extends AppCompatActivity {
         protypecon=findViewById(R.id.protypecon);
         numb=findViewById(R.id.numb);
         t23=findViewById(R.id.t23);
+        randomlib=findViewById(R.id.randomlib);
         prowhilepy=findViewById(R.id.prowhilepy);
         pronum=findViewById(R.id.pronum);
         pystrings=findViewById(R.id.pystrings);
@@ -246,6 +255,7 @@ public class LessonsActivity extends AppCompatActivity {
         provarscope=findViewById(R.id.provarscope);
         propass=findViewById(R.id.propass);
         pyinstall=findViewById(R.id.pyinstall);
+        prorandomlib=findViewById(R.id.prorandomlib);
         prointrofun=findViewById(R.id.proinfun);
         proinst=findViewById(R.id.proinst);
         if_else=findViewById(R.id.if_else);
@@ -384,6 +394,23 @@ public class LessonsActivity extends AppCompatActivity {
                 propyiter.setProgress(probar(pya6,p6));
         prointmodule.setProgress(probar(mod1,mo1));
         promathmod.setProgress(probar(mod2,mo2));
+        prorandomlib.setProgress(probar(mod3,mo3));
+
+
+
+        randomlib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t83.getText().toString();
+                String strand="3/6";
+                String tno="Eight";
+                int idl=46;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), Rand_ompy.class);
+
+                startActivity(insta);
+            }
+        });
 
         maolib.setOnClickListener(new View.OnClickListener() {
             @Override

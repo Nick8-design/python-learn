@@ -296,7 +296,21 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Which function is used to calculate the square root of a number?", Arrays.asList("sqrt()", "square()", "root()"), 0));
             questionList.add(new Question("What does the math.ceil() function do?", Arrays.asList("Rounds a number up to the nearest integer", "Rounds a number down to the nearest integer", "Finds the absolute value of a number"), 0));
             questionList.add(new Question("Which of the following functions returns the smallest of the input values?", Arrays.asList("max()", "min()", "smallest()"), 1));
+        } else if (activityid==46) {
+            questionList.add(new Question("How do you import the random module in Python?", Arrays.asList("import random", "import Random", "import rnd"), 0));
+            questionList.add(new Question("Which function is used to generate a random integer between two values?", Arrays.asList("random.randint()", "random.choice()", "random.range()"), 0));
+            questionList.add(new Question("What does the random.choice() function do?", Arrays.asList("Selects a random item from a list", "Generates a random float number", "Returns a random integer"), 0));
+            questionList.add(new Question("Which function shuffles a list in place?", Arrays.asList("random.shuffle()", "random.sample()", "random.mix()"), 0));
+            questionList.add(new Question("How do you generate a random float number between 0 and 1?", Arrays.asList("random.random()", "random.uniform()", "random.range()"), 0));
+        } else if (activityid==47) {
+            questionList.add(new Question("Which function returns a random element from a specified range?", Arrays.asList("random.randrange()", "random.random()", "random.randint()"), 0));
+            questionList.add(new Question("What does the random.seed() function do?", Arrays.asList("Initializes the random number generator", "Generates a random seed", "Resets the random number generator"), 0));
+            questionList.add(new Question("How do you generate a random float within a specified range?", Arrays.asList("random.uniform()", "random.random()", "random.choice()"), 0));
+            questionList.add(new Question("Which function is used to select a random sample from a list?", Arrays.asList("random.sample()", "random.choice()", "random.shuffle()"), 0));
+            questionList.add(new Question("What does the random.getrandbits() function return?", Arrays.asList("A random integer with a specified number of bits", "A random float number", "A random binary string"), 0));
         }
+
+
 
 
 
@@ -470,6 +484,10 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("intromodule",correctAnswers);
         }  else if (activityid==45) {
             savedir("mathmodule",correctAnswers);
+        }  else if (activityid==46) {
+            savedir("randmodule",correctAnswers);
+        }  else if (activityid==47) {
+            savedir("dateT",correctAnswers);
         }
 
 
