@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.mathModule">
+    tools:context=".Lessons.modules.MathModule">
 
     <include layout="@layout/return_topbar" />
 
@@ -53,18 +53,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorImportMath"
+                    android:id="@+id/pd1"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''# Importing the math module\nimport math'''
+                    android:layout_height="50dp"
+                    app:text='# Importing the math module\nimport math'
                 android:layout_margin="5dp"
-                android:background="#EFEFEF"
                 android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -87,18 +100,32 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorSqrt"
+                    android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''import math\nprint(math.sqrt(16))  # Output: 4.0'''
+                    android:layout_height="50dp"
+                    app:text='import math\nprint(math.sqrt(16))  # Output: 4.0'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -111,18 +138,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorPow"
+                    android:id="@+id/pd3"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''import math\nprint(math.pow(2, 3))  # Output: 8.0'''
+                    android:layout_height="50dp"
+                    app:text='import math\nprint(math.pow(2, 3))  # Output: 8.0'
                 android:layout_margin="5dp"
-                android:background="#EFEFEF"
+
                 android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -135,18 +175,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorPi"
+                    android:id="@+id/pd4"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''import math\nprint(math.pi)  # Output: 3.141592653589793'''
+                    android:layout_height="50dp"
+                    app:text='import math\nprint(math.pi)  # Output: 3.141592653589793'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -159,18 +212,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorSin"
+                    android:id="@+id/pd5"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''import math\nprint(math.sin(math.pi/2))  # Output: 1.0'''
+                    android:layout_height="50dp"
+                    app:text='import math\nprint(math.sin(math.pi/2))  # Output: 1.0'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -201,18 +267,32 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorAbs"
+                    android:id="@+id/pd6"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''print(abs(-5))  # Output: 5'''
+                    android:layout_height="50dp"
+                    app:text='print(abs(-5))  # Output: 5'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -225,15 +305,105 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/codeEditorRound"
+                    android:id="@+id/pd7"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    app:text='''print(round(3.14159, 2))  # Output: 3.14'''
+                    android:layout_height="50dp"
+                    app:text='print(round(3.14159, 2))  # Output: 3.14'
                 android:layout_margin="5dp"
-                android:background="#EFEFEF"
-                android:padding="4dp
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd77"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. max(x1, x2, ...): Returns the largest of the input values."
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_margin="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <io.github.rosemoe.sora.widget.CodeEditor
+            android:id="@+id/pd8"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:text='print(max(3, 7, 2, 5))  # Output: 7'
+        android:layout_margin="5dp"
+
+        android:padding="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. min(x1, x2, ...): Returns the smallest of the input values."
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_margin="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <io.github.rosemoe.sora.widget.CodeEditor
+            android:id="@+id/pd9"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:text='print(min(3, 7, 2, 5))  # Output: 2'
+        android:layout_margin="5dp"
+
+        android:padding="4dp" />
+    </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="math module has many function ,the above once are the common once.\nTo check function in math module use dir().\n\n\t\timport math\n\t\tprint(dir(math))"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>
+    </LinearLayout>
