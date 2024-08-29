@@ -291,7 +291,13 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Which keyword is used to import a module?", Arrays.asList("include", "import"), 1));
             questionList.add(new Question("How do you import only the sqrt function from the math module?", Arrays.asList("from math import sqrt", "import math.sqrt"), 0));
             questionList.add(new Question("Which function lists all functions and variables in a module?", Arrays.asList("list()", "dir()"), 1));
+        } else if (activityid==45) {
+            questionList.add(new Question("How do you import the math module in Python?", Arrays.asList("import math", "import Math", "import mathematics"), 0));
+            questionList.add(new Question("Which function is used to calculate the square root of a number?", Arrays.asList("sqrt()", "square()", "root()"), 0));
+            questionList.add(new Question("What does the math.ceil() function do?", Arrays.asList("Rounds a number up to the nearest integer", "Rounds a number down to the nearest integer", "Finds the absolute value of a number"), 0));
+            questionList.add(new Question("Which of the following functions returns the smallest of the input values?", Arrays.asList("max()", "min()", "smallest()"), 1));
         }
+
 
 
 
@@ -462,6 +468,8 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("inputm",correctAnswers);
         }  else if (activityid==44) {
             savedir("intromodule",correctAnswers);
+        }  else if (activityid==45) {
+            savedir("mathmodule",correctAnswers);
         }
 
 

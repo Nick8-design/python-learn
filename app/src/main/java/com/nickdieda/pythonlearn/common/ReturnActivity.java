@@ -37,6 +37,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
+import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
@@ -144,6 +145,8 @@ public class ReturnActivity {
             bk = new Intent(act, UserInput.class);
         } else if (activityid==44) {
             bk = new Intent(act, IntroModule.class);
+        } else if (activityid==45) {
+            bk = new Intent(act, MathModule.class);
         }
 
 

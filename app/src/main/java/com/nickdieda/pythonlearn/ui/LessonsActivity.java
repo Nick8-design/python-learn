@@ -50,6 +50,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
+import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
@@ -74,7 +75,7 @@ public class LessonsActivity extends AppCompatActivity {
     private LinearLayout containers,lists,tuples,set_s,dictionary,classO;
     private LinearLayout introfun,fu_n,lambdaf,pass_s,if_else,ifshort,forpy,whilepy,conbrk,inherit,varscope;
     private LinearLayout fomstrings,tryexcept,pyiter ,inputm;
-    private LinearLayout     intmodule;
+    private LinearLayout     intmodule,maolib;
 
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
@@ -83,7 +84,7 @@ public class LessonsActivity extends AppCompatActivity {
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
     ProgressBar prointrofun,profun,prolambdaf,propass,proclassO,protryexc;
     ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring,proinputm,propyiter;
-    ProgressBar   prointmodule;
+    ProgressBar   prointmodule,promathmod;
 
 
 
@@ -167,13 +168,13 @@ public class LessonsActivity extends AppCompatActivity {
         int pya6= sharedPreferences.getInt("interator", 0);
         int pya7= sharedPreferences.getInt("inputm", 0);
         int mod1= sharedPreferences.getInt("intromodule", 0);
-
+        int mod2= sharedPreferences.getInt("mathmodule", 0);
 
       //  Toast.makeText(getApplicationContext(),"intro = "+fint,Toast.LENGTH_SHORT).show();
          totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
-      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1;
+      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1+mod2;
 
-        mark=(totalProgress*10)/180;
+        mark=(totalProgress*10)/184;
         progressindicator();
 
 
@@ -203,6 +204,7 @@ public class LessonsActivity extends AppCompatActivity {
         probolean=findViewById(R.id.probolean);
         procom=findViewById(R.id.procom);
         fomstrings=findViewById(R.id.fomstrings);
+        maolib=findViewById(R.id.maolib);
         compa=findViewById(R.id.compa);
         tryexcept=findViewById(R.id.tryexcept);
         proclassO=findViewById(R.id.proclassO);
@@ -287,7 +289,8 @@ public class LessonsActivity extends AppCompatActivity {
         t4=findViewById(R.id.t4);
         intmodule=findViewById(R.id.intmodule);
         proconbrk=findViewById(R.id.proconbrk);
-                t5=findViewById(R.id.t5);
+        promathmod=findViewById(R.id.promathmod);
+        t5=findViewById(R.id.t5);
                 t6=findViewById(R.id.t6);
                 t7=findViewById(R.id.t7);
                 prointmodule=findViewById(R.id.prointmodule);
@@ -380,9 +383,21 @@ public class LessonsActivity extends AppCompatActivity {
         proinputm.setProgress(probar(pya7,p7));
                 propyiter.setProgress(probar(pya6,p6));
         prointmodule.setProgress(probar(mod1,mo1));
+        promathmod.setProgress(probar(mod2,mo2));
 
+        maolib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t82.getText().toString();
+                String strand="2/6";
+                String tno="Eight";
+                int idl=45;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), MathModule.class);
 
-
+                startActivity(insta);
+            }
+        });
         intmodule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
