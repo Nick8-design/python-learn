@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.modules.ActivityJson">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/intrott"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Introduction to JSON in Python"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JSON (JavaScript Object Notation) is a popular data format used for exchanging data between a client and a server. In Python, the 'json' module provides an easy way to work with JSON data."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JSON is often used because of its simplicity and ease of use. It is lightweight, easy to read and write, and can be used with many programming languages, including Python."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Converting JSON to a Python Dictionary"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can convert JSON data to a Python dictionary using the 'json.loads()' function."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Example:\nimport json\ndata = '{&#34;name&#34;: &#34;John&#34;, &#34;age&#34;: 30}'\nresult = json.loads(data)\nprint(result)"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_margin="4dp"
+                android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This will convert the JSON string into a Python dictionary:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:text="{'name': 'John', 'age': 30}"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Converting a Python Dictionary to JSON"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can convert a Python dictionary to a JSON string using the 'json.dumps()' function."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Example:\nimport json\npython_dict = {'name': 'John', 'age': 30}\njson_string = json.dumps(python_dict)\nprint(json_string)"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This will convert the Python dictionary into a JSON string:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:text='{"name": "John", "age": 30}'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/pd55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Formatting JSON Data"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can format JSON data with indentations for better readability using the 'indent' parameter in the 'json.dumps()' function."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Example:\nimport json\npython_dict = {'name': 'John', 'age': 30}\njson_string = json.dumps(python_dict, indent=4)\nprint(json_string)"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saving JSON Data to a File"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can save JSON data to a file using the 'json.dump()' function."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Example:\nimport json\npython_dict = {'name': 'John', 'age': 30}\nwith open('data.json', 'w') as file:\n    json.dump(python_dict, file)"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using JSON in Real-World Applications"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JSON is widely used in web development, data storage, APIs, and more."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

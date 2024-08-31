@@ -125,7 +125,28 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
 
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="to get the maximum and minmum year ever use datetime.MAXIMUM/datetime.MINMUM"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -172,6 +193,313 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="### Date and Time in Python"
+                android:textColor="@color/alice"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Python's `datetime` module is used to work with dates and times. It provides classes for manipulating dates and times in both simple and complex ways."
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#### Importing the datetime module"
+                android:textColor="@color/alice"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="```python\nimport datetime\n```"
+                android:textColor="@color/alice"
+
+                android:textSize="14sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#### Getting the current date and time"
+                android:textColor="@color/alice"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You can get the current date and time using the `datetime.datetime.now()` method."
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="```python\ndate_time_now = datetime.datetime.now()\nprint(date_time_now)\n```"
+                android:textColor="@color/maziwa"
+
+                android:textSize="14sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#### Formatting Dates and Times"
+                android:textColor="@color/alice"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You can format dates and times using the `strftime()` method, which converts a `datetime` object to a string."
+                 android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="```python\ndate_time_str = date_time_now.strftime('%Y-%m-%d %H:%M:%S')\nprint(date_time_str)\n```"
+                android:textColor="@color/maziwa"
+
+                android:textSize="14sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#### Common Date and Time Formatting Directives"
+                android:textColor="@color/alice"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Here are some commonly used directives for formatting dates and times with `strftime()`:"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%Y** - Year with century as a decimal number (e.g., 2023)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%m** - Month as a zero-padded decimal number (e.g., 01 for January)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%d** - Day of the month as a zero-padded decimal number (e.g., 05)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%H** - Hour (24-hour clock) as a zero-padded decimal number (e.g., 14)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%M** - Minute as a zero-padded decimal number (e.g., 30)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%S** - Second as a zero-padded decimal number (e.g., 59)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%p** - Locale’s equivalent of either AM or PM"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%I** - Hour (12-hour clock) as a zero-padded decimal number (e.g., 02)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%j** - Day of the year as a zero-padded decimal number (e.g., 365)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%U** - Week number of the year (Sunday as the first day of the week)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%W** - Week number of the year (Monday as the first day of the week)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%a** - Abbreviated weekday name (e.g., Mon)"
+                android:textColor="@color/coco"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%A** - Full weekday name (e.g., Monday)"
+                android:textColor="@color/maziwa"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%b** - Abbreviated month name (e.g., Jan)"
+                android:textColor="@color/coco"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%B** - Full month name (e.g., January)"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%c** - Locale’s appropriate date and time representation"
+                android:textColor="@color/coco"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%x** - Locale’s appropriate date representation"
+                android:textColor="@color/alice"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%X** - Locale’s appropriate time representation"
+                android:textColor="@color/coco"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* **%%** - A literal '%' character"
+                android:textColor="@color/coco"
+                android:textSize="16sp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="These directives give you flexibility in formatting dates and times to match the specific needs of your application."
+                android:textColor="@color/coco"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+
 
             <TextView
                 android:layout_width="match_parent"

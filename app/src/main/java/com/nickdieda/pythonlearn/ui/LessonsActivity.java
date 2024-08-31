@@ -49,6 +49,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.modules.DateTimeModule;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
 import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
@@ -85,7 +86,7 @@ public class LessonsActivity extends AppCompatActivity {
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
     ProgressBar prointrofun,profun,prolambdaf,propass,proclassO,protryexc;
     ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring,proinputm,propyiter;
-    ProgressBar   prointmodule,promathmod,prorandomlib;
+    ProgressBar   prointmodule,promathmod,prorandomlib,prodatetime;
 
 
 
@@ -194,7 +195,8 @@ public class LessonsActivity extends AppCompatActivity {
 
         prological = findViewById(R.id.prological);
         conbrk = findViewById(R.id.conbrk);
-        menuButton = findViewById(R.id.menu_button);datetime
+        menuButton = findViewById(R.id.menu_button);
+        datetime = findViewById(R.id.datetime);
         prostring = findViewById(R.id.prostring);
         prooperintro=findViewById(R.id.prooperintro);
         logical=findViewById(R.id.logical);
@@ -271,6 +273,7 @@ public class LessonsActivity extends AppCompatActivity {
         variable=findViewById(R.id.variable);
         provar=findViewById(R.id.provar);
         nummethods=findViewById(R.id.nummethods);
+        prodatetime=findViewById(R.id.prodatetime);
         identity=findViewById(R.id.identity);
         containers=findViewById(R.id.containers);
         pyintro=findViewById(R.id.pyintro);
@@ -395,8 +398,28 @@ public class LessonsActivity extends AppCompatActivity {
         prointmodule.setProgress(probar(mod1,mo1));
         promathmod.setProgress(probar(mod2,mo2));
         prorandomlib.setProgress(probar(mod3,mo3));
+        prodatetime.setProgress(probar(mod4,mo4));
 
 
+
+
+
+
+
+
+        datetime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t84.getText().toString();
+                String strand="4/6";
+                String tno="Eight";
+                int idl=47;
+                learning(topic,strand,tno,idl);
+                    Intent insta=new Intent(getApplicationContext(), DateTimeModule.class);
+
+                startActivity(insta);
+            }
+        });
 
         randomlib.setOnClickListener(new View.OnClickListener() {
             @Override

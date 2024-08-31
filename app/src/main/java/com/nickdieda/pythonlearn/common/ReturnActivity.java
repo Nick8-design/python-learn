@@ -36,6 +36,7 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.modules.DateTimeModule;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
 import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
@@ -150,6 +151,8 @@ public class ReturnActivity {
             bk = new Intent(act, MathModule.class);
         } else if (activityid==46) {
             bk = new Intent(act, Rand_ompy.class);
+        } else if (activityid==47) {
+            bk = new Intent(act, DateTimeModule.class);
         }
 
 

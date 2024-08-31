@@ -303,12 +303,13 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Which function shuffles a list in place?", Arrays.asList("random.shuffle()", "random.sample()", "random.mix()"), 0));
             questionList.add(new Question("How do you generate a random float number between 0 and 1?", Arrays.asList("random.random()", "random.uniform()", "random.range()"), 0));
         } else if (activityid==47) {
-            questionList.add(new Question("Which function returns a random element from a specified range?", Arrays.asList("random.randrange()", "random.random()", "random.randint()"), 0));
-            questionList.add(new Question("What does the random.seed() function do?", Arrays.asList("Initializes the random number generator", "Generates a random seed", "Resets the random number generator"), 0));
-            questionList.add(new Question("How do you generate a random float within a specified range?", Arrays.asList("random.uniform()", "random.random()", "random.choice()"), 0));
-            questionList.add(new Question("Which function is used to select a random sample from a list?", Arrays.asList("random.sample()", "random.choice()", "random.shuffle()"), 0));
-            questionList.add(new Question("What does the random.getrandbits() function return?", Arrays.asList("A random integer with a specified number of bits", "A random float number", "A random binary string"), 0));
+            questionList.add(new Question("Which module in Python is used to work with dates and times?", Arrays.asList("datetime", "time", "calendar"), 0));
+            questionList.add(new Question("How do you get the current date and time in Python?", Arrays.asList("datetime.datetime.now()", "time.time()", "datetime.now()"), 0));
+            questionList.add(new Question("Which function is used to get the current date in Python?", Arrays.asList("datetime.date.today()", "datetime.now()", "date.today()"), 0));
+            questionList.add(new Question("How do you format a date object into a string?", Arrays.asList("strftime()", "format()", "str()"), 0));
+            questionList.add(new Question("Which method would you use to add or subtract time from a date object?", Arrays.asList("timedelta", "timeadd", "timediff"), 0));
         }
+
 
 
 
