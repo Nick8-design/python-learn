@@ -10,13 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 
-public class ActivityJson extends AppCompatActivity {
+public class REactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_json);
+        setContentView(R.layout.activity_reactivity);
 
     }
 }
