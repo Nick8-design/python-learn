@@ -17,6 +17,9 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.pyfile.RFile"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.pyfile.IntFile"
             android:exported="false" />
         <activity

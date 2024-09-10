@@ -10,13 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 
-public class IntFile extends AppCompatActivity {
+public class RFile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_int_file);
+        setContentView(R.layout.activity_rfile);
 
     }
 }
