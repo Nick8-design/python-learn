@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.pyfile.WFile">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/writingtt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Writing Files in Python"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python makes it easy to write to a file using built-in functions. Writing files involves opening the file in the correct mode and using functions to write data into it."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opening a File for Writing"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To write to a file, you need to open it in a mode that allows writing. This can be done using the open() function, passing 'w', 'a', or 'x' as the second argument:\n"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="open('filename', 'w'): Opens the file for writing. If the file exists, its content is overwritten.\nopen('filename', 'a'): Opens the file for appending. Data is added to the end of the file.\nopen('filename', 'x'): Creates a new file for writing. If the file exists, an error is raised."
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Writing to a File"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Once a file is opened in write mode, you can use the write() or writelines() methods to insert data into the file."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Examples:"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/writeFileCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='file = open("sample.txt", "w")\nfile.write("This is a sample file.")\nfile.close()'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/writeFileExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of writing to a file"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appending to a File"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To add content to the end of an existing file, you can use 'a' mode in the open() function. This will preserve the original content and add the new data."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/appendFileCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='file = open("sample.txt", "a")\nfile.write("\\nAppended text.")\nfile.close()'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/appendFileExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of appending to a file"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Writelines() Method"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The writelines() method allows you to write multiple lines at once, provided they are passed as a list. Here's an example:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/writelinesCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='lines = ["Line 1", "Line 2", "Line 3"]\nfile = open("sample.txt", "w")\nfile.writelines(lines)\nfile.close()'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/writelinesExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of writelines()"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Closing a File"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="It is important to close the file after writing to it. Closing a file ensures that any changes are saved and releases the system resources associated with the file."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/closeFileCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='file = open("sample.txt", "w")\nfile.write("This is a sample.")\nfile.close()'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/closeFileExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of closing a file"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

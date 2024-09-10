@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.pyfun.DeleteFiles">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/deletett"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deleting Files in Python"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In Python, you can delete files using the `os` module. This module provides a straightforward method for removing files from the file system."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using the os.remove() Method"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The `os.remove()` function is used to delete a file. To use this method, you need to pass the file path as an argument."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Example:"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp" />
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/deleteFileCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='import os\n\nos.remove("sample.txt")'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+
+            </LinearLayout>
+
+                <TextView
+                    android:id="@+id/deleteFileExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of deleting a file"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Handling File Deletion Errors"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="When attempting to delete a file, it's a good practice to handle potential errors, such as the file not existing. This can be done using a try-except block."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/handleDeleteErrorCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='import os\n\ntry:\n    os.remove("sample.txt")\nexcept FileNotFoundError:\n    print("File not found.")'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/handleDeleteErrorExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of handling deletion errors"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deleting Multiple Files"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To delete multiple files, you can use a loop to iterate through a list of file paths and apply the `os.remove()` function to each file."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/deleteMultipleFilesCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:text='import os\n\nfiles = ["file1.txt", "file2.txt", "file3.txt"]\nfor file in files:\n    os.remove(file)'
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/deleteMultipleFilesExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example of deleting multiple files"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
