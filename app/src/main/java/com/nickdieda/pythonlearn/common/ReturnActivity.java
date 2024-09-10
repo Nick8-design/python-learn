@@ -36,9 +36,11 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.modules.ActivityJson;
 import com.nickdieda.pythonlearn.Lessons.modules.DateTimeModule;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
+import com.nickdieda.pythonlearn.Lessons.modules.REactivity;
 import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
@@ -153,6 +155,10 @@ public class ReturnActivity {
             bk = new Intent(act, Rand_ompy.class);
         } else if (activityid==47) {
             bk = new Intent(act, DateTimeModule.class);
+        } else if (activityid==48) {
+            bk = new Intent(act, ActivityJson.class);
+        } else if (activityid==49) {
+            bk = new Intent(act, REactivity.class);
         }
 
 

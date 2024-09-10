@@ -28,6 +28,8 @@ import com.chaquo.python.android.AndroidPlatform;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
+import com.nickdieda.pythonlearn.common.CodeLang;
+import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.common.setpylan;
 
 import java.io.BufferedReader;
@@ -44,11 +46,10 @@ public class CompilerPy extends AppCompatActivity {
     TextView txtv;
     LinearLayout homefra, lessonfra, button, runb;
     private ImageButton menuButton;
-    ImageView homei, lessoni, compi, swi_img, uswi, cont_img, image;
+    ImageView homei, lessoni, returnback,clear;
     TextView hometext, lessontext, percentage;
     private CodeEditor CodeArea;
-    TextView clear;
-    // private EditText CodeArea;
+
     private Button runButton;
     String script = "#Your Python code goes here";
     String outgo;
@@ -64,8 +65,10 @@ public class CompilerPy extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
         String savedCode = sharedPreferences.getString("code", ""); // Default value if not found
 
+       int activityid= sharedPreferences.getInt("idlearn", 0);
+
         if (savedCode.isEmpty()) {
-            CodeArea.setText("#delete..");
+            CodeArea.setText("#welcome to python");
         } else {
 
             CodeArea.setText(savedCode);
@@ -90,6 +93,7 @@ public class CompilerPy extends AppCompatActivity {
         menuButton = findViewById(R.id.menu_button);
         homefra = findViewById(R.id.home_fra);
         lessonfra = findViewById(R.id.lesson_fra);
+        returnback=findViewById(R.id.returnback);
 
 
         homefra = findViewById(R.id.home_fra);
@@ -126,9 +130,23 @@ public class CompilerPy extends AppCompatActivity {
 
         CodeArea.setTypefaceText(Typeface.MONOSPACE);
 
+     int retmain = getIntent().getIntExtra("mainid",0);
+        ReturnActivity rt=new ReturnActivity();
+returnback.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent bk;
+        if (retmain==8){
+            bk = new Intent(getApplicationContext(),MainActivity.class);
+        }else {
+            bk = rt.returnINT(getApplicationContext(), activityid);
+        }
+        startActivity(bk);
+    }
+});
 
-        setpylan pylang=new setpylan();
-        pylang.pyLang(getApplicationContext(),CodeArea);
+
+        CodeLang.pyLangstatic(getApplicationContext(),CodeArea);
         if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(this));
         }

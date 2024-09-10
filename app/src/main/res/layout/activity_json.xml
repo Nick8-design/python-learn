@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JSON (JavaScript Object Notation) is a popular data format used for exchanging data between a client and a server. In Python, the 'json' module provides an easy way to work with JSON data."
+                android:text="JSON (JavaScript Object Notation) is a popular data format used for exchanging data between a client and a server."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
@@ -43,10 +43,32 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="JSON is often used because of its simplicity and ease of use. It is lightweight, easy to read and write, and can be used with many programming languages, including Python."
+                android:text="JSON is often used because of its simplicity and ease of use. \nIt is lightweight, easy to read and write, and can be used with many programming languages, including Python."
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ddyn"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Example of JSON:\n\nimport json\n\ndata = '{&#34;name&#34;: &#34;Nick&#34;, &#34;age&#34;: 21}'\nprint(data)\nor\nresult = json.loads(data)\nprint(result)"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="4dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -66,28 +88,7 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ddyn"
-                    android:layout_gravity="center"
-                    android:layout_margin="4dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Example:\nimport json\ndata = '{&#34;name&#34;: &#34;John&#34;, &#34;age&#34;: 30}'\nresult = json.loads(data)\nprint(result)"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:layout_margin="4dp"
-                android:layout_gravity="center" />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"

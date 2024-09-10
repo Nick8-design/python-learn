@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView homei, lessoni, compi, swi_img, uswi, cont_img, image;
     TextView hometext, lessontext, percentage, percentag,title,covpas,topicname,strand,topicno,ts,tn;
     private ImageButton menuButton;
+    private int mainactId=8;
    private int i;
 private int activityid;
     private static final int REQUEST_WRITE_STORAGE = 112;
@@ -126,6 +127,7 @@ private int activityid;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
+                intent.putExtra("mainid",mainactId);
                 startActivity(intent);
             }
         });
@@ -215,11 +217,6 @@ private int activityid;
                 editor.putInt("colorValue", colorValue1);
                 editor.apply();
 
-              //  i++;
-          //  }
-
-
-     //   });
 
 
         continuel.setOnClickListener(new View.OnClickListener() {

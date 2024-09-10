@@ -308,7 +308,27 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("Which function is used to get the current date in Python?", Arrays.asList("datetime.date.today()", "datetime.now()", "date.today()"), 0));
             questionList.add(new Question("How do you format a date object into a string?", Arrays.asList("strftime()", "format()", "str()"), 0));
             questionList.add(new Question("Which method would you use to add or subtract time from a date object?", Arrays.asList("timedelta", "timeadd", "timediff"), 0));
+        } else if (activityid==48) {
+            questionList.add(new Question("Which module in Python is used to work with JSON data?", Arrays.asList("json", "pickle", "csv"), 0));
+            questionList.add(new Question("Which function is used to parse a JSON string into a Python dictionary?", Arrays.asList("json.loads()", "json.dumps()", "json.load()"), 0));
+            questionList.add(new Question("Which method is used to convert a Python object into a JSON string?", Arrays.asList("json.dumps()", "json.loads()", "json.dump()"), 0));
+            questionList.add(new Question("How can you write JSON data to a file in Python?", Arrays.asList("json.dump()", "json.dumps()", "json.write()"), 0));
+        } else if (activityid==49) {
+            questionList.add(new Question("Which module in Python is used for working with regular expressions?", Arrays.asList("re", "regex", "match"), 0));
+            questionList.add(new Question("Which function is used to search for a pattern in a string in Python?", Arrays.asList("re.search()", "re.match()", "re.find()"), 0));
+            questionList.add(new Question("What does the symbol '^' represent in a regular expression?", Arrays.asList("Start of string", "End of string", "Any character"), 0));
+            questionList.add(new Question("Which method is used to find all occurrences of a pattern in a string?", Arrays.asList("re.findall()", "re.search()", "re.split()"), 0));
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -489,7 +509,17 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("randmodule",correctAnswers);
         }  else if (activityid==47) {
             savedir("dateT",correctAnswers);
+        }  else if (activityid==48) {
+            savedir("jsonn",correctAnswers);
+        }  else if (activityid==49) {
+            savedir("repy",correctAnswers);
+        } else if (activityid==50) {
+            questionList.add(new Question("Which function is used to open a file in Python?", Arrays.asList("open()", "read()", "write()"), 0));
+            questionList.add(new Question("Which mode is used to open a file for reading in Python?", Arrays.asList("'r'", "'w'", "'a'"), 0));
+            questionList.add(new Question("What is the correct way to close a file in Python?", Arrays.asList("file.close()", "close(file)", "file.read()"), 0));
+            questionList.add(new Question("Which method is used to read the entire contents of a file?", Arrays.asList("read()", "readline()", "readlines()"), 0));
         }
+
 
 
 

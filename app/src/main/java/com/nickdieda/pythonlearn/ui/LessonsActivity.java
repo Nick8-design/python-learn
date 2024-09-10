@@ -49,9 +49,11 @@ import com.nickdieda.pythonlearn.Lessons.matopera.IdentityOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.IntOpera;
 import com.nickdieda.pythonlearn.Lessons.matopera.LogOp;
 import com.nickdieda.pythonlearn.Lessons.matopera.MemberShip;
+import com.nickdieda.pythonlearn.Lessons.modules.ActivityJson;
 import com.nickdieda.pythonlearn.Lessons.modules.DateTimeModule;
 import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
+import com.nickdieda.pythonlearn.Lessons.modules.REactivity;
 import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
@@ -77,7 +79,7 @@ public class LessonsActivity extends AppCompatActivity {
     private LinearLayout containers,lists,tuples,set_s,dictionary,classO;
     private LinearLayout introfun,fu_n,lambdaf,pass_s,if_else,ifshort,forpy,whilepy,conbrk,inherit,varscope;
     private LinearLayout fomstrings,tryexcept,pyiter ,inputm;
-    private LinearLayout     intmodule,maolib,randomlib,datetime;
+    private LinearLayout     intmodule,maolib,randomlib,datetime,jsonn,repy;
 
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
@@ -86,7 +88,7 @@ public class LessonsActivity extends AppCompatActivity {
     ProgressBar procontainers,prolists,protuple,prosets,prodictionary;
     ProgressBar prointrofun,profun,prolambdaf,propass,proclassO,protryexc;
     ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring,proinputm,propyiter;
-    ProgressBar   prointmodule,promathmod,prorandomlib,prodatetime;
+    ProgressBar   prointmodule,promathmod,prorandomlib,prodatetime,projson,prorepy;
 
 
 
@@ -173,6 +175,8 @@ public class LessonsActivity extends AppCompatActivity {
         int mod2= sharedPreferences.getInt("mathmodule", 0);
         int mod3= sharedPreferences.getInt("randmodule", 0);
         int mod4= sharedPreferences.getInt("dateT", 0);
+        int mod5= sharedPreferences.getInt("jsonn", 0);
+        int mod6= sharedPreferences.getInt("repy", 0);
 
 
 
@@ -181,9 +185,9 @@ public class LessonsActivity extends AppCompatActivity {
 
         //  Toast.makeText(getApplicationContext(),"intro = "+mod3,Toast.LENGTH_SHORT).show();
          totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
-      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1+mod2+mod3+mod4;
+      totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1+mod2+mod3+mod4+mod5+mod6;
 
-        mark=(totalProgress*10)/194;
+        mark=(totalProgress*10)/202;
         progressindicator();
 
 
@@ -236,6 +240,9 @@ public class LessonsActivity extends AppCompatActivity {
         members=findViewById(R.id.members);
         syntax=findViewById(R.id.syntax);
         lists=findViewById(R.id.lists);
+        projson=findViewById(R.id.projson);
+        jsonn=findViewById(R.id.jsonn);
+        repy=findViewById(R.id.repy);
         prolists=findViewById(R.id.prolists);
         statement=findViewById(R.id.statement);
         proinherit=findViewById(R.id.proinherit);
@@ -308,6 +315,7 @@ public class LessonsActivity extends AppCompatActivity {
                 t7=findViewById(R.id.t7);
                 prointmodule=findViewById(R.id.prointmodule);
                 t8=findViewById(R.id.t8);
+        prorepy=findViewById(R.id.prorepy);
         t21=findViewById(R.id.t21);
         t22=findViewById(R.id.t22);
         t24=findViewById(R.id.t24);
@@ -399,11 +407,40 @@ public class LessonsActivity extends AppCompatActivity {
         promathmod.setProgress(probar(mod2,mo2));
         prorandomlib.setProgress(probar(mod3,mo3));
         prodatetime.setProgress(probar(mod4,mo4));
+        projson.setProgress(probar(mod5,mo5));
+        prorepy.setProgress(probar(mod6,mo6));
 
 
 
 
 
+        repy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t86.getText().toString();
+                String strand="6/6";
+                String tno="Eight";
+                int idl=49;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), REactivity.class);
+
+                startActivity(insta);
+            }
+        });
+
+        jsonn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t85.getText().toString();
+                String strand="5/6";
+                String tno="Eight";
+                int idl=48;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), ActivityJson.class);
+
+                startActivity(insta);
+            }
+        });
 
 
 
