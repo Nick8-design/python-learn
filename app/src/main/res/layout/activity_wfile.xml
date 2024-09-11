@@ -103,24 +103,24 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/writeFileCode"
+                    android:id="@+id/pd1"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="70dp"
                     app:text='file = open("sample.txt", "w")\nfile.write("This is a sample file.")\nfile.close()'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/writeFileExample"
+                    android:id="@+id/pd11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of writing to a file"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
@@ -150,24 +150,24 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/appendFileCode"
+                    android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="70dp"
                     app:text='file = open("sample.txt", "a")\nfile.write("\\nAppended text.")\nfile.close()'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/appendFileExample"
+                    android:id="@+id/pd22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of appending to a file"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
@@ -197,14 +197,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="130dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/writelinesCode"
+                    android:id="@+id/pd3"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="90dp"
                     app:text='lines = ["Line 1", "Line 2", "Line 3"]\nfile = open("sample.txt", "w")\nfile.writelines(lines)\nfile.close()'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
@@ -214,7 +214,7 @@
                     android:id="@+id/writelinesExample"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of writelines()"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
@@ -244,14 +244,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="110dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/closeFileCode"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="70dp"
                     app:text='file = open("sample.txt", "w")\nfile.write("This is a sample.")\nfile.close()'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"

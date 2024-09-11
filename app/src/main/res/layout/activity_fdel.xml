@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/navyb"
-    tools:context=".Lessons.pyfun.DeleteFiles">
+    tools:context=".Lessons.pyfile.FDel">
 
     <include layout="@layout/return_topbar" />
 
@@ -58,37 +58,27 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
-            <LinearLayout
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/pd1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
-
+                android:layout_height="100dp"
+                app:text="Example:\nimport os\n\nos.remove('sample.txt')"
+                android:layout_margin="5dp"
+                android:background="#EFEFEF"
+                android:padding="4dp" />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Example:"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp" />
-
-                <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/deleteFileCode"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    app:text='import os\n\nos.remove("sample.txt")'
-                    android:layout_margin="5dp"
-                    android:background="#EFEFEF"
-                    android:padding="4dp" />
-
-
-            </LinearLayout>
-
-                <TextView
-                    android:id="@+id/deleteFileExample"
+                    android:id="@+id/pd11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of deleting a file"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
@@ -96,7 +86,7 @@
                     android:layout_gravity="end"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
-            </LinearLayout>
+        </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -118,24 +108,24 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/handleDeleteErrorCode"
+                    android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="160dp"
                     app:text='import os\n\ntry:\n    os.remove("sample.txt")\nexcept FileNotFoundError:\n    print("File not found.")'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/handleDeleteErrorExample"
+                    android:id="@+id/pd22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of handling deletion errors"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
@@ -170,7 +160,7 @@
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/deleteMultipleFilesCode"
+                    android:id="@+id/pd3"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     app:text='import os\n\nfiles = ["file1.txt", "file2.txt", "file3.txt"]\nfor file in files:\n    os.remove(file)'
@@ -179,10 +169,10 @@
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/deleteMultipleFilesExample"
+                    android:id="@+id/pd33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of deleting multiple files"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
