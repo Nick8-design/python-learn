@@ -67,12 +67,41 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Syntax:\nfile = open('filename', 'r')\n\n# Example:\nfile = open('example.txt', 'r')\ncontents = file.read()\nprint(contents)\nfile.close()"
+                    android:text="Syntax:\nfile = open('filename', 'r')\n\n\nExample:"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:text="file = open('example.txt', 'r')\ncontents = file.read()\nprint(contents)\nfile.close()"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -92,20 +121,43 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Example:\nfile = open('example.txt', 'r')\ncontents = file.read()\nprint(contents)\nfile.close()"
+                    android:text="Example:\n"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:text="file = open('example.txt', 'r')\ncontents = file.read()\nprint(contents)\nfile.close()"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -126,20 +178,43 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Example:\nfile = open('example.txt', 'r')\nfirst_line = file.readline()\nprint(first_line)\nfile.close()"
+                    android:text="Example:"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:text="file = open('example.txt', 'r')\nfirst_line = file.readline()\nprint(first_line)\nfile.close()"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -174,6 +249,34 @@
                     android:textSize="16sp"
                     android:layout_margin="4dp"
                     android:layout_gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:text="file = open('example.txt', 'r')\nfirst_line = file.readline()\nprint(first_line)\nfile.close()"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
+                <TextView
+                    android:id="@+id/pd44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try it out"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
