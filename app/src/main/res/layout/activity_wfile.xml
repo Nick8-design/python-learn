@@ -211,7 +211,7 @@
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/writelinesExample"
+                    android:id="@+id/pd33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"

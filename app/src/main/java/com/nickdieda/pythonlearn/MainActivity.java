@@ -60,6 +60,7 @@ private int activityid;
         hometext = findViewById(R.id.home_text);
         lessontext = findViewById(R.id.lesson_text);
         percentage = findViewById(R.id.percentage);
+        percentag=findViewById(R.id.percentag);
         image = findViewById(R.id.image);
         button = findViewById(R.id.swi);
         compiler_b = findViewById(R.id.compiler_btn);
@@ -72,7 +73,7 @@ private int activityid;
         ts=findViewById(R.id.ts);
         covpas=findViewById(R.id.covpas);
         tn=findViewById(R.id.tn);
-        percentag=findViewById(R.id.percentag);
+
 
 
         requestStoragePermission();
@@ -287,12 +288,21 @@ private int activityid;
 
     public void octColor(int color) {
         Drawable background = percentage.getBackground();
-        if (background instanceof VectorDrawable) {
+        Drawable backg = percentag.getBackground();
+        if (background instanceof VectorDrawable ) {
             ((VectorDrawable) background).setColorFilter(
                     getResources().getColor(color),
                     PorterDuff.Mode.SRC_IN
             );
         }
+        if (backg instanceof VectorDrawable ) {
+            ((VectorDrawable) backg).setColorFilter(
+                    getResources().getColor(color),
+                    PorterDuff.Mode.SRC_IN
+            );
+        }
+
+
     }
 
 

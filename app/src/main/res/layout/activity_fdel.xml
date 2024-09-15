@@ -62,15 +62,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="110dp"
             android:orientation="vertical"
             android:layout_marginTop="16dp">
 
             <io.github.rosemoe.sora.widget.CodeEditor
                 android:id="@+id/pd1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                app:text="Example:\nimport os\n\nos.remove('sample.txt')"
+                android:layout_height="70dp"
+                app:text="import os\n\nos.remove('sample.txt')"
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
@@ -108,14 +108,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="180dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="140dp"
                     app:text='import os\n\ntry:\n    os.remove("sample.txt")\nexcept FileNotFoundError:\n    print("File not found.")'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
@@ -181,6 +181,7 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

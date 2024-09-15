@@ -2549,7 +2549,7 @@
                 android:layout_margin="8dp"
                 android:padding="8dp"
                 android:gravity="center_vertical"
-                android:id="@+id/intfile"
+                android:id="@+id/int_file"
                 >
 
                 <ProgressBar
@@ -2725,7 +2725,483 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundcon"
+            android:alpha="0.8"
+            android:scrollbars="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python NumPy"
+                android:textSize="38sp"
+                android:gravity="start|center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                >
 
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:id="@+id/int_numpy"
+                >
+
+                <ProgressBar
+                    android:id="@+id/pronumpy"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:max="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Introduction to Numpy"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/101"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/numpyarr"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/proarr"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Numpy Arrays"
+                    android:textSize="20sp"
+                    android:id="@+id/t102"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/numpyindex"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/proindex"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Array Indexing"
+                    android:textSize="20sp"
+                    android:id="@+id/t103"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fdel"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prodel"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/t94"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Deleting File in Python"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fread"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/proread"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Reading Files in Python"
+                    android:textSize="20sp"
+                    android:id="@+id/t92"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fwrite"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/profwrite"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Writing and Creating files"
+                    android:textSize="20sp"
+                    android:id="@+id/t93"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fdel"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prodel"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/t94"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Deleting File in Python"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fread"
+                android:gravity="center_vertical"
+
+                >
+
+                <ProgressBar
+                    android:id="@+id/proread"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Reading Files in Python"
+                    android:textSize="20sp"
+                    android:id="@+id/t92"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fwrite"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/profwrite"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Writing and Creating files"
+                    android:textSize="20sp"
+                    android:id="@+id/t93"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounddark"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:id="@+id/fdel"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/prodel"
+                    android:layout_width="0dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
+                    android:progress="50"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/t94"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:text="Deleting File in Python"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center|start"
+                    >
+
+                </TextView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrowd">
+
+                </ImageView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
 
 

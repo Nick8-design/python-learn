@@ -49,6 +49,10 @@ import com.nickdieda.pythonlearn.Lessons.pyadvance.Inheritance;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.Iterator;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.UserInput;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.VarScope;
+import com.nickdieda.pythonlearn.Lessons.pyfile.FDel;
+import com.nickdieda.pythonlearn.Lessons.pyfile.IntFile;
+import com.nickdieda.pythonlearn.Lessons.pyfile.RFile;
+import com.nickdieda.pythonlearn.Lessons.pyfile.WFile;
 import com.nickdieda.pythonlearn.Lessons.pyfun.FunDef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.Introdef;
 import com.nickdieda.pythonlearn.Lessons.pyfun.PassPy;
@@ -159,6 +163,14 @@ public class ReturnActivity {
             bk = new Intent(act, ActivityJson.class);
         } else if (activityid==49) {
             bk = new Intent(act, REactivity.class);
+        } else if (activityid==50) {
+            bk = new Intent(act, IntFile.class);
+        } else if (activityid==51) {
+            bk = new Intent(act, RFile.class);
+        } else if (activityid==52) {
+            bk = new Intent(act, WFile.class);
+        } else if (activityid==53) {
+            bk = new Intent(act, FDel.class);
         }
 
 
