@@ -45,12 +45,12 @@ public class RFile extends AppCompatActivity {
         pd22 = findViewById(R.id.pd22);
         pd3 = findViewById(R.id.pd3);
         pd33 = findViewById(R.id.pd33);
-       /*  pd4= findViewById(R.id.pd4);
+       pd4= findViewById(R.id.pd4);
         pd44= findViewById(R.id.pd44);
 
 
 
-        pd5 = findViewById(R.id.pd5);
+       /*   pd5 = findViewById(R.id.pd5);
         pd55 = findViewById(R.id.pd55);
         pd6 = findViewById(R.id.pd6);
         pd66 = findViewById(R.id.pd66);
@@ -70,11 +70,11 @@ public class RFile extends AppCompatActivity {
         pd3.setTypefaceText(Typeface.MONOSPACE);
 
 
-       /*   pd4.setEditable(false);
+       pd4.setEditable(false);
         pd4.setTypefaceText(Typeface.MONOSPACE);
 
 
-        pd5.setEditable(false);
+         /*  pd5.setEditable(false);
         pd5.setTypefaceText(Typeface.MONOSPACE);
 
         pd6.setEditable(false);
@@ -89,7 +89,7 @@ public class RFile extends AppCompatActivity {
 */
 
 
-        String tt = "Regular Expressions in Python";
+        String tt = "Reading Files in Python";
         title.setText(tt);
         title.setSelected(true);
 
@@ -99,7 +99,7 @@ public class RFile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent quiz = new Intent(getApplicationContext(), OpenQuiz.class);
                 quiz.putExtra("tt", tt);
-                quiz.putExtra("id", 49);
+                quiz.putExtra("id", 51);
 
                 startActivity(quiz);
             }
@@ -109,9 +109,9 @@ public class RFile extends AppCompatActivity {
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
-       /*   CodeLang.pyLangstatic(getApplicationContext(),pd4);
-        CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+    CodeLang.pyLangstatic(getApplicationContext(),pd4);
+       /*  CodeLang.pyLangstatic(getApplicationContext(),pd5);
+             CodeLang.pyLangstatic(getApplicationContext(),pd6);
       CodeLang.pyLangstatic(getApplicationContext(),pd7);
         CodeLang.pyLangstatic(getApplicationContext(),pd8);
         CodeLang.pyLangstatic(getApplicationContext(),pd9);*/
@@ -146,7 +146,7 @@ public class RFile extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-         /*      pd44.setOnClickListener(new View.OnClickListener() {
+            pd44.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
@@ -159,7 +159,7 @@ public class RFile extends AppCompatActivity {
 
 
 
-        pd55.setOnClickListener(new View.OnClickListener() {
+          /* pd55.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);

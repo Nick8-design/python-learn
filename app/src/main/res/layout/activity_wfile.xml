@@ -261,7 +261,7 @@
                     android:id="@+id/pd44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of closing a file"
+                    android:text="Try it out"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
                     android:textSize="16sp"
