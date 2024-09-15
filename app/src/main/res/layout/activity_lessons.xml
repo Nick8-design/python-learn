@@ -2775,7 +2775,7 @@
                     android:text="Introduction to Numpy"
                     android:textSize="20sp"
                     android:textColor="@color/white"
-                    android:id="@+id/101"
+                    android:id="@+id/t101"
                     android:gravity="center|start"
                     >
 
@@ -2889,12 +2889,12 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/fdel"
+                android:id="@+id/arrslice"
                 android:gravity="center_vertical"
                 >
 
                 <ProgressBar
-                    android:id="@+id/prodel"
+                    android:id="@+id/proarrslice"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
@@ -2905,11 +2905,11 @@
                     android:progressDrawable="@drawable/circular_progress_bar" />
 
                 <TextView
-                    android:id="@+id/t94"
+                    android:id="@+id/t104"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Deleting File in Python"
+                    android:text="Array Slicing"
                     android:textSize="20sp"
                     android:textColor="@color/white"
                     android:gravity="center|start"
@@ -2934,13 +2934,13 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/fread"
+                android:id="@+id/numpydatatype"
                 android:gravity="center_vertical"
 
                 >
 
                 <ProgressBar
-                    android:id="@+id/proread"
+                    android:id="@+id/pronumpydata"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
@@ -2954,9 +2954,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Reading Files in Python"
+                    android:text="Numpy Data Types"
                     android:textSize="20sp"
-                    android:id="@+id/t92"
+                    android:id="@+id/t105"
                     android:textColor="@color/white"
                     android:gravity="center|start"
 
@@ -2981,12 +2981,12 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/fwrite"
+                android:id="@+id/numpyiterate"
                 android:gravity="center_vertical"
                 >
 
                 <ProgressBar
-                    android:id="@+id/profwrite"
+                    android:id="@+id/proiternum"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
@@ -2999,9 +2999,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Writing and Creating files"
+                    android:text="Numpy Iterate"
                     android:textSize="20sp"
-                    android:id="@+id/t93"
+                    android:id="@+id/t106"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
@@ -3025,12 +3025,12 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/fdel"
+                android:id="@+id/numpyjoin"
                 android:gravity="center_vertical"
                 >
 
                 <ProgressBar
-                    android:id="@+id/prodel"
+                    android:id="@+id/projoin"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
@@ -3041,11 +3041,11 @@
                     android:progressDrawable="@drawable/circular_progress_bar" />
 
                 <TextView
-                    android:id="@+id/t94"
+                    android:id="@+id/t107"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Deleting File in Python"
+                    android:text="NumPy Join"
                     android:textSize="20sp"
                     android:textColor="@color/white"
                     android:gravity="center|start"
@@ -3070,13 +3070,13 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/fread"
+                android:id="@+id/searchnumpy"
                 android:gravity="center_vertical"
 
                 >
 
                 <ProgressBar
-                    android:id="@+id/proread"
+                    android:id="@+id/proserchnum"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
@@ -3090,9 +3090,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Reading Files in Python"
+                    android:text="NumPy Search"
                     android:textSize="20sp"
-                    android:id="@+id/t92"
+                    android:id="@+id/t108"
                     android:textColor="@color/white"
                     android:gravity="center|start"
 
@@ -3117,12 +3117,12 @@
                 android:orientation="horizontal"
                 android:layout_margin="8dp"
                 android:padding="8dp"
-                android:id="@+id/fwrite"
+                android:id="@+id/sortnum"
                 android:gravity="center_vertical"
                 >
 
                 <ProgressBar
-                    android:id="@+id/profwrite"
+                    android:id="@+id/prosort"
                     android:layout_width="0dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_weight="1"
@@ -3135,15 +3135,16 @@
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="match_parent"
-                    android:text="Writing and Creating files"
+                    android:text="NumPy Sort"
                     android:textSize="20sp"
-                    android:id="@+id/t93"
+                    android:id="@+id/t109"
                     android:textColor="@color/white"
                     android:gravity="center|start"
                     >
 
                 </TextView>
                 <ImageView
+
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:gravity="end"
@@ -3154,51 +3155,7 @@
 
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounddark"
-                android:orientation="horizontal"
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:id="@+id/fdel"
-                android:gravity="center_vertical"
-                >
 
-                <ProgressBar
-                    android:id="@+id/prodel"
-                    android:layout_width="0dp"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="5dp"
-                    android:progress="50"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:progressDrawable="@drawable/circular_progress_bar" />
-
-                <TextView
-                    android:id="@+id/t94"
-                    android:layout_width="0dp"
-                    android:layout_weight="5"
-                    android:layout_height="match_parent"
-                    android:text="Deleting File in Python"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                    android:gravity="center|start"
-                    >
-
-                </TextView>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:src="@drawable/arrowd">
-
-                </ImageView>
-
-
-            </LinearLayout>
 
 
         </LinearLayout>
