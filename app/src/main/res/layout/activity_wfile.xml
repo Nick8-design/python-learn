@@ -249,7 +249,7 @@
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/closeFileCode"
+                    android:id="@+id/pd4"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     app:text='file = open("sample.txt", "w")\nfile.write("This is a sample.")\nfile.close()'
@@ -258,7 +258,7 @@
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/closeFileExample"
+                    android:id="@+id/pd44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Example of closing a file"
