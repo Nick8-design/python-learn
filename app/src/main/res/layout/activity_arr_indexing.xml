@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.numpy.ArrIndexing">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/introTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Python Array Indexing"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Array Indexing in Python:\n\nArray indexing is used to access elements in an array using their index position. Indexing starts at 0, meaning the first element of the array has an index of 0, the second has an index of 1, and so on."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example:\n\nThe following is an example of accessing elements in a NumPy array using index positions:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeArrayIndex"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:text='import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[1])  # Output: 20\nprint(arr[3])  # Output: 40'
+                android:layout_margin="5dp"
+                android:background="#EFEFEF"
+                android:padding="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Negative Indexing:\n\nNegative indexing allows you to access elements from the end of the array. In negative indexing, the last element has an index of -1, the second last has an index of -2, and so on."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example:\n\nHere is an example of using negative indexing to access elements from the end of the array:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeNegativeIndex"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:text='import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[-1])  # Output: 50\nprint(arr[-2])  # Output: 40'
+                android:layout_margin="5dp"
+                android:background="#EFEFEF"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/exampleNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try out these examples to explore array indexing in Python!"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

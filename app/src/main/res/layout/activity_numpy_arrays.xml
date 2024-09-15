@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.numpy.Numpy_arrays">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/introTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Introduction to NumPy Arrays"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What are NumPy Arrays?\n\nNumPy arrays are the core of the NumPy library and are used for storing data in a grid of elements. Arrays provide efficient storage and operations compared to Python lists."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Why use Arrays?\n\nArrays allow you to perform vectorized operations on data, which is much faster and more memory-efficient than using Python lists, especially for large datasets."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Creating a NumPy Array:\n\nYou can create a NumPy array using the `array()` function in the NumPy library. Here's an example of how to create a simple array:\n"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeCreateArray"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:text='import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)'
+                android:layout_margin="5dp"
+                android:background="#EFEFEF"
+                android:padding="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The ndarray Object:\n\nNumPy arrays are represented by the `ndarray` object. It stands for 'N-dimensional array' and can store multiple dimensions of data. Here's an example of creating a 2-dimensional array (matrix):"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeNdArray"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:text='import numpy as np\n\nmatrix = np.array([[1, 2, 3], [4, 5, 6]])\nprint(matrix)'
+                android:layout_margin="5dp"
+                android:background="#EFEFEF"
+                android:padding="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accessing Elements in an Array:\n\nYou can access elements in a NumPy array using indexing. Here's an example of accessing elements in a 1D and 2D array:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeArrayElements"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:text='import numpy as np\n\n# 1D array\narr = np.array([10, 20, 30, 40])\nprint(arr[2])  # Output: 30\n\n# 2D array\nmatrix = np.array([[1, 2], [3, 4], [5, 6]])\nprint(matrix[1, 1])  # Output: 4'
+                android:layout_margin="5dp"
+                android:background="#EFEFEF"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/exampleNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try out the examples to explore NumPy arrays!"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

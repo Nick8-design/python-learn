@@ -17,6 +17,21 @@
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Lessons.numpy.numpyIter"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.numpy.NDataType"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.numpy.ArrSlicing"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.numpy.ArrIndexing"
+            android:exported="false" />
+        <activity
+            android:name=".Lessons.numpy.Numpy_arrays"
+            android:exported="false" />
+        <activity
             android:name=".Lessons.numpy.Int_numpy"
             android:exported="false" />
         <activity

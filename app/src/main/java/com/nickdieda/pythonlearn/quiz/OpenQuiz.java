@@ -338,7 +338,43 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("What should you do to handle errors when trying to delete a file?", Arrays.asList("Use try-except block", "Use if-else block", "Use while loop"), 0));
             questionList.add(new Question("How can you delete multiple files in Python?", Arrays.asList("Use a loop with os.remove()", "Use os.delete() in a loop", "Call os.remove() multiple times individually"), 0));
             questionList.add(new Question("What is the output if you attempt to delete a file that does not exist?", Arrays.asList("No output", "FileNotFoundError", "PermissionError"), 1));
+        } else if (activityid==54) {
+            questionList.add(new Question("What does NumPy stand for?", Arrays.asList("Number Python", "Numerical Python", "Numeric Program"), 1));
+            questionList.add(new Question("Which command is used to install NumPy using pip?", Arrays.asList("pip install numpy", "install numpy", "python -m numpy"), 0));
+            questionList.add(new Question("How do you import the NumPy library with an alias?", Arrays.asList("import numpy", "import numpy as np", "from numpy import np"), 1));
+            questionList.add(new Question("Which data structure is primarily used in NumPy?", Arrays.asList("Array", "List", "Dictionary"), 0));
+        } else if (activityid==55) {
+            questionList.add(new Question("What is the core data structure of NumPy?", Arrays.asList("Array", "List", "Dictionary"), 0));
+            questionList.add(new Question("Which function is used to create an array in NumPy?", Arrays.asList("array()", "createArray()", "newArray()"), 0));
+            questionList.add(new Question("What does ndarray stand for in NumPy?", Arrays.asList("New Dimension Array", "Numerical Dimension Array", "N-dimensional Array"), 2));
+            questionList.add(new Question("How do you access the element at index 2 in a 1D NumPy array?", Arrays.asList("arr(2)", "arr[2]", "arr{2}"), 1));
+        } else if (activityid==56) {
+            questionList.add(new Question("What is the starting index of an array in Python?", Arrays.asList("1", "0", "-1"), 1));
+            questionList.add(new Question("How do you access the third element in a NumPy array?", Arrays.asList("arr[2]", "arr[3]", "arr[1]"), 0));
+            questionList.add(new Question("What does negative indexing in Python allow you to do?", Arrays.asList("Access elements from the start", "Access elements from the end", "Skip elements"), 1));
+            questionList.add(new Question("Which index would you use to access the last element of a NumPy array?", Arrays.asList("arr[-1]", "arr[0]", "arr[-2]"), 0));
+        } else if (activityid==57) {
+            questionList.add(new Question("What is array slicing in Python?", Arrays.asList("Extracting a portion of an array", "Adding elements to an array", "Changing array data type"), 0));
+            questionList.add(new Question("What is the output of the slice `arr[1:4]` for the array `[10, 20, 30, 40, 50]`?", Arrays.asList("[10, 20, 30]", "[20, 30, 40]", "[30, 40, 50]"), 1));
+            questionList.add(new Question("What does the slice `arr[:3]` do?", Arrays.asList("Slices from the start to the third element", "Slices the last 3 elements", "Slices the middle 3 elements"), 0));
+            questionList.add(new Question("What does negative slicing `arr[-3:]` return for the array `[10, 20, 30, 40, 50]`?", Arrays.asList("[10, 20, 30]", "[30, 40, 50]", "[20, 30, 40]"), 1));
+        } else if (activityid == 58) {
+            questionList.add(new Question("Which NumPy data type is used for integer values?", Arrays.asList("float", "complex", "int"), 2));
+            questionList.add(new Question("What is the dtype property used for in NumPy?", Arrays.asList("To check the data type of elements in an array", "To modify array shapes", "To perform mathematical operations"), 0));
+            questionList.add(new Question("Which of the following represents the boolean data type in NumPy?", Arrays.asList("b", "bool", "S"), 1));
+            questionList.add(new Question("Which NumPy data type is used for complex numbers?", Arrays.asList("complex", "f", "i"), 0));
+        } else if (activityid == 59) {
+            questionList.add(new Question("How can you iterate through a one-dimensional NumPy array?", Arrays.asList("Using a `for` loop", "Using `nditer()`", "Using `numpy.apply_along_axis()`"), 0));
+            questionList.add(new Question("What is the purpose of the `nditer()` function in NumPy?", Arrays.asList("To iterate through multi-dimensional arrays efficiently", "To sort arrays", "To perform mathematical operations"), 0));
+            questionList.add(new Question("Which method is used to iterate through each element of a NumPy array with a `for` loop?", Arrays.asList("`arr.items()`", "`arr.flat`", "`arr.iter()`"), 1));
+            questionList.add(new Question("What will the following code output?\n\nimport numpy as np\narr = np.array([[1, 2, 3], [4, 5, 6]])\nfor x in np.nditer(arr):\n    print(x)", Arrays.asList("1 2 3 4 5 6", "1\n2\n3\n4\n5\n6", "Error"), 1));
         }
+
+
+
+
+
+
 
 
 

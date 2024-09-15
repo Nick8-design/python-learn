@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.numpy.NDataType">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/introTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NumPy Data Types"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explanation:\n\nNumPy supports a wide variety of data types. These types determine the kind of elements stored in a NumPy array. The `dtype` property is used to check the data type of elements in an array."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Types in NumPy:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:padding="8dp"
+                android:background="@drawable/rounddark">
+
+                <!-- Table Row 1 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <!-- Table Row 2 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="int"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Integer type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 3 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="float"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Floating-point type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 4 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="complex"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Complex number type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 5 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bool"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Boolean type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 6 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="String type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 7 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="U"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unicode string type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 8 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="i"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Signed integer"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 9 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="u"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unsigned integer"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 10 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="f"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Floating-point"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 11 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="c"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Complex floating-point"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 12 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="m"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Timedelta type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <!-- Table Row 13 -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Datetime type"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dtype Property:\n\nThe `dtype` property of a NumPy array allows us to see or specify the data type of the elements stored in the array."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text="import numpy as np\n\narr = np.array([1, 2, 3, 4])\nprint(arr.dtype)" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

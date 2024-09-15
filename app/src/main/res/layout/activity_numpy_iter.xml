@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.numpy.numpyIter">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/intrott"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iterating Through a NumPy Array"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In NumPy, you can iterate through arrays using basic Python `for` loops, or you can use NumPy's `nditer()` function for more efficient iteration, especially with multi-dimensional arrays."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `for` loops to iterate through a NumPy array:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\nfor x in arr:\n    print(x)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text="1\n2\n3\n4\n5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `nditer()` for iteration:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The `nditer()` function provides an efficient way to iterate through multi-dimensional arrays."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr = np.array([[1, 2, 3], [4, 5, 6]])\nfor x in np.nditer(arr):\n    print(x)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text="1\n2\n3\n4\n5\n6" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
