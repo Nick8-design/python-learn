@@ -368,7 +368,24 @@ public class OpenQuiz extends AppCompatActivity {
             questionList.add(new Question("What is the purpose of the `nditer()` function in NumPy?", Arrays.asList("To iterate through multi-dimensional arrays efficiently", "To sort arrays", "To perform mathematical operations"), 0));
             questionList.add(new Question("Which method is used to iterate through each element of a NumPy array with a `for` loop?", Arrays.asList("`arr.items()`", "`arr.flat`", "`arr.iter()`"), 1));
             questionList.add(new Question("What will the following code output?\n\nimport numpy as np\narr = np.array([[1, 2, 3], [4, 5, 6]])\nfor x in np.nditer(arr):\n    print(x)", Arrays.asList("1 2 3 4 5 6", "1\n2\n3\n4\n5\n6", "Error"), 1));
+        } else if (activityid == 60) {
+            questionList.add(new Question("Which function is used to join arrays end-to-end along an existing axis?", Arrays.asList("np.concatenate()", "np.vstack()", "np.hstack()"), 0));
+            questionList.add(new Question("What does `np.vstack()` do with NumPy arrays?", Arrays.asList("Stacks arrays vertically", "Stacks arrays horizontally", "Concatenates arrays end-to-end"), 0));
+            questionList.add(new Question("What is the result of the following code?\n\nimport numpy as np\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nresult = np.hstack((arr1, arr2))\nprint(result)", Arrays.asList("[1, 2, 3, 4, 5, 6]", "[[1, 2, 3], [4, 5, 6]]", "Error"), 0));
+            questionList.add(new Question("What will `np.vstack((arr1, arr2))` output when `arr1` and `arr2` are one-dimensional arrays?", Arrays.asList("A two-dimensional array with arrays stacked vertically", "A concatenated one-dimensional array", "An error"), 0));
+        } else if (activityid == 61) {
+            questionList.add(new Question("Which function is used to find indices where a condition is true in a NumPy array?", Arrays.asList("np.where()", "np.searchsorted()", "np.nonzero()"), 0));
+            questionList.add(new Question("What does `np.searchsorted()` return when searching for an element in a sorted array?", Arrays.asList("Index where the element should be inserted", "Indices of the element in the array", "Boolean mask indicating presence of the element"), 0));
+            questionList.add(new Question("What is the output of the following code?\n\nimport numpy as np\narr = np.array([1, 3, 5, 7])\nindex = np.searchsorted(arr, 4)\nprint(index)", Arrays.asList("2", "3", "1"), 0));
+            questionList.add(new Question("What does `np.nonzero()` return when applied to an array with zero and non-zero elements?", Arrays.asList("Indices of non-zero elements", "Indices of zero elements", "Total count of non-zero elements"), 0));
+        } else if (activityid == 62) {
+            questionList.add(new Question("Which function in NumPy returns a new array with elements sorted?", Arrays.asList("np.sort()", "np.argsort()", "np.lexsort()"), 0));
+            questionList.add(new Question("What does `np.argsort()` return when applied to an array?", Arrays.asList("Indices that would sort the array", "Sorted array itself", "Indices of the elements in the array"), 0));
+            questionList.add(new Question("Given the array `arr = np.array([3, 1, 2])`, what is the output of `np.sort(arr)`?", Arrays.asList("[1, 2, 3]", "[3, 2, 1]", "[2, 1, 3]"), 0));
+            questionList.add(new Question("How does `np.lexsort()` work in sorting arrays?", Arrays.asList("It sorts using multiple keys", "It sorts the array in place", "It returns the sorted elements"), 0));
         }
+
+
 
 
 

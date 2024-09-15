@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.numpy.JoinNumpy">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/intrott"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Joining NumPy Arrays"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In NumPy, you can join arrays using various functions. The most common functions are `np.concatenate()`, `np.vstack()`, and `np.hstack()`. Each of these functions can be used to combine arrays in different ways."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `np.concatenate()`:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nresult = np.concatenate((arr1, arr2))\nprint(result)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text="[1 2 3 4 5 6]" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `np.vstack()`:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nresult = np.vstack((arr1, arr2))\nprint(result)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='[[1 2 3]\n [4 5 6]]' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `np.hstack()`:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor5"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr1 = np.array([[1], [2], [3]])\narr2 = np.array([[4], [5], [6]])\nresult = np.hstack((arr1, arr2))\nprint(result)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='[[1 4]\n [2 5]\n [3 6]]' />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navyb"
+    tools:context=".Lessons.numpy.NumSort">
+
+    <include layout="@layout/return_topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            android:paddingBottom="150dp">
+
+            <TextView
+                android:id="@+id/intrott"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sorting in NumPy Arrays"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NumPy provides several functions for sorting arrays, including `np.sort()`, `np.argsort()`, and `np.lexsort()`. These functions allow you to sort arrays in different ways and obtain the indices of sorted elements."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `np.sort()`:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr = np.array([3, 1, 2])\nsorted_arr = np.sort(arr)\nprint(sorted_arr)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='[1, 2, 3]' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `np.argsort()`:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr = np.array([3, 1, 2])\nindices = np.argsort(arr)\nprint(indices)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='[1, 2, 0]' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using `np.lexsort()`:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor5"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="true"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='import numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([3, 2, 1])\nindices = np.lexsort((arr2, arr1))\nprint(indices)' />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Example Output:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="4dp" />
+
+            <io.github.rosemoe.sora.widget.CodeEditor
+                android:id="@+id/codeEditor6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="12dp"
+                app:editorEnableLineNumber="false"
+                app:editorNonPrintableGlyph="true"
+                app:editorTextSize="17sp"
+                tools:text='[2, 1, 0]' />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
