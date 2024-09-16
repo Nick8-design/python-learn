@@ -57,13 +57,26 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeCreateArray"
+                android:id="@+id/pd1"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:text='import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+            <TextView
+                android:id="@+id/pd11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -74,13 +87,26 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeNdArray"
+                android:id="@+id/pd2"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:text='import numpy as np\n\nmatrix = np.array([[1, 2, 3], [4, 5, 6]])\nprint(matrix)'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+            <TextView
+                android:id="@+id/pd22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -91,19 +117,19 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeArrayElements"
+                android:id="@+id/pd3"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="200dp"
                 app:text='import numpy as np\n\n# 1D array\narr = np.array([10, 20, 30, 40])\nprint(arr[2])  # Output: 30\n\n# 2D array\nmatrix = np.array([[1, 2], [3, 4], [5, 6]])\nprint(matrix[1, 1])  # Output: 4'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
 
             <TextView
-                android:id="@+id/exampleNote"
+                android:id="@+id/pd33"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Try out the examples to explore NumPy arrays!"
+                android:text="Try it out"
                 android:textColor="@color/white"
                 android:layout_margin="4dp"
                 android:gravity="center"

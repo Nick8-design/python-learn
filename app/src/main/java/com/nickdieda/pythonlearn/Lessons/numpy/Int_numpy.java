@@ -88,6 +88,7 @@ public class Int_numpy extends AppCompatActivity {
         pd9.setEditable(false);
         pd9.setTypefaceText(Typeface.MONOSPACE);
 */
+        pd0.setEditable(false);
 
 
         String tt = "Introduction to numpy in python";
