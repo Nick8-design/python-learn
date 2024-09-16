@@ -49,13 +49,14 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeInstallNumpy"
+                android:id="@+id/pd0"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:text='pip install numpy'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -73,14 +74,33 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeImportNumpy"
+                android:id="@+id/pd1"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:text='import numpy as np'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+            <TextView
+                android:id="@+id/pd11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -114,19 +134,19 @@
             </LinearLayout>
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeNumpyExample"
+                android:id="@+id/pd3"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="190dp"
                 app:text='import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n\n# Performing basic operations\narr = arr * 2\nprint(arr)'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
 
             <TextView
-                android:id="@+id/exampleNote"
+                android:id="@+id/pd33"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Try this code and see how NumPy works!"
+                android:text="Try it out"
                 android:textColor="@color/white"
                 android:layout_margin="4dp"
                 android:gravity="center"
