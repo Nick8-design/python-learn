@@ -594,6 +594,24 @@ public class OpenQuiz extends AppCompatActivity {
             savedir("writef",correctAnswers);
         }  else if (activityid==53) {
             savedir("delf", correctAnswers);
+        }  else if (activityid==54) {
+            savedir("intnumpy",correctAnswers);
+        }  else if (activityid==55) {
+            savedir("numarr",correctAnswers);
+        }  else if (activityid==56) {
+            savedir("arrindex",correctAnswers);
+        }  else if (activityid==57) {
+            savedir("arrslice", correctAnswers);
+        }  else if (activityid==58) {
+            savedir("ndts",correctAnswers);
+        }  else if (activityid==59) {
+            savedir("nipy",correctAnswers);
+        }  else if (activityid==60) {
+            savedir("numjoin",correctAnswers);
+        }  else if (activityid==61) {
+            savedir("numsearch", correctAnswers);
+        }  else if (activityid==62) {
+            savedir("numsort", correctAnswers);
         }
 
 

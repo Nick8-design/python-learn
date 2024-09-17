@@ -300,14 +300,27 @@
                 android:textStyle="bold" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor"
+                android:id="@+id/pd1"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="90dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="true"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text="import numpy as np\n\narr = np.array([1, 2, 3, 4])\nprint(arr.dtype)" />
+
+                app:text="import numpy as np\n\narr = np.array([1, 2, 3, 4])\nprint(arr.dtype)" />
+
+            <TextView
+                android:id="@+id/pd11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
         </LinearLayout>
     </ScrollView>
 

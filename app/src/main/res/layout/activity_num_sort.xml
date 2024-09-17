@@ -50,15 +50,25 @@
                 android:textStyle="bold" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor1"
+                android:id="@+id/pd1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="true"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text='import numpy as np\n\narr = np.array([3, 1, 2])\nsorted_arr = np.sort(arr)\nprint(sorted_arr)' />
 
+                app:text='import numpy as np\n\narr = np.array([3, 1, 2])\nsorted_arr = np.sort(arr)\nprint(sorted_arr)' />
+            <TextView
+                android:id="@+id/pd11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,34 +79,42 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor2"
+                android:id="@+id/pd0"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="false"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text='[1, 2, 3]' />
+
+                app:text='[1, 2, 3]' />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Using `np.argsort()`:"
+                android:text="\n\nUsing `np.argsort()`:"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp"
                 android:textStyle="bold" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor3"
+                android:id="@+id/pd3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="true"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text='import numpy as np\n\narr = np.array([3, 1, 2])\nindices = np.argsort(arr)\nprint(indices)' />
 
+                app:text='import numpy as np\n\narr = np.array([3, 1, 2])\nindices = np.argsort(arr)\nprint(indices)' />
+            <TextView
+                android:id="@+id/pd33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,34 +125,41 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor4"
+                android:id="@+id/pd00"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="false"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text='[1, 2, 0]' />
+
+                app:text='[1, 2, 0]' />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Using `np.lexsort()`:"
+                android:text="\n\nUsing `np.lexsort()`:"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp"
                 android:textStyle="bold" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor5"
+                android:id="@+id/pd2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="130dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="true"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text='import numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([3, 2, 1])\nindices = np.lexsort((arr2, arr1))\nprint(indices)' />
-
+                app:text='import numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([3, 2, 1])\nindices = np.lexsort((arr2, arr1))\nprint(indices)' />
+            <TextView
+                android:id="@+id/pd22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,14 +170,12 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeEditor6"
+                android:id="@+id/pd000"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="12dp"
-                app:editorEnableLineNumber="false"
-                app:editorNonPrintableGlyph="true"
-                app:editorTextSize="17sp"
-                tools:text='[2, 1, 0]' />
+
+                app:text='[2, 1, 0]' />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

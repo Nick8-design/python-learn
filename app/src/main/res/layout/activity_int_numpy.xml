@@ -54,7 +54,7 @@
                 android:layout_height="50dp"
                 app:text='pip install numpy'
                 android:layout_margin="5dp"
-                android:background="#EFEFEF"
+
                 android:padding="4dp" />
 
 
@@ -134,7 +134,7 @@
             </LinearLayout>
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/pd3"
+                android:id="@+id/pd2"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 app:text='import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n\n# Performing basic operations\narr = arr * 2\nprint(arr)'
@@ -143,7 +143,7 @@
                 android:padding="4dp" />
 
             <TextView
-                android:id="@+id/pd33"
+                android:id="@+id/pd22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Try it out"

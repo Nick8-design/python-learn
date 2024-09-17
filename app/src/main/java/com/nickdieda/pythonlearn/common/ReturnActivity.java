@@ -42,6 +42,15 @@ import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
 import com.nickdieda.pythonlearn.Lessons.modules.REactivity;
 import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
+import com.nickdieda.pythonlearn.Lessons.numpy.ArrIndexing;
+import com.nickdieda.pythonlearn.Lessons.numpy.ArrSlicing;
+import com.nickdieda.pythonlearn.Lessons.numpy.Int_numpy;
+import com.nickdieda.pythonlearn.Lessons.numpy.JoinNumpy;
+import com.nickdieda.pythonlearn.Lessons.numpy.NDataType;
+import com.nickdieda.pythonlearn.Lessons.numpy.NumSort;
+import com.nickdieda.pythonlearn.Lessons.numpy.NumpySearch;
+import com.nickdieda.pythonlearn.Lessons.numpy.Numpy_arrays;
+import com.nickdieda.pythonlearn.Lessons.numpy.numpyIter;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
@@ -171,6 +180,24 @@ public class ReturnActivity {
             bk = new Intent(act, WFile.class);
         } else if (activityid==53) {
             bk = new Intent(act, FDel.class);
+        } else if (activityid==54) {
+            bk = new Intent(act, Int_numpy.class);
+        } else if (activityid==55) {
+            bk = new Intent(act, Numpy_arrays.class);
+        } else if (activityid==56) {
+            bk = new Intent(act, ArrIndexing.class);
+        } else if (activityid==57) {
+            bk = new Intent(act, ArrSlicing.class);
+        } else if (activityid==58) {
+            bk = new Intent(act, NDataType.class);
+        } else if (activityid==59) {
+            bk = new Intent(act, numpyIter.class);
+        } else if (activityid==60) {
+            bk = new Intent(act, JoinNumpy.class);
+        } else if (activityid==61) {
+            bk = new Intent(act, NumpySearch.class);
+        } else if (activityid==62) {
+            bk = new Intent(act, NumSort.class);
         }
 
 

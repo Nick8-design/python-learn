@@ -55,6 +55,15 @@ import com.nickdieda.pythonlearn.Lessons.modules.IntroModule;
 import com.nickdieda.pythonlearn.Lessons.modules.MathModule;
 import com.nickdieda.pythonlearn.Lessons.modules.REactivity;
 import com.nickdieda.pythonlearn.Lessons.modules.Rand_ompy;
+import com.nickdieda.pythonlearn.Lessons.numpy.ArrIndexing;
+import com.nickdieda.pythonlearn.Lessons.numpy.ArrSlicing;
+import com.nickdieda.pythonlearn.Lessons.numpy.Int_numpy;
+import com.nickdieda.pythonlearn.Lessons.numpy.JoinNumpy;
+import com.nickdieda.pythonlearn.Lessons.numpy.NDataType;
+import com.nickdieda.pythonlearn.Lessons.numpy.NumSort;
+import com.nickdieda.pythonlearn.Lessons.numpy.NumpySearch;
+import com.nickdieda.pythonlearn.Lessons.numpy.Numpy_arrays;
+import com.nickdieda.pythonlearn.Lessons.numpy.numpyIter;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ClassesPy;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.ErrorHandling;
 import com.nickdieda.pythonlearn.Lessons.pyadvance.FormatingStrings;
@@ -85,6 +94,7 @@ public class LessonsActivity extends AppCompatActivity {
     private LinearLayout fomstrings,tryexcept,pyiter ,inputm;
     private LinearLayout     intmodule,maolib,randomlib,datetime,jsonn,repy;
     private LinearLayout int_file,fread,fwrite,fdel;
+    private LinearLayout int_numpy,numpyarr,numpyindex,arrslice,numpydatatype,numpyiterate,numpyjoin,searchnumpy,sortnum;
 
     private ProgressBar provar,prodata,pronum,promet,prostring,prostinmeth,protypecon,probolean;
     ProgressBar basicf,prointro,proinst,prowrite,prodis,prostate,prosyn,procom;
@@ -94,6 +104,7 @@ public class LessonsActivity extends AppCompatActivity {
     ProgressBar proif_else,proifshort,proforpy,prowhilepy,proconbrk,proinherit,provarscope,profomstring,proinputm,propyiter;
     ProgressBar   prointmodule,promathmod,prorandomlib,prodatetime,projson,prorepy;
             ProgressBar profile,proread,profwrite,prodel;
+            ProgressBar pronumpy,proarr,proindex,proarrslice,pronumpydata,proiternum,projoin,proserchnum,prosort;
 
 
     TextView t1,t2,t3,t4,t5,t6,t7,t8;
@@ -105,6 +116,7 @@ public class LessonsActivity extends AppCompatActivity {
     private  TextView t71,t72,t73,t74,t75,t76,t77;
     private  TextView t81,t82,t83,t84,t85,t86;
     private  TextView t91,t92,t93,t94;
+    private  TextView t101,t102,t103,t104,t105,t106,t107,t108,t109;
 
 
     private    int prog,b2,b3,b4,b5,b6,b7,b8;
@@ -116,6 +128,7 @@ public class LessonsActivity extends AppCompatActivity {
     private int p1,p2,p3,p4,p5,p6,p7;
     private int mo1,mo2,mo3,mo4,mo5,mo6;
     private int fo1,fo2,fo3,fo4;
+    private    int pb1,pb2,pb3,pb4,pb5,pb6,pb7,pb8,pb9;
 
 
     SharedPreferences sharedPreferences;
@@ -187,6 +200,15 @@ public class LessonsActivity extends AppCompatActivity {
         int fl2= sharedPreferences.getInt("readf", 0);
         int fl3= sharedPreferences.getInt("writef", 0);
         int fl4= sharedPreferences.getInt("delf", 0);
+        int np1= sharedPreferences.getInt("intnumpy", 0);
+        int np2= sharedPreferences.getInt("numarr", 0);
+        int np3= sharedPreferences.getInt("arrindex", 0);
+        int np4= sharedPreferences.getInt("arrslice", 0);
+        int np5= sharedPreferences.getInt("ndts", 0);
+        int np6= sharedPreferences.getInt("nipy", 0);
+        int np7= sharedPreferences.getInt("numjoin", 0);
+        int np8= sharedPreferences.getInt("numsearch", 0);
+        int np9= sharedPreferences.getInt("numsort", 0);
 
 
 
@@ -196,8 +218,8 @@ public class LessonsActivity extends AppCompatActivity {
         //  Toast.makeText(getApplicationContext(),"intro = "+mod3,Toast.LENGTH_SHORT).show();
          totalProgress=bfp+bint+binsta+bwpc+bdis+bsta+bsin+bcom+vvar+vdata+vnum+vnumed+vstring+vstrmed+vconv+vbool+mintoper+marith+mass+mcomp+mlog+mis+mm+cint+clist+ctup+cs+cd;
       totalProgress +=fint+fun+fl+fp+ifc+ifs+fors+whiles+brk+pya1+pya2+pya3+pya4+pya5+pya6+pya7+mod1+mod2+mod3+mod4+mod5+mod6;
-        totalProgress +=fl1+fl2+fl3+fl4;
-        mark=(totalProgress*10)/218;
+        totalProgress +=fl1+fl2+fl3+fl4+np1+np2+np3+np4+np5+np6+np7+np8+np9;
+        mark=(totalProgress*10)/254;
         progressindicator();
 
 
@@ -225,13 +247,19 @@ public class LessonsActivity extends AppCompatActivity {
         promet=findViewById(R.id.promet);
         int_file=findViewById(R.id.int_file);
         proinputm=findViewById(R.id.proinputm);
+        proarrslice=findViewById(R.id.proarrslice);
         propyiter=findViewById(R.id.propyiter);
         probolean=findViewById(R.id.probolean);
+        proiternum=findViewById(R.id.proiternum);
         procom=findViewById(R.id.procom);
+        projoin=findViewById(R.id.projoin);
         fomstrings=findViewById(R.id.fomstrings);
         maolib=findViewById(R.id.maolib);
         compa=findViewById(R.id.compa);
-                prodel=findViewById(R.id.prodel);
+        proarr=findViewById(R.id.proarr);
+        prodel=findViewById(R.id.prodel);
+        proserchnum=findViewById(R.id.proserchnum);
+        pronumpy=findViewById(R.id.pronumpy);
         tryexcept=findViewById(R.id.tryexcept);
         proclassO=findViewById(R.id.proclassO);
         prosyn=findViewById(R.id.prosyn);
@@ -241,12 +269,14 @@ public class LessonsActivity extends AppCompatActivity {
         comm=findViewById(R.id.comments);
         protypecon=findViewById(R.id.protypecon);
         numb=findViewById(R.id.numb);
+        proindex=findViewById(R.id.proindex);
         t23=findViewById(R.id.t23);
         randomlib=findViewById(R.id.randomlib);
         prowhilepy=findViewById(R.id.prowhilepy);
         pronum=findViewById(R.id.pronum);
         pystrings=findViewById(R.id.pystrings);
         proidentity=findViewById(R.id.proidentity);
+        prosort=findViewById(R.id.prosort);
         lessonfra=findViewById(R.id.lesson_fra);
         typeconversion=findViewById(R.id.typeconversion);
         members=findViewById(R.id.members);
@@ -294,20 +324,25 @@ public class LessonsActivity extends AppCompatActivity {
         operIntro=findViewById(R.id.operIntro);
         variable=findViewById(R.id.variable);
         provar=findViewById(R.id.provar);
+        arrslice=findViewById(R.id.arrslice);
         nummethods=findViewById(R.id.nummethods);
         prodatetime=findViewById(R.id.prodatetime);
         identity=findViewById(R.id.identity);
         containers=findViewById(R.id.containers);
         pyintro=findViewById(R.id.pyintro);
+        sortnum=findViewById(R.id.sortnum);
         inherit=findViewById(R.id.inherit);
+        searchnumpy=findViewById(R.id.searchnumpy);
         procontainers=findViewById(R.id.procontainers);
         prointro=findViewById(R.id.prointro);
         profomstring=findViewById(R.id.profomstring);
         lambdaf=findViewById(R.id.lambdaf);
+        numpyiterate=findViewById(R.id.numpyiterate);
         assigns=findViewById(R.id.assigns);
         tuples=findViewById(R.id.tuples);
         prostate=findViewById(R.id.prostate);
         ifshort=findViewById(R.id.ifshort);
+        numpydatatype=findViewById(R.id.numpydatatype);
         prodis=findViewById(R.id.prodis);
         proforpy=findViewById(R.id.proforpy);
         prostinmeth=findViewById(R.id.prostinmeth);
@@ -316,12 +351,14 @@ public class LessonsActivity extends AppCompatActivity {
         profun=findViewById(R.id.profun);
         t1=findViewById(R.id.t1);
         whilepy=findViewById(R.id.whilepy);
+        pronumpydata=findViewById(R.id.pronumpydata);
         t2=findViewById(R.id.t2);
         protryexc=findViewById(R.id.protryexc);
         t3=findViewById(R.id.t3);
         pyiter=findViewById(R.id.pyiter);
         inputm=findViewById(R.id.inputm);
         t4=findViewById(R.id.t4);
+        int_numpy=findViewById(R.id.int_numpy);
         intmodule=findViewById(R.id.intmodule);
         proconbrk=findViewById(R.id.proconbrk);
         promathmod=findViewById(R.id.promathmod);
@@ -329,8 +366,11 @@ public class LessonsActivity extends AppCompatActivity {
         fread=findViewById(R.id.fread);
         t6=findViewById(R.id.t6);
         profile=findViewById(R.id.profile);
+        numpyjoin=findViewById(R.id.numpyjoin);
         t7=findViewById(R.id.t7);
-                prointmodule=findViewById(R.id.prointmodule);
+        numpyindex=findViewById(R.id.numpyindex);
+        prointmodule=findViewById(R.id.prointmodule);
+        numpyarr=findViewById(R.id.numpyarr);
         fwrite=findViewById(R.id.fwrite);
         t8=findViewById(R.id.t8);
         prorepy=findViewById(R.id.prorepy);
@@ -379,6 +419,15 @@ public class LessonsActivity extends AppCompatActivity {
         t92=findViewById(R.id.t92);
         t93=findViewById(R.id.t93);
         t94=findViewById(R.id.t94);
+        t101=findViewById(R.id.t101);
+        t102=findViewById(R.id.t102);
+        t103=findViewById(R.id.t103);
+        t104=findViewById(R.id.t104);
+        t105=findViewById(R.id.t105);
+        t106=findViewById(R.id.t106);
+        t107=findViewById(R.id.t107);
+        t108=findViewById(R.id.t108);
+        t109=findViewById(R.id.t109);
 
 
                 proinst.setProgress(probar(binsta,b3));
@@ -435,10 +484,142 @@ public class LessonsActivity extends AppCompatActivity {
         proread.setProgress(probar(fl2,fo2));
         profwrite.setProgress(probar(fl3,fo3));
         prodel.setProgress(probar(fl4,fo4));
+        pronumpy.setProgress(probar(np1,pb1));
+        proarr.setProgress(probar(np2,pb2));
+        proindex.setProgress(probar(np3,pb3));
+        proarrslice.setProgress(probar(np4,pb4));
+        pronumpydata.setProgress(probar(np5,pb5));
+        proiternum.setProgress(probar(np6,pb6));
+        projoin.setProgress(probar(np7,pb7));
+        proserchnum.setProgress(probar(np8,pb8));
+        prosort.setProgress(probar(np9,pb9));
 
 
 
 
+
+
+
+        sortnum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t109.getText().toString();
+                String strand="9/9";
+                String tno="Ten";
+                int idl=63;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), NumSort.class);
+
+                startActivity(insta);
+            }
+        });
+        searchnumpy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t108.getText().toString();
+                String strand="8/9";
+                String tno="Ten";
+                int idl=62;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), NumpySearch.class);
+
+                startActivity(insta);
+            }
+        });
+        numpyjoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t107.getText().toString();
+                String strand="7/9";
+                String tno="Ten";
+                int idl=61;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), JoinNumpy.class);
+
+                startActivity(insta);
+            }
+        });
+
+
+        numpyiterate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t106.getText().toString();
+                String strand="6/9";
+                String tno="Ten";
+                int idl=60;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), numpyIter.class);
+
+                startActivity(insta);
+            }
+        });
+        numpydatatype.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t105.getText().toString();
+                String strand="5/9";
+                String tno="Ten";
+                int idl=59;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), NDataType.class);
+
+                startActivity(insta);
+            }
+        });
+        arrslice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t104.getText().toString();
+                String strand="4/9";
+                String tno="Ten";
+                int idl=58;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), ArrSlicing.class);
+
+                startActivity(insta);
+            }
+        });
+        numpyindex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t103.getText().toString();
+                String strand="3/9";
+                String tno="Ten";
+                int idl=57;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), ArrIndexing.class);
+
+                startActivity(insta);
+            }
+        });
+        numpyarr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t102.getText().toString();
+                String strand="2/9";
+                String tno="Ten";
+                int idl=56;
+                learning(topic,strand,tno,idl);
+                Intent insta=new Intent(getApplicationContext(), Numpy_arrays.class);
+
+                startActivity(insta);
+            }
+        });
+
+        int_numpy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String topic =t101.getText().toString();
+                String strand="1/9";
+                String tno="Ten";
+                int idl=55;
+                learning(topic,strand,tno,idl);
+                    Intent insta=new Intent(getApplicationContext(), Int_numpy.class);
+
+                startActivity(insta);
+            }
+        });
 
         fdel.setOnClickListener(new View.OnClickListener() {
             @Override

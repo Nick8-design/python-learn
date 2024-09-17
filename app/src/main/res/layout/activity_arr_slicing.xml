@@ -49,13 +49,27 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeSliceExample1"
+                android:id="@+id/pd1"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:text='import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[1:4])  # Output: [20, 30, 40]'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+            <TextView
+                android:id="@+id/pd11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -66,13 +80,27 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeSliceExample2"
+                android:id="@+id/pd2"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:text='import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[:3])  # Output: [10, 20, 30]'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+            <TextView
+                android:id="@+id/pd22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -83,13 +111,26 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeSliceExample3"
+                android:id="@+id/pd3"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:text='import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[1:])  # Output: [20, 30, 40, 50]'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
+            <TextView
+                android:id="@+id/pd33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try it out"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:background="@drawable/rounddark"
+                android:layout_gravity="end"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -100,19 +141,18 @@
                 android:layout_margin="4dp" />
 
             <io.github.rosemoe.sora.widget.CodeEditor
-                android:id="@+id/codeNegativeSlice"
+                android:id="@+id/pd4"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 app:text='import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[-3:])  # Output: [30, 40, 50]'
                 android:layout_margin="5dp"
                 android:background="#EFEFEF"
                 android:padding="4dp" />
-
             <TextView
-                android:id="@+id/exampleNote"
+                android:id="@+id/pd44"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Try out these examples to explore array slicing in Python!"
+                android:text="Try it out"
                 android:textColor="@color/white"
                 android:layout_margin="4dp"
                 android:gravity="center"
@@ -121,6 +161,9 @@
                 android:layout_gravity="end"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
+
+
+
 
         </LinearLayout>
     </ScrollView>
