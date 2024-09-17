@@ -222,7 +222,9 @@ public class LessonsActivity extends AppCompatActivity {
         mark=(totalProgress*10)/254;
         progressindicator();
 
-
+if(8>2){
+    Toast.makeText(getApplicationContext(),"Kijana you can claim your certificate "+totalProgress,Toast.LENGTH_SHORT).show();
+}
 
 
         TextView title=findViewById(R.id.title);
