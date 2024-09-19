@@ -107,10 +107,10 @@ public class PyVar extends AppCompatActivity {
 
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
-        CodeLang.pyLangstatic(getApplicationContext(),pd3);
-        CodeLang.pyLangstatic(getApplicationContext(),pd4);
-        CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+       // CodeLang.pyLangstatic(getApplicationContext(),pd3);
+      //  CodeLang.pyLangstatic(getApplicationContext(),pd4);
+      //  CodeLang.pyLangstatic(getApplicationContext(),pd5);
+      //  CodeLang.pyLangstatic(getApplicationContext(),pd6);
         CodeLang.pyLangstatic(getApplicationContext(),pd7);
         CodeLang.pyLangstatic(getApplicationContext(),pd8);
         CodeLang.pyLangstatic(getApplicationContext(),pd9);

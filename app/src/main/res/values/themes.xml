@@ -20,7 +20,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="SplashScreenTheme" parent="@style/Theme.PythonLearn">
+    <style name="SplashScreenTheme" parent="Theme.SplashScreen" >
         <item name="windowSplashScreenBackground">@drawable/wf</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/roundlog</item>
         <item name="postSplashScreenTheme">@style/Theme.PythonLearn.NoActionBar</item>
