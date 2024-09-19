@@ -154,65 +154,6 @@ public class NumpySearch extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-         /*     pd44.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd4.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-
-
-
-
-      pd55.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd5.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-        pd66.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =ne
-    }
-}w Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd6.getText().toString());
-                startActivity(exe1);
-            }
-        });
- pd77.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd7.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd88.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd8.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-*/
-
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override

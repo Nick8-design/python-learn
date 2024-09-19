@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.CodeLang;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -23,10 +23,10 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class Setsc extends AppCompatActivity {
-    private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10,pd12, pd111,pd13,pd14,pd15,pd17,pd16,pd18,pd19,pd20;
-    private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010,pd1111,pd1212,pd1313,pd1414,pd1515,pd1616,pd1717,pd1818,pd1919,pd2020;
+    private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10,pd12, pd111;
+    private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010,pd1111;
     private ImageView ret;
-    public  setpylan pylang=new setpylan();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,25 +68,7 @@ public class Setsc extends AppCompatActivity {
 
         pd111 = findViewById(R.id.pd111);
         pd1111 = findViewById(R.id.pd1111);
-       /*  pd12 = findViewById(R.id.pd12);
-        pd1212 = findViewById(R.id.pd1212);
-       pd13 = findViewById(R.id.pd13);
-        pd1313 = findViewById(R.id.pd1313);
-        pd14= findViewById(R.id.pd14);
-        pd1414= findViewById(R.id.pd1414);
 
-
-
-        pd15 = findViewById(R.id.pd15);
-        pd1515 = findViewById(R.id.pd1515);
-        pd16 = findViewById(R.id.pd16);
-        pd1616 = findViewById(R.id.pd1616);
-        pd17= findViewById(R.id.pd17);
-        pd1717= findViewById(R.id.pd1717);
-        pd18= findViewById(R.id.pd18);
-        pd1818= findViewById(R.id.pd1818);
-
-*/
 
 
 
@@ -120,29 +102,7 @@ public class Setsc extends AppCompatActivity {
 
         pd111.setEditable(false);
         pd111.setTypefaceText(Typeface.MONOSPACE);
-   /*
-        pd12.setEditable(false);
-        pd12.setTypefaceText(Typeface.MONOSPACE);
 
-    pd13.setEditable(false);
-        pd13.setTypefaceText(Typeface.MONOSPACE);
-
-        pd14.setEditable(false);
-        pd14.setTypefaceText(Typeface.MONOSPACE);
-
-
-        pd15.setEditable(false);
-        pd15.setTypefaceText(Typeface.MONOSPACE);
-
-        pd16.setEditable(false);
-        pd16.setTypefaceText(Typeface.MONOSPACE);
-
-        pd17.setEditable(false);
-        pd17.setTypefaceText(Typeface.MONOSPACE);
-        pd18.setEditable(false);
-        pd18.setTypefaceText(Typeface.MONOSPACE);
-
-*/
 
 
 
@@ -171,19 +131,11 @@ public class Setsc extends AppCompatActivity {
         CodeLang.pyLangstatic(getApplicationContext(),pd6);
         CodeLang.pyLangstatic(getApplicationContext(),pd7);
         CodeLang.pyLangstatic(getApplicationContext(),pd8);
-        pylang.pyLang(getApplicationContext(),pd9);
-        pylang.pyLang(getApplicationContext(),pd10);
-        pylang.pyLang(getApplicationContext(),pd111);
+        CodeLang.pyLangstatic(getApplicationContext(),pd9);
+        CodeLang.pyLangstatic(getApplicationContext(),pd10);
+        CodeLang.pyLangstatic(getApplicationContext(),pd111);
 
-        /* pylang.pyLang(getApplicationContext(),pd12);
 
-        pylang.pyLang(getApplicationContext(),pd13);
-        pylang.pyLang(getApplicationContext(),pd14);
-
-        pylang.pyLang(getApplicationContext(),pd15);
-        pylang.pyLang(getApplicationContext(),pd16);
-        pylang.pyLang(getApplicationContext(),pd17);
-        pylang.pyLang(getApplicationContext(),pd18);*/
 
 
 
@@ -288,69 +240,7 @@ public class Setsc extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-     /*    pd1212.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd12.getText().toString());
-                startActivity(exe1);
-            }
-        });
-       pd1313.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd13.getText().toString());
-                startActivity(exe1);
-            }
-        });
 
-
-
-
-        pd1414.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd14.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-        pd1515.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd15.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd1616.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd16.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd1717.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd17.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd1818.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd18.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-*/
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override

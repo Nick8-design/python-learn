@@ -1,10 +1,14 @@
 package com.nickdieda.pythonlearn.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.Lessons.Collections.Ctuple;
@@ -82,6 +87,7 @@ import com.nickdieda.pythonlearn.Lessons.pyfun.lambdaActivity;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
+import com.nickdieda.pythonlearn.common.generateCertificate;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 
@@ -222,8 +228,34 @@ public class LessonsActivity extends AppCompatActivity {
         mark=(totalProgress*10)/254;
         progressindicator();
 
-if(8>2){
-    Toast.makeText(getApplicationContext(),"Kijana you can claim your certificate "+totalProgress,Toast.LENGTH_SHORT).show();
+if(8>79){
+    //Toast.makeText(getApplicationContext(),"Kijana you can claim your certificate "+totalProgress,Toast.LENGTH_SHORT).show();
+    if (totalProgress == 10) {
+        // Show a dialog to claim the certificate
+        new AlertDialog.Builder(this)
+                .setTitle("Congratulations!")
+                .setMessage("You are eligible to claim your certificate.")
+                .setPositiveButton("Claim Now", (dialog, which) -> {
+                //    if (isOnline()) {
+                        // User is online, start downloading the certificate
+                    requestUserNameBeforeDownload();
+                       // String userFullName="Nick Dieda";
+                      //  generateCertificate.generateCertificate(userFullName, totalProgress);
+                  /*    //  downloadCertificate();
+                  //  } else {
+                        // User is offline, show option to download later
+                        new AlertDialog.Builder(this)
+                                .setTitle("Offline")
+                                .setMessage("You are offline. Press the button below to download your certificate.")
+                                .setPositiveButton("Download Later", (dialog1, which1) -> {
+                                    // Logic to store the file for later download
+                                })
+                                .show();
+                  //  }*/
+                })
+                .show();
+    }
+
 }
 
 
@@ -436,8 +468,8 @@ if(8>2){
                 basicf.setProgress(probar(bfp,prog));
                 prointro.setProgress(probar(bint,b2));
                 prowrite.setProgress(probar(bwpc,b4));
-                prodis.setProgress(probar(bdis,b5));
-                prostate.setProgress(probar(bsta,b6));
+       prodis.setProgress(probar(bdis,b5));
+       prostate.setProgress(probar(bsta,b6));
        prosyn.setProgress(probar(bsin,b7));
                 procom.setProgress(probar(bcom,b8));
                 provar.setProgress(probar(vvar,b9));
@@ -1491,6 +1523,32 @@ public void learning(String top,String stra,String tno,int idl) {
 
 }
 
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+    }
+
+
+    public void requestUserNameBeforeDownload() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter Full Name");
+
+        // Create an EditText for user input
+        final EditText input = new EditText(this);
+        builder.setView(input);
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", (dialog, which) -> {
+            String fullName = input.getText().toString();
+            // Call the generateCertificate method with the user's name
+            generateCertificate.generateCertificate(this,fullName, totalProgress);
+        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+
+        builder.show();
+    }
 
 
 }

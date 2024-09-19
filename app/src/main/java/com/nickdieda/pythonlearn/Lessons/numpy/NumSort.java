@@ -22,8 +22,8 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class NumSort extends AppCompatActivity {
-    private CodeEditor pd0,pd00,pd000,pd1, pd2,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
-    private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
+    private CodeEditor pd0,pd00,pd000,pd1, pd2,pd3;
+    private TextView title,qz,pd11,pd22,pd33;
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,21 +49,7 @@ public class NumSort extends AppCompatActivity {
         pd22 = findViewById(R.id.pd22);
         pd3 = findViewById(R.id.pd3);
         pd33 = findViewById(R.id.pd33);
-          /*  pd4= findViewById(R.id.pd4);
-        pd44= findViewById(R.id.pd44);
 
-
-
-         /* pd5 = findViewById(R.id.pd5);
-        pd55 = findViewById(R.id.pd55);
-        pd6 = findViewById(R.id.pd6);
-        pd66 = findViewById(R.id.pd66);
-       pd7= findViewById(R.id.pd7);
-        pd77= findViewById(R.id.pd77);
-        pd8= findViewById(R.id.pd8);
-        pd88= findViewById(R.id.pd88);
-        pd9= findViewById(R.id.pd9);
-        pd99= findViewById(R.id.pd99);*/
 
         pd0.setEditable(false);
         pd00.setEditable(false);
@@ -77,23 +63,7 @@ public class NumSort extends AppCompatActivity {
         pd3.setTypefaceText(Typeface.MONOSPACE);
 
 
-         /*  pd4.setEditable(false);
-        pd4.setTypefaceText(Typeface.MONOSPACE);
 
-
-        /*   pd5.setEditable(false);
-        pd5.setTypefaceText(Typeface.MONOSPACE);
-
-        pd6.setEditable(false);
-        pd6.setTypefaceText(Typeface.MONOSPACE);
-
-      pd7.setEditable(false);
-        pd7.setTypefaceText(Typeface.MONOSPACE);
-        pd8.setEditable(false);
-        pd8.setTypefaceText(Typeface.MONOSPACE);
-        pd9.setEditable(false);
-        pd9.setTypefaceText(Typeface.MONOSPACE);
-*/
 
 
         String tt = "NumPy Sort";
@@ -118,13 +88,6 @@ public class NumSort extends AppCompatActivity {
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
-          /* CodeLang.pyLangstatic(getApplicationContext(),pd4);
-        /*   CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
-      CodeLang.pyLangstatic(getApplicationContext(),pd7);
-        CodeLang.pyLangstatic(getApplicationContext(),pd8);
-        CodeLang.pyLangstatic(getApplicationContext(),pd9);*/
-
 
 
 
@@ -155,64 +118,6 @@ public class NumSort extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-         /*     pd44.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd4.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-
-
-
-
-      pd55.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd5.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-        pd66.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =ne
-    }
-}w Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd6.getText().toString());
-                startActivity(exe1);
-            }
-        });
- pd77.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd7.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd88.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd8.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-*/
 
 
         ret.setOnClickListener(new View.OnClickListener() {

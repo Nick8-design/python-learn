@@ -14,7 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
-import com.nickdieda.pythonlearn.common.setpylan;
+
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -27,7 +28,7 @@ public class If_el extends AppCompatActivity {
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setpylan pylang=new setpylan();
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_if_el);
@@ -108,15 +109,15 @@ public class If_el extends AppCompatActivity {
         });
 
 
-        pylang.pyLang(getApplicationContext(),pd1);
-        pylang.pyLang(getApplicationContext(),pd2);
-        pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
-        pylang.pyLang(getApplicationContext(),pd5);
-         pylang.pyLang(getApplicationContext(),pd6);
-        pylang.pyLang(getApplicationContext(),pd7);
-        pylang.pyLang(getApplicationContext(),pd8);
-        /*  pylang.pyLang(getApplicationContext(),pd9);*/
+
+        CodeLang.pyLangstatic(getApplicationContext(),pd1);
+        CodeLang.pyLangstatic(getApplicationContext(),pd2);
+        CodeLang.pyLangstatic(getApplicationContext(),pd3);
+        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd5);
+        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+        CodeLang.pyLangstatic(getApplicationContext(),pd8);
 
 
 
@@ -193,17 +194,7 @@ public class If_el extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-   /*      pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
 
-
-*/
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override

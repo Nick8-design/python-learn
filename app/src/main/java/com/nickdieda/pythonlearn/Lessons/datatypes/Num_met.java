@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.CodeLang;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -23,8 +23,8 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class Num_met extends AppCompatActivity {
-    private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
-    private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
+    private CodeEditor pd2, pd1,pd3,pd4;
+    private TextView title,qz,pd11,pd22,pd33,pd44;
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

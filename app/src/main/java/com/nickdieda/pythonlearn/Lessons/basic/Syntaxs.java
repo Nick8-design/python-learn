@@ -11,8 +11,9 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
@@ -76,11 +77,9 @@ public class Syntaxs extends AppCompatActivity {
 
         });
 
-        setpylan pylang=new setpylan();
-
-        pylang.pyLang(getApplicationContext(),pd2);
-        pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd2);
+        CodeLang.pyLangstatic(getApplicationContext(),pd3);
 
 
 

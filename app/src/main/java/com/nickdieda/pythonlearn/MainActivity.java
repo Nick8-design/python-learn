@@ -32,7 +32,7 @@ import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import com.nickdieda.pythonlearn.ui.Projects;
-
+import leakcanary.LeakCanary;
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,10 +46,18 @@ private int activityid;
     private static final int REQUEST_WRITE_STORAGE = 112;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         installSplashScreen(this);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+
+
+
+
+
 
         menuButton = findViewById(R.id.menu_button);
         continuel = findViewById(R.id.continuel);

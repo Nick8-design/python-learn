@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.CodeLang;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -28,7 +28,7 @@ public class FormatingStrings extends AppCompatActivity {
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setpylan pylang=new setpylan();
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_formating_strings);
@@ -82,13 +82,6 @@ public class FormatingStrings extends AppCompatActivity {
         pd6.setEditable(false);
         pd6.setTypefaceText(Typeface.MONOSPACE);
 
-            /*    pd7.setEditable(false);
-        pd7.setTypefaceText(Typeface.MONOSPACE);
-         pd8.setEditable(false);
-        pd8.setTypefaceText(Typeface.MONOSPACE);
-     // pd9.setEditable(false);
-        //pd9.setTypefaceText(Typeface.MONOSPACE);*/
-
 
 
         String tt = "Formatting Stings in Python";
@@ -108,18 +101,13 @@ public class FormatingStrings extends AppCompatActivity {
         });
 
 
+
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
         CodeLang.pyLangstatic(getApplicationContext(),pd4);
-        pylang.pyLang(getApplicationContext(),pd5);
-        pylang.pyLang(getApplicationContext(),pd6);
-            /*    pylang.pyLang(getApplicationContext(),pd7);
-          pylang.pyLang(getApplicationContext(),pd8);
-        pylang.pyLang(getApplicationContext(),pd9);*/
-
-
-
+        CodeLang.pyLangstatic(getApplicationContext(),pd5);
+        CodeLang.pyLangstatic(getApplicationContext(),pd6);
 
 
         pd11.setOnClickListener(new View.OnClickListener() {
@@ -177,33 +165,6 @@ public class FormatingStrings extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-          /*      pd77.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd7.getText().toString());
-                startActivity(exe1);
-            }
-        });
-    pd88.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd8.getText().toString());
-                startActivity(exe1);
-            }
-        });
-   pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-
-*/
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override

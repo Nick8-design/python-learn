@@ -14,7 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
-import com.nickdieda.pythonlearn.common.setpylan;
+
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -38,10 +39,10 @@ public class Pystrmed extends AppCompatActivity {
         ret = findViewById(R.id.returnback);
 
 
-     //   pd2 = findViewById(R.id.pd2);
+
         pd1 = findViewById(R.id.pd1);
         pd11 = findViewById(R.id.pd11);
-      //  pd22 = findViewById(R.id.pd22);
+
         pd3 = findViewById(R.id.pd3);
         pd33 = findViewById(R.id.pd33);
         pd4= findViewById(R.id.pd4);
@@ -99,19 +100,14 @@ public class Pystrmed extends AppCompatActivity {
             }
         });
 
-        setpylan pylang=new setpylan();
-        pylang.pyLang(getApplicationContext(),pd1);
+        CodeLang.pyLangstatic(getApplicationContext(),pd1);
 
-            //pylang.pyLang(getApplicationContext(),pd2);
-
-        pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
-        pylang.pyLang(getApplicationContext(),pd5);
-        pylang.pyLang(getApplicationContext(),pd6);
-        pylang.pyLang(getApplicationContext(),pd7);
-        pylang.pyLang(getApplicationContext(),pd8);
-
-
+        CodeLang.pyLangstatic(getApplicationContext(),pd3);
+        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd5);
+        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+        CodeLang.pyLangstatic(getApplicationContext(),pd8);
 
 
 
@@ -124,14 +120,6 @@ public class Pystrmed extends AppCompatActivity {
             }
         });
 
-     /*   pd22.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd2.getText().toString());
-                startActivity(exe1);
-            }
-        });*/
         pd33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

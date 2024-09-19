@@ -35,7 +35,7 @@ android {
 
 
         ndk {
-            abiFilters += listOf("arm64-v8a", "x86_64","armeabi-v7a")
+            abiFilters += listOf("arm64-v8a","x86_64","armeabi-v7a")
         }
 
 
@@ -61,7 +61,7 @@ android {
     chaquopy {
         productFlavors {
             getByName("py38") {
-                version = "3.8"
+                version = "3.11"
                 pip{
                    install("numpy")
 
@@ -96,7 +96,7 @@ android {
 
         }
         defaultConfig {
-            version = "3.8"
+            version = "3.11"
         }
 
         sourceSets {
@@ -137,4 +137,11 @@ dependencies {
 
 //am using it to achieve lazycoloumn behaviour
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+
+    //certificate
+    implementation ("com.itextpdf:itext7-core:7.1.8")
+
+    //memory leak
+    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.9.1")
 }

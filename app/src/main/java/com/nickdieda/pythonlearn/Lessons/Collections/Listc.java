@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.CodeLang;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -30,7 +30,7 @@ public class Listc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_list);
-        setpylan pylang=new setpylan();
+
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
@@ -103,8 +103,9 @@ public class Listc extends AppCompatActivity {
         CodeLang.pyLangstatic(getApplicationContext(),pd14);
         CodeLang.pyLangstatic(getApplicationContext(),pd15);
         CodeLang.pyLangstatic(getApplicationContext(),pd16);
-       pylang.pyLang(Listc.this,pd17);
-        pylang.pyLang(Listc.this,pd18);
+        CodeLang.pyLangstatic(getApplicationContext(),pd17);
+        CodeLang.pyLangstatic(getApplicationContext(),pd18);
+
 
 
 

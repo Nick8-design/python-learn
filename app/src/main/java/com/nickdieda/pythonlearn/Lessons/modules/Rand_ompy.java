@@ -53,12 +53,7 @@ public class Rand_ompy extends AppCompatActivity {
         pd55 = findViewById(R.id.pd55);
         pd6 = findViewById(R.id.pd6);
         pd66 = findViewById(R.id.pd66);
-     /*   pd7= findViewById(R.id.pd7);
-        pd77= findViewById(R.id.pd77);
-        pd8= findViewById(R.id.pd8);
-        pd88= findViewById(R.id.pd88);
-        pd9= findViewById(R.id.pd9);
-        pd99= findViewById(R.id.pd99);*/
+
 
         pd1.setEditable(false);
         pd1.setTypefaceText(Typeface.MONOSPACE);
@@ -79,13 +74,7 @@ public class Rand_ompy extends AppCompatActivity {
         pd6.setEditable(false);
         pd6.setTypefaceText(Typeface.MONOSPACE);
 
-      /*  pd7.setEditable(false);
-        pd7.setTypefaceText(Typeface.MONOSPACE);
-        pd8.setEditable(false);
-        pd8.setTypefaceText(Typeface.MONOSPACE);
-        pd9.setEditable(false);
-        pd9.setTypefaceText(Typeface.MONOSPACE);
-*/
+
 
 
         String tt = "Random Modules";
@@ -111,11 +100,6 @@ public class Rand_ompy extends AppCompatActivity {
         CodeLang.pyLangstatic(getApplicationContext(),pd4);
         CodeLang.pyLangstatic(getApplicationContext(),pd5);
         CodeLang.pyLangstatic(getApplicationContext(),pd6);
-      /*  CodeLang.pyLangstatic(getApplicationContext(),pd7);
-        CodeLang.pyLangstatic(getApplicationContext(),pd8);
-        CodeLang.pyLangstatic(getApplicationContext(),pd9);*/
-
-
 
 
 
@@ -175,32 +159,7 @@ public class Rand_ompy extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-    /*    pd77.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd7.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd88.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd8.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
 
-*/
 
 
         ret.setOnClickListener(new View.OnClickListener() {

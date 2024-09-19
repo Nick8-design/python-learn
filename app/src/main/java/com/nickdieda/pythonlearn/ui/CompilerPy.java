@@ -30,7 +30,7 @@ import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 
 import java.io.BufferedReader;
 import java.io.File;

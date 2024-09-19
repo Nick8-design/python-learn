@@ -11,8 +11,9 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
@@ -60,8 +61,7 @@ public class OverviewBasic extends AppCompatActivity {
         out1.setTypefaceText(Typeface.MONOSPACE);
 
 
-        setpylan pylang=new setpylan();
-        pylang.pyLang(getApplicationContext(),out1);
+        CodeLang.pyLangstatic(getApplicationContext(),out1);
 
 
         ex1.setOnClickListener(new View.OnClickListener() {

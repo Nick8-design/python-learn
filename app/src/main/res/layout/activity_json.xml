@@ -47,29 +47,36 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
+                android:layout_height="190dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ddyn"
-                    android:layout_gravity="center"
-                    android:layout_margin="4dp" />
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:text="import json\n\ndata = '{&#34;name&#34;: &#34;Nick&#34;, &#34;age&#34;: 21}'\nprint(data)\n\n\nresult = json.loads(data)\nprint(result)"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/pd11"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example of JSON:\n\nimport json\n\ndata = '{&#34;name&#34;: &#34;Nick&#34;, &#34;age&#34;: 21}'\nprint(data)\nor\nresult = json.loads(data)\nprint(result)"
+                    android:text="Try it out"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
                     android:layout_margin="4dp"
-                    android:layout_gravity="center" />
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,16 +112,16 @@
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd4"
+                    android:id="@+id/pd2"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="50dp"
                     app:text="{'name': 'John', 'age': 30}"
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/pd44"
+                    android:id="@+id/pd22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"
@@ -146,29 +153,36 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
+                android:layout_height="130dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ddyn"
-                    android:layout_gravity="center"
-                    android:layout_margin="4dp" />
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd3"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:text="import json\npython_dict = {'name': 'John', 'age': 30}\njson_string = json.dumps(python_dict)\nprint(json_string)"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/pd33"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example:\nimport json\npython_dict = {'name': 'John', 'age': 30}\njson_string = json.dumps(python_dict)\nprint(json_string)"
+                    android:text="Try it out"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
                     android:layout_margin="4dp"
-                    android:layout_gravity="center" />
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -179,21 +193,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="90dp"
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
                 <io.github.rosemoe.sora.widget.CodeEditor
-                    android:id="@+id/pd5"
+                    android:id="@+id/pd4"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="50dp"
                     app:text='{"name": "John", "age": 30}'
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
 
                 <TextView
-                    android:id="@+id/pd55"
+                    android:id="@+id/pd44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Try it out"
@@ -225,27 +239,35 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ddyn"
-                    android:layout_gravity="center"
-                    android:layout_margin="4dp" />
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd5"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    app:text="import json\npython_dict = {'name': 'John', 'age': 30}\njson_string = json.dumps(python_dict, indent=4)\nprint(json_string)"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/pd55"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example:\nimport json\npython_dict = {'name': 'John', 'age': 30}\njson_string = json.dumps(python_dict, indent=4)\nprint(json_string)"
+                    android:text="Try it out"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
                     android:layout_margin="4dp"
-                    android:layout_gravity="center" />
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
 
             <TextView
@@ -266,29 +288,37 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
+
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@drawable/rounddark">
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ddyn"
-                    android:layout_gravity="center"
-                    android:layout_margin="4dp" />
+                <io.github.rosemoe.sora.widget.CodeEditor
+                    android:id="@+id/pd6"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    app:text="import json\npython_dict = {'name': 'John', 'age': 30}\nwith open('data.json', 'w') as file:\n    json.dump(python_dict, file)"
+                    android:layout_margin="5dp"
+                    android:background="#EFEFEF"
+                    android:padding="4dp" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/pd66"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Example:\nimport json\npython_dict = {'name': 'John', 'age': 30}\nwith open('data.json', 'w') as file:\n    json.dump(python_dict, file)"
+                    android:text="Try it out"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
                     android:layout_margin="4dp"
-                    android:layout_gravity="center" />
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/rounddark"
+                    android:layout_gravity="end"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
             </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

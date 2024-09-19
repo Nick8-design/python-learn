@@ -9,12 +9,11 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 import com.nickdieda.pythonlearn.R;
-import com.nickdieda.pythonlearn.common.setpylan;
+
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -27,7 +26,7 @@ public class For_Loop extends AppCompatActivity {
     private ImageView ret;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setpylan pylang=new setpylan();
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_for_loop);
@@ -53,14 +52,7 @@ public class For_Loop extends AppCompatActivity {
 
         pd5 = findViewById(R.id.pd5);
         pd55 = findViewById(R.id.pd55);
-      /*    pd6 = findViewById(R.id.pd6);
-        pd66 = findViewById(R.id.pd66);
-        pd7= findViewById(R.id.pd7);
-        pd77= findViewById(R.id.pd77);
-        pd8= findViewById(R.id.pd8);
-        pd88= findViewById(R.id.pd88);
-        pd9= findViewById(R.id.pd9);
-         pd99= findViewById(R.id.pd99);*/
+
 
         pd1.setEditable(false);
         pd1.setTypefaceText(Typeface.MONOSPACE);
@@ -77,16 +69,6 @@ public class For_Loop extends AppCompatActivity {
 
         pd5.setEditable(false);
         pd5.setTypefaceText(Typeface.MONOSPACE);
-
-         /*    pd6.setEditable(false);
-        pd6.setTypefaceText(Typeface.MONOSPACE);
-
-        pd7.setEditable(false);
-        pd7.setTypefaceText(Typeface.MONOSPACE);
-        pd8.setEditable(false);
-        pd8.setTypefaceText(Typeface.MONOSPACE);
-     // pd9.setEditable(false);
-        //pd9.setTypefaceText(Typeface.MONOSPACE);*/
 
 
 
@@ -107,15 +89,11 @@ public class For_Loop extends AppCompatActivity {
         });
 
 
-        pylang.pyLang(getApplicationContext(),pd1);
-        pylang.pyLang(getApplicationContext(),pd2);
-        pylang.pyLang(getApplicationContext(),pd3);
-        pylang.pyLang(getApplicationContext(),pd4);
-        pylang.pyLang(getApplicationContext(),pd5);
-       /*   pylang.pyLang(getApplicationContext(),pd6);
-        pylang.pyLang(getApplicationContext(),pd7);
-        pylang.pyLang(getApplicationContext(),pd8);
-        pylang.pyLang(getApplicationContext(),pd9);*/
+        CodeLang.pyLangstatic(getApplicationContext(),pd1);
+        CodeLang.pyLangstatic(getApplicationContext(),pd2);
+        CodeLang.pyLangstatic(getApplicationContext(),pd3);
+        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+        CodeLang.pyLangstatic(getApplicationContext(),pd5);
 
 
 
@@ -168,41 +146,6 @@ public class For_Loop extends AppCompatActivity {
             }
         });
 
-   /*           pd66.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd6.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd77.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd7.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd88.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd8.getText().toString());
-                startActivity(exe1);
-            }
-        });
-   pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-
-*/
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override

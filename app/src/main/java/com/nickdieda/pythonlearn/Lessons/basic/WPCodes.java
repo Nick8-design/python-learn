@@ -11,8 +11,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
-import com.nickdieda.pythonlearn.common.setpylan;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 
@@ -66,10 +66,10 @@ public class WPCodes extends AppCompatActivity {
 
         });
 
-        setpylan pylang=new setpylan();
-        pylang.pyLang(getApplicationContext(),out1);
-        pylang.pyLang(getApplicationContext(),wpcb);
-        pylang.pyLang(getApplicationContext(),wpca);
+
+        CodeLang.pyLangstatic(getApplicationContext(),out1);
+        CodeLang.pyLangstatic(getApplicationContext(),wpcb);
+        CodeLang.pyLangstatic(getApplicationContext(),wpca);
 
         tryyname.setOnClickListener(new View.OnClickListener() {
             @Override

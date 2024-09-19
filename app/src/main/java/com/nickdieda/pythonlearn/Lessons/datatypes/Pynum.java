@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.CodeLang;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;

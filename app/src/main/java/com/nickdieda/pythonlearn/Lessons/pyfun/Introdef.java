@@ -14,7 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
-import com.nickdieda.pythonlearn.common.setpylan;
+
+import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -25,7 +26,7 @@ public class Introdef extends AppCompatActivity {
     private CodeEditor pd2, pd1;
     private TextView title,qz,pd11;
     private ImageView ret;
-    public setpylan pylang=new setpylan();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class Introdef extends AppCompatActivity {
         });
 
 
-        pylang.pyLang(getApplicationContext(),pd1);
+        CodeLang.pyLangstatic(getApplicationContext(),pd1);
 
 
 

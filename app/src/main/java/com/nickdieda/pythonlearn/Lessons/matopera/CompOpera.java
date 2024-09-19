@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.CodeLang;
-import com.nickdieda.pythonlearn.common.setpylan;
+
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
@@ -59,8 +59,6 @@ public class CompOpera extends AppCompatActivity {
          pd77= findViewById(R.id.pd77);
          pd8= findViewById(R.id.pd8);
           pd88= findViewById(R.id.pd88);
-        //  pd9= findViewById(R.id.pd9);
-        //  pd99= findViewById(R.id.pd99);
 
         pd2.setEditable(false);
         pd2.setTypefaceText(Typeface.MONOSPACE);
@@ -84,8 +82,6 @@ public class CompOpera extends AppCompatActivity {
           pd7.setTypefaceText(Typeface.MONOSPACE);
            pd8.setEditable(false);
              pd8.setTypefaceText(Typeface.MONOSPACE);
-        // pd9.setEditable(false);
-        //pd9.setTypefaceText(Typeface.MONOSPACE);
 
 
 
@@ -105,19 +101,14 @@ public class CompOpera extends AppCompatActivity {
             }
         });
 
-        setpylan pylang=new setpylan();
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
         CodeLang.pyLangstatic(getApplicationContext(),pd4);
         CodeLang.pyLangstatic(getApplicationContext(),pd5);
         CodeLang.pyLangstatic(getApplicationContext(),pd6);
-
-        pylang.pyLang(getApplicationContext(),pd7);
-          pylang.pyLang(getApplicationContext(),pd8);
-        //    pylang.pyLang(getApplicationContext(),pd9);
-
-
+        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+        CodeLang.pyLangstatic(getApplicationContext(),pd8);
 
 
 
@@ -192,17 +183,6 @@ public class CompOpera extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-/*        pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-
-*/
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override
