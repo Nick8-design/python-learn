@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "384752510878",
+    "project_id": "python-learn-e7370",
+    "storage_bucket": "python-learn-e7370.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384752510878:android:c229c035df47755101588f",
+        "android_client_info": {
+          "package_name": "com.nickdieda.pythonlearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQTHkyPzUDaBQLEXsqAPAqU9BN1thbfec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

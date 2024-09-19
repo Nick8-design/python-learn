@@ -228,9 +228,9 @@ public class LessonsActivity extends AppCompatActivity {
         mark=(totalProgress*10)/254;
         progressindicator();
 
-if(8>79){
+if(8>7){
     //Toast.makeText(getApplicationContext(),"Kijana you can claim your certificate "+totalProgress,Toast.LENGTH_SHORT).show();
-    if (totalProgress == 10) {
+    if (totalProgress >= 10) {
         // Show a dialog to claim the certificate
         new AlertDialog.Builder(this)
                 .setTitle("Congratulations!")
