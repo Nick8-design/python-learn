@@ -145,5 +145,5 @@ dependencies {
     implementation ("com.itextpdf:itext7-core:7.1.8")
 
     //memory leak
-    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.9.1")
+//    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.9.1")
 }

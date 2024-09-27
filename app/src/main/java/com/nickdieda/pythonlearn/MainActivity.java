@@ -29,14 +29,15 @@ import androidx.core.content.ContextCompat;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.ColorUtil;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
+import com.nickdieda.pythonlearn.common.certificate;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
 import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import com.nickdieda.pythonlearn.ui.Projects;
-import leakcanary.LeakCanary;
+
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout homefra, lessonfra, button, compiler_b, projects,continuel;
+    LinearLayout homefra, lessonfra, button, compiler_b, projects,continuel,swi;
     ImageView homei, lessoni, compi, swi_img, uswi, cont_img, image;
     TextView hometext, lessontext, percentage, percentag,title,covpas,topicname,strand,topicno,ts,tn;
     private ImageButton menuButton;
@@ -70,7 +71,7 @@ private int activityid;
         percentage = findViewById(R.id.percentage);
         percentag=findViewById(R.id.percentag);
         image = findViewById(R.id.image);
-        button = findViewById(R.id.swi);
+
         compiler_b = findViewById(R.id.compiler_btn);
         swi_img = findViewById(R.id.swi_img);
         title = findViewById(R.id.title);
@@ -81,6 +82,8 @@ private int activityid;
         ts=findViewById(R.id.ts);
         covpas=findViewById(R.id.covpas);
         tn=findViewById(R.id.tn);
+        swi=findViewById(R.id.swi);
+
 
 
 
@@ -95,6 +98,7 @@ private int activityid;
         covpas.setTextColor(ColorUtil.getRandomColor());
 
 
+
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
         i = sharedPreferences.getInt("count", 0);
         int imageResource = sharedPreferences.getInt("imageResource", R.drawable.p);
@@ -103,7 +107,22 @@ private int activityid;
         String topsno=sharedPreferences.getString("topno","Home page");
         String stre=sharedPreferences.getString("strands","Home");
          activityid= sharedPreferences.getInt("idlearn", 0);
+         int totalm=sharedPreferences.getInt("total_marks",0);
 
+
+        swi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//if (totalm>202){
+    if(true){
+
+        certificate cet=new certificate();
+        cet.requestUserNameBeforeDownload(MainActivity.this,totalm);
+}else {
+    Toast.makeText(MainActivity.this,"Score 80% of the total marks to claim your certificate !",Toast.LENGTH_LONG).show();
+}
+            }
+        });
         topicname.setText(tops);
         topicno.setText(topsno);
         strand.setText(stre);

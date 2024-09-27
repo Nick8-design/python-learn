@@ -363,7 +363,7 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/les"
+                    android:src="@drawable/certificate"
                     android:id="@+id/cont_img"
                     >
 

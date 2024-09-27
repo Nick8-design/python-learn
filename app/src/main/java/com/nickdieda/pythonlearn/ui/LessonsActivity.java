@@ -18,9 +18,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.nickdieda.pythonlearn.Fbdb.CompletionList;
+import com.nickdieda.pythonlearn.Fbdb.DBAdd_name;
 import com.nickdieda.pythonlearn.Lessons.Collections.Ctuple;
 import com.nickdieda.pythonlearn.Lessons.Collections.Dictionar_y;
 import com.nickdieda.pythonlearn.Lessons.Collections.Listc;
@@ -87,6 +95,7 @@ import com.nickdieda.pythonlearn.Lessons.pyfun.lambdaActivity;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
+import com.nickdieda.pythonlearn.common.certificate;
 import com.nickdieda.pythonlearn.common.generateCertificate;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
@@ -228,35 +237,27 @@ public class LessonsActivity extends AppCompatActivity {
         mark=(totalProgress*10)/254;
         progressindicator();
 
-if(8>7){
-    //Toast.makeText(getApplicationContext(),"Kijana you can claim your certificate "+totalProgress,Toast.LENGTH_SHORT).show();
-    if (totalProgress >= 10) {
+        SharedPreferences totalm = getSharedPreferences("app_datas", MODE_PRIVATE);
+        SharedPreferences.Editor edit = totalm.edit();
+      edit.putInt("total_marks",totalProgress);
+        edit.apply();
+
+    if (totalProgress >= 254) {
         // Show a dialog to claim the certificate
         new AlertDialog.Builder(this)
                 .setTitle("Congratulations!")
                 .setMessage("You are eligible to claim your certificate.")
                 .setPositiveButton("Claim Now", (dialog, which) -> {
-                //    if (isOnline()) {
-                        // User is online, start downloading the certificate
-                    requestUserNameBeforeDownload();
-                       // String userFullName="Nick Dieda";
-                      //  generateCertificate.generateCertificate(userFullName, totalProgress);
-                  /*    //  downloadCertificate();
-                  //  } else {
-                        // User is offline, show option to download later
-                        new AlertDialog.Builder(this)
-                                .setTitle("Offline")
-                                .setMessage("You are offline. Press the button below to download your certificate.")
-                                .setPositiveButton("Download Later", (dialog1, which1) -> {
-                                    // Logic to store the file for later download
-                                })
-                                .show();
-                  //  }*/
+
+                   // certificate.requestUserNameBeforeDownload(LessonsActivity.this,totalProgress);
+
+                    certificate cet=new certificate();
+                    cet.requestUserNameBeforeDownload(LessonsActivity.this,totalProgress);
+
                 })
                 .show();
     }
 
-}
 
 
         TextView title=findViewById(R.id.title);
@@ -1531,24 +1532,8 @@ public void learning(String top,String stra,String tno,int idl) {
     }
 
 
-    public void requestUserNameBeforeDownload() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Enter Full Name");
 
-        // Create an EditText for user input
-        final EditText input = new EditText(this);
-        builder.setView(input);
 
-        // Set up the buttons
-        builder.setPositiveButton("OK", (dialog, which) -> {
-            String fullName = input.getText().toString();
-            // Call the generateCertificate method with the user's name
-            generateCertificate.generateCertificate(this,fullName, totalProgress);
-        });
-        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
-
-        builder.show();
-    }
 
 
 }
