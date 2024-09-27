@@ -52,23 +52,7 @@ import java.time.LocalDateTime;
 
             public static void generateCertificate(Context context, String fullName, int score) {
                 try {
-                    // Path to save the certificate
 
-                    /*
-                          File scriptFile = new File(pythonProjectsFolder, scriptName + ".py");
-
-        if (scriptFile.exists()) {
-            Toast.makeText(this, "A script with this name already exists. Please choose a different name.", Toast.LENGTH_LONG).show();
-            showSaveAsDialog(); // Prompt the user to enter a new name
-        } else {
-            try (FileOutputStream fos = new FileOutputStream(scriptFile)) {
-                fos.write(scriptContent.getBytes());
-                Toast.makeText(this, "Saved in Python programs", Toast.LENGTH_SHORT).show();
-            } catch (IOException e) {
-                Toast.makeText(this, "Failed to save script: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
-                     */
 
 
                     File pythonProjectsFolder = new File(Environment.getExternalStorageDirectory(), "Python programs");
@@ -81,7 +65,7 @@ import java.time.LocalDateTime;
               // Prompt the user to enter a new name
                     } else {
 
-                        Toast.makeText(context, "Certificate generated for " + fullName, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Certificate generated for " + fullName, Toast.LENGTH_LONG).show();
 
                         // Create a writer instance
                         PdfWriter writer = new PdfWriter(scriptFile);

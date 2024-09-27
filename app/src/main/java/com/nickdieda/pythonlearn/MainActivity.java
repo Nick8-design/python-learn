@@ -113,8 +113,8 @@ private int activityid;
         swi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//if (totalm>202){
-    if(true){
+if (totalm>202){
+ //   if(true){
 
         certificate cet=new certificate();
         cet.requestUserNameBeforeDownload(MainActivity.this,totalm);

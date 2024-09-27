@@ -373,7 +373,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/ubottom"
                     android:gravity="center"
-                    android:text="Online"
+                    android:text="Certificate"
                     android:textColor="@color/black"
                     android:elevation="10dp"
                     android:id="@+id/lswi"
