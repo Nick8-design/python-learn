@@ -274,10 +274,7 @@
             android:name=".Lessons.basic.OverviewBasic"
             android:exported="false"
             android:theme="@style/Theme.PythonLearn.NoActionBar" />
-        <activity
-            android:name=".ui.InputActivity"
-            android:exported="false"
-            android:theme="@style/Theme.PythonLearn.NoActionBar" />
+
         <activity
             android:name=".ui.Myproject"
             android:exported="false"
@@ -297,11 +294,14 @@
         <activity
             android:name=".ui.LessonsActivity"
             android:exported="false"
+
             android:theme="@style/Theme.PythonLearn.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/SplashScreenTheme">
+            android:theme="@style/SplashScreenTheme"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

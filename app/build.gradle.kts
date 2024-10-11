@@ -14,9 +14,9 @@ android {
 
     flavorDimensions += "pyVersion"
     productFlavors {
-       // create("py310") { dimension = "pyVersion" }
+
         create("py38") { dimension = "pyVersion" }
-        //create("py311") { dimension = "pyVersion" }
+
 
 
     }
@@ -25,18 +25,16 @@ android {
         applicationId = "com.nickdieda.pythonlearn"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
-        // Enable core library desugaring
-       // multiDexEnabled= true
-        //vectorDrawables.useSupportLibrary = true
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 
         ndk {
-            abiFilters += listOf("arm64-v8a","x86_64","armeabi-v7a")
+            abiFilters += listOf("arm64-v8a","armeabi-v7a")
         }
 
 
@@ -55,6 +53,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
+
 
     }
 
@@ -122,8 +121,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    //compiler view
-  //  implementation ("io.github.amrdeveloper:codeview:1.3.9")
 
 
      //code editor
@@ -144,6 +141,6 @@ dependencies {
     //certificate
     implementation ("com.itextpdf:itext7-core:7.1.8")
 
-    //memory leak
-//    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.9.1")
+//desugaring
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }

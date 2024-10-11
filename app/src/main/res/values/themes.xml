@@ -21,8 +21,8 @@
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.SplashScreen" >
-        <item name="windowSplashScreenBackground">@drawable/wf</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/roundlog</item>
+        <item name="windowSplashScreenBackground">@drawable/splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/pylog</item>
         <item name="postSplashScreenTheme">@style/Theme.PythonLearn.NoActionBar</item>
     </style>
 

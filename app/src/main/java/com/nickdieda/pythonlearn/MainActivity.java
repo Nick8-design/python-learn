@@ -3,6 +3,7 @@ package com.nickdieda.pythonlearn;
 import static androidx.core.splashscreen.SplashScreen.installSplashScreen;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -53,6 +54,7 @@ private int activityid;
         installSplashScreen(this);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
 

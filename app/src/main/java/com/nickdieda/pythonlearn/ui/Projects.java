@@ -204,6 +204,7 @@ public class Projects extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(Projects.this, CompilerPy.class);
+            intent.putExtra("mainid",11);
             intent.putExtra("code", code);
           //  Toast.makeText(Projects.this, code, Toast.LENGTH_SHORT).show();
             startActivity(intent);

@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,9 +25,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,17 +35,21 @@ import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Myproject extends AppCompatActivity {
     TextView title;
     LinearLayout pre;
-    LinearLayout homefra, lessonfra, cd;
+    LinearLayout homefra, lessonfra;
     ImageView homei, lessoni;
-    TextView hometext, lessontext, percentage;
-    private ImageButton menuButton;
+    TextView hometext, lessontext;
     private static final int REQUEST_PERMISSION = 1;
 
-    private List<File> pythonFiles = new ArrayList<>();
+    private final List<File> pythonFiles = new ArrayList<>();
+    private ProgressBar progressBar;
+    private RecyclerView recyclerView;
+    private ExecutorService executorService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +57,7 @@ public class Myproject extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_myproject);
 
-        requestStoragePermission();
-
+        // Initialize views
         title = findViewById(R.id.title);
         pre = findViewById(R.id.prepro);
         homefra = findViewById(R.id.home_fra);
@@ -65,63 +66,62 @@ public class Myproject extends AppCompatActivity {
         lessoni = findViewById(R.id.lessons_im);
         hometext = findViewById(R.id.home_text);
         lessontext = findViewById(R.id.lesson_text);
-        menuButton = findViewById(R.id.menu_button);
+        ImageButton menuButton = findViewById(R.id.menu_button);
+        progressBar = findViewById(R.id.progressBar); // ProgressBar
+        recyclerView = findViewById(R.id.phnpro); // RecyclerView for displaying the files
 
+        // Initialize ExecutorService
+        executorService = Executors.newSingleThreadExecutor();
+
+        // Request storage permission
+        requestStoragePermission();
 
         title.setText("My Projects");
-        pre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Projects.class);
-                startActivity(intent);
-            }
+        pre.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Projects.class);
+            startActivity(intent);
         });
 
-        menuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showPopupMenu(view);
-            }
+        menuButton.setOnClickListener(this::showPopupMenu);
+
+        homefra.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         });
 
-
-        homei.setImageResource(R.drawable.unhome);
-        lessoni.setImageResource(R.drawable.unbook);
-        hometext.setTextColor(getResources().getColor(R.color.off));
-        lessontext.setTextColor(getResources().getColor(R.color.off));
-        homei.setBackgroundResource(R.drawable.round_unselected);
-        lessoni.setBackgroundResource(R.drawable.round_unselected);
-
-        lessonfra.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
-                startActivity(intent);
-
-            }
+        lessonfra.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
+            startActivity(intent);
         });
 
-
-        homefra.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
+        // Load files with ExecutorService
+        loadPythonFiles(); // This can be retained if you want to load files immediately after permission is granted
     }
 
-    private void setupRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.phnpro);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        MyAdapter adapter = new MyAdapter(pythonFiles);
-        recyclerView.setAdapter(adapter);
+
+    // Load files using ExecutorService
+    private void loadPythonFiles() {
+        executorService.execute(() -> {
+            // Perform the task of loading Python files in the background
+            File storageDir = Environment.getExternalStorageDirectory();
+            scanDirectory(storageDir);
+
+            runOnUiThread(() -> {
+                // Hide progress bar and show RecyclerView once files are loaded
+                progressBar.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+                // Set up the RecyclerView adapter
+                recyclerView.setLayoutManager(new LinearLayoutManager(Myproject.this));
+                recyclerView.setAdapter(new MyAdapter(pythonFiles));
+            });
+        });
+
+        // Show progress bar while loading files
+        progressBar.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE); // Hide RecyclerView initially
     }
 
+    // Adapter for RecyclerView
     private class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         private List<File> files;
 
@@ -147,6 +147,7 @@ public class Myproject extends AppCompatActivity {
         }
     }
 
+    // ViewHolder for RecyclerView items
     private class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView fileNameTextView;
         private File file;
@@ -166,11 +167,12 @@ public class Myproject extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(Myproject.this, CompilerPy.class);
             intent.putExtra("filePath", file.getAbsolutePath());
+            intent.putExtra("mainid",12);
             startActivity(intent);
         }
     }
 
-
+    // Request storage permissions
     private void requestStoragePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             if (!Environment.isExternalStorageManager()) {
@@ -179,9 +181,8 @@ public class Myproject extends AppCompatActivity {
                 intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
                 startActivityForResult(intent, REQUEST_PERMISSION);
             } else {
-            // Permission already granted
-            loadPythonFiles();
-        }
+                loadPythonFiles();
+            }
         } else {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION);
@@ -190,7 +191,6 @@ public class Myproject extends AppCompatActivity {
             }
         }
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -206,13 +206,6 @@ public class Myproject extends AppCompatActivity {
         }
     }
 
-
-    private void loadPythonFiles() {
-        File storageDir = Environment.getExternalStorageDirectory();
-        scanDirectory(storageDir);
-        setupRecyclerView();
-    }
-
     private void scanDirectory(File dir) {
         File[] files = dir.listFiles();
         if (files != null) {
@@ -225,9 +218,10 @@ public class Myproject extends AppCompatActivity {
             }
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults); // Call super method
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 loadPythonFiles();
@@ -241,23 +235,27 @@ public class Myproject extends AppCompatActivity {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
         popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
-        popupMenu.getMenu().findItem(R.id.action_save).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
-        popupMenu.getMenu().findItem(R.id.action_open).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
+        popupMenu.getMenu().findItem(R.id.action_save).setVisible(false);
+        popupMenu.getMenu().findItem(R.id.action_open).setVisible(false);
 
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                if (item.getItemId() == R.id.action_settings) {
-                    BrightnessUtil.showBrightnessDialog(Myproject.this);
-                    return true;
-
-                } else {
-                    return false;
-                }
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.action_settings) {
+                BrightnessUtil.showBrightnessDialog(Myproject.this);
+                return true;
+            } else {
+                return false;
             }
-
         });
 
         popupMenu.show();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (executorService != null && !executorService.isShutdown()) {
+            executorService.shutdown();
+        }
+    }
+
 }

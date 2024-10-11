@@ -131,6 +131,7 @@ public class CompilerPy extends AppCompatActivity {
         CodeArea.setTypefaceText(Typeface.MONOSPACE);
 
      int retmain = getIntent().getIntExtra("mainid",0);
+     
         ReturnActivity rt=new ReturnActivity();
 returnback.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -138,6 +139,10 @@ returnback.setOnClickListener(new View.OnClickListener() {
         Intent bk;
         if (retmain==8){
             bk = new Intent(getApplicationContext(),MainActivity.class);
+        }else   if (retmain==11){
+            bk = new Intent(getApplicationContext(),Projects.class);
+        }else   if (retmain==12){
+            bk = new Intent(getApplicationContext(),Myproject.class);
         }else {
             bk = rt.returnINT(getApplicationContext(), activityid);
         }
@@ -163,7 +168,7 @@ returnback.setOnClickListener(new View.OnClickListener() {
                     launchOutputActivity(outgo);
                 } catch (PyException e) {
                     if (e.getMessage().contains("Input required")) {
-                        launchInputActivity();
+
                     } else {
                         launchOutputActivity(e.getMessage());
                     }
@@ -269,10 +274,7 @@ returnback.setOnClickListener(new View.OnClickListener() {
         startActivity(intent);
     }
 
-    private void launchInputActivity() {
-        Intent intent = new Intent(getApplicationContext(), InputActivity.class);
-        startActivityForResult(intent, 1);  // Use a request code to identify the response
-    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
