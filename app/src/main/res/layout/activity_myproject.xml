@@ -29,6 +29,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -111,12 +112,40 @@
             android:layout_weight="8">
 
             <include layout="@layout/progressbarcenter"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/phnpro"
-                android:visibility="invisible"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/noPermission"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Grant Permission in the setting to Read and Save Python file to the device Storage."
+                    android:textColor="@color/alice"
+                    android:textSize="24sp"
+
+                    >
+
+                </TextView>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="settings"
+                    android:layout_gravity="end"
+                    android:id="@+id/setPermission"
+                    >
+
+                </Button>
+            </LinearLayout>
 
         </LinearLayout>
 

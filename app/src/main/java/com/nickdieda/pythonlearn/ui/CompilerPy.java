@@ -64,6 +64,7 @@ public class CompilerPy extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
         String savedCode = sharedPreferences.getString("code", ""); // Default value if not found
+        int retmain=sharedPreferences.getInt("backcode",8);
 
        int activityid= sharedPreferences.getInt("idlearn", 0);
 
@@ -130,8 +131,15 @@ public class CompilerPy extends AppCompatActivity {
 
         CodeArea.setTypefaceText(Typeface.MONOSPACE);
 
-     int retmain = getIntent().getIntExtra("mainid",0);
-     
+     int retma = getIntent().getIntExtra("mainid",8);
+
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("backcode", retma);
+        editor.apply();
+
+
+
         ReturnActivity rt=new ReturnActivity();
 returnback.setOnClickListener(new View.OnClickListener() {
     @Override

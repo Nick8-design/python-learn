@@ -8,19 +8,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -41,24 +43,27 @@ import java.util.concurrent.Executors;
 public class Myproject extends AppCompatActivity {
     TextView title;
     LinearLayout pre;
-    LinearLayout homefra, lessonfra;
+    LinearLayout homefra, lessonfra,noPermission;
+    RelativeLayout progressBar;
     ImageView homei, lessoni;
     TextView hometext, lessontext;
+    Button setPermission;
     private static final int REQUEST_PERMISSION = 1;
 
     private final List<File> pythonFiles = new ArrayList<>();
-    private ProgressBar progressBar;
+    //private ProgressBar progressBar;
     private RecyclerView recyclerView;
     private ExecutorService executorService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_myproject);
 
         // Initialize views
         title = findViewById(R.id.title);
+        setPermission = findViewById(R.id.setPermission);
+        noPermission = findViewById(R.id.noPermission);
         pre = findViewById(R.id.prepro);
         homefra = findViewById(R.id.home_fra);
         lessonfra = findViewById(R.id.lesson_fra);
@@ -73,16 +78,12 @@ public class Myproject extends AppCompatActivity {
         // Initialize ExecutorService
         executorService = Executors.newSingleThreadExecutor();
 
-        // Request storage permission
-        requestStoragePermission();
-
+        // Set title and button actions
         title.setText("My Projects");
         pre.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), Projects.class);
             startActivity(intent);
         });
-
-        menuButton.setOnClickListener(this::showPopupMenu);
 
         homefra.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -94,36 +95,55 @@ public class Myproject extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Load files with ExecutorService
-        loadPythonFiles(); // This can be retained if you want to load files immediately after permission is granted
-    }
+        menuButton.setOnClickListener(this::showPopupMenu);
 
+        // Request storage permission and load files
+        noPermission.setVisibility(View.GONE);
+        requestStoragePermission();
+
+        // Button to manually set permission
+        setPermission.setOnClickListener(v -> requestStoragePermission());
+
+
+    }
 
     // Load files using ExecutorService
     private void loadPythonFiles() {
+       // Hide permission warning
+        progressBar.setVisibility(View.VISIBLE); // Show progress bar
+        recyclerView.setVisibility(View.GONE); // Hide RecyclerView
+        noPermission.setVisibility(View.GONE);
         executorService.execute(() -> {
-            // Perform the task of loading Python files in the background
             File storageDir = Environment.getExternalStorageDirectory();
             scanDirectory(storageDir);
 
             runOnUiThread(() -> {
+
                 // Hide progress bar and show RecyclerView once files are loaded
-                progressBar.setVisibility(View.GONE);
+              // progressBar.setVisibility(View.GONE);
+              //  noPermission.setVisibility(View.VISIBLE);
                 recyclerView.setVisibility(View.VISIBLE);
-                // Set up the RecyclerView adapter
-                recyclerView.setLayoutManager(new LinearLayoutManager(Myproject.this));
-                recyclerView.setAdapter(new MyAdapter(pythonFiles));
+
+                if (!pythonFiles.isEmpty()) {
+                   recyclerView.setLayoutManager(new LinearLayoutManager(Myproject.this));
+                    recyclerView.setAdapter(new MyAdapter(pythonFiles));
+                    Toast.makeText(Myproject.this, "Found " + pythonFiles.size() + " files", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    Toast.makeText(Myproject.this, "No Python files found", Toast.LENGTH_SHORT).show();
+                }
+
+
+
             });
         });
 
-        // Show progress bar while loading files
-        progressBar.setVisibility(View.VISIBLE);
-        recyclerView.setVisibility(View.GONE); // Hide RecyclerView initially
     }
 
     // Adapter for RecyclerView
     private class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
-        private List<File> files;
+        private final List<File> files;
 
         MyAdapter(List<File> files) {
             this.files = files;
@@ -146,10 +166,9 @@ public class Myproject extends AppCompatActivity {
             return files.size();
         }
     }
-
     // ViewHolder for RecyclerView items
     private class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView fileNameTextView;
+        private final TextView fileNameTextView;
         private File file;
 
         MyViewHolder(@NonNull View itemView) {
@@ -176,18 +195,25 @@ public class Myproject extends AppCompatActivity {
     private void requestStoragePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             if (!Environment.isExternalStorageManager()) {
+                noPermission.setVisibility(View.VISIBLE); // Show noPermission layout
+                progressBar.setVisibility(View.GONE); // Hide progress bar
                 Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                intent.addCategory(Intent.CATEGORY_DEFAULT);
-                intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
+                intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
                 startActivityForResult(intent, REQUEST_PERMISSION);
             } else {
-                loadPythonFiles();
+                noPermission.setVisibility(View.GONE); // Hide noPermission layout
+                loadPythonFiles(); // Load files if permission is granted
+
             }
         } else {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                noPermission.setVisibility(View.VISIBLE); // Show noPermission layout
+                progressBar.setVisibility(View.GONE); // Hide progress bar
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION);
             } else {
-                loadPythonFiles();
+                noPermission.setVisibility(View.GONE); // Hide noPermission layout
+                loadPythonFiles(); // Load files if permission is granted
+
             }
         }
     }
@@ -198,10 +224,31 @@ public class Myproject extends AppCompatActivity {
         if (requestCode == REQUEST_PERMISSION) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 if (Environment.isExternalStorageManager()) {
+                    noPermission.setVisibility(View.GONE); // Hide noPermission layout
                     loadPythonFiles();
+                    // Load files if permission is granted
                 } else {
+                    noPermission.setVisibility(View.VISIBLE); // Show noPermission layout
+                    progressBar.setVisibility(View.GONE); // Hide progress bar
                     Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
                 }
+
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                noPermission.setVisibility(View.GONE); // Hide noPermission layout
+                loadPythonFiles(); // Load files if permission is granted
+
+            } else {
+                noPermission.setVisibility(View.VISIBLE); // Show noPermission layout
+                progressBar.setVisibility(View.GONE); // Hide progress bar
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -214,24 +261,15 @@ public class Myproject extends AppCompatActivity {
                     scanDirectory(file);
                 } else if (file.getName().endsWith(".py")) {
                     pythonFiles.add(file);
+
                 }
             }
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                loadPythonFiles();
-            } else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
-    private void showPopupMenu(View view) {
+
+private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
         popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
@@ -242,9 +280,8 @@ public class Myproject extends AppCompatActivity {
             if (item.getItemId() == R.id.action_settings) {
                 BrightnessUtil.showBrightnessDialog(Myproject.this);
                 return true;
-            } else {
-                return false;
             }
+            return false;
         });
 
         popupMenu.show();
@@ -257,5 +294,4 @@ public class Myproject extends AppCompatActivity {
             executorService.shutdown();
         }
     }
-
 }

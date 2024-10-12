@@ -121,7 +121,7 @@ if (totalm>202){
         certificate cet=new certificate();
         cet.requestUserNameBeforeDownload(MainActivity.this,totalm);
 }else {
-    Toast.makeText(MainActivity.this,"Score 80% of the total marks to claim your certificate !",Toast.LENGTH_LONG).show();
+    Toast.makeText(MainActivity.this,"Score 80% of the total marks to claim your certificate !",Toast.LENGTH_SHORT).show();
 }
             }
         });
