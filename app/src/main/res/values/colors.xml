@@ -27,6 +27,36 @@
     <color name="coco">#FFF1E6</color>
     <color name="egg">#FFF9E3</color>
 
+    <color name="on_primary">#34495e</color>
+
+
+
+        <!-- Background and text base -->
+        <color name="code_primary">#0F2027</color>
+        <color name="code_primary_variant">#203A43</color>
+        <color name="code_on_primary">#FFFFFF</color>
+
+        <!-- Accents -->
+        <color name="code_accent">#00FFAB</color>
+        <color name="code_accent_variant">#80deea</color>
+        <color name="code_on_secondary">#0F2027</color>
+
+        <!-- Optional UI elements -->
+        <color name="code_error">#FF5252</color>
+        <color name="code_success">#8BC34A</color>
+        <color name="code_subtext">#CCCCCC</color>
+
+
+        <color name="white_trans50">#b3e5fc</color>
+    <color name="onback">#5dade2</color>
+    <color name="onback1">#90caf9 </color>
+
+    <color name="yello1">#FFFF66 </color>
+
+
+
+
+
 
 
 

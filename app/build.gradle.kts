@@ -25,8 +25,8 @@ android {
         applicationId = "com.nickdieda.pythonlearn"
         minSdk = 24
         targetSdk = 34
-        versionCode = 5
-        versionName = "1.5"
+        versionCode = 16
+        versionName = "2.5"
 
 
 
@@ -61,7 +61,7 @@ android {
     chaquopy {
         productFlavors {
             getByName("py38") {
-                version = "3.11"
+                version = "3.8"
                 pip{
                    install("numpy")
 
@@ -96,7 +96,7 @@ android {
 
         }
         defaultConfig {
-            version = "3.11"
+            version = "3.8"
         }
 
         sourceSets {

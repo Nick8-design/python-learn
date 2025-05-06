@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Dark base, like a code editor -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0F2027"
+                android:centerColor="#203A43"
+                android:endColor="#2C5364"
+                android:angle="135"/>
+        </shape>
+    </item>
+
+    <!-- Optional overlay for subtle visual depth -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#10000000" />
+        </shape>
+    </item>
+</layer-list>

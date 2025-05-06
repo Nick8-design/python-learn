@@ -1,36 +1,33 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Theme.PythonLearn" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/graya</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/on</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Modern programming-style theme -->
+        <item name="colorPrimary">@color/code_primary</item> <!-- Dark Blue/Slate -->
+        <item name="colorPrimaryVariant">@color/code_primary_variant</item>
+        <item name="colorOnPrimary">@color/code_on_primary</item> <!-- White -->
+
+        <!-- Accent color for buttons/interactive UI -->
+        <item name="colorSecondary">@color/code_accent</item> <!-- Neon Green -->
+        <item name="colorSecondaryVariant">@color/code_accent_variant</item>
+        <item name="colorOnSecondary">@color/code_on_secondary</item> <!-- Dark -->
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/code_primary_variant</item>
     </style>
 
-    <style name="Theme.PythonLearn.NoActionBar" >
+    <style name="Theme.PythonLearn.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="SplashScreenTheme" parent="Theme.SplashScreen" >
-        <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/pylog</item>
+    <style name="SplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/code_primary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/newicon</item>
         <item name="postSplashScreenTheme">@style/Theme.PythonLearn.NoActionBar</item>
     </style>
 
-
-
-
     <style name="Theme.PythonLearn.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.PythonLearn.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-</resources>
 
+</resources>

@@ -2,8 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="@color/graya"
+    android:layout_height="120dp"
+
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     >
@@ -28,7 +28,7 @@
     android:text="hello world"
     android:layout_margin="3dp"
     android:layout_marginStart="8dp"
-    android:textColor="@color/white"
+    android:textColor="@color/code_accent_variant"
 
     >
 

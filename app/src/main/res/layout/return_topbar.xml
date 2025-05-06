@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:orientation="vertical"
-    android:background="@color/graya"
+
     android:fitsSystemWindows="true"
     >
 
@@ -18,7 +18,7 @@
             >
 
             <ImageView
-                android:layout_width="80dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/back"
                 android:src="@drawable/back"
@@ -36,7 +36,7 @@
                 android:text="hello world"
                 android:layout_margin="3dp"
                 android:layout_marginStart="8dp"
-                android:textColor="@color/white"
+                android:textColor="@color/code_accent_variant"
                 android:paddingTop="10dp"
                 android:ellipsize="marquee"
                 android:marqueeRepeatLimit="marquee_forever"
@@ -51,15 +51,16 @@
 
             <TextView
                 android:id="@+id/qiuz"
-                android:layout_width="80dp"
+                android:layout_width="100dp"
                 android:text="Quiz"
-                android:alpha="0.7"
+                android:textSize="24sp"
+                android:alpha="1"
                 android:gravity="center"
                 android:textColor="@color/on"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="0dp"
                 android:layout_gravity="end|center_vertical"
-                android:background="@color/darkgra"
+
                 android:contentDescription="quiz"/>
         </LinearLayout>
 

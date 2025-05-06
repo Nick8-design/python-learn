@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/wf"
+    android:background="@drawable/background"
     android:orientation="vertical"
 
     >
@@ -20,7 +20,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/round_unselected"
+
         android:layout_weight="1"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -29,7 +29,7 @@
         <TextView
             android:id="@+id/percentage"
             android:layout_width="0dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="0dp"
             android:layout_weight="1"
             android:layout_gravity="left"
             android:layout_height="match_parent"
@@ -55,7 +55,7 @@
         <TextView
             android:id="@+id/percentag"
             android:layout_width="0dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="0dp"
             android:layout_weight="1"
             android:layout_gravity="right"
             android:layout_height="match_parent"
@@ -85,13 +85,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:gravity="start"
                 android:layout_weight="1"
                 >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:orientation="vertical"
-                    android:layout_weight="2"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
                     android:gravity="start|top"
                     >
                     <TextView
@@ -226,18 +228,25 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
+                    android:gravity="start"
                     android:layout_weight="2"
 
                     >
+
+
+
+
                 <LinearLayout
                     android:id="@+id/compiler_btn"
                     android:layout_width="match_parent"
                     android:layout_marginTop="30dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="140dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_height="130dp"
                     android:orientation="vertical"
                     android:gravity="center"
+                    android:layout_weight="2"
+
 
                     >
                     <TextView
@@ -264,7 +273,8 @@
                         android:background="@drawable/ubottom"
                         android:gravity="center"
                         android:text="Compiler"
-                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textColor="@color/alice"
                         android:elevation="10dp"
 
                         >
@@ -273,6 +283,21 @@
 
 
                 </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/comiler_btn"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_height="130dp"
+                        android:orientation="vertical"
+                       android:layout_weight="3"
+                        android:gravity="center"
+
+
+                        >
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -284,7 +309,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:scaleType="fitCenter"
 
             android:src="@drawable/p">
@@ -327,15 +352,18 @@
                     >
 
                 </ImageView>
+
                 <TextView
+                    android:id="@+id/comp"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
                     android:background="@drawable/ubottom"
+                    android:elevation="10dp"
                     android:gravity="center"
                     android:text="Projects"
-                    android:textColor="@color/black"
-                    android:elevation="10dp"
-                    android:id="@+id/comp"
+                    android:textSize="16sp"
+                    android:textColor="@color/alice"
+
                     >
 
                 </TextView>
@@ -376,7 +404,8 @@
                     android:background="@drawable/ubottom"
                     android:gravity="center"
                     android:text="Certificate"
-                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textColor="@color/alice"
                     android:elevation="10dp"
                     android:id="@+id/lswi"
 
@@ -420,7 +449,8 @@
                     android:background="@drawable/ubottom"
                     android:gravity="center"
                     android:elevation="10dp"
-                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textColor="@color/alice"
                     android:text="Continue"
                     android:id="@+id/cont"
                     >

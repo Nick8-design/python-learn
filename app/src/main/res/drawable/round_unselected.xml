@@ -1,9 +1,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/graya" />
+    <solid android:color="@color/white_trans50" /> <!-- Accent blue with 50% opacity -->
     <corners
         android:topLeftRadius="30dp"
         android:topRightRadius="30dp"
         android:bottomLeftRadius="30dp"
         android:bottomRightRadius="30dp" />
-
 </shape>

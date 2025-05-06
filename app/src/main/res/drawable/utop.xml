@@ -7,7 +7,7 @@
 
     <path
         android:fillColor="@android:color/transparent"
-        android:strokeColor="@color/red"
+        android:strokeColor="@color/code_accent_variant"
         android:strokeWidth="3"
         android:pathData="M 30,45 Q 30,30 50,30 Q 70,30 70,45"/>
 

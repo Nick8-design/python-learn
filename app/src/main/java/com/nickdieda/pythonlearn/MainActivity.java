@@ -52,14 +52,9 @@ private int activityid;
 
         super.onCreate(savedInstanceState);
         installSplashScreen(this);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-
-
-
-
 
 
         menuButton = findViewById(R.id.menu_button);
