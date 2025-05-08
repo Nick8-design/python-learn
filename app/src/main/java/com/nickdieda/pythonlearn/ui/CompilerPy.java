@@ -4,8 +4,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.DocumentsContract;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +23,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.documentfile.provider.DocumentFile;
 
 import com.chaquo.python.PyException;
 import com.chaquo.python.PyObject;
@@ -34,9 +38,13 @@ import com.nickdieda.pythonlearn.common.ReturnActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 
 
 import io.github.rosemoe.sora.widget.CodeEditor;
@@ -84,11 +92,32 @@ public class CompilerPy extends AppCompatActivity {
         if (ex1 != null) {
             CodeArea.setText(ex1);
         }
-        String filePath = getIntent().getStringExtra("filePath");
-        if (filePath != null) {
-            String fileContent = readFileContent(new File(filePath));
-            CodeArea.setText(fileContent);
+
+
+        Intent intent = getIntent();
+        String fileUriString = intent.getStringExtra("fileUri");
+
+        if (fileUriString != null) {
+            Uri fileUri = Uri.parse(fileUriString);
+
+            try (InputStream inputStream = getContentResolver().openInputStream(fileUri);
+                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                StringBuilder fileContent = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    fileContent.append(line).append("\n");
+                }
+                CodeArea.setText(fileContent.toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Failed to read file content", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "File not found", Toast.LENGTH_SHORT).show();
         }
+
+
+
 
 
         menuButton = findViewById(R.id.menu_button);
@@ -263,18 +292,16 @@ returnback.setOnClickListener(new View.OnClickListener() {
         popupMenu.show();
     }
 
-    private String readFileContent(File file) {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                stringBuilder.append(line).append('\n');
-            }
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), (CharSequence) e, Toast.LENGTH_LONG).show();
-        }
-        return stringBuilder.toString();
+
+//    CodeArea codeArea = findViewById(R.id.code_area); // Make sure this ID matches your layout
+
+
+    private void showErrorToast(String message) {
+        Toast.makeText(CompilerPy.this, message, Toast.LENGTH_LONG).show();
     }
+
+
+
 
     private void launchOutputActivity(String output) {
         Intent intent = new Intent(getApplicationContext(), Output.class);
@@ -283,38 +310,100 @@ returnback.setOnClickListener(new View.OnClickListener() {
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            String userInput = data.getStringExtra("userInput");
-            Python py = Python.getInstance();
-            PyObject pyobj = py.getModule("myscript");
-            pyobj.callAttr("handle_input", userInput);
 
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_CODE_USER_INPUT) {
+                // Handle user input for Python script
+                if (data != null) {
+                    String userInput = data.getStringExtra("userInput");
+                    Python py = Python.getInstance();
+                    PyObject pyobj = py.getModule("myscript");
+                    pyobj.callAttr("handle_input", userInput);
+                }
+            } else if (requestCode == REQUEST_CODE_OPEN_DOCUMENT_TREE) {
+                // Handle folder selection for saving files
+                if (data != null) {
+                    Uri folderUri = data.getData();
+
+                    // Persist permissions for the folder
+                    getContentResolver().takePersistableUriPermission(folderUri,
+                            Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
+                    // Save the folder URI in SharedPreferences
+                    SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+                    sharedPreferences.edit().putString("selectedFolderUri", folderUri.toString()).apply();
+
+                    Toast.makeText(this, "Folder selected successfully!", Toast.LENGTH_SHORT).show();
+                }
+            }
         }
-
     }
 
+
+
+    private static final int REQUEST_CODE_USER_INPUT = 1;
+    private static final int REQUEST_CODE_OPEN_DOCUMENT_TREE = 2;
+
+    // Trigger folder selection
+    private void selectFolder() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        startActivityForResult(intent, REQUEST_CODE_OPEN_DOCUMENT_TREE);
+    }
+
+
+
+
     public void saveScript(String scriptContent, String scriptName) {
-        File pythonProjectsFolder = new File(Environment.getExternalStorageDirectory(), "Python programs");
-        if (!pythonProjectsFolder.exists()) {
-            pythonProjectsFolder.mkdirs();
+        // Get the folder URI from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String folderUriString = sharedPreferences.getString("selectedFolderUri", null);
+
+        if (folderUriString == null) {
+            Toast.makeText(this, "No folder selected. Please select a folder first.", Toast.LENGTH_SHORT).show();
+            return;
         }
 
-        File scriptFile = new File(pythonProjectsFolder, scriptName + ".py");
+        Uri folderUri = Uri.parse(folderUriString);
 
-        if (scriptFile.exists()) {
-            Toast.makeText(this, "A script with this name already exists. Please choose a different name.", Toast.LENGTH_LONG).show();
-            showSaveAsDialog(); // Prompt the user to enter a new name
-        } else {
-            try (FileOutputStream fos = new FileOutputStream(scriptFile)) {
-                fos.write(scriptContent.getBytes());
-                Toast.makeText(this, "Saved in Python programs", Toast.LENGTH_SHORT).show();
-            } catch (IOException e) {
-                Toast.makeText(this, "Failed to save script: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        try {
+            // Use DocumentFile to work with the folder URI
+            DocumentFile folder = DocumentFile.fromTreeUri(this, folderUri);
+            if (folder == null || !folder.exists()) {
+                Toast.makeText(this, "Selected folder does not exist.", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            // Check if a file with the same name already exists
+            String fileName = scriptName + ".py";
+            DocumentFile existingFile = folder.findFile(fileName);
+            if (existingFile != null) {
+                Toast.makeText(this, "A script with this name already exists. Please choose a different name.", Toast.LENGTH_LONG).show();
+                showSaveAsDialog(); // Prompt the user to enter a new name
+                return;
+            }
+
+            // Create a new file in the selected folder
+            DocumentFile newFile = folder.createFile("text/x-python", fileName);
+            if (newFile == null) {
+                Toast.makeText(this, "Failed to create file.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Write the content to the new file
+            try (OutputStream outputStream = getContentResolver().openOutputStream(newFile.getUri())) {
+                if (outputStream != null) {
+                    outputStream.write(scriptContent.getBytes());
+                    Toast.makeText(this, "Script saved successfully in " + folder.getName(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Failed to open file for writing.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Failed to save script: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

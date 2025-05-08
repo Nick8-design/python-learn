@@ -1,9 +1,16 @@
 package com.nickdieda.pythonlearn.common;
 
+import static androidx.activity.result.ActivityResultCallerKt.registerForActivityResult;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
@@ -28,37 +35,38 @@ public class certificate {
         final EditText input = new EditText(con);
         builder.setView(input);
 
+
         // Set up the buttons
         builder.setPositiveButton("OK", (dialog, which) -> {
             String fullName = input.getText().toString().trim();
-            DBAdd_name.addname(con,fullName);
 
 
-            //name verify
+
+
 
             database=FirebaseDatabase.getInstance();
             dbRef=database.getReference("Python Certificate List");
 
 
-dbRef.addValueEventListener(new ValueEventListener() {
-    @Override
-    public void onDataChange(@NonNull DataSnapshot snapshot) {
-        if (snapshot.hasChild(fullName)){
-            Toast.makeText(con, "You have already claimed your certificate.", Toast.LENGTH_SHORT).show();
+            dbRef.orderByChild("name").equalTo(fullName).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        // Name already exists
+                        Toast.makeText(con, "You have already claimed your certificate.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Name doesn't exist; add to the database and generate certificate
+                        Toast.makeText(con, "Congratulations " + fullName + ", wait for your certificate to be generated.", Toast.LENGTH_SHORT).show();
+                        DBAdd_name.addname(con, fullName); // Add the name to Firebase
+                        GenerateCertificate.generateCertificate(con, fullName, totalProgress); // Generate the certificate
+                    }
+                }
 
-        }else {
-          // generateCertificate.generateCertificate(con,fullName, totalProgress);
-            Toast.makeText(con, "You can claim your certificate", Toast.LENGTH_SHORT).show();
-        }
-
-
-    }
-
-    @Override
-    public void onCancelled(@NonNull DatabaseError error) {
-        Toast.makeText(con, "Check your network connection !!!", Toast.LENGTH_SHORT).show();
-    }
-});
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(con, "Check your network connection !!! And try again", Toast.LENGTH_LONG).show();
+                }
+            });
 
 
 
@@ -70,5 +78,12 @@ dbRef.addValueEventListener(new ValueEventListener() {
 
         builder.show();
     }
+
+
+
+
+
+// To start folder picker
+
 
 }

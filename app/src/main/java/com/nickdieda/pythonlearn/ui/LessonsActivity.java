@@ -96,7 +96,7 @@ import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.certificate;
-import com.nickdieda.pythonlearn.common.generateCertificate;
+//import com.nickdieda.pythonlearn.common.generateCertificate;
 
 import io.github.rosemoe.sora.widget.CodeEditor;
 

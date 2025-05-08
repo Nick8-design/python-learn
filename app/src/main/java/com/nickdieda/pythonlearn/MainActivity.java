@@ -1,6 +1,8 @@
 package com.nickdieda.pythonlearn;
 
 import static androidx.core.splashscreen.SplashScreen.installSplashScreen;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -8,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.MutableInt;
@@ -23,12 +26,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.Manifest;
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.ColorUtil;
+import com.nickdieda.pythonlearn.common.GenerateCertificate;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.common.certificate;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -38,14 +44,15 @@ import com.nickdieda.pythonlearn.ui.Projects;
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout homefra, lessonfra, button, compiler_b, projects,continuel,swi;
+    LinearLayout homefra, lessonfra, button, compiler_b, projects, continuel, swi;
     ImageView homei, lessoni, compi, swi_img, uswi, cont_img, image;
-    TextView hometext, lessontext, percentage, percentag,title,covpas,topicname,strand,topicno,ts,tn;
+    TextView hometext, lessontext, percentage, percentag, title, covpas, topicname, strand, topicno, ts, tn;
     private ImageButton menuButton;
-    private int mainactId=8;
-   private int i;
-private int activityid;
+    private int mainactId = 8;
+    private int i;
+    private int activityid;
     private static final int REQUEST_WRITE_STORAGE = 112;
+    private ActivityResultLauncher<Intent> folderPickerLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -66,22 +73,20 @@ private int activityid;
         hometext = findViewById(R.id.home_text);
         lessontext = findViewById(R.id.lesson_text);
         percentage = findViewById(R.id.percentage);
-        percentag=findViewById(R.id.percentag);
+        percentag = findViewById(R.id.percentag);
         image = findViewById(R.id.image);
 
         compiler_b = findViewById(R.id.compiler_btn);
         swi_img = findViewById(R.id.swi_img);
         title = findViewById(R.id.title);
         projects = findViewById(R.id.projectsbtn);
-        topicname=findViewById(R.id.topicname);
-        topicno=findViewById(R.id.topicno);
-        strand=findViewById(R.id.strand);
-        ts=findViewById(R.id.ts);
-        covpas=findViewById(R.id.covpas);
-        tn=findViewById(R.id.tn);
-        swi=findViewById(R.id.swi);
-
-
+        topicname = findViewById(R.id.topicname);
+        topicno = findViewById(R.id.topicno);
+        strand = findViewById(R.id.strand);
+        ts = findViewById(R.id.ts);
+        covpas = findViewById(R.id.covpas);
+        tn = findViewById(R.id.tn);
+        swi = findViewById(R.id.swi);
 
 
         requestStoragePermission();
@@ -89,37 +94,44 @@ private int activityid;
         title.setText("Home");
 
 
-
-
-
         covpas.setTextColor(ColorUtil.getRandomColor());
-
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
         i = sharedPreferences.getInt("count", 0);
         int imageResource = sharedPreferences.getInt("imageResource", R.drawable.p);
         int colorValue = sharedPreferences.getInt("colorValue", R.color.red);
-        String tops=sharedPreferences.getString("topics","Welcome!,Lets learn python together.");
-        String topsno=sharedPreferences.getString("topno","Home page");
-        String stre=sharedPreferences.getString("strands","Home");
-         activityid= sharedPreferences.getInt("idlearn", 0);
-         int totalm=sharedPreferences.getInt("total_marks",0);
+        String tops = sharedPreferences.getString("topics", "Welcome!,Lets learn python together.");
+        String topsno = sharedPreferences.getString("topno", "Home page");
+        String stre = sharedPreferences.getString("strands", "Home");
+        activityid = sharedPreferences.getInt("idlearn", 0);
+        int totalm = sharedPreferences.getInt("total_marks", 0);
+
+
+
+
+
 
 
         swi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-if (totalm>202){
- //   if(true){
+                if (totalm > 202) {
+//                       if(true){
 
-        certificate cet=new certificate();
-        cet.requestUserNameBeforeDownload(MainActivity.this,totalm);
-}else {
-    Toast.makeText(MainActivity.this,"Score 80% of the total marks to claim your certificate !",Toast.LENGTH_SHORT).show();
-}
+                    certificate cet=new certificate();
+                    cet.requestUserNameBeforeDownload(MainActivity.this,totalm);
+
+//                         GenerateCertificate.selectFolder(this, folderPickerLauncher);
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Score 80% of the total marks to claim your certificate !", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+
+
         topicname.setText(tops);
         topicno.setText(topsno);
         strand.setText(stre);
@@ -131,14 +143,12 @@ if (totalm>202){
         tn.setSelected(true);
 
 
-
         image.setImageResource(imageResource);
         percentage.setText(getPercentageText(i));
         percentag.setText(getPercentageText(i));
         percentage.setTextColor(getResources().getColor(colorValue));
         percentag.setTextColor(getResources().getColor(colorValue));
         octColor(colorValue);
-
 
 
         menuButton.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +162,7 @@ if (totalm>202){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
-                intent.putExtra("mainid",mainactId);
+                intent.putExtra("mainid", mainactId);
                 startActivity(intent);
             }
         });
@@ -165,92 +175,90 @@ if (totalm>202){
         });
 
 
-      //  button.setOnClickListener(new View.OnClickListener() {
+        //  button.setOnClickListener(new View.OnClickListener() {
 
         //    @Override
-           // public void onClick(View view) {
+        // public void onClick(View view) {
 
-                int imageResource1 = 0; // Initialize imageResource here
-                int colorValue1 = 0;     // Initialize colorValue here
+        int imageResource1 = 0; // Initialize imageResource here
+        int colorValue1 = 0;     // Initialize colorValue here
 
-                // Determine image and color based on i
-                switch (i) {
-                    case 0:
-                        imageResource1 = R.drawable.p;
-                        colorValue1 = R.color.red;
-                        break;
-                    case 1:
-                        imageResource1 = R.drawable.p10;
-                        colorValue1 = R.color.orange;
-                        break;
-                    case 2:
-                        imageResource1 = R.drawable.p20;
-                        colorValue1 = R.color.off;
-                        break;
-                    case 3:
-                        imageResource1 = R.drawable.p30;
-                        colorValue1 = R.color.lightgray;
-                        break;
-                    case 4:
-                        imageResource1 = R.drawable.p40;
-                        colorValue1 = R.color.egg;
-                        break;
+        // Determine image and color based on i
+        switch (i) {
+            case 0:
+                imageResource1 = R.drawable.p;
+                colorValue1 = R.color.red;
+                break;
+            case 1:
+                imageResource1 = R.drawable.p10;
+                colorValue1 = R.color.orange;
+                break;
+            case 2:
+                imageResource1 = R.drawable.p20;
+                colorValue1 = R.color.off;
+                break;
+            case 3:
+                imageResource1 = R.drawable.p30;
+                colorValue1 = R.color.lightgray;
+                break;
+            case 4:
+                imageResource1 = R.drawable.p40;
+                colorValue1 = R.color.egg;
+                break;
 
-                    case 5:
-                        imageResource1 = R.drawable.p50;
-                        colorValue1 = R.color.lightgray;
-                        break;
-                    case 6:
-                        imageResource1 = R.drawable.p60;
-                        colorValue1 = R.color.green;
-                        break;
-                    case 7:
-                        imageResource1 = R.drawable.p70;
-                        colorValue1 = R.color.blue;
-                        break;
-                    case 8:
-                        imageResource1 = R.drawable.p80;
-                        colorValue1 = R.color.pink;
-                        break;
-                    case 9:
-                        imageResource1 = R.drawable.p90;
-                        colorValue1 = R.color.white;
-                        break;
+            case 5:
+                imageResource1 = R.drawable.p50;
+                colorValue1 = R.color.lightgray;
+                break;
+            case 6:
+                imageResource1 = R.drawable.p60;
+                colorValue1 = R.color.green;
+                break;
+            case 7:
+                imageResource1 = R.drawable.p70;
+                colorValue1 = R.color.blue;
+                break;
+            case 8:
+                imageResource1 = R.drawable.p80;
+                colorValue1 = R.color.pink;
+                break;
+            case 9:
+                imageResource1 = R.drawable.p90;
+                colorValue1 = R.color.white;
+                break;
 
-                    case 10:
-                        imageResource1 = R.drawable.p90;
-                        colorValue1 = R.color.yellow;
-                        break;
-                    default:
-                        i = 0;
-                        imageResource1 = R.drawable.p;
-                        colorValue1 = R.color.red;
-                        break;
-                }
-                image.setImageResource(imageResource1);
-                percentage.setText(getPercentageText(i));
-                percentag.setText(getPercentageText(i));
-               percentage.setTextColor(getResources().getColor(colorValue1));
+            case 10:
+                imageResource1 = R.drawable.p90;
+                colorValue1 = R.color.yellow;
+                break;
+            default:
+                i = 0;
+                imageResource1 = R.drawable.p;
+                colorValue1 = R.color.red;
+                break;
+        }
+        image.setImageResource(imageResource1);
+        percentage.setText(getPercentageText(i));
+        percentag.setText(getPercentageText(i));
+        percentage.setTextColor(getResources().getColor(colorValue1));
 
-               percentag.setTextColor(getResources().getColor(colorValue1));
-                octColor(colorValue1);
+        percentag.setTextColor(getResources().getColor(colorValue1));
+        octColor(colorValue1);
 
-                // Save state to SharedPreferences
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("count", i);
-                editor.putInt("imageResource", imageResource1);
-                editor.putInt("colorValue", colorValue1);
-                editor.apply();
-
+        // Save state to SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("count", i);
+        editor.putInt("imageResource", imageResource1);
+        editor.putInt("colorValue", colorValue1);
+        editor.apply();
 
 
         continuel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ReturnActivity rt=new ReturnActivity();
-                Intent bk = rt.returnINT(getApplicationContext(),activityid);
+                ReturnActivity rt = new ReturnActivity();
+                Intent bk = rt.returnINT(getApplicationContext(), activityid);
                 startActivity(bk);
-
 
 
             }
@@ -309,17 +317,16 @@ if (totalm>202){
     }
 
 
-
     public void octColor(int color) {
         Drawable background = percentage.getBackground();
         Drawable backg = percentag.getBackground();
-        if (background instanceof VectorDrawable ) {
+        if (background instanceof VectorDrawable) {
             ((VectorDrawable) background).setColorFilter(
                     getResources().getColor(color),
                     PorterDuff.Mode.SRC_IN
             );
         }
-        if (backg instanceof VectorDrawable ) {
+        if (backg instanceof VectorDrawable) {
             ((VectorDrawable) backg).setColorFilter(
                     getResources().getColor(color),
                     PorterDuff.Mode.SRC_IN
@@ -339,7 +346,6 @@ if (totalm>202){
         editor.apply();
 
     }
-
 
 
     private void showPopupMenu(View view) {
@@ -380,12 +386,10 @@ if (totalm>202){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_WRITE_STORAGE);
         }
     }
-
-
-
-
-
 }
+
+
+
 
 
 
