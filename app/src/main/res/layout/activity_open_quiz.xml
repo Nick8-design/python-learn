@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".quiz.OpenQuiz"
-    android:background="@drawable/wf"
+    android:background="@color/navyb"
     android:orientation="vertical">
 
     <include layout="@layout/return_topbar" />
@@ -15,6 +15,7 @@
         android:id="@+id/ansdis">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
+            android:textColor="@color/maziwa"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/markdis"
-        android:visibility="gone"> <!-- Initially hidden -->
+        android:visibility="gone">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

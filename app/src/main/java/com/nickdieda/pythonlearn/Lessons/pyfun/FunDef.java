@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
 
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -24,6 +26,7 @@ public class FunDef extends AppCompatActivity {
     private CodeEditor pd2, pd1,pd3,pd4,pd5,pd7,pd6,pd8,pd9,pd10;
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
     private ImageView ret;
+    private FrameLayout adContainerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,10 @@ public class FunDef extends AppCompatActivity {
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
 
+        AdHelper.initializeAds(this);
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE);
+        AdHelper.loadBannerAd(this, adContainerView);
 
         ret = findViewById(R.id.returnback);
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 
@@ -23,11 +25,27 @@ public class InstallPy extends AppCompatActivity {
   private  TextView title,ex1,qz;
  private   ImageView ret;
     private CodeEditor out1;
+
+    private FrameLayout adContainerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_install_py);
+
+
+        AdHelper.initializeAds(this);
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE);
+        AdHelper.loadBannerAd(this, adContainerView);
+
+
+
+
+
+
+
 
         title=findViewById(R.id.title);
         qz=findViewById(R.id.qiuz);

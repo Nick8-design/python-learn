@@ -49,6 +49,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         final OpenQuiz.Question question = questionList.get(position);
 
         holder.questionNumber.setText((position + 1) + "/" + questionList.size());
+
         holder.questionText.setText(question.getQuestionText());
 
         holder.choicesGroup.removeAllViews();

@@ -40,6 +40,7 @@
         android:alpha="0.8"
         android:scrollbars="vertical"
         >
+        <include layout="@layout/bottonadd"/>
 <TextView
     android:layout_width="match_parent"
     android:layout_height="60dp"
@@ -98,6 +99,7 @@
 
 
         </LinearLayout>
+<!--        <include layout="@layout/bottonadd"/>-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -3167,5 +3169,6 @@
 </LinearLayout>
 
     </ScrollView>
+<!--    <include layout="@layout/bottonadd"/>-->
     <include layout="@layout/bottom_bar" />
 </LinearLayout>

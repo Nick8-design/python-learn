@@ -9,6 +9,8 @@
     tools:context=".Lessons.pyfun.lambdaActivity">
 
     <include layout="@layout/return_topbar" />
+    <include layout="@layout/bottonadd"/>
+
 
     <ScrollView
         android:layout_width="match_parent"

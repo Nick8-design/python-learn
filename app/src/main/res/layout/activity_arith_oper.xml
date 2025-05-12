@@ -529,11 +529,13 @@
                         android:paddingEnd="8dp" />
 
 
-
+                    <include layout="@layout/bottonadd"/>
 
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
+    <include layout="@layout/bottonadd"/>
 
 </LinearLayout>

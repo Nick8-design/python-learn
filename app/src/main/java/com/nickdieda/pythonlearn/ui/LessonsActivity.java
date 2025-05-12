@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -94,6 +96,7 @@ import com.nickdieda.pythonlearn.Lessons.pyfun.PassPy;
 import com.nickdieda.pythonlearn.Lessons.pyfun.lambdaActivity;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.certificate;
 //import com.nickdieda.pythonlearn.common.generateCertificate;
@@ -152,13 +155,22 @@ public class LessonsActivity extends AppCompatActivity {
     private ImageButton menuButton;
     private CodeEditor fra;
     private int totalProgress,mark;
-
+    private FrameLayout adContainerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_lessons);
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+
+        AdHelper.initializeAds(this);
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE);
+        AdHelper.loadBannerAd(this, adContainerView);
+
 
         sharedPreferences = getSharedPreferences("progress", MODE_PRIVATE);
         int bfp = sharedPreferences.getInt("overv", 0);

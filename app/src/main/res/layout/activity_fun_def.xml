@@ -23,6 +23,9 @@
             android:layout_marginBottom="50dp"
             android:paddingBottom="150dp">
 
+            <include layout="@layout/bottonadd"/>
+
+
             <TextView
                 android:id="@+id/intrott"
                 android:layout_width="match_parent"

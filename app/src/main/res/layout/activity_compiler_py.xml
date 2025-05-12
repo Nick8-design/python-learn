@@ -163,6 +163,14 @@
 </LinearLayout>
 
 
+
+<include layout="@layout/bottonadd"/>
+
+
+
+
+
+
     <include layout="@layout/bottom_bar"
         />
 

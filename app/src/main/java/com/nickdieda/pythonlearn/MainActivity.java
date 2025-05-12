@@ -13,6 +13,7 @@ import android.graphics.drawable.VectorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.util.MutableInt;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,10 +29,18 @@ import android.Manifest;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.ColorUtil;
 import com.nickdieda.pythonlearn.common.GenerateCertificate;
@@ -42,6 +51,8 @@ import com.nickdieda.pythonlearn.ui.LessonsActivity;
 import com.nickdieda.pythonlearn.ui.Projects;
 
 import java.io.File;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout homefra, lessonfra, button, compiler_b, projects, continuel, swi;
@@ -51,16 +62,23 @@ public class MainActivity extends AppCompatActivity {
     private int mainactId = 8;
     private int i;
     private int activityid;
+    private InterstitialAd mInterstitialAd;
+    private static final String TAG = "MainActivity";
     private static final int REQUEST_WRITE_STORAGE = 112;
     private ActivityResultLauncher<Intent> folderPickerLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
+
         super.onCreate(savedInstanceState);
         installSplashScreen(this);
 //        EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this, initializationStatus -> {});
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
@@ -109,6 +127,27 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-5272550552627150/2093048931", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i(TAG, "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d(TAG, loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+
+
 
 
 
@@ -116,8 +155,31 @@ public class MainActivity extends AppCompatActivity {
         swi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.show(MainActivity.this);
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            // Reload a new ad after the current one is dismissed
+                            loadInterstitialAd();
+                        }
+                    });
+                } else {
+                    Log.d("TAG", "The interstitial ad wasn't ready yet.");
+                }
+
+
                 if (totalm > 202) {
 //                       if(true){
+
+//                    if (mInterstitialAd != null) {
+//                        mInterstitialAd.show(MainActivity.this);
+//                    } else {
+//                        Log.d("TAG", "The interstitial ad wasn't ready yet.");
+//                    }
+
 
                     certificate cet=new certificate();
                     cet.requestUserNameBeforeDownload(MainActivity.this,totalm);
@@ -161,17 +223,107 @@ public class MainActivity extends AppCompatActivity {
         compiler_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
-                intent.putExtra("mainid", mainactId);
-                startActivity(intent);
+
+
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            // Called when the ad is dismissed.
+                            Log.d("TAG", "Ad was dismissed.");
+                            // Proceed to next activity
+                            Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
+                            intent.putExtra("mainid", mainactId);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+                            // Called when ad fails to show
+                            Log.e("TAG", "Ad failed to show.");
+                            // Proceed anyway
+                            Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
+                            intent.putExtra("mainid", mainactId);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdShowedFullScreenContent() {
+                            mInterstitialAd = null; // Set to null so it can't be reused.
+                        }
+                    });
+
+                    mInterstitialAd.show(MainActivity.this);
+                } else {
+                    // If ad is not ready, just go to activity
+                    Intent intent = new Intent(getApplicationContext(), CompilerPy.class);
+                    intent.putExtra("mainid", mainactId);
+                    startActivity(intent);
+                }
+
+
             }
+
         });
+
+
+
         projects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Projects.class);
-                startActivity(intent);
+
+//            jjj
+//                if (mInterstitialAd != null) {
+//                    mInterstitialAd.show(MainActivity.this);
+//                } else {
+//                    Log.d("TAG", "The interstitial ad wasn't ready yet.");
+//                }
+//                Intent intent = new Intent(getApplicationContext(), Projects.class);
+//                startActivity(intent);
+
+
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            // Called when the ad is dismissed.
+                            Log.d("TAG", "Ad was dismissed.");
+                            // Proceed to next activity
+                            Intent intent = new Intent(getApplicationContext(), Projects.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+                            // Called when ad fails to show
+                            Log.e("TAG", "Ad failed to show.");
+                            // Proceed anyway
+                            Intent intent = new Intent(getApplicationContext(), Projects.class);
+
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdShowedFullScreenContent() {
+                            mInterstitialAd = null; // Set to null so it can't be reused.
+                        }
+                    });
+
+                    mInterstitialAd.show(MainActivity.this);
+                } else {
+                    // If ad is not ready, just go to activity
+                    Intent intent = new Intent(getApplicationContext(), Projects.class);
+                    startActivity(intent);
+                }
+
+
+
             }
+
+
+
+
+
         });
 
 
@@ -276,8 +428,60 @@ public class MainActivity extends AppCompatActivity {
         lessonfra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
-                startActivity(intent);
+
+//
+//                jjjj
+//                if (mInterstitialAd != null) {
+//                    mInterstitialAd.show(MainActivity.this);
+//                } else {
+//                    Log.d("TAG", "The interstitial ad wasn't ready yet.");
+//                }
+//
+//
+//
+//
+//                Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
+//                startActivity(intent);
+
+
+
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            // Called when the ad is dismissed.
+                            Log.d("TAG", "Ad was dismissed.");
+                            // Proceed to next activity
+                            Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+                            // Called when ad fails to show
+                            Log.e("TAG", "Ad failed to show.");
+                            // Proceed anyway
+                            Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
+
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdShowedFullScreenContent() {
+                            mInterstitialAd = null; // Set to null so it can't be reused.
+                        }
+                    });
+
+                    mInterstitialAd.show(MainActivity.this);
+                } else {
+                    // If ad is not ready, just go to activity
+                    Intent intent = new Intent(getApplicationContext(), LessonsActivity.class);
+                    startActivity(intent);
+                }
+
+
+
+
 
             }
         });
@@ -386,6 +590,28 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_WRITE_STORAGE);
         }
     }
+
+    private void loadInterstitialAd() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(this, "ca-app-pub-5272550552627150/2093048931", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        mInterstitialAd = interstitialAd;
+                        Log.i(TAG, "Interstitial ad loaded.");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        mInterstitialAd = null;
+                        Log.e(TAG, "Failed to load interstitial ad: " + loadAdError.getMessage());
+                    }
+                });
+    }
+
+
+
+
 }
 
 

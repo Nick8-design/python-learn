@@ -129,7 +129,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Grant Permission in the setting to Read and Save Python file to the device Storage."
+                    android:text="Select folder having python files."
                     android:textColor="@color/alice"
                     android:textSize="24sp"
 
@@ -139,7 +139,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="settings"
+                    android:text="Open"
                     android:layout_gravity="end"
                     android:id="@+id/setPermission"
                     >

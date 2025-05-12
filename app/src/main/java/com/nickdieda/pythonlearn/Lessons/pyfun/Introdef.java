@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -26,6 +28,7 @@ public class Introdef extends AppCompatActivity {
     private CodeEditor pd2, pd1;
     private TextView title,qz,pd11;
     private ImageView ret;
+    private FrameLayout adContainerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,10 @@ public class Introdef extends AppCompatActivity {
 
 
         ret = findViewById(R.id.returnback);
-
+        AdHelper.initializeAds(this);
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE);
+        AdHelper.loadBannerAd(this, adContainerView);
 
 
         pd1 = findViewById(R.id.pd1);

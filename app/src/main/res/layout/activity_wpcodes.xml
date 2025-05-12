@@ -10,6 +10,7 @@
 
     <include layout="@layout/return_topbar" />
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -77,14 +78,14 @@
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:text="Python Console also called shell allows you to run python codes in command prompt or terminal.\nIt excutes them line by line.\n\nIf you have already installed python on your Machine and i did show you how to start Python on cmd or terminal during installation now lets learn how to use it.\n\nStart Python console by typing the word python on cmd or terminal."
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:layout_margin="4dp" />
-
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -388,5 +389,7 @@
             </TextView>
         </LinearLayout>
     </ScrollView>
+
+    <include layout="@layout/bottonadd"/>
 
 </LinearLayout>
