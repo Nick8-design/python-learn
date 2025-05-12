@@ -1,9 +1,13 @@
 package com.nickdieda.pythonlearn.ui;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -11,8 +15,10 @@ import android.provider.DocumentsContract;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,8 +35,13 @@ import com.chaquo.python.PyException;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
 import com.nickdieda.pythonlearn.MainActivity;
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
@@ -54,7 +65,7 @@ public class CompilerPy extends AppCompatActivity {
     TextView txtv;
     LinearLayout homefra, lessonfra, button, runb;
     private ImageButton menuButton;
-    ImageView homei, lessoni, returnback,clear;
+    ImageView homei, lessoni, returnback, clear;
     TextView hometext, lessontext, percentage;
     private CodeEditor CodeArea;
 
@@ -63,6 +74,9 @@ public class CompilerPy extends AppCompatActivity {
     String outgo;
     private static final int REQUEST_INPUT = 1;
 
+    private FrameLayout adContainerView;
+    private AdView adView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,11 +84,48 @@ public class CompilerPy extends AppCompatActivity {
         setContentView(R.layout.activity_compiler_py);
         CodeArea = findViewById(R.id.codearea);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
-        String savedCode = sharedPreferences.getString("code", ""); // Default value if not found
-        int retmain=sharedPreferences.getInt("backcode",8);
 
-       int activityid= sharedPreferences.getInt("idlearn", 0);
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+
+        AdHelper.initializeAds(this); // Call once in each activity
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE); // Initially hide
+        AdHelper.loadBannerAd(this, adContainerView);
+
+
+//        adView = new AdView(this);
+//
+
+//        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+//
+//        adView.setAdSize(AdSize.BANNER);
+//        adContainerView.addView(adView);  // Attach to container
+//
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        adView.loadAd(adRequest);
+//
+//
+//        // (Optional) Set AdListener
+//        adView.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//                // Ad loaded
+//            }
+//
+//            @Override
+//            public void onAdFailedToLoad(LoadAdError adError) {
+//                Log.e("AdError", adError.getMessage());
+//            }
+//        });
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("app_datas", MODE_PRIVATE);
+        String savedCode = sharedPreferences.getString("code", "");
+        int retmain = sharedPreferences.getInt("backcode", 8);
+
+        int activityid = sharedPreferences.getInt("idlearn", 0);
 
         if (savedCode.isEmpty()) {
             CodeArea.setText("#welcome to python");
@@ -112,18 +163,16 @@ public class CompilerPy extends AppCompatActivity {
                 e.printStackTrace();
                 Toast.makeText(this, "Failed to read file content", Toast.LENGTH_SHORT).show();
             }
-        } else {
-            Toast.makeText(this, "File not found", Toast.LENGTH_SHORT).show();
+        } else
+        {
+          //  Toast.makeText(this, "File not found", Toast.LENGTH_SHORT).show();
         }
-
-
-
 
 
         menuButton = findViewById(R.id.menu_button);
         homefra = findViewById(R.id.home_fra);
         lessonfra = findViewById(R.id.lesson_fra);
-        returnback=findViewById(R.id.returnback);
+        returnback = findViewById(R.id.returnback);
 
 
         homefra = findViewById(R.id.home_fra);
@@ -160,7 +209,7 @@ public class CompilerPy extends AppCompatActivity {
 
         CodeArea.setTypefaceText(Typeface.MONOSPACE);
 
-     int retma = getIntent().getIntExtra("mainid",8);
+        int retma = getIntent().getIntExtra("mainid", 8);
 
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -168,27 +217,26 @@ public class CompilerPy extends AppCompatActivity {
         editor.apply();
 
 
+        ReturnActivity rt = new ReturnActivity();
+        returnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent bk;
+                if (retmain == 8) {
+                    bk = new Intent(getApplicationContext(), MainActivity.class);
+                } else if (retmain == 11) {
+                    bk = new Intent(getApplicationContext(), Projects.class);
+                } else if (retmain == 12) {
+                    bk = new Intent(getApplicationContext(), Myproject.class);
+                } else {
+                    bk = rt.returnINT(getApplicationContext(), activityid);
+                }
+                startActivity(bk);
+            }
+        });
 
-        ReturnActivity rt=new ReturnActivity();
-returnback.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent bk;
-        if (retmain==8){
-            bk = new Intent(getApplicationContext(),MainActivity.class);
-        }else   if (retmain==11){
-            bk = new Intent(getApplicationContext(),Projects.class);
-        }else   if (retmain==12){
-            bk = new Intent(getApplicationContext(),Myproject.class);
-        }else {
-            bk = rt.returnINT(getApplicationContext(), activityid);
-        }
-        startActivity(bk);
-    }
-});
 
-
-        CodeLang.pyLangstatic(getApplicationContext(),CodeArea);
+        CodeLang.pyLangstatic(getApplicationContext(), CodeArea);
         if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(this));
         }
@@ -277,7 +325,7 @@ returnback.setOnClickListener(new View.OnClickListener() {
 
                 } else if (item.getItemId() == R.id.action_open) {
 
-                    Intent opn=new Intent(getApplicationContext(),Myproject.class);
+                    Intent opn = new Intent(getApplicationContext(), Myproject.class);
                     startActivity(opn);
 
                     return true;
@@ -299,8 +347,6 @@ returnback.setOnClickListener(new View.OnClickListener() {
     private void showErrorToast(String message) {
         Toast.makeText(CompilerPy.this, message, Toast.LENGTH_LONG).show();
     }
-
-
 
 
     private void launchOutputActivity(String output) {
@@ -343,7 +389,6 @@ returnback.setOnClickListener(new View.OnClickListener() {
     }
 
 
-
     private static final int REQUEST_CODE_USER_INPUT = 1;
     private static final int REQUEST_CODE_OPEN_DOCUMENT_TREE = 2;
 
@@ -353,8 +398,6 @@ returnback.setOnClickListener(new View.OnClickListener() {
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         startActivityForResult(intent, REQUEST_CODE_OPEN_DOCUMENT_TREE);
     }
-
-
 
 
     public void saveScript(String scriptContent, String scriptName) {
@@ -421,7 +464,7 @@ returnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String scriptName = input.getText().toString().trim();
-                String scriptContent=CodeArea.getText().toString();
+                String scriptContent = CodeArea.getText().toString();
                 if (!scriptName.isEmpty()) {
                     saveScript(scriptContent, scriptName);
                 } else {

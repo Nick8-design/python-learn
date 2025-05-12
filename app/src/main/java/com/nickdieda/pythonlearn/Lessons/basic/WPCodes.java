@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -22,11 +24,33 @@ public class WPCodes extends AppCompatActivity {
     private CodeEditor out1,wpcb,wpca;
     private TextView title,ex1,qz,wpcsave,tryyname ;
     private ImageView ret;
+
+    private FrameLayout adContainerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+
+
+
+
+
+
+
         setContentView(R.layout.activity_wpcodes);
+
+
+
+
+
+        AdHelper.initializeAds(this); // Call once in each activity
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE); // Initially hide
+        AdHelper.loadBannerAd(this, adContainerView);
+
+
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
