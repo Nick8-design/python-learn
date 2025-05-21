@@ -8,9 +8,7 @@
     android:background="@color/navyb"
     tools:context=".Lessons.numpy.ArrIndexing">
 
-
     <include layout="@layout/return_topbar" />
-    <include layout="@layout/bottonadd"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -80,8 +78,6 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
-            <include layout="@layout/bottonadd"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -89,7 +85,6 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
-
 
             <io.github.rosemoe.sora.widget.CodeEditor
                 android:id="@+id/pd2"
@@ -113,11 +108,7 @@
                 android:layout_gravity="end"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
-            <include layout="@layout/bottonadd"/>
 
         </LinearLayout>
     </ScrollView>
-
-
-
 </LinearLayout>
