@@ -1,7 +1,5 @@
 package com.nickdieda.pythonlearn.common;
 
-
-
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
@@ -15,12 +13,34 @@ import com.google.android.gms.ads.MobileAds;
 
 public class AdHelper {
 
-    public static void loadBannerAd(Activity activity, FrameLayout adContainerView) {
-        AdView adView = new AdView(activity);
-        adView.setAdUnitId("ca-app-pub-5272550552627150/8268700770");
+    // Reuse a single AdView across activities
+    private static AdView adView;
 
-//        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-        adView.setAdSize(AdSize.BANNER);
+    public static void initializeAds(Activity activity) {
+        MobileAds.initialize(activity, initializationStatus -> {});
+    }
+
+    public static void loadBannerAd(Activity activity, FrameLayout adContainerView) {
+        // If adView is already created, remove it from old parent
+        if (adView != null && adView.getParent() != null) {
+            ((FrameLayout) adView.getParent()).removeView(adView);
+        }
+
+
+        if (adView == null) {
+            adView = new AdView(activity.getApplicationContext());
+//            production
+//            adView.setAdUnitId("ca-app-pub-5272550552627150/8268700770");
+
+            //test
+            adView.setAdUnitId("ca-app-pub-3940256099942544/9214589741");
+
+
+            adView.setAdSize(AdSize.BANNER);
+        }
+
+        // Add adView to container
+        adContainerView.removeAllViews();
         adContainerView.addView(adView);
 
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -37,10 +57,12 @@ public class AdHelper {
                 Log.e("AdError", adError.getMessage());
                 adContainerView.setVisibility(View.GONE);
             }
-        });
-    }
 
-    public static void initializeAds(Activity activity) {
-        MobileAds.initialize(activity, initializationStatus -> {});
+            @Override
+            public void onAdOpened() {
+                // Preload next ad immediately after this one is shown
+                adView.loadAd(new AdRequest.Builder().build());
+            }
+        });
     }
 }

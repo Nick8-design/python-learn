@@ -1,6 +1,8 @@
 <!-- res/menu/menu.xml -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
     <item
         android:id="@+id/action_sav"
         android:title="Save"
@@ -23,4 +25,14 @@
         android:title="Brightness"
         android:icon="@drawable/settings"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/rate_us"
+        android:title="Rate us"
+        android:icon="@drawable/chat"
+        app:showAsAction="always"/>
+
+
+
+
 </menu>

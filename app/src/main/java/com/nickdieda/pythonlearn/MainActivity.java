@@ -41,9 +41,11 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.BrightnessUtil;
 import com.nickdieda.pythonlearn.common.ColorUtil;
 import com.nickdieda.pythonlearn.common.GenerateCertificate;
+import com.nickdieda.pythonlearn.common.RateUs;
 import com.nickdieda.pythonlearn.common.ReturnActivity;
 import com.nickdieda.pythonlearn.common.certificate;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int REQUEST_WRITE_STORAGE = 112;
     private ActivityResultLauncher<Intent> folderPickerLauncher;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -79,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MobileAds.initialize(this, initializationStatus -> {});
+        AdHelper.initializeAds(this);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
@@ -107,8 +113,10 @@ public class MainActivity extends AppCompatActivity {
         swi = findViewById(R.id.swi);
 
 
+
         requestStoragePermission();
         createPythonProjectsFolder();
+
         title.setText("Home");
 
 
@@ -129,7 +137,14 @@ public class MainActivity extends AppCompatActivity {
 
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,"ca-app-pub-5272550552627150/2093048931", adRequest,
+//      test
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+
+//       production
+//        InterstitialAd.load(this,"ca-app-pub-5272550552627150/2093048931", adRequest,
+
+
+
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -146,6 +161,10 @@ public class MainActivity extends AppCompatActivity {
                         mInterstitialAd = null;
                     }
                 });
+
+
+
+
 
 
 
@@ -553,11 +572,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showPopupMenu(View view) {
+
+
+
         PopupMenu popupMenu = new PopupMenu(this, view);
+
+
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
         popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
-        popupMenu.getMenu().findItem(R.id.action_save).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
-        popupMenu.getMenu().findItem(R.id.action_open).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
+        popupMenu.getMenu().findItem(R.id.action_save).setVisible(false);
+        popupMenu.getMenu().findItem(R.id.action_open).setVisible(false);
+
+
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
@@ -566,10 +592,30 @@ public class MainActivity extends AppCompatActivity {
                     BrightnessUtil.showBrightnessDialog(MainActivity.this);
                     return true;
 
-                } else {
+                    } else if(item.getItemId() == R.id.rate_us) {
+                    Toast.makeText(MainActivity.this, "Rate us page coming", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(getApplicationContext(), RateUs.class);
+                    startActivity(intent);
+
+
+
+
+                    return false;
+                }else
+
+                {
                     return false;
                 }
             }
+
+
+
+
+
+
+
+
 
         });
 
@@ -593,7 +639,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadInterstitialAd() {
         AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(this, "ca-app-pub-5272550552627150/2093048931", adRequest,
+        InterstitialAd.load(this,
+
+//                "ca-app-pub-5272550552627150/2093048931"
+                "ca-app-pub-3940256099942544/1033173712"
+
+                , adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

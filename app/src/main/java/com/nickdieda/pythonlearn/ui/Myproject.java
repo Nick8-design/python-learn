@@ -273,6 +273,7 @@ public class Myproject extends AppCompatActivity {
         popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
         popupMenu.getMenu().findItem(R.id.action_save).setVisible(false);
         popupMenu.getMenu().findItem(R.id.action_open).setVisible(false);
+        popupMenu.getMenu().findItem(R.id.rate_us).setVisible(false);
 
         popupMenu.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_settings) {

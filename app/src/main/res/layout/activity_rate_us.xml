@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/background"
+
+    android:padding="24dp"
+
+android:orientation="vertical"
+    tools:context=".common.RateUs">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/back"
+        android:src="@drawable/back"
+        android:id="@+id/returnback"
+
+        >
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+
+    <ImageView
+        android:src="@drawable/dnd"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:text="Enjoying Python Learn?"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/maziwa"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:layout_height="60dp"
+         android:layout_width="match_parent"
+        />
+
+    <TextView
+        android:id="@+id/subText"
+        android:text="We'd love to hear your feedback. Please rate us on the Play Store!"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"
+        android:textColor="@color/alice"
+        android:gravity="center"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="16dp" />
+
+    <Button
+        android:id="@+id/rateButton"
+        android:text="Rate Now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+</LinearLayout>
+
+</LinearLayout>

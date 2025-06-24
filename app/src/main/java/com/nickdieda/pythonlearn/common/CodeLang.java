@@ -23,7 +23,7 @@ public class CodeLang {
                 new AssetsFileResolver(act.getAssets())
         );
 
-// Load the theme (replace "your-theme-name" with the actual theme name)
+
         ThemeRegistry themeRegistry = ThemeRegistry.getInstance();
         String themeAssetsPath = "textmate/darcula.json";
         try {

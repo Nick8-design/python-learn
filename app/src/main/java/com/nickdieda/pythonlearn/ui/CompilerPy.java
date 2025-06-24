@@ -89,7 +89,7 @@ public class CompilerPy extends AppCompatActivity {
         MobileAds.initialize(this, initializationStatus -> {});
 
 
-        AdHelper.initializeAds(this);
+
         adContainerView = findViewById(R.id.ad_view_container);
         adContainerView.setVisibility(View.GONE);
         AdHelper.loadBannerAd(this, adContainerView);

@@ -111,8 +111,9 @@ public class Output extends AppCompatActivity {
         PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.getMenuInflater().inflate(R.menu.kebab, popupMenu.getMenu());
         popupMenu.getMenu().findItem(R.id.action_sav).setVisible(false);
-        popupMenu.getMenu().findItem(R.id.action_save).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
-        popupMenu.getMenu().findItem(R.id.action_open).setVisible(false); // Or use setEnabled(false) if you want to disable it instead of hiding
+        popupMenu.getMenu().findItem(R.id.action_save).setVisible(false);
+        popupMenu.getMenu().findItem(R.id.action_open).setVisible(false);
+        popupMenu.getMenu().findItem(R.id.rate_us).setVisible(false);
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override

@@ -2,14 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
-
-
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
         android:allowBackup="true"
@@ -21,11 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
+
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5272550552627150~1354682335"/>
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+<!--            android:value="ca-app-pub-5272550552627150~1354682335" />-->
 
+
+        <activity
+            android:name=".common.RateUs"
+            android:exported="false"
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
 
         <activity
             android:name=".Lessons.numpy.NumSort"
@@ -34,8 +38,7 @@
         <activity
             android:name=".Lessons.numpy.NumpySearch"
             android:exported="false"
-            android:theme="@style/Theme.PythonLearn.NoActionBar"
-            />
+            android:theme="@style/Theme.PythonLearn.NoActionBar" />
         <activity
             android:name=".Lessons.numpy.JoinNumpy"
             android:exported="false"
@@ -284,7 +287,6 @@
             android:name=".Lessons.basic.OverviewBasic"
             android:exported="false"
             android:theme="@style/Theme.PythonLearn.NoActionBar" />
-
         <activity
             android:name=".ui.Myproject"
             android:exported="false"
@@ -304,14 +306,11 @@
         <activity
             android:name=".ui.LessonsActivity"
             android:exported="false"
-
             android:theme="@style/Theme.PythonLearn.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/SplashScreenTheme"
-
-            >
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

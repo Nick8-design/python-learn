@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdHelper;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -20,6 +22,7 @@ import io.github.rosemoe.sora.widget.CodeEditor;
 
 public class introcol extends AppCompatActivity {
     private CodeEditor  pd1;
+    private FrameLayout adContainerView;
     private TextView title,qz,pd11;
     private ImageView ret;
     @Override
@@ -32,6 +35,10 @@ public class introcol extends AppCompatActivity {
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
 
+        AdHelper.initializeAds(this);
+        adContainerView = findViewById(R.id.ad_view_container);
+        adContainerView.setVisibility(View.GONE);
+        AdHelper.loadBannerAd(this, adContainerView);
 
         ret = findViewById(R.id.returnback);
 
