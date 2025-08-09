@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.nickdieda.pythonlearn"
-    compileSdk = 34
+    compileSdk = 36
 
     flavorDimensions += "pyVersion"
     productFlavors {
@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId = "com.nickdieda.pythonlearn"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 17
         versionName = "2.6"
 
