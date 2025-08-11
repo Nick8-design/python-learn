@@ -48,6 +48,9 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
+            <include layout="@layout/bottonadd"/>
+
+
             <io.github.rosemoe.sora.widget.CodeEditor
                 android:id="@+id/pd0"
                 android:layout_width="match_parent"

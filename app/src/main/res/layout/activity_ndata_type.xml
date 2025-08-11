@@ -75,7 +75,7 @@
                         android:textStyle="bold" />
                 </TableRow>
 
-                <!-- Table Row 2 -->
+
                 <TableRow>
                     <TextView
                         android:layout_width="wrap_content"
@@ -280,6 +280,9 @@
                 </TableRow>
 
             </TableLayout>
+
+            <include layout="@layout/bottonadd"/>
+
 
             <TextView
                 android:layout_width="match_parent"

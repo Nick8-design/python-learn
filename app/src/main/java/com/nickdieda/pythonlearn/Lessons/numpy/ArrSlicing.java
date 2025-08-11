@@ -10,12 +10,11 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.AdHelper;
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -28,30 +27,30 @@ public class ArrSlicing extends AppCompatActivity {
     private TextView title,qz,pd11,pd22,pd33,pd44,pd55,pd66,pd77,pd88,pd99,pd1010;
     private ImageView ret;
 
-
-
     private FrameLayout adContainerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         EdgeToEdge.enable(this);
-
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_arr_slicing);
 
 
 
-        AdHelper.initializeAds(this); // Call once in each activity
-        adContainerView = findViewById(R.id.ad_view_container);
-        adContainerView.setVisibility(View.GONE); // Initially hide
-        AdHelper.loadBannerAd(this, adContainerView);
+//        AdHelper.initializeAds(this); // Call once in each activity
+//
+//        adContainerView = findViewById(R.id.ad_view_container);
+//        adContainerView.setVisibility(View.GONE); // Initially hide
+//        AdHelper.loadBannerAd(this, adContainerView);
 
+        FrameLayout adContainer = findViewById(R.id.ad_view_container);
 
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainer
+        );
 
 
         title = findViewById(R.id.title);
@@ -60,7 +59,7 @@ public class ArrSlicing extends AppCompatActivity {
 
         ret = findViewById(R.id.returnback);
 
-        // pd0 = findViewById(R.id.pd0);
+
         pd2 = findViewById(R.id.pd2);
         pd1 = findViewById(R.id.pd1);
         pd11 = findViewById(R.id.pd11);
@@ -71,17 +70,6 @@ public class ArrSlicing extends AppCompatActivity {
         pd44= findViewById(R.id.pd44);
 
 
-
-         /* pd5 = findViewById(R.id.pd5);
-        pd55 = findViewById(R.id.pd55);
-        pd6 = findViewById(R.id.pd6);
-        pd66 = findViewById(R.id.pd66);
-       pd7= findViewById(R.id.pd7);
-        pd77= findViewById(R.id.pd77);
-        pd8= findViewById(R.id.pd8);
-        pd88= findViewById(R.id.pd88);
-        pd9= findViewById(R.id.pd9);
-        pd99= findViewById(R.id.pd99);*/
 
         pd1.setEditable(false);
         pd1.setTypefaceText(Typeface.MONOSPACE);
@@ -96,19 +84,6 @@ public class ArrSlicing extends AppCompatActivity {
         pd4.setTypefaceText(Typeface.MONOSPACE);
 
 
-        /*   pd5.setEditable(false);
-        pd5.setTypefaceText(Typeface.MONOSPACE);
-
-        pd6.setEditable(false);
-        pd6.setTypefaceText(Typeface.MONOSPACE);
-
-      pd7.setEditable(false);
-        pd7.setTypefaceText(Typeface.MONOSPACE);
-        pd8.setEditable(false);
-        pd8.setTypefaceText(Typeface.MONOSPACE);
-        pd9.setEditable(false);
-        pd9.setTypefaceText(Typeface.MONOSPACE);
-*/
 
 
         String tt = "NumPy Array Slicing";
@@ -127,16 +102,11 @@ public class ArrSlicing extends AppCompatActivity {
             }
         });
 
-        // CodeLang.pyLangstatic(getApplicationContext(),pd0);
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
         CodeLang.pyLangstatic(getApplicationContext(),pd4);
-        /*   CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
-      CodeLang.pyLangstatic(getApplicationContext(),pd7);
-        CodeLang.pyLangstatic(getApplicationContext(),pd8);
-        CodeLang.pyLangstatic(getApplicationContext(),pd9);*/
+
 
 
 
@@ -233,5 +203,24 @@ public class ArrSlicing extends AppCompatActivity {
         });
 
 
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AdaptiveBannerLoader.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        AdaptiveBannerLoader.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        AdaptiveBannerLoader.onDestroy();
+        super.onDestroy();
     }
 }

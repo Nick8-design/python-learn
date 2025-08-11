@@ -2,6 +2,6 @@
 
 plugins {
     id("com.android.application") version "8.11.1" apply false
-    id("com.chaquo.python") version "15.0.1" apply false
+    id("com.chaquo.python") version "16.1.0" apply false
     alias(libs.plugins.google.gms.google.services) apply false
 }

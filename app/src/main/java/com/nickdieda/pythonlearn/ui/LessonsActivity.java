@@ -346,9 +346,9 @@ public class LessonsActivity extends AppCompatActivity {
         dictionary=findViewById(R.id.dictionary);
         lessontext=findViewById(R.id.lesson_text);
         prolambdaf=findViewById(R.id.prolambdaf);
-        percentage=findViewById(R.id.percentage);
+//        percentage=findViewById(R.id.percentage);
         pass_s=findViewById(R.id.pass_s);
-        image=findViewById(R.id.image);
+//        image=findViewById(R.id.image);
         classO=findViewById(R.id.classO);
         introfun=findViewById(R.id.introfun);
         cont=findViewById(R.id.contless);

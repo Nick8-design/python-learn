@@ -26,12 +26,12 @@
                 android:id="@+id/introTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Python Array Slicing"
+                android:text="@string/python_array_slicing"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp" />
-            <include layout="@layout/bottonadd"/>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -40,6 +40,7 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,6 +72,8 @@
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
 
+
+            <include layout="@layout/bottonadd"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -165,7 +168,7 @@
                 android:paddingEnd="8dp" />
 
 
-            <include layout="@layout/bottonadd"/>
+
 
         </LinearLayout>
     </ScrollView>
