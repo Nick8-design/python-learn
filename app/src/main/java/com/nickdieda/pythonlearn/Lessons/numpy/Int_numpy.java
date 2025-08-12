@@ -133,6 +133,8 @@ public class Int_numpy extends AppCompatActivity {
         AdaptiveBannerLoader.onDestroy();
         super.onDestroy();
     }
+
+
 }
 
 

@@ -56,6 +56,8 @@
                 android:layout_margin="5dp"
                 android:padding="4dp"
                 app:text='import numpy as np\n\narr1 = np.array([1, 2, 3])\narr2 = np.array([4, 5, 6])\nresult = np.concatenate((arr1, arr2))\nprint(result)' />
+
+            <include layout="@layout/bottonadd"/>
             <TextView
                 android:id="@+id/pd11"
                 android:layout_width="wrap_content"

@@ -123,6 +123,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_margin="4dp" />
+            <include layout="@layout/bottonadd"/>
 
             <io.github.rosemoe.sora.widget.CodeEditor
                 android:id="@+id/pd00"

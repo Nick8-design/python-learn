@@ -84,27 +84,6 @@ public class ArrIndexing extends AppCompatActivity {
         pd2.setEditable(false);
         pd2.setTypefaceText(Typeface.MONOSPACE);
 
-         /* pd3.setEditable(false);
-        pd3.setTypefaceText(Typeface.MONOSPACE);
-
-
-        pd4.setEditable(false);
-        pd4.setTypefaceText(Typeface.MONOSPACE);
-
-
-        pd5.setEditable(false);
-        pd5.setTypefaceText(Typeface.MONOSPACE);
-
-        pd6.setEditable(false);
-        pd6.setTypefaceText(Typeface.MONOSPACE);
-
-      pd7.setEditable(false);
-        pd7.setTypefaceText(Typeface.MONOSPACE);
-        pd8.setEditable(false);
-        pd8.setTypefaceText(Typeface.MONOSPACE);
-        pd9.setEditable(false);
-        pd9.setTypefaceText(Typeface.MONOSPACE);
-*/
 
 
         String tt = "NumPy Array Indexing";

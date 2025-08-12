@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -32,6 +34,12 @@ public class JoinNumpy extends AppCompatActivity {
         setContentView(R.layout.activity_join_numpy);
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
+        FrameLayout adContainer = findViewById(R.id.ad_view_container);
+
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainer
+        );
 
 
         ret = findViewById(R.id.returnback);
@@ -153,64 +161,7 @@ public class JoinNumpy extends AppCompatActivity {
                 startActivity(exe1);
             }
         });
-         /*     pd44.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd4.getText().toString());
-                startActivity(exe1);
-            }
-        });
 
-
-
-
-
-      pd55.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd5.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-        pd66.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =ne
-    }
-}w Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd6.getText().toString());
-                startActivity(exe1);
-            }
-        });
- pd77.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd7.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd88.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd8.getText().toString());
-                startActivity(exe1);
-            }
-        });
-        pd99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exe1 =new Intent(getApplicationContext(), CompilerPy.class);
-                exe1.putExtra("try1",pd9.getText().toString());
-                startActivity(exe1);
-            }
-        });
-
-*/
 
 
         ret.setOnClickListener(new View.OnClickListener() {
@@ -222,5 +173,23 @@ public class JoinNumpy extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AdaptiveBannerLoader.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        AdaptiveBannerLoader.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        AdaptiveBannerLoader.onDestroy();
+        super.onDestroy();
     }
 }
