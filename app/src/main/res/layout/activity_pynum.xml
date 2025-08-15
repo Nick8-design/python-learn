@@ -90,6 +90,7 @@
                     android:paddingEnd="8dp" />
             </LinearLayout>
 
+            <include layout="@layout/bottonadd"/>
 
 
 

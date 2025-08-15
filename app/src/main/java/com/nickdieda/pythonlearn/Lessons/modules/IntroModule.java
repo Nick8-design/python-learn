@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -62,6 +64,12 @@ public class IntroModule extends AppCompatActivity {
          pd3.setEditable(false);
         pd3.setTypefaceText(Typeface.MONOSPACE);
 
+        FrameLayout adContainer = findViewById(R.id.ad_view_container);
+
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainer
+        );
 
         pd4.setEditable(false);
         pd4.setTypefaceText(Typeface.MONOSPACE);
@@ -172,5 +180,24 @@ public class IntroModule extends AppCompatActivity {
         });
 
 
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AdaptiveBannerLoader.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        AdaptiveBannerLoader.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        AdaptiveBannerLoader.onDestroy();
+        super.onDestroy();
     }
 }

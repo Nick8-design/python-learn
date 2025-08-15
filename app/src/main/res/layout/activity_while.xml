@@ -153,6 +153,8 @@
                 android:orientation="vertical"
                 android:layout_marginTop="16dp">
 
+                <include layout="@layout/bottonadd"/>
+
                 <io.github.rosemoe.sora.widget.CodeEditor
                     android:id="@+id/pd3"
                     android:layout_width="match_parent"

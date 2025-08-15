@@ -53,7 +53,7 @@ android:orientation="vertical"
 
     <TextView
         android:id="@+id/subText"
-        android:text="We'd love to hear your feedback. Please rate us on the Play Store!"
+        android:text="We'd love to hear your feedback. Please rate us on the Play Store! and free free to say what you need us to add or improve ."
         android:textSize="16sp"
         android:layout_marginBottom="24dp"
         android:textColor="@color/alice"
@@ -64,7 +64,7 @@ android:orientation="vertical"
 
     <Button
         android:id="@+id/rateButton"
-        android:text="Rate Now"
+        android:text="Talk to us"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#4CAF50"

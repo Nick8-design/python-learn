@@ -59,7 +59,7 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
-
+            <include layout="@layout/bottonadd"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"

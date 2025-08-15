@@ -95,21 +95,21 @@ public class Listc extends AppCompatActivity {
 
 
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
-        CodeLang.pyLangstatic(getApplicationContext(),pd2);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd2);
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
-        CodeLang.pyLangstatic(getApplicationContext(),pd4);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd4);
         CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
-        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd7);
         CodeLang.pyLangstatic(getApplicationContext(),pd8);
-        CodeLang.pyLangstatic(getApplicationContext(),pd9);
-        CodeLang.pyLangstatic(getApplicationContext(),pd10);
-        CodeLang.pyLangstatic(getApplicationContext(),pd111);
-        CodeLang.pyLangstatic(getApplicationContext(),pd12);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd9);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd10);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd111);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd12);
         CodeLang.pyLangstatic(getApplicationContext(),pd13);
-        CodeLang.pyLangstatic(getApplicationContext(),pd14);
-        CodeLang.pyLangstatic(getApplicationContext(),pd15);
-        CodeLang.pyLangstatic(getApplicationContext(),pd16);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd14);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd15);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd16);
         CodeLang.pyLangstatic(getApplicationContext(),pd17);
         CodeLang.pyLangstatic(getApplicationContext(),pd18);
 

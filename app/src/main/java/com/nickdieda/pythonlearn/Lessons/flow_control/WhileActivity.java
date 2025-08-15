@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
@@ -35,6 +37,12 @@ public class WhileActivity extends AppCompatActivity {
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
+        FrameLayout adContainer = findViewById(R.id.ad_view_container);
+
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainer
+        );
 
 
         ret = findViewById(R.id.returnback);
@@ -116,5 +124,23 @@ public class WhileActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AdaptiveBannerLoader.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        AdaptiveBannerLoader.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        AdaptiveBannerLoader.onDestroy();
+        super.onDestroy();
     }
 }

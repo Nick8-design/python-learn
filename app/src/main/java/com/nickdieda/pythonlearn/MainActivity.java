@@ -3,6 +3,7 @@ package com.nickdieda.pythonlearn;
 import static androidx.core.splashscreen.SplashScreen.installSplashScreen;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -133,15 +134,34 @@ public class MainActivity extends AppCompatActivity {
         activityid = sharedPreferences.getInt("idlearn", 0);
         int totalm = sharedPreferences.getInt("total_marks", 0);
 
+        if (!sharedPreferences.contains("firstLaunchDate")) {
+            long currentTime = System.currentTimeMillis();
+            sharedPreferences.edit().putLong("firstLaunchDate", currentTime).apply();
+        }
 
+        long firstLaunch = sharedPreferences.getLong("firstLaunchDate", System.currentTimeMillis());
+        long currentTime = System.currentTimeMillis();
+        long twoWeeksInMillis = 3L * 24 * 60 * 60 * 1000; // 14 days
+      long ONE_MINUTE = 60*60* 1000;
+
+
+        if (!sharedPreferences.getBoolean("rateDialogShown", false) &&
+                currentTime - firstLaunch >= ONE_MINUTE) {
+            showRateDialog();
+            sharedPreferences.edit().putBoolean("rateDialogShown", true).apply();
+        }
+
+        if (currentTime - firstLaunch >= twoWeeksInMillis) {
+            showRateDialog();
+        }
 
         AdRequest adRequest = new AdRequest.Builder().build();
 
 //      test
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+//        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
 
 //       production
-//        InterstitialAd.load(this,"ca-app-pub-5272550552627150/2093048931", adRequest,
+        InterstitialAd.load(this,"ca-app-pub-5272550552627150/2093048931", adRequest,
 
 
 
@@ -593,7 +613,6 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                     } else if(item.getItemId() == R.id.rate_us) {
-                    Toast.makeText(MainActivity.this, "Rate us page coming", Toast.LENGTH_LONG).show();
 
                     Intent intent = new Intent(getApplicationContext(), RateUs.class);
                     startActivity(intent);
@@ -641,8 +660,8 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(this,
 
-//                "ca-app-pub-5272550552627150/2093048931"
-                "ca-app-pub-3940256099942544/1033173712"
+                "ca-app-pub-5272550552627150/2093048931"
+//                "ca-app-pub-3940256099942544/1033173712"
 
                 , adRequest,
                 new InterstitialAdLoadCallback() {
@@ -661,6 +680,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void showRateDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Enjoying our app?")
+                .setMessage("Please take a moment to rate us on the Play Store!")
+                .setPositiveButton("Rate Now", (dialog, which) -> {
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id=" + getPackageName())));
+                    } catch (android.content.ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
+                    }
+                })
+                .setNegativeButton("Later", null)
+                .show();
+    }
 
 
 }

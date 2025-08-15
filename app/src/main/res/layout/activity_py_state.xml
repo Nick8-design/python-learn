@@ -79,7 +79,7 @@
                 android:layout_margin="4dp" />
 
 
-
+            <include layout="@layout/bottonadd"/>
 
 
             <TextView

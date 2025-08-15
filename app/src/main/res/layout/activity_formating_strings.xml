@@ -91,7 +91,7 @@
             </LinearLayout>
 
 
-
+            <include layout="@layout/bottonadd"/>
 
             <TextView
                 android:layout_width="match_parent"

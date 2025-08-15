@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nickdieda.pythonlearn.R;
 
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 import com.nickdieda.pythonlearn.ui.CompilerPy;
@@ -39,7 +41,12 @@ public class Pystrmed extends AppCompatActivity {
         ret = findViewById(R.id.returnback);
 
 
+        FrameLayout adContainer = findViewById(R.id.ad_view_container);
 
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainer
+        );
         pd1 = findViewById(R.id.pd1);
         pd11 = findViewById(R.id.pd11);
 
@@ -105,8 +112,8 @@ public class Pystrmed extends AppCompatActivity {
         CodeLang.pyLangstatic(getApplicationContext(),pd3);
         CodeLang.pyLangstatic(getApplicationContext(),pd4);
         CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
-        CodeLang.pyLangstatic(getApplicationContext(),pd7);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd6);
+//        CodeLang.pyLangstatic(getApplicationContext(),pd7);
         CodeLang.pyLangstatic(getApplicationContext(),pd8);
 
 
@@ -187,5 +194,22 @@ public class Pystrmed extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AdaptiveBannerLoader.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        AdaptiveBannerLoader.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        AdaptiveBannerLoader.onDestroy();
+        super.onDestroy();
     }
 }

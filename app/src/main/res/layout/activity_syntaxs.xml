@@ -137,7 +137,7 @@
                 android:layout_margin="4dp"
                 android:textSize="26sp"
                 android:textStyle="bold" />
-
+            <include layout="@layout/bottonadd"/>
 
             <TextView
                 android:layout_width="match_parent"

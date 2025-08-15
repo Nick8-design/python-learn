@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.AdHelper;
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 
@@ -29,7 +30,7 @@ public class OverviewBasic extends AppCompatActivity {
 
     private CodeEditor out1;
 
-    private FrameLayout adContainerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,12 @@ public class OverviewBasic extends AppCompatActivity {
 
 
 
-        AdHelper.initializeAds(this);
-        adContainerView = findViewById(R.id.ad_view_container);
-        adContainerView.setVisibility(View.GONE);
-        AdHelper.loadBannerAd(this, adContainerView);
+        FrameLayout adContainer = findViewById(R.id.ad_view_container);
 
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainer
+        );
 
 
         ret=findViewById(R.id.returnback);

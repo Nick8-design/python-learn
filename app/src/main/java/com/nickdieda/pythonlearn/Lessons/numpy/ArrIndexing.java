@@ -61,23 +61,11 @@ public class ArrIndexing extends AppCompatActivity {
         pd1 = findViewById(R.id.pd1);
         pd11 = findViewById(R.id.pd11);
         pd22 = findViewById(R.id.pd22);
-          /*   pd3 = findViewById(R.id.pd3);
-        pd33 = findViewById(R.id.pd33);
-    pd4= findViewById(R.id.pd4);
-        pd44= findViewById(R.id.pd44);
 
 
 
-        pd5 = findViewById(R.id.pd5);
-        pd55 = findViewById(R.id.pd55);
-        pd6 = findViewById(R.id.pd6);
-        pd66 = findViewById(R.id.pd66);
-       pd7= findViewById(R.id.pd7);
-        pd77= findViewById(R.id.pd77);
-        pd8= findViewById(R.id.pd8);
-        pd88= findViewById(R.id.pd88);
-        pd9= findViewById(R.id.pd9);
-        pd99= findViewById(R.id.pd99);*/
+
+
 
         pd1.setEditable(false);
         pd1.setTypefaceText(Typeface.MONOSPACE);
@@ -102,17 +90,9 @@ public class ArrIndexing extends AppCompatActivity {
             }
         });
 
-        // CodeLang.pyLangstatic(getApplicationContext(),pd0);
+
         CodeLang.pyLangstatic(getApplicationContext(),pd1);
         CodeLang.pyLangstatic(getApplicationContext(),pd2);
-       /*    CodeLang.pyLangstatic(getApplicationContext(),pd3);
-       CodeLang.pyLangstatic(getApplicationContext(),pd4);
-        CodeLang.pyLangstatic(getApplicationContext(),pd5);
-        CodeLang.pyLangstatic(getApplicationContext(),pd6);
-      CodeLang.pyLangstatic(getApplicationContext(),pd7);
-        CodeLang.pyLangstatic(getApplicationContext(),pd8);
-        CodeLang.pyLangstatic(getApplicationContext(),pd9);*/
-
 
 
 

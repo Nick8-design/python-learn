@@ -28,7 +28,7 @@
 
     <item
         android:id="@+id/rate_us"
-        android:title="Rate us"
+        android:title="Talk to us"
         android:icon="@drawable/chat"
         app:showAsAction="always"/>
 

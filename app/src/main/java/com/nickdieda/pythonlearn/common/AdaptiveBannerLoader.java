@@ -28,7 +28,7 @@ public class AdaptiveBannerLoader {
         // Initialize Mobile Ads SDK
         MobileAds.initialize(activity, initializationStatus -> {});
 
-        String adUnitId=  "ca-app-pub-3940256099942544/9214589741";
+        String adUnitId=  "ca-app-pub-5272550552627150/7666397056";
 
         adView = new AdView(activity);
         adView.setAdUnitId(adUnitId);

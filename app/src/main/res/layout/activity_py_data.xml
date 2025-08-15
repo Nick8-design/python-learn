@@ -196,7 +196,7 @@
                     android:layout_margin="5dp"
                     android:background="#EFEFEF"
                     android:padding="4dp" />
-
+                <include layout="@layout/bottonadd"/>
                 <TextView
                     android:id="@+id/pd44"
                     android:layout_width="wrap_content"

@@ -40,6 +40,8 @@
                 android:textSize="18sp"
                 android:layout_margin="4dp" />
 
+            <include layout="@layout/bottonadd"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

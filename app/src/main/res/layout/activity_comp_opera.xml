@@ -81,7 +81,7 @@
 
             </TextView>
 
-
+            <include layout="@layout/bottonadd"/>
             <TextView
                 android:layout_width="match_parent"
                 android:text="It compares value or operand on the left to that of right and returns True if the value are equal and False if they are not equal."

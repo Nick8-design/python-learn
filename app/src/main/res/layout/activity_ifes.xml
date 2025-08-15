@@ -140,7 +140,7 @@
 
 
 
-
+            <include layout="@layout/bottonadd"/>
 
             <TextView
 

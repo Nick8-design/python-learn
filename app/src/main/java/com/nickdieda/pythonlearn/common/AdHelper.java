@@ -30,10 +30,10 @@ public class AdHelper {
         if (adView == null) {
             adView = new AdView(activity.getApplicationContext());
 //            production
-//            adView.setAdUnitId("ca-app-pub-5272550552627150/8268700770");
+            adView.setAdUnitId("ca-app-pub-5272550552627150/8268700770");
 
             //test
-            adView.setAdUnitId("ca-app-pub-3940256099942544/9214589741");
+//            adView.setAdUnitId("ca-app-pub-3940256099942544/9214589741");
 
 
             adView.setAdSize(AdSize.BANNER);

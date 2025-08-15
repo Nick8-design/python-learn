@@ -80,7 +80,7 @@
                 android:layout_marginBottom="6dp">
 
             </TextView>
-
+            <include layout="@layout/bottonadd"/>
 
             <TextView
                 android:text="and returns True if both operands are True ,otherwise False."

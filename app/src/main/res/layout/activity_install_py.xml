@@ -9,7 +9,7 @@
     tools:context=".Lessons.basic.InstallPy">
 
     <include layout="@layout/return_topbar" />
-    <include layout="@layout/bottonadd"/>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -114,6 +114,8 @@
                     android:layout_gravity="center"
                     android:layout_margin="4dp" />
 
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -126,6 +128,7 @@
                 </TextView>
 
             </LinearLayout>
+            <include layout="@layout/bottonadd"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -188,6 +191,8 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
             </LinearLayout>
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

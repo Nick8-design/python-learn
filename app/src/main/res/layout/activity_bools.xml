@@ -171,6 +171,7 @@
                 android:background="#EFEFEF"
                 android:padding="4dp" />
 
+                <include layout="@layout/bottonadd"/>
 
                 <TextView
                     android:id="@+id/pd33"

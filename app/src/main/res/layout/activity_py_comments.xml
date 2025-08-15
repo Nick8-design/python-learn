@@ -100,7 +100,7 @@
                 </TextView>
             </LinearLayout>
 
-
+            <include layout="@layout/bottonadd"/>
 
 
             <TextView

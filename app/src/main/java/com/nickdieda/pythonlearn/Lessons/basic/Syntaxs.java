@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nickdieda.pythonlearn.R;
 import com.nickdieda.pythonlearn.common.AdHelper;
+import com.nickdieda.pythonlearn.common.AdaptiveBannerLoader;
 import com.nickdieda.pythonlearn.common.CodeLang;
 import com.nickdieda.pythonlearn.quiz.OpenQuiz;
 
@@ -36,19 +37,10 @@ public class Syntaxs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
-
-
-
-
-
-
-
-        setContentView(R.layout.activity_wpcodes);
-
-
-
-
         setContentView(R.layout.activity_syntaxs);
+
+
+
 
         title = findViewById(R.id.title);
         qz = findViewById(R.id.qiuz);
@@ -61,6 +53,12 @@ public class Syntaxs extends AppCompatActivity {
         adContainerView.setVisibility(View.GONE); // Initially hide
         AdHelper.loadBannerAd(this, adContainerView);
 
+
+
+        AdaptiveBannerLoader.loadAd(
+                this,
+                adContainerView
+        );
 
         pd2 = findViewById(R.id.pd2);
         pd22 = findViewById(R.id.pd22);
